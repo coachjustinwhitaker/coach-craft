@@ -4,7 +4,7 @@ track: rec
 sessions_per_week: 2
 weeks:
 - week: 1
-  focus: Me & the Ball under pressure — settling into 7v7
+  focus: Under pressure, settling into 7v7
   opening:
     activity: 3v3-beat-your-player-bonus
     note: Take on a defender, then score
@@ -24,7 +24,7 @@ weeks:
   block: B1
   level: intro
 - week: 2
-  focus: Me & the Ball — control and scanning in space
+  focus: Control and scanning in space
   opening:
     activity: 3v3-four-goals
     note: Look up to find the open goal
@@ -44,7 +44,7 @@ weeks:
   block: B1
   level: intro
 - week: 3
-  focus: 'Me & My Teammates — introduced: pass and move'
+  focus: 'Introduced: pass and move'
   opening:
     activity: 4v4-pass-and-move
     note: Pass, then move
@@ -64,7 +64,7 @@ weeks:
   block: B2
   level: intro
 - week: 4
-  focus: Me & My Teammates — combination play deepens
+  focus: Combination play deepens
   opening:
     activity: 3v3-give-and-go-bonus
     note: Pass and run to get it back
@@ -84,7 +84,7 @@ weeks:
   block: B2
   level: intro
 - week: 5
-  focus: Me & My Teammates — numerical advantage and finishing
+  focus: Numerical advantage and finishing
   opening:
     activity: 5v4-with-a-floater
     note: Use the extra player
@@ -104,7 +104,7 @@ weeks:
   block: B2
   level: intro
 - week: 6
-  focus: 'Me & My Team Defending, introduced: press, delay, cover'
+  focus: 'Introduced: press, delay, cover'
   opening:
     activity: 3v3-pressure-and-cover
     note: One presses, the others cover
@@ -124,7 +124,7 @@ weeks:
   block: B3
   level: intro
 - week: 7
-  focus: 'Me & My Team Defending: marking and staying compact'
+  focus: 'Marking and staying compact'
   opening:
     activity: 4v4-two-in-the-final-third
     note: Defend with numbers up
