@@ -19,7 +19,106 @@ details{background:#fff;border:1px solid #e1e6ef;border-radius:12px;margin:8px 0
 .dg.big{position:fixed;inset:0;z-index:50;width:100vw;height:100vh;object-fit:contain;background:rgba(10,20,40,.92);padding:12px;cursor:zoom-out}
 .car .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.car figure{flex:0 0 100%;scroll-snap-align:center;margin:0}.car .n{padding:6px 10px;font-size:12px;font-weight:700;color:#384959;background:#fafbfd;border-bottom:1px solid #e1e6ef}
 a.vid{display:inline-block;margin-top:8px;color:#384959;font-weight:600}.ids{color:#6b7280;font-size:12px;margin-top:12px}
-</style><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script></head><body><main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cc-theme v2: hybrid palette */
+:root{--navy:#17324F;--navy-dark:#17324F;--navy-deep:#0F2338;--gold:#1E6FD9;--gold-warm:#66C4FF;--cc-ink:#13202B;--cc-tint:#E6F6FF;--cc-line:#D5DEE5;
+--b1:#7D99AA;--b2:#66C4FF;--b3:#66F4FF;--b4:#ADEBB3;--b5:#FFC067;--gray-light:#F3F8FB}
+html{background:#E9F1F6}
+body{color:var(--cc-ink)}
+body.cc-col{max-width:880px;margin:0 auto;box-shadow:0 0 0 1px var(--cc-line);background:var(--gray-light)}
+.header,.site-header,body>header{z-index:3;background:var(--cc-tint)!important;color:var(--cc-ink)!important;border-bottom:4px solid var(--b2)!important;position:relative}
+.header::after,.site-header::after,body>header::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:4px;z-index:3;background:linear-gradient(90deg,var(--b1) 0 20%,var(--b2) 20% 40%,var(--b3) 40% 60%,var(--b4) 60% 80%,var(--b5) 80% 100%)}
+.header-logo{background:transparent!important}
+.header h1,.site-header-text h1,.session-title,.header .session-title{color:var(--cc-ink)!important}
+.header h1 span{color:var(--gold)!important}
+.club-label,.site-header-text p{color:var(--gold)!important;opacity:1!important}
+.header-meta,.header-dateline,.site-header-text span{color:#3A4D5C!important}
+.hchip,.header-duration{background:#fff!important;border:1px solid #BFD9EE!important;color:#124A96!important}
+.header-duration strong{color:#124A96!important}.header-duration span{color:#3A4D5C!important}
+.philosophy,.pull-quote{background:#fff!important;border-bottom:3px solid var(--b5)!important;border-left-color:var(--b5)!important}
+.philosophy p,.pull-quote blockquote{color:var(--cc-ink)!important}
+.philosophy p em,.pull-quote blockquote em{color:var(--gold)!important}
+.pull-quote cite{color:#5A6670!important}
+.philosophy .eyebrow{color:var(--gold)!important}
+.fun-banner{background:var(--b5)!important}.fun-banner p{color:#4A2E00!important}
+.section.navy .eyebrow,.structure-strip .s-arrow,.sideline-box .eyebrow,.sideline-box h4,.huddle .eyebrow,.notes-box .eyebrow{color:var(--b2)!important}
+.footer{background:var(--navy)}
+.tagline{color:#124A96!important}
+.site-nav{background:#fff!important;border-bottom:1px solid var(--cc-line)}
+.site-nav a{color:var(--gold)!important;opacity:1!important}
+body>header,body>header *{color:var(--cc-ink)}
+.coachbox{background:var(--cc-tint)!important;color:var(--cc-ink)!important;border-left:4px solid var(--b5)}
+.coachbox *{color:var(--cc-ink)!important}
+
+/* light bands */
+.section.navy,.structure-strip,.block-band,.profile-card,.profile-card.primary,.prac-a,.footer,.page-footer,.huddle,.notes-box,.cp-block,.next-card-band,.hero,.coach,.stretch-section,.note-card,.ussoccer-card,.universal-banner,.meta-bar,.philosophy{background:var(--cc-tint)!important;color:var(--cc-ink)!important}
+.section.navy *,.structure-strip *,.block-band *,.profile-card *,.prac-a *,.footer *,.page-footer *,.huddle *,.notes-box *,.cp-block *,.next-card-band *,.hero *,.coach *,.stretch-section *,.note-card *,.ussoccer-card *,.universal-banner *,.meta-bar *,.hero-in *,.hq-listen,.hq-listen *,.huddle-close,.huddle-close *,.cp-list li,.profile-item,.source,.ussoccer-card .source{color:var(--cc-ink)!important}
+.section.navy .eyebrow,.structure-strip .s-arrow,.block-band .eyebrow,.profile-card h4,.footer-left,.huddle .eyebrow,.notes-box .eyebrow,.page-footer a,.meta-cell-label,.flow-eyebrow,.block-cell-name{color:var(--gold)!important}
+.success-item,.block-cell,.meta-cell,.profile-item::before{background:#fff!important}
+.profile-item::before{background:var(--gold)!important}
+.success-item{border-left:4px solid var(--b5)!important}
+.success-item strong{color:#124A96!important}
+.success-item p,.block-cell-desc,.footer-right{color:#3A4D5C!important}
+.block-band-grid{background:var(--cc-line)!important}
+.footer,.page-footer{border-top:3px solid var(--b2)!important}
+.movement-note,.sideline-box,.pairing-rule{background:#FFF4DE!important;border-left:4px solid var(--b5)!important;border-radius:0 8px 8px 0}
+.movement-note *,.sideline-box *,.pairing-rule *{color:var(--cc-ink)!important}
+.movement-note p strong,.sideline-box .script,.pairing-rule strong,.sideline-box .eyebrow{color:#124A96!important}
+.s-practice{background:#fff!important;color:var(--gold)!important}.s-time{color:#3A4D5C!important}
+.rotation-table thead tr,thead tr{background:#D9F0FF!important}
+.rotation-table thead th,thead th{color:var(--cc-ink)!important}
+.skill-group-bar,.skill-group-bar.defending,.skill-group-bar.game,.skill-group-bar.integration{background:#D9F0FF!important;color:var(--cc-ink)!important;border-left:6px solid var(--b2)}
+.skill-group-bar.animal{background:#ADEBB3!important;border-left-color:#5CBF5A}
+.skill-group-bar.defending{background:#D6FBFF!important;border-left-color:var(--b3)}
+.skill-group-bar.game{background:#FFE9C2!important;border-left-color:var(--b5)}
+.skill-group-bar.integration{background:#E3E8EC!important;border-left-color:var(--b1)}
+.skill-group-bar *,.act-header *,.act-header.animal *{color:var(--cc-ink)!important}
+.act-header{background:#D9F0FF!important;color:var(--cc-ink)!important;border-bottom:3px solid var(--b2)}
+.act-header.animal{background:#ADEBB3!important;border-bottom-color:#5CBF5A}
+.act-header .act-num,.act-header.animal .act-num{color:#124A96!important}
+.phase-pill.practice{background:var(--gold)!important}
+div[style*="background:var(--navy)"],div[style*="background: var(--navy)"]{background:#E6F6FF!important;border:1px solid #BFD9EE}
+div[style*="background:var(--navy)"] *,div[style*="background: var(--navy)"] *{color:var(--cc-ink)!important}
+div[style*="font-size:28px"]{color:var(--gold)!important}
+div[style*="background:var(--gold)"],div[style*="background: var(--gold)"]{background:#FFE9C2!important;border:1px solid #F2CF8E}
+div[style*="background:var(--gold)"] *,div[style*="background: var(--gold)"] *{color:var(--cc-ink)!important}
+.meta-cell{border:1px solid var(--cc-line)}
+.flow-name,.meta-cell-val{color:var(--cc-ink)!important}.flow-time{color:var(--gold)!important}.flow-row{border-bottom-color:var(--cc-line)!important}
+
+.fb-block{background:#fff!important;color:var(--gold)!important;border:1px solid var(--gold)!important}
+.flow-badge.fb-warmup,.flow-badge.fb-game,.flow-badge.fb-reflect,.flow-badge.fb-station{color:#fff!important}
+.vocab-band{background:#FFF4DE!important;border-top:3px solid var(--b5)!important;border-bottom:3px solid var(--b5)!important}
+.vocab-card{background:#fff!important;border:1px solid #F2CF8E!important}
+.vocab-term{color:#124A96!important}.vocab-def{color:var(--cc-ink)!important}.vocab-when{color:#5A6670!important}
+
+.phase-card-head,.groups-banner,.act-head,.p1,.cp-block,.band-edu,.band-season,.lc-intro .level-card-head,.lc-dev .level-card-head,.block-card-num{background:#D9F0FF!important;color:var(--cc-ink)!important}
+.phase-card-head *,.groups-banner *,.act-head *,.p1 *,.band-edu *,.band-season *,.level-card-head *{color:var(--cc-ink)!important}
+.act-head{border-bottom:3px solid var(--b2)}
+
+.callout,.overall-picture,.implication,.spiral-card,.shift-card,.intro,.level-card-head{background:#E6F6FF!important;color:var(--cc-ink)!important;border-left:4px solid var(--b2)}
+.callout *,.overall-picture *,.implication *,.spiral-card *,.shift-card *,.intro *,.level-card-head *{color:var(--cc-ink)!important}
+.callout strong,.overall-picture strong,.implication strong,.spiral-card strong,.shift-card strong{color:#124A96!important}
+.coach em,.notes-box em,.huddle em,.hq-listen em,.hero-in em,.cp-block em{color:#124A96!important}
+.coach .eyebrow,.notes-box .eyebrow,.hero-in .eyebrow{color:var(--gold)!important}
+.hero-in,.hq-listen,.huddle-close,.cp-list{background:transparent!important}
+.pairing-note{color:#5A6670!important}
+.flow-badge.fb-reflect,.fb-reflect{background:#5A6670!important;color:#fff!important}
+.act-head .num,.act-head .num *{background:var(--gold)!important;color:#fff!important}
+.act-head .num{background:var(--gold)!important}
+@media(min-width:900px){.header-content{padding-left:32px}}
+</style><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script></head><body class="cc-col"><main>
 <h1>All activities</h1><p class="sub">Internal view. Every activity, every age and track. Not linked from the coach app.</p>
 <div class="bar"><input type="search" id="q" placeholder="Search names, objectives, setup, coaching points"><div class="f" id="f"></div><div class="cnt" id="cnt"></div></div>
 <div id="list"></div></main>
