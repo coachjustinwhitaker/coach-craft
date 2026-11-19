@@ -488,7 +488,7 @@ function practiceCard(w, si, one){
       <div class="ownform" data-of="${key}"><label>Name</label><input type="text" class="o-name" maxlength="80"><label>Notes <small>(setup, rules, what it is for. One idea per line)</small></label><textarea class="o-notes"></textarea><label>Look for <small>(optional)</small></label><input type="text" class="o-cue"><label>Ask <small>(optional)</small></label><input type="text" class="o-ask"><input type="hidden" class="o-id"><button class="small" data-saveown="${key}">Save and add</button></div></details></div>`;
 }
 function repeatChip(w, si, slot){
-  const base = x => ((x || '').split('#')[0]), me = base((w.sessions[si][slot] || {}).activity);
+  const base = x => (x || ''), me = base((w.sessions[si][slot] || {}).activity);
   if(!me) return '';
   for(let d = 0; d < si; d++) for(const k of ['a', 'b']) if(w.sessions[d][k] && base(w.sessions[d][k].activity) === me) return ` <span class="chip">Revisit from Day ${d + 1}</span>`;
   for(let wn = w.week - 1; wn >= 1; wn--){ const pw = plan.weeks.find(x => x.week === wn); if(!pw || !pw.sessions) continue; for(const sx of pw.sessions) for(const k of ['a', 'b']) if(sx[k] && base(sx[k].activity) === me) return ` <span class="chip">${wn === w.week - 1 ? 'From last week' : 'From week ' + wn}</span>`; }
