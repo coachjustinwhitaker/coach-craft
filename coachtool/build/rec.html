@@ -57,6 +57,7 @@ p.lead{font-size:16px;line-height:1.5}
 .pr.seq .seq-wrap .slot{background:#fff;border:1px solid var(--line)!important;border-radius:14px;padding:14px 16px}
 .pr.seq .card.game{background:#F0F8FF!important;border:1px solid #BFD9EE!important}
 .watch{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:6px 0 14px}.watch .lab{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.04em}.watch .nm{font-size:18px;font-weight:600;color:var(--navy);margin:2px 0 4px}.watch p{margin:0 0 8px}.linkrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.linkrow a{text-decoration:none;color:var(--navy);background:#E6F6FF;border:1px solid #BFD9EE;border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600}
+.chip{margin-left:6px;background:#E6F6FF;color:#124A96;border:1px solid #BFD9EE;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;text-transform:none;letter-spacing:0;white-space:nowrap}
 .ptog{display:flex;gap:6px;background:#E6F6FF;border-radius:12px;padding:4px;margin:14px 0 12px}.ptog button{flex:1;border:0!important;background:transparent!important;color:var(--navy)!important;box-shadow:none!important;font-weight:600;font-size:16px;padding:10px 0;border-radius:9px;cursor:pointer}.ptog button.on{background:var(--gold)!important;color:#fff!important}@media screen{.pr-off{display:none}}
 .card.game .lab{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.04em;margin-top:10px}.card.game>b{font-size:15px;color:var(--navy)}.card.game>b+.note,.card[data-pc]>b+.note{white-space:nowrap;font-size:14px;color:var(--mute)}.card>b+.note{font-size:14px;color:var(--mute)}
 
@@ -486,6 +487,13 @@ function practiceCard(w, si, one){
       ${own.map(([id, o]) => `<div class="alt"><span>${o.name}<br><span class="note">Your activity</span></span><button class="small" data-add="${key}|own:${id}">Add</button></div>`).join('')}
       <div class="ownform" data-of="${key}"><label>Name</label><input type="text" class="o-name" maxlength="80"><label>Notes <small>(setup, rules, what it is for. One idea per line)</small></label><textarea class="o-notes"></textarea><label>Look for <small>(optional)</small></label><input type="text" class="o-cue"><label>Ask <small>(optional)</small></label><input type="text" class="o-ask"><input type="hidden" class="o-id"><button class="small" data-saveown="${key}">Save and add</button></div></details></div>`;
 }
+function repeatChip(w, si, slot){
+  const base = x => ((x || '').split('#')[0]), me = base((w.sessions[si][slot] || {}).activity);
+  if(!me) return '';
+  for(let d = 0; d < si; d++) for(const k of ['a', 'b']) if(w.sessions[d][k] && base(w.sessions[d][k].activity) === me) return ` <span class="chip">Revisit from Day ${d + 1}</span>`;
+  for(let wn = w.week - 1; wn >= 1; wn--){ const pw = plan.weeks.find(x => x.week === wn); if(!pw || !pw.sessions) continue; for(const sx of pw.sessions) for(const k of ['a', 'b']) if(sx[k] && base(sx[k].activity) === me) return ` <span class="chip">${wn === w.week - 1 ? 'From last week' : 'From week ' + wn}</span>`; }
+  return '';
+}
 const prTab = {};
 function viewWeek(n){
   const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, N = plan.weeks.length, cw = curWeek(), P = T.players;
@@ -503,7 +511,7 @@ function viewWeek(n){
     if(!a) return `<div class="slot"><div class="lab">Main activity</div><div class="nm">Not chosen yet</div>
       <div class="note">${alts.length ? alts.length + ' fit this block, level, your numbers and space. Tap Use to pick one.' : 'Nothing fits yet. Try a different space in Setup, or check the Library.'}</div>
       ${alts.map(x => `<div class="alt"><span>${x.name}<br><span class="note">${TYPE(x.type)}</span></span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('')}</div>`;
-    return `<div class="slot"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? (slot==='a' ? 'Main activity · familiar' : 'Main activity · new idea') : 'Main activity')}</div><div class="nm">${actName(ref)}</div>
+    return `<div class="slot"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? (slot==='a' ? 'Main activity · familiar' : 'Main activity · new idea') : 'Main activity')}${swapped ? '' : repeatChip(w, si, slot)}</div><div class="nm">${actName(ref)}</div>
       <div class="note">${[TYPE(a.type), swapped ? 'Swapped in' : note].filter(Boolean).join(' · ')}</div>
       <details><summary>How to run it</summary>${runIt(a)}</details>
       <details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' fit your numbers and space' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
