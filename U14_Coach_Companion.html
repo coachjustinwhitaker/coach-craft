@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U14 Coach Companion — Coach Craft</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#384959;--navy-dark:#2A3744;--gold:#6A89A7;--gold-warm:#88BDF2;--white:#FFFFFF;--gray-light:#F5F6FA;--gray-mid:#888888;--gray-dark:#333333;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Inter",Arial,sans-serif;background:var(--gray-light);color:var(--gray-dark);font-size:13px;line-height:1.6;}
+  .header{background:var(--navy);color:white;border-bottom:4px solid var(--gold);display:flex;align-items:stretch;}
+  .header-logo{background:var(--navy-dark);padding:16px 20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .header-logo img{height:90px;width:auto;}
+  .header-content{padding:22px 28px 18px;flex:1;}
+  .club-label{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+  .header h1{font-family:"Inter",Arial,sans-serif;font-size:20px;font-weight:800;color:white;line-height:1.2;}
+  .header h1 .blocks{font-size:11px;font-weight:600;color:var(--gold);display:block;margin-top:5px;line-height:1.5;}
+  .header-meta{font-size:12px;color:rgba(255,255,255,0.6);margin-top:6px;}
+  .header-duration{background:rgba(106,137,167,0.2);border:1px solid rgba(106,137,167,0.5);border-radius:5px;padding:8px 14px;margin-top:10px;display:inline-block;}
+  .header-duration strong{font-family:"Inter",Arial,sans-serif;font-size:11px;color:var(--gold);}
+  .header-duration span{font-size:12px;color:rgba(255,255,255,0.75);margin-left:6px;}
+  .philosophy{background:var(--navy-dark);border-bottom:3px solid var(--gold);padding:18px 32px 20px;}
+  .philosophy p{font-size:13.5px;color:rgba(255,255,255,0.9);line-height:1.65;max-width:860px;}
+  .philosophy p em{color:var(--gold-warm);font-style:normal;font-weight:600;}
+  .block-band{background:var(--navy);padding:18px 32px 22px;border-bottom:2px solid rgba(106,137,167,0.3);}
+  .block-band-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1px;background:rgba(255,255,255,0.15);margin-top:14px;border-radius:4px;overflow:hidden;}
+  .block-cell{background:var(--navy);padding:13px 15px;}
+  .block-cell-name{font-family:"Inter",Arial,sans-serif;font-size:10.5px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:0.3px;margin-bottom:3px;line-height:1.3;}
+  .block-cell-status{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;color:var(--gold-warm);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px;}
+  .block-cell-desc{font-size:11px;color:rgba(255,255,255,0.7);line-height:1.5;}
+  .section{background:white;padding:22px 32px 24px;border-bottom:1px solid #e2e6ef;}
+  .section.tinted{background:var(--gray-light);}
+  .section.navy{background:var(--navy);}
+  .section.gold-tint{background:#F2F7FC;border-bottom:2px solid var(--gold-warm);}
+  .eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .eyebrow.navy{color:var(--navy);}
+  .section-heading{font-family:"Inter",Arial,sans-serif;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+  .section-heading.white{color:white;}
+  .four-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px;}
+  .six-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:12px;}
+  .info-card{background:var(--gray-light);border-top:3px solid var(--navy);border-radius:0 0 5px 5px;padding:13px 14px;}
+  .info-card h4{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;}
+  .info-card p{font-size:12px;color:var(--gray-dark);line-height:1.55;}
+  .success-item{border-left:3px solid var(--gold);padding:8px 12px;background:rgba(255,255,255,0.07);}
+  .success-item strong{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:white;display:block;margin-bottom:3px;text-transform:uppercase;}
+  .success-item p{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.5;}
+  .pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+  .pill{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;padding:5px 13px;border-radius:20px;}
+  .pill.tech{background:var(--navy);color:white;}
+  .pill.perc{background:var(--gold);color:white;}
+  .pills-note{font-size:12px;color:var(--gray-mid);margin-top:10px;line-height:1.5;}
+  .arrive-box{background:#F2F7FC;border-left:4px solid var(--gold);padding:14px 16px;border-radius:0 5px 5px 0;font-size:12.5px;line-height:1.6;margin-top:14px;}
+  .sideline-box{background:var(--navy-dark);border-left:4px solid var(--gold);border-radius:0 5px 5px 0;padding:14px 16px;margin-top:16px;}
+  .sideline-box p{font-size:12.5px;color:rgba(255,255,255,0.85);line-height:1.6;}
+  .sideline-box .script{font-style:italic;color:var(--gold-warm);font-weight:600;margin-top:6px;display:block;font-size:13px;}
+  .equip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:14px;}
+  .equip-item{background:white;border-radius:5px;padding:11px 12px;border-left:3px solid var(--gold);}
+  .equip-item strong{font-family:"Inter",Arial,sans-serif;font-size:11.5px;font-weight:700;color:var(--navy);display:block;margin-bottom:3px;}
+  .equip-item span{font-size:11px;color:var(--gray-mid);line-height:1.4;}
+  .structure-strip{background:var(--navy-dark);padding:13px 32px;display:flex;align-items:center;flex-wrap:wrap;gap:5px;}
+  .s-block{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:6px 16px;border-radius:4px;}
+  .s-play{background:var(--gold);color:white;}
+  .s-practice{background:white;color:var(--navy);}
+  .s-time{font-size:11px;color:rgba(255,255,255,0.5);margin:0 5px;}
+  .s-arrow{color:var(--gold);font-size:16px;margin:0 4px;}
+  .pairing-note{font-size:11px;color:rgba(255,255,255,0.45);margin-left:auto;font-style:italic;}
+  .rotation-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:12px;}
+  .rotation-table thead tr{background:var(--navy);}
+  .rotation-table thead th{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.75);padding:9px 12px;text-align:left;}
+  .rotation-table tbody tr.week-a{background:white;border-bottom:none;}
+  .rotation-table tbody tr.week-b{background:#F8F9FC;border-bottom:2px solid #dde2ef;}
+  .rotation-table tbody tr:last-child{background:#F2F7FC;}
+  .rotation-table tbody td{padding:8px 12px;vertical-align:top;}
+  .rotation-table .week-num{font-family:"Inter",Arial,sans-serif;font-weight:700;color:var(--navy);font-size:12px;}
+  .prac-label{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:2px 7px;border-radius:3px;display:inline-block;margin-bottom:3px;}
+  .prac-a{background:var(--navy);color:white;}
+  .prac-b{background:rgba(56,73,89,0.15);color:var(--navy);}
+  .block-tag-cell{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;display:inline-block;margin-bottom:2px;color:white;}
+  .bt-establishing{background:var(--navy);}
+  .bt-defending{background:#2A3744;}
+  .bt-game{background:#2D1B69;}
+  .bt-int{background:#555;}
+  .pair-tag{font-size:10px;color:var(--gray-mid);font-style:italic;margin-top:2px;}
+  .play-section{background:white;padding:22px 32px 24px;border-bottom:4px solid var(--gold);}
+  .phase-header{display:flex;align-items:center;gap:13px;margin-bottom:16px;}
+  .phase-pill{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 11px;border-radius:3px;}
+  .phase-pill.play{background:var(--gold);color:white;}
+  .phase-pill.practice{background:var(--navy);color:white;}
+  .phase-title{font-family:"Inter",Arial,sans-serif;font-size:18px;font-weight:800;color:var(--navy);}
+  .phase-sub{font-size:12px;color:var(--gray-mid);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr;}}
+  .info-box{border-radius:4px;padding:13px 15px;font-size:12.5px;line-height:1.6;}
+  .info-box.navy-left{background:var(--gray-light);border-left:3px solid var(--navy);}
+  .info-box.gold-left{background:#F2F7FC;border-left:3px solid var(--gold);}
+  .info-box h4{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;color:var(--navy);}
+  .info-box.gold-left h4{color:#2A3744;}
+  .question-box{background:var(--gray-light);border-left:4px solid var(--gold);padding:12px 15px;margin-top:14px;border-radius:0 4px 4px 0;}
+  .q-label{font-family:"Inter",Arial,sans-serif;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);display:block;margin-bottom:5px;}
+  .q-text{font-size:13px;font-style:italic;color:var(--navy);font-weight:600;}
+  .e-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:13px;}
+  .e-tag{font-size:11px;color:#2A3744;background:#F2F7FC;border:1px solid var(--gold-warm);border-radius:10px;padding:3px 9px;font-weight:600;}
+  .practice-section{background:var(--gray-light);padding:22px 32px 28px;border-bottom:4px solid var(--navy);}
+  .practice-intro{font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-top:6px;margin-bottom:20px;max-width:740px;}
+  .pairing-rule{background:var(--navy-dark);border-left:4px solid var(--gold);padding:12px 16px;border-radius:0 4px 4px 0;margin-bottom:22px;font-size:12px;color:rgba(255,255,255,0.85);line-height:1.6;}
+  .pairing-rule strong{color:var(--gold);font-family:"Inter",Arial,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;}
+  .skill-group-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;margin-top:22px;margin-bottom:14px;border-radius:4px;background:var(--navy-dark);}
+  .skill-group-bar.defending{background:#2A3744;}
+  .skill-group-bar.game{background:#2D1B69;}
+  .skill-group-bar.integration{background:#444;}
+  .skill-group-bar:first-of-type{margin-top:0;}
+  .skill-group-label{font-size:11px;color:rgba(255,255,255,0.85);font-style:italic;}
+  .activity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:13px;}
+  .act-card{background:white;border-radius:6px;overflow:hidden;box-shadow:0 1px 5px rgba(56,73,89,0.08);}
+  .act-header{background:var(--navy);padding:10px 15px;}
+  .act-num{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+  .act-name{font-family:"Inter",Arial,sans-serif;font-size:14px;font-weight:800;color:white;}
+  .act-focus{font-size:10px;color:var(--gold-warm);margin-top:2px;}
+  .act-body{padding:13px 15px 15px;}
+  .a-label{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray-mid);margin-bottom:4px;margin-top:12px;}
+  .a-label:first-of-type{margin-top:0;}
+  .a-text{font-size:12.5px;color:var(--gray-dark);line-height:1.55;}
+  .a-question{background:var(--gray-light);border-left:3px solid var(--gold);padding:8px 11px;margin-top:11px;border-radius:0 3px 3px 0;font-size:12px;font-style:italic;color:var(--navy);font-weight:600;line-height:1.45;}
+  .pairs-tag{font-size:10px;font-style:italic;color:var(--gold);font-family:"Inter",Arial,sans-serif;font-weight:700;margin-top:8px;display:block;}
+  .cues-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:14px;}
+  .cue-card{background:var(--gray-light);border-top:3px solid var(--gold);border-radius:0 0 5px 5px;padding:11px 13px;}
+  .cue-card strong{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:var(--navy);display:block;text-transform:uppercase;margin-bottom:4px;}
+  .cue-card p{font-size:12px;color:var(--gray-dark);line-height:1.5;font-style:italic;}
+  .profile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px;}
+  .profile-card{border-radius:5px;padding:14px 16px;}
+  .profile-card.primary{background:var(--navy);}
+  .profile-card.secondary{background:var(--gray-light);border:1px solid #d4d9e5;}
+  .profile-card.comp{background:#F2F7FC;border-left:4px solid var(--gold);border-radius:0 5px 5px 0;}
+  .profile-card h4{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px;}
+  .profile-card.primary h4{color:var(--gold);}
+  .profile-card.secondary h4{color:var(--navy);}
+  .profile-card.comp h4{color:#2A3744;}
+  .profile-item{font-size:12.5px;line-height:1.5;padding:4px 0 4px 14px;position:relative;}
+  .profile-card.primary .profile-item{color:rgba(255,255,255,0.85);}
+  .profile-card.secondary .profile-item{color:var(--gray-dark);}
+  .profile-card.comp .profile-item{color:#555;}
+  .profile-item::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .profile-card.secondary .profile-item::before{background:var(--navy);}
+  .gk-note{background:#F2F7FC;border-left:4px solid var(--gold);padding:12px 16px;margin-top:14px;border-radius:0 4px 4px 0;font-size:12.5px;line-height:1.6;}
+  .credit-section{background:white;padding:16px 32px;border-top:1px solid #e2e6ef;}
+  .credit-text{font-size:12px;color:var(--gray-mid);line-height:1.6;}
+  .credit-text a{color:var(--navy);font-weight:600;}
+  .footer{background:var(--navy-dark);padding:13px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:3px solid var(--gold);}
+  .footer-left{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:var(--gold);}
+  .footer-right{font-size:11px;color:rgba(255,255,255,0.4);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<script src="assets/gate-config.js"></script><script src="assets/gate.js" defer></script><style>
+/* U14 additions */
+.bt-moment{background:#B36B00;}
+.skill-group-bar.moment{background:#FFE9C2!important;border-left-color:var(--b5)!important}
+.block-band-grid{grid-template-columns:repeat(auto-fit,minmax(135px,1fr))}
+.four-grid{grid-template-columns:repeat(2,1fr)}
+@media(max-width:560px){.four-grid{grid-template-columns:1fr}}
+
+/* cc-theme v2: hybrid palette */
+:root{--navy:#17324F;--navy-dark:#17324F;--navy-deep:#0F2338;--gold:#1E6FD9;--gold-warm:#66C4FF;--cc-ink:#13202B;--cc-tint:#E6F6FF;--cc-line:#D5DEE5;
+--b1:#7D99AA;--b2:#66C4FF;--b3:#66F4FF;--b4:#ADEBB3;--b5:#FFC067;--gray-light:#F3F8FB}
+html{background:#E9F1F6}
+body{color:var(--cc-ink)}
+body.cc-col{max-width:880px;margin:0 auto;box-shadow:0 0 0 1px var(--cc-line);background:var(--gray-light)}
+.header,.site-header,body>header{z-index:3;background:var(--cc-tint)!important;color:var(--cc-ink)!important;border-bottom:4px solid var(--b2)!important;position:relative}
+.header::after,.site-header::after,body>header::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:4px;z-index:3;background:linear-gradient(90deg,var(--b1) 0 20%,var(--b2) 20% 40%,var(--b3) 40% 60%,var(--b4) 60% 80%,var(--b5) 80% 100%)}
+.header-logo{background:transparent!important}
+.header h1,.site-header-text h1,.session-title,.header .session-title{color:var(--cc-ink)!important}
+.header h1 span{color:var(--gold)!important}
+.club-label,.site-header-text p{color:var(--gold)!important;opacity:1!important}
+.header-meta,.header-dateline,.site-header-text span{color:#3A4D5C!important}
+.hchip,.header-duration{background:#fff!important;border:1px solid #BFD9EE!important;color:#124A96!important}
+.header-duration strong{color:#124A96!important}.header-duration span{color:#3A4D5C!important}
+.philosophy,.pull-quote{background:#fff!important;border-bottom:3px solid var(--b5)!important;border-left-color:var(--b5)!important}
+.philosophy p,.pull-quote blockquote{color:var(--cc-ink)!important}
+.philosophy p em,.pull-quote blockquote em{color:var(--gold)!important}
+.pull-quote cite{color:#5A6670!important}
+.philosophy .eyebrow{color:var(--gold)!important}
+.fun-banner{background:var(--b5)!important}.fun-banner p{color:#4A2E00!important}
+.section.navy .eyebrow,.structure-strip .s-arrow,.sideline-box .eyebrow,.sideline-box h4,.huddle .eyebrow,.notes-box .eyebrow{color:var(--b2)!important}
+.footer{background:var(--navy)}
+.tagline{color:#124A96!important}
+.site-nav{background:#fff!important;border-bottom:1px solid var(--cc-line)}
+.site-nav a{color:var(--gold)!important;opacity:1!important}
+body>header,body>header *{color:var(--cc-ink)}
+.coachbox{background:var(--cc-tint)!important;color:var(--cc-ink)!important;border-left:4px solid var(--b5)}
+.coachbox *{color:var(--cc-ink)!important}
+
+/* light bands */
+.section.navy,.structure-strip,.block-band,.profile-card,.profile-card.primary,.prac-a,.footer,.page-footer,.huddle,.notes-box,.cp-block,.next-card-band,.hero,.coach,.stretch-section,.note-card,.ussoccer-card,.universal-banner,.meta-bar,.philosophy{background:var(--cc-tint)!important;color:var(--cc-ink)!important}
+.section.navy *,.structure-strip *,.block-band *,.profile-card *,.prac-a *,.footer *,.page-footer *,.huddle *,.notes-box *,.cp-block *,.next-card-band *,.hero *,.coach *,.stretch-section *,.note-card *,.ussoccer-card *,.universal-banner *,.meta-bar *,.hero-in *,.hq-listen,.hq-listen *,.huddle-close,.huddle-close *,.cp-list li,.profile-item,.source,.ussoccer-card .source{color:var(--cc-ink)!important}
+.section.navy .eyebrow,.structure-strip .s-arrow,.block-band .eyebrow,.profile-card h4,.footer-left,.huddle .eyebrow,.notes-box .eyebrow,.page-footer a,.meta-cell-label,.flow-eyebrow,.block-cell-name{color:var(--gold)!important}
+.success-item,.block-cell,.meta-cell,.profile-item::before{background:#fff!important}
+.profile-item::before{background:var(--gold)!important}
+.success-item{border-left:4px solid var(--b5)!important}
+.success-item strong{color:#124A96!important}
+.success-item p,.block-cell-desc,.footer-right{color:#3A4D5C!important}
+.block-band-grid{background:var(--cc-line)!important}
+.footer,.page-footer{border-top:3px solid var(--b2)!important}
+.movement-note,.sideline-box,.pairing-rule{background:#FFF4DE!important;border-left:4px solid var(--b5)!important;border-radius:0 8px 8px 0}
+.movement-note *,.sideline-box *,.pairing-rule{color:var(--cc-ink)!important}
+.pairing-rule *{color:var(--cc-ink)!important}
+.movement-note p strong,.sideline-box .script,.pairing-rule strong,.sideline-box .eyebrow{color:#124A96!important}
+.s-practice{background:#fff!important;color:var(--gold)!important}.s-time{color:#3A4D5C!important}
+.rotation-table thead tr,thead tr{background:#D9F0FF!important}
+.rotation-table thead th,thead th{color:var(--cc-ink)!important}
+.skill-group-bar,.skill-group-bar.defending,.skill-group-bar.game,.skill-group-bar.integration{background:#D9F0FF!important;color:var(--cc-ink)!important;border-left:6px solid var(--b2)}
+.skill-group-bar.animal{background:#ADEBB3!important;border-left-color:#5CBF5A}
+.skill-group-bar.defending{background:#D6FBFF!important;border-left-color:var(--b3)}
+.skill-group-bar.game{background:#FFE9C2!important;border-left-color:var(--b5)}
+.skill-group-bar.integration{background:#E3E8EC!important;border-left-color:var(--b1)}
+.skill-group-bar *,.act-header *,.act-header.animal *{color:var(--cc-ink)!important}
+.act-header{background:#D9F0FF!important;color:var(--cc-ink)!important;border-bottom:3px solid var(--b2)}
+.act-header.animal{background:#ADEBB3!important;border-bottom-color:#5CBF5A}
+.act-header .act-num,.act-header.animal .act-num{color:#124A96!important}
+.phase-pill.practice{background:var(--gold)!important}
+div[style*="background:var(--navy)"],div[style*="background: var(--navy)"]{background:#E6F6FF!important;border:1px solid #BFD9EE}
+div[style*="background:var(--navy)"] *,div[style*="background: var(--navy)"] *{color:var(--cc-ink)!important}
+div[style*="font-size:28px"]{color:var(--gold)!important}
+div[style*="background:var(--gold)"],div[style*="background: var(--gold)"]{background:#FFE9C2!important;border:1px solid #F2CF8E}
+div[style*="background:var(--gold)"] *,div[style*="background: var(--gold)"] *{color:var(--cc-ink)!important}
+.meta-cell{border:1px solid var(--cc-line)}
+.flow-name,.meta-cell-val{color:var(--cc-ink)!important}.flow-time{color:var(--gold)!important}.flow-row{border-bottom-color:var(--cc-line)!important}
+
+.fb-block{background:#fff!important;color:var(--gold)!important;border:1px solid var(--gold)!important}
+.flow-badge.fb-warmup,.flow-badge.fb-game,.flow-badge.fb-reflect,.flow-badge.fb-station{color:#fff!important}
+.vocab-band{background:#FFF4DE!important;border-top:3px solid var(--b5)!important;border-bottom:3px solid var(--b5)!important}
+.vocab-card{background:#fff!important;border:1px solid #F2CF8E!important}
+.vocab-term{color:#124A96!important}.vocab-def{color:var(--cc-ink)!important}.vocab-when{color:#5A6670!important}
+
+.phase-card-head,.groups-banner,.act-head,.p1,.cp-block,.band-edu,.band-season,.lc-intro .level-card-head,.lc-dev .level-card-head,.block-card-num{background:#D9F0FF!important;color:var(--cc-ink)!important}
+.phase-card-head *,.groups-banner *,.act-head *,.p1 *,.band-edu *,.band-season *,.level-card-head *{color:var(--cc-ink)!important}
+.act-head{border-bottom:3px solid var(--b2)}
+
+.callout,.overall-picture,.implication,.spiral-card,.shift-card,.intro,.level-card-head{background:#E6F6FF!important;color:var(--cc-ink)!important;border-left:4px solid var(--b2)}
+.callout *,.overall-picture *,.implication *,.spiral-card *,.shift-card *,.intro *,.level-card-head *{color:var(--cc-ink)!important}
+.callout strong,.overall-picture strong,.implication strong,.spiral-card strong,.shift-card strong{color:#124A96!important}
+.coach em,.notes-box em,.huddle em,.hq-listen em,.hero-in em,.cp-block em{color:#124A96!important}
+.coach .eyebrow,.notes-box .eyebrow,.hero-in .eyebrow{color:var(--gold)!important}
+.hero-in,.hq-listen,.huddle-close,.cp-list{background:transparent!important}
+.pairing-note{color:#5A6670!important}
+.flow-badge.fb-reflect,.fb-reflect{background:#5A6670!important;color:#fff!important}
+.act-head .num,.act-head .num *{background:var(--gold)!important;color:#fff!important}
+.act-head .num{background:var(--gold)!important}
+@media(min-width:900px){.header-content{padding-left:32px}}
+/* level columns: no bullets, hairline dividers */
+.level-card-body li{padding:.5rem 0!important;padding-left:0!important;border-top:1px solid #E3EDF3}
+.level-card-body li:first-child{border-top:0;padding-top:.15rem!important}
+.level-card-body li::before{display:none!important;content:none!important}
+
+</style>
+</head>
+<body class="cc-col">
+
+<div class="header">
+  <div class="header-logo"><img src="data:image/png;base64,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" alt="Coach Craft"></div>
+  <div class="header-content">
+    <div class="club-label">Coach Craft &nbsp;|&nbsp; Player Development Methodology</div>
+    <h1>U14 Coach Companion
+      <span class="blocks">Me &amp; the Ball &nbsp;&middot;&nbsp; Me &amp; My Teammates &nbsp;&middot;&nbsp; Me &amp; My Team Defending &nbsp;&middot;&nbsp; Me &amp; the Game &nbsp;&middot;&nbsp; Me &amp; the Moment</span>
+    </h1>
+    <div class="header-meta">Progression Phase I &nbsp;&middot;&nbsp; 11v11 &nbsp;&middot;&nbsp; 2 Practices Per Week &nbsp;&middot;&nbsp; Recreational</div>
+    <div class="header-duration">
+      <strong>Session Length:</strong><span>Up to 90 minutes total &nbsp;&middot;&nbsp; Arrive 15 minutes early</span>
+    </div>
+  </div>
+</div>
+<div class="philosophy">
+  <p>The field got big. <em>Eleven against eleven means shape matters as much as skill.</em> The players in front of you can reason now, they care what their teammates think, and they want a say. Your job this season is to give them real problems to solve in games they enjoy, then step back when they solve them. Enjoy watching them take ownership.</p>
+</div>
+<div class="block-band">
+  <div class="eyebrow" style="color:var(--gold);">What Each Focus Means at U14</div>
+  <div class="block-band-grid">
+    <div class="block-cell">
+      <div class="block-cell-name">Me &amp; the Ball</div>
+      <div class="block-cell-status">Growth Phase</div>
+      <div class="block-cell-desc">Scanning, first touch, body shape and playing forward. Players know these habits and now use them at full-game speed with a defender closing fast. Every player does this, in every position.</div>
+    </div>
+    <div class="block-cell">
+      <div class="block-cell-name">Me &amp; My Teammates</div>
+      <div class="block-cell-status">Growth Phase</div>
+      <div class="block-cell-desc">Support angles, wall passes and moving after the pass. New this season is timing: a run that arrives when the ball does, not early and not late.</div>
+    </div>
+    <div class="block-cell">
+      <div class="block-cell-name">Me &amp; My Team Defending</div>
+      <div class="block-cell-status">Reinforced</div>
+      <div class="block-cell-desc">Pressure, cover and balance with eleven. The nearest player pressures, a teammate covers behind, and the team stays close enough to stay connected. Forwards defend too.</div>
+    </div>
+    <div class="block-cell">
+      <div class="block-cell-name">Me &amp; the Game</div>
+      <div class="block-cell-status">Reinforced</div>
+      <div class="block-cell-desc">The first second after the ball changes hands. Press or recover when you lose it. Play forward or keep it when you win it.</div>
+    </div>
+    <div class="block-cell">
+      <div class="block-cell-name">Me &amp; the Moment</div>
+      <div class="block-cell-status">Introduced</div>
+      <div class="block-cell-desc">Finishing: separating to receive, a final pass, and a composed shot with few touches. New at U14 and the focus of weeks 4 to 6.</div>
+    </div>
+  </div>
+</div>
+<div class="section tinted">
+  <div class="eyebrow navy">US Soccer Alignment</div>
+  <div class="section-heading">Progression Phase I &nbsp;&middot;&nbsp; 11v11 Format</div>
+  <p style="font-size:12.5px;margin-top:8px;max-width:780px;">At U14, US Soccer&rsquo;s Progression Phase I expects players to play within a formation with defined roles, and adds new objectives like midfield interchange and quick combination play in tight spaces under high pressure. For a recreational team, take the spirit and keep it light. Teach the shape of the team and the habits that go with it, and let players try different spots across the season. Finishing joins the first four focuses as a fifth. All five run at the Introduction level.</p>
+  <div class="two-col" style="margin-top:14px;">
+    <div class="info-box navy-left"><h4>What This Season Keeps Simple</h4>Introduction level in all five focuses. The habits every player needs in every position. No fixed roles. Players rotate through lines and positions, because identity at this age is still forming.</div>
+    <div class="info-box gold-left"><h4>What a Competitive Program Adds</h4>Development and Application levels, where the same ideas run at full game speed and then by function: who combines together, who presses together, who finishes. Press triggers, center backs stepping into midfield and role-specific work all live there.</div>
+  </div>
+</div>
+<div class="section">
+  <div class="eyebrow">Who Is In Front of You</div>
+  <div class="section-heading">Understanding Your U14 Players</div>
+  <div class="four-grid">
+    <div class="info-card"><h4>Growth Is Uneven</h4><p>In any U14 group you will see players who have already grown a lot and players who have not started. Do not read size as skill. Praise decisions and effort, and watch that your biggest players are not only winning duels with size. Sore knees or heels are worth a word with the parent. Rest beats extra reps.</p></div>
+    <div class="info-card"><h4>The Field Got Big</h4><p>The jump from 9v9 to 11v11 is a jump in distance, not just numbers. Players tire faster and shape breaks down. Short rests and water breaks are coaching tools, not weaknesses.</p></div>
+    <div class="info-card"><h4>Peers Matter More Than You</h4><p>At this age what teammates think carries a lot of weight. Individual feedback works best quietly, one on one. Public praise for team moments and brave decisions builds the culture you want. Pushing back is part of building an identity, not disrespect. Give them a say: let players pick a warm-up game or lead one.</p></div>
+    <div class="info-card"><h4>They Can Think It Through</h4><p>U14 players can reason about why, not just what. Ask &ldquo;what was open?&rdquo; or &ldquo;why did we lose our shape there?&rdquo; and let them answer before you do. A solution they work out themselves sticks.</p></div>
+  </div>
+</div>
+<div class="section navy">
+  <div class="eyebrow white">What a Great U14 Session Looks Like</div>
+  <div class="six-grid">
+    <div class="success-item"><strong>Players take the shot</strong><p>The ball is in the final third and someone shoots, early, with composure, without a second dribble. Missing is fine. Not shooting is the problem.</p></div>
+    <div class="success-item"><strong>Compact, connected shape</strong><p>Eleven players on a big field can look scattered. Look for lines that stay close enough to support each other: defenders, midfielders and forwards moving as one unit.</p></div>
+    <div class="success-item"><strong>Instant reaction on turnovers</strong><p>When the ball changes hands, do players react in the first second or watch? That reaction is the whole game-moments block.</p></div>
+    <div class="success-item"><strong>Players talking to each other</strong><p>Voices on the field: &ldquo;Man on,&rdquo; &ldquo;Turn,&rdquo; &ldquo;Switch.&rdquo; Player-to-player coaching is a development goal. Step back when it happens.</p></div>
+    <div class="success-item"><strong>Practice A concept in Practice B</strong><p>If something from the first session of the week shows up in the second without you asking, the concept is taking hold.</p></div>
+    <div class="success-item"><strong>Everyone gets a turn in goal</strong><p>Rotate the goalkeeper. Finishing practice is also goalkeeper practice, so nobody should miss out on a turn.</p></div>
+  </div>
+</div>
+<div class="section tinted">
+  <div class="eyebrow navy">Teaching Points for This Age Group</div>
+  <div class="section-heading">What You Are Developing</div>
+  <div class="pills">
+    <span class="pill tech">Controlling</span><span class="pill tech">Protecting</span><span class="pill tech">Driving</span>
+    <span class="pill tech">Dribbling</span><span class="pill tech">Passing</span><span class="pill tech">Shooting</span>
+    <span class="pill tech">Finishing</span><span class="pill perc">Scanning</span><span class="pill perc">Supporting</span>
+    <span class="pill perc">Body Shape</span><span class="pill perc">Covering</span><span class="pill perc">Marking</span>
+    <span class="pill perc">Timing Runs</span>
+  </div>
+  <p class="pills-note"><strong>Finishing</strong> and <strong>Timing Runs</strong> are the new pieces this season. Finishing is shooting with composure when it matters: choosing the corner, striking cleanly, and following up. Timing a run means arriving in the right place at the right moment, not early and not late. Both are what the finishing block looks like in action.</p>
+</div>
+<div class="section">
+  <div class="eyebrow">Before You Arrive</div>
+  <div class="section-heading">What Prepared Looks Like</div>
+  <div class="arrive-box">Preparation at U14 is simpler than at U12, because the group already knows the language. Pick the week&rsquo;s focus before you arrive and choose Activity A as something familiar. Activity B is where the new idea lives. If the group needs more time on a concept, run the revisit instead of moving on. With two practices a week, Practice A introduces and Practice B deepens. Both are correct. Try to avoid pairing two new concepts in the same session.</div>
+  <div class="sideline-box">
+    <div class="eyebrow">The Parents on the Sideline</div>
+    <p>Before the session starts, take 30 seconds to walk over. Something like:</p>
+    <span class="script">&ldquo;This season we are working on finishing and on the moment the ball changes hands. The most helpful thing you can do is cheer the brave decisions: the player who shoots, the player who sprints back, the player who tries the pass that might not work.&rdquo;</span>
+    <p style="margin-top:8px;">At U14 players hear everything. Positive sideline energy is genuinely useful. Criticism of a missed shot makes the next shot less likely.</p>
+  </div>
+</div>
+<div class="structure-strip">
+  <span class="s-block s-play">Opening Play</span><span class="s-time">12 min</span>
+  <span class="s-arrow">&#8594;</span>
+  <span class="s-block s-practice">Activity A</span><span class="s-time">15 min</span>
+  <span class="s-arrow">&#8594;</span>
+  <span class="s-block s-practice">Activity B</span><span class="s-time">15 min</span>
+  <span class="s-arrow">&#8594;</span>
+  <span class="s-block s-play">Closing Play</span><span class="s-time">25 min</span>
+  <span class="pairing-note">A = anchor (familiar) &nbsp;&middot;&nbsp; B = concept focus for the week</span>
+</div>
+<div class="play-section">
+  <div class="phase-header">
+    <span class="phase-pill play">Opening Play</span>
+    <div><div class="phase-title">6v6 or 7v7 &ndash; Free Small-Sided Game</div>
+    <div class="phase-sub">Same setup every session. Smaller than the closing game. More touches, more shots and cleaner decisions.</div></div>
+  </div>
+  <div class="two-col">
+    <div class="info-box navy-left"><h4>The Setup</h4>Same setup every session. Smaller than the closing game, so more touches, more shots and cleaner decisions. Half a field, with a full-size or large goal at each end. Teams of 6 or 7. Add a goalkeeper if you have one willing. Quick restarts. Let them play the first 8 minutes without saying anything. On Practice B days, watch for whether the concept from Practice A earlier in the week shows up.</div>
+    <div class="info-box gold-left"><h4>Your Job</h4>Watch the moments in front of goal. Do players shoot? Do they pick their moment or force it? Watch the transitions too. Come in with Activity A already chosen and let the opening play confirm your read for Activity B.</div>
+  </div>
+  <div class="question-box">
+    <span class="q-label">One Question &mdash; Ask it after the opening game</span>
+    <span class="q-text">&ldquo;When you had a chance to shoot today, what made you take it or pass it up?&rdquo;</span>
+  </div>
+  <div class="e-tags"><span class="e-tag">1 ball per team · Full-size or large goals · Disc cones · Pinnies in 2 colors</span></div>
+</div>
+<div class="practice-section">
+  <div class="phase-header">
+    <span class="phase-pill practice">Practice</span>
+    <div><div class="phase-title">Activity Toolkit &ndash; Pick Two Per Session</div></div>
+  </div>
+  <p class="practice-intro">Run Activity A for 15 minutes, then Activity B for 15 minutes. A brief transition or water break (&ldquo;good work, new game&rdquo;) resets attention and energy. Follow the season plan for which focus to prioritize each week. The five opening games at the top of the toolkit replace the free small-sided game when a week calls for a challenge built into the play.</p>
+  <div class="pairing-rule">
+    <strong>The Pairing Rule</strong>
+    Try to avoid pairing two new concepts in the same session. Activity A works best as something players already know well enough to run without much explanation. Activity B is where the new concept lives. If the group is flat after Activity A, shorten Activity B or swap it for something more physical.
+  </div>
+  <div class="skill-group-bar integration"><span class="skill-group-label">OPENING PLAY &nbsp;&mdash;&nbsp; One added rule sets the challenge before the practice starts</span></div>
+  <div class="activity-grid" style="margin-top:14px;">
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 01</div>
+        <div class="act-name">3v3 Everybody Plays</div>
+        <div class="act-focus">Passing · Supporting · Combination Play · Me &amp; My Teammates</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Keep it small. Mark a field about 35 by 30 yards. Go smaller if it plays loose. Mini goals or cone goals at each end. No goalkeepers. 3v3. Extra players wait on the sideline and rotate in after each goal. Have each team count its touches out loud, one, two, three, so everyone knows who has played.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Show for the ball. Be somewhere your teammate can see you. After you pass, move to a new spot. Find the teammate who has not touched it yet.</div>
+        <div class="a-question">&ldquo;How did you let your teammate know you were free?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors</span></div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 02</div>
+        <div class="act-name">4v4 Two in the Final Third</div>
+        <div class="act-focus">Compact Shape · Pressing · Numerical Advantage · Me &amp; My Team Defending</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Keep it small. Mark a field about 35 by 30 yards. Go smaller if it plays loose. Use cones to mark the final third at each end, about a third of the field. Mini goals or cone goals at each end. No goalkeepers. 4v4. Extra players wait on the sideline and rotate in after each goal. Walk the final-third lines once so players see where the limit is.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Defenders: stay close together. Shrink the space. Attackers: nothing there? Pass it back and reset. Win it, then go. Attack the other way right away.</div>
+        <div class="a-question">&ldquo;How close were you to your teammates when you won it?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors</span></div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 03</div>
+        <div class="act-name">4v4 Win It and Go</div>
+        <div class="act-focus">Decision-Making · Pressing · Combination Play · Me &amp; the Game</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Keep it small. Mark a field about 35 by 30 yards. Go smaller if it plays loose. Mini goals or cone goals at each end. No goalkeepers. 4v4. Extra players wait on the sideline and rotate in after each goal. Tell players to start the count the moment they win the ball.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Win it, look up and go. Pass forward early, to the open player. Lost it? Get back and win it again.</div>
+        <div class="a-question">&ldquo;What did you see the moment you won it?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors</span></div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 04</div>
+        <div class="act-name">5v5 First-Time Finish</div>
+        <div class="act-focus">Shooting · Decision-Making · Combination Play · Me &amp; the Moment</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Keep it small. Mark a field about 40 by 30 yards. Go smaller if it plays loose. A large goal or cone goal at each end. Add a goalkeeper if you have one willing. 5v5. Extra players wait on the sideline and rotate in after each goal. Make the goals as big as you can, so players take shots.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Get your body ready before the ball arrives. Move into the space where the cutback or the pass will arrive. Missed? Reset right away.</div>
+        <div class="a-question">&ldquo;What did you do before the pass reached you?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors</span></div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 05</div>
+        <div class="act-name">5v4 With a Floater</div>
+        <div class="act-focus">Numerical Advantage · Passing · Possession · Me &amp; My Teammates</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Keep it small. Mark a field about 35 by 30 yards. Go smaller if it plays loose. Mini goals or cone goals at each end. No goalkeepers. Two teams of four, plus one floater who plays for whichever team has the ball. Extra players wait on the sideline and rotate in after each goal. Give the floater a different color pinnie from both teams.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Use the floater when you are under pressure. Move into a spot where the defense cannot see you and the ball. Look for the free player before you pass.</div>
+        <div class="a-question">&ldquo;When was the floater free, and did you find them?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="skill-group-bar "><span class="skill-group-label">ME &amp; THE BALL &nbsp;&mdash;&nbsp; Ball skills at game speed</span></div>
+  <div class="activity-grid" style="margin-top:14px;">
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 06</div>
+        <div class="act-name">Flying Numbers</div>
+        <div class="act-focus">Decision-Making · Me &amp; the Ball</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Mark a space with cones, goals on both sides. Two teams along the touchline either side of you. Call a number combination and each side sends in that many players to scrimmage. New players rotate in after every goal or ball out. Outgoing players sprint off, incoming players sprint on. No walking at any point.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Your anchor activity every week. Players know it from U12, so it needs almost no explanation and it settles the group fast. At U14, call uneven numbers (3v2, 4v3) and watch what the extra player does. If one player is dominating, play them 1v2.</div>
+        <div class="a-question">&ldquo;When your team had the extra player, what did you do with that advantage?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball · 2 goals · Disc cones · Pinnies</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="skill-group-bar "><span class="skill-group-label">ME &amp; MY TEAMMATES &nbsp;&mdash;&nbsp; Combination play, switching, patience</span></div>
+  <div class="activity-grid" style="margin-top:14px;">
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 07</div>
+        <div class="act-name">Barcelona</div>
+        <div class="act-focus">Possession · Passing · Combination Play · Me &amp; My Teammates</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Rectangular grid with goals at each end. 4v4, no goalkeeper. Score points equal to the number of passes completed before scoring: 8 passes before a goal is 8 points. A missed shot scores nothing. Play short rounds of 3 to 4 minutes.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Watch for players who switch the ball to the far side before going to goal, drawing defenders across before finding the opening. Name it when it happens. Best as a focus activity, not an anchor.</div>
+        <div class="a-question">&ldquo;Before you scored, was there a moment you switched the ball to the other side? What did that open up?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball · 2 small goals · Disc cones · Pinnies</span></div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 08</div>
+        <div class="act-name">Hotbox</div>
+        <div class="act-focus">Combination Play · Decision-Making · Me &amp; My Teammates</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Rectangular grid with a small goal at each end and a no-go square (the hotbox) in the center. 4v4 or 5v5. Players cannot enter the hotbox. Only the ball can pass through it. When the attackers&rsquo; path is blocked by the hotbox and a defender, the solution is to switch the ball to the other side.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Generates all five blocks in a single game: ball skills under pressure, switching with teammates, cutting off lanes around the box, instant reaction on turnovers, and a decisive finish when the opening appears. Best used in week 7 to observe without isolating any one block. Do not over-coach. Watch.</div>
+        <div class="a-question">&ldquo;When your path was blocked, what did you do? And when the ball turned over, what was your first movement?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball · 2 small goals · Disc cones for outer grid and hotbox square · Pinnies</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="skill-group-bar defending"><span class="skill-group-label">ME &amp; MY TEAM DEFENDING &nbsp;&mdash;&nbsp; Compact shape, first and second defender</span></div>
+  <div class="activity-grid" style="margin-top:14px;">
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 09</div>
+        <div class="act-name">Shrinking Field: Defending Focus</div>
+        <div class="act-focus">Compact Shape · Pressing · Me &amp; My Team Defending</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Rectangular grid with small goals at each end. 4v4 or 5v5. Every minute, move each touchline in by 3 steps. Tell them before you start: &ldquo;today we are watching the defending team.&rdquo; Play 2 to 3 rounds.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">As the field shrinks, compact shape matters more and more. Watch for the defending team getting tighter: closer together, higher up, forcing play to one side. Are they reacting to the ball or anticipating where it is going? Anticipation is worth naming.</div>
+        <div class="a-question">&ldquo;As the field got smaller, did defending get easier or harder? What does that tell you about defending in tight spaces?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball · 2 small goals · Disc cones</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="skill-group-bar game"><span class="skill-group-label">ME &amp; THE GAME &nbsp;&mdash;&nbsp; Both transitions, relentless reaction</span></div>
+  <div class="activity-grid" style="margin-top:14px;">
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 10</div>
+        <div class="act-name">Crisscross</div>
+        <div class="act-focus">Decision-Making · Scanning · Me &amp; the Game</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Square grid with a goal in the middle of each side, 4 goals total. One team scores on the two endline goals, the other on the two touchline goals. Play 3v3 or 4v4. Score by passing through a goal to a teammate. The cross-axis attack forces defenders to re-orient constantly.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">The instant a team wins the ball, do they look up and find a target within one or two actions? Players who hesitate give defenders time to recover. That first-second decision is the whole transition idea.</div>
+        <div class="a-question">&ldquo;How quickly after winning the ball did you find your target? What would have happened if you waited two more seconds?&rdquo;</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball · 4 cone goals (pairs, arm&rsquo;s length apart) · Pinnies</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="skill-group-bar moment"><span class="skill-group-label">ME &amp; THE MOMENT &nbsp;&mdash;&nbsp; Finishing, final pass, timing the run</span></div>
+  <div class="activity-grid" style="margin-top:14px;">
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 11</div>
+        <div class="act-name">Duels to Goal</div>
+        <div class="act-focus">Shooting · Decision-Making · Me &amp; the Moment</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Two lines of players about 25 yards from a full-size goal with a goalkeeper (rotate keepers often). The coach plays a ball in. The first attacker and first defender race to it and play 1v1 to goal. Shot, save, miss or ball out ends the duel. Next pair goes. Keep the pace quick: three or four duels per player, then swap roles.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">The moment of decision: does the attacker commit, or hesitate and give the defender time? Look for the attacker who takes one decisive touch toward goal, and for the player who shoots early instead of dribbling one extra time. For defenders, look for patience: delay, do not dive in.</div>
+        <div class="a-question">&ldquo;When you had the ball facing the goalkeeper, what did you decide first: shoot, dribble, or pass? What told you that?&rdquo;</div>
+        <span class="pairs-tag">&#8594; Pairs well with: Flying Numbers or Waves</span>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">Balls in a bag · 1 full-size goal · Disc cones · Pinnies</span></div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 12</div>
+        <div class="act-name">Waves</div>
+        <div class="act-focus">Numerical Advantage · Passing · Shooting · Me &amp; the Moment</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Full-size goal with a goalkeeper. Three attackers start from the halfway line against two defenders and attack in waves. When the wave finishes (goal, save, or ball out), the three attackers become the next wave&rsquo;s defenders, and the two defenders go to the back of the attacking line. Coach feeds a new ball in right away so play is continuous.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Numbers-up decisions are the heart of this one. Watch for the attacker who carries the ball until a defender commits, then passes. Watch for the third attacker arriving late into the box. Celebrate a good final pass as loudly as the goal.</div>
+        <div class="a-question">&ldquo;With three against two, who decided when to pass and when to shoot? How did you know?&rdquo;</div>
+        <span class="pairs-tag">&#8594; Pairs well with: Duels to Goal or Wide Service Finishing</span>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">Balls in a bag · 1 full-size goal · Disc cones · Pinnies in 2 colors</span></div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 13</div>
+        <div class="act-name">Wide Service Finishing</div>
+        <div class="act-focus">Shooting · Supporting · Me &amp; the Moment</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div><div class="a-text">Full-size goal with a goalkeeper. Wide players on each flank serve balls into the box while two or three attackers arrive to finish. Start with serves along the ground or driven low, finish with feet. Rotate servers, finishers and the goalkeeper every few turns. Heading is optional: if you include it, use a lighter ball, toss to the head from short range, and keep the total number of headers very low.</div>
+        <div class="a-label">What to Look For</div><div class="a-text">Do the attackers time their runs so they arrive as the ball does, rather than standing in the box waiting? Do they attack the near post and far post with different players? Watch for the serve itself: low and hard, away from the goalkeeper, is hard to defend.</div>
+        <div class="a-question">&ldquo;When the cross came in, how did you decide where to run? What did your teammate do differently from you?&rdquo;</div>
+        <span class="pairs-tag">&#8594; Pairs well with: Waves or Flying Numbers</span>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">Balls in a bag · 1 full-size goal · Disc cones for the wide channels · Pinnies</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="play-section">
+    <div class="phase-header">
+      <span class="phase-pill play">Closing Play</span>
+      <div><div class="phase-title">11v11 &ndash; Full Game</div>
+      <div class="phase-sub">The biggest game of the session. 25 minutes. This is where everything comes together.</div></div>
+    </div>
+    <div class="two-col">
+      <div class="info-box navy-left"><h4>The Setup</h4>The biggest game of the session. Full field, full-size goals, goalkeepers. Play 11v11 if you have the numbers. Short of players? Play 9v9 or 10v10 on a narrower field rather than leaving gaps. Alternatively, put a full-size goal with a keeper at one end and two small goals at the halfway line for the other team to attack. Offside applies, so introduce it early in the season and be patient with it. Let the game run without stopping.</div>
+      <div class="info-box gold-left"><h4>What to Notice</h4>Watch for the focus you introduced that week showing up without being asked: a team that stays compact across three lines, a player who sprints to press the instant possession is lost, a forward who shoots when the chance comes.</div>
+    </div>
+    <div class="question-box">
+      <span class="q-label">Closing Question</span>
+      <span class="q-text">&ldquo;Was there a moment today where your whole team did something together, attacking or defending, that one player could not have done alone?&rdquo;</span>
+    </div>
+    <div class="e-tags"><span class="e-tag">Full field · Full-size goals · Disc cones · Pinnies in 2 colors</span></div>
+  </div>
+  <div class="gk-note"><strong style="font-family:Inter,Arial,sans-serif;color:var(--navy);font-size:11px;">Goalkeeper:</strong>&nbsp; Every player should experience goalkeeper at some point, and at U14 finishing practice is also goalkeeper practice. Rotate the position so nobody misses a turn. If a player shows genuine enthusiasm for the role, encourage that.</div>
+</div>
+<div class="section">
+  <div class="eyebrow navy">Season Plan</div>
+  <div class="section-heading">Sample Rotation &nbsp;&middot;&nbsp; Two Practices Per Week</div>
+  <p style="font-size:12.5px;margin-top:6px;margin-bottom:14px;max-width:780px;">Weeks 1&ndash;2 bring combination play and team defending into the 11v11 environment. Week 3 revisits both transition moments. Weeks 4&ndash;6 introduce and deepen finishing, the new focus at U14. Week 7 integrates all five. Week 8 belongs to you. Each week starts with a small opening game that builds the week&rsquo;s challenge into the play.</p>
+  <table class="rotation-table">
+    <thead><tr>
+      <th style="width:5%">Week</th>
+      <th style="width:20%">Focus</th>
+      <th style="width:37%">Activity A &mdash; Anchor</th>
+      <th>Activity B &mdash; Concept Focus</th>
+    </tr></thead>
+    <tbody>
+      <tr class="week-a">
+        <td rowspan="2" class="week-num" style="vertical-align:middle;border-right:2px solid #e0e5f0;">1</td>
+        <td rowspan="2" style="vertical-align:middle;border-right:1px solid #eee;"><span class="block-tag-cell bt-establishing">Teammates</span><div class="pair-tag" style="margin-top:4px;">Ball skills and combination play on the bigger field</div><div class="pair-tag" style="margin-top:4px;"><strong>Opening:</strong> 3v3 Everybody Plays. Everyone touches it before a goal</div></td>
+        <td><span class="prac-label prac-a">Practice A</span><br>Flying Numbers<div class="pair-tag">Anchor. Familiar, settles the group into the new format</div></td>
+        <td>Barcelona<div class="pair-tag">Pass counting. Patience before scoring</div></td>
+      </tr>
+      <tr class="week-b">
+        <td><span class="prac-label prac-b">Practice B</span><br>Flying Numbers<div class="pair-tag">Call uneven numbers: 3v2, 4v3</div></td>
+        <td>Barcelona<div class="pair-tag">Revisit. Can they beat last session&rsquo;s pass count?</div></td>
+      </tr>
+      <tr class="week-a">
+        <td rowspan="2" class="week-num" style="vertical-align:middle;border-right:2px solid #e0e5f0;">2</td>
+        <td rowspan="2" style="vertical-align:middle;border-right:1px solid #eee;"><span class="block-tag-cell bt-defending">Defending</span><div class="pair-tag" style="margin-top:4px;">Team defending with more players and more space</div><div class="pair-tag" style="margin-top:4px;"><strong>Opening:</strong> 4v4 Two in the Final Third. Defend with numbers up</div></td>
+        <td><span class="prac-label prac-a">Practice A</span><br>Flying Numbers<div class="pair-tag">Anchor</div></td>
+        <td>Shrinking Field: Defending Focus<div class="pair-tag">Compact shape as space disappears</div></td>
+      </tr>
+      <tr class="week-b">
+        <td><span class="prac-label prac-b">Practice B</span><br>Shrinking Field: Defending Focus<div class="pair-tag">Revisit. Did defending get easier or harder? Why?</div></td>
+        <td>Barcelona<div class="pair-tag">Can the team that just defended now keep the ball against pressure?</div></td>
+      </tr>
+      <tr class="week-a">
+        <td rowspan="2" class="week-num" style="vertical-align:middle;border-right:2px solid #e0e5f0;">3</td>
+        <td rowspan="2" style="vertical-align:middle;border-right:1px solid #eee;"><span class="block-tag-cell bt-game">Transitions</span><div class="pair-tag" style="margin-top:4px;">Both transition moments revisited</div><div class="pair-tag" style="margin-top:4px;"><strong>Opening:</strong> 4v4 Win It and Go. Attack the moment you win it</div></td>
+        <td><span class="prac-label prac-a">Practice A</span><br>Flying Numbers<div class="pair-tag">Sprint on, sprint off. No walking</div></td>
+        <td>Crisscross<div class="pair-tag">Find a target the instant the ball is won</div></td>
+      </tr>
+      <tr class="week-b">
+        <td><span class="prac-label prac-b">Practice B</span><br>Crisscross<div class="pair-tag">Revisit. How fast after winning the ball do they find a target?</div></td>
+        <td>Shrinking Field: Defending Focus<div class="pair-tag">Win it, then what? Defend, win, go</div></td>
+      </tr>
+      <tr class="week-a">
+        <td rowspan="2" class="week-num" style="vertical-align:middle;border-right:2px solid #e0e5f0;">4</td>
+        <td rowspan="2" style="vertical-align:middle;border-right:1px solid #eee;"><span class="block-tag-cell bt-moment">Finishing</span><div class="pair-tag" style="margin-top:4px;">Finishing introduced: the decisive action in front of goal</div><div class="pair-tag" style="margin-top:4px;"><strong>Opening:</strong> 5v5 First-Time Finish. Take the chance when it comes</div></td>
+        <td><span class="prac-label prac-a">Practice A</span><br>Flying Numbers<div class="pair-tag">Anchor. Add a bonus for the first shot after a turnover</div></td>
+        <td>Duels to Goal<div class="pair-tag">1v1 to a full-size goal. First decision, first touch, shoot</div></td>
+      </tr>
+      <tr class="week-b">
+        <td><span class="prac-label prac-b">Practice B</span><br>Duels to Goal<div class="pair-tag">Revisit. Reward the early shot and the composed finish</div></td>
+        <td>Waves<div class="pair-tag">3v2 in waves. When to pass, when to shoot</div></td>
+      </tr>
+      <tr class="week-a">
+        <td rowspan="2" class="week-num" style="vertical-align:middle;border-right:2px solid #e0e5f0;">5</td>
+        <td rowspan="2" style="vertical-align:middle;border-right:1px solid #eee;"><span class="block-tag-cell bt-moment">Finishing</span><div class="pair-tag" style="margin-top:4px;">Finishing deepens: numbers-up decisions and arriving in the box</div><div class="pair-tag" style="margin-top:4px;"><strong>Opening:</strong> 5v4 With a Floater. Use the extra player</div></td>
+        <td><span class="prac-label prac-a">Practice A</span><br>Duels to Goal<div class="pair-tag">Warm up the finishing with quick duels</div></td>
+        <td>Waves<div class="pair-tag">Revisit. Celebrate the final pass</div></td>
+      </tr>
+      <tr class="week-b">
+        <td><span class="prac-label prac-b">Practice B</span><br>Waves<div class="pair-tag">Revisit with a second defender recovering late</div></td>
+        <td>Wide Service Finishing<div class="pair-tag">Serve low and hard. Attack near and far post</div></td>
+      </tr>
+      <tr class="week-a">
+        <td rowspan="2" class="week-num" style="vertical-align:middle;border-right:2px solid #e0e5f0;">6</td>
+        <td rowspan="2" style="vertical-align:middle;border-right:1px solid #eee;"><span class="block-tag-cell bt-moment">Finishing</span><div class="pair-tag" style="margin-top:4px;">Finishing in context: after transition and combination play</div><div class="pair-tag" style="margin-top:4px;"><strong>Opening:</strong> 5v5 First-Time Finish. Revisit: finish in the flow of the game</div></td>
+        <td><span class="prac-label prac-a">Practice A</span><br>Flying Numbers<div class="pair-tag">Anchor. Finish at speed after sprints</div></td>
+        <td>Wide Service Finishing<div class="pair-tag">Revisit. Add a defender in the box</div></td>
+      </tr>
+      <tr class="week-b">
+        <td><span class="prac-label prac-b">Practice B</span><br>Wide Service Finishing<div class="pair-tag">Revisit. Better timing than last session?</div></td>
+        <td>Crisscross<div class="pair-tag">Win the ball, find a target, finish</div></td>
+      </tr>
+      <tr class="week-a">
+        <td rowspan="2" class="week-num" style="vertical-align:middle;border-right:2px solid #e0e5f0;">7</td>
+        <td rowspan="2" style="vertical-align:middle;border-right:1px solid #eee;"><span class="block-tag-cell bt-int">Integration</span><div class="pair-tag" style="margin-top:4px;">Integration: all five blocks in play together</div></td>
+        <td><span class="prac-label prac-a">Practice A</span><br>Hotbox<div class="pair-tag">All five blocks in one game. Observe, do not over-coach</div></td>
+        <td>Waves<div class="pair-tag">Final consolidation of finishing under numbers</div></td>
+      </tr>
+      <tr class="week-b">
+        <td><span class="prac-label prac-b">Practice B</span><br>Crisscross<div class="pair-tag">Transition urgency</div></td>
+        <td>Hotbox<div class="pair-tag">Revisit. What is different from earlier today?</div></td>
+      </tr>
+      <tr>
+        <td class="week-num" style="border-right:2px solid #e0e5f0;">8</td>
+        <td style="font-style:italic;color:var(--gray-mid);font-size:11.5px;border-right:1px solid #eee;">Coach&rsquo;s choice both days</td>
+        <td colspan="2" style="font-style:italic;color:var(--gray-mid);">What does your group love most? What do they still need most? Run your two best sessions of the season. Both are correct answers.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="section gold-tint">
+  <div class="eyebrow">Session Setup</div>
+  <div class="section-heading">What You'll Need Each Session</div>
+  <div class="equip-grid">
+    <div class="equip-item"><strong>Balls &mdash; 1 per player (Size 5)</strong><span>Practice activities require one ball per pair minimum.</span></div>
+    <div class="equip-item"><strong>Cones &mdash; 60+ per team</strong><span>Half-field marking, practice grids and the box for shooting games. Several grids may run at once.</span></div>
+    <div class="equip-item"><strong>Full-size goals &mdash; 2</strong><span>Finishing is the new focus, so players need to shoot at a proper goal with a keeper in it as often as you can manage.</span></div>
+    <div class="equip-item"><strong>Pinnies &mdash; Full squad, 3 colors</strong><span>Three colors are useful when more than two teams play at once, and for marking the floater in numbers-up games.</span></div>
+    <div class="equip-item"><strong>Small goals &mdash; 4&ndash;6</strong><span>Still needed for several activities even though the closing game uses full-size goals.</span></div>
+    <div class="equip-item"><strong>Timer</strong><span>Timed rounds are essential. Competition drives intensity and mirrors the real game.</span></div>
+  </div>
+</div>
+<div class="section">
+  <div class="eyebrow navy">Coaching Cues</div>
+  <div class="section-heading">What to Watch For and How to Respond</div>
+  <div class="cues-grid">
+    <div class="cue-card"><strong>Player shoots early and misses</strong><p>&ldquo;Good decision. Great shot to take. Take that one every time.&rdquo; Praise the decision before you talk about the technique.</p></div>
+    <div class="cue-card"><strong>Player passes up a clear shot</strong><p>Ask, do not tell: &ldquo;What were you thinking when you had that space?&rdquo; Then listen. Often it is confidence, not judgment.</p></div>
+    <div class="cue-card"><strong>Team defends compactly</strong><p>&ldquo;That shape right there, everyone close enough to support each other. That is exactly what we are building toward.&rdquo;</p></div>
+    <div class="cue-card"><strong>Player presses instantly after turnover</strong><p>Name it in the moment: &ldquo;Did everyone see that? No hesitation. That is the whole idea.&rdquo;</p></div>
+    <div class="cue-card"><strong>Players coaching each other</strong><p>Step further back. Let it run. Come back and ask: &ldquo;What did you tell your teammate there?&rdquo;</p></div>
+    <div class="cue-card"><strong>Players too self-critical</strong><p>&ldquo;The best players in the world miss shots and lose the ball in every game. The difference is what they do next.&rdquo;</p></div>
+  </div>
+</div>
+<div class="section tinted">
+  <div class="eyebrow navy">Player Development</div>
+  <div class="section-heading">Where Your Players Will Be</div>
+  <p style="font-size:12.5px; color:var(--gray-dark); margin-top:6px; margin-bottom:14px; max-width:780px;">These are the skills we hope to see developing by the end of the season. All players develop at different rates and not every player will show all of these. That is completely normal.</p>
+  <p style="font-size:12.5px; color:var(--gray-dark); margin-bottom:14px; max-width:780px;">Finishing is the new piece this season. Let it show up in games, ask about it, and celebrate the brave shot as much as the goal.</p>
+  <div class="profile-grid">
+    <div class="profile-card primary">
+      <h4>Moving on to the Next Level</h4>
+      <div class="profile-item">Keeps the ball under pressure on the full field</div>
+      <div class="profile-item">Defends as part of an eleven-player team</div>
+      <div class="profile-item">Reacts in the first second after the ball changes hands</div>
+      <div class="profile-item">Takes shots with composure and makes good final-third decisions</div>
+      <div class="profile-item">Times runs to arrive when the ball does</div>
+      <div class="profile-item">Communicates with and coaches teammates on the field</div>
+      <div class="profile-item">Shows up wanting to play again</div>
+    </div>
+    <div class="profile-card comp">
+      <h4>A Player Ready for More</h4>
+      <div class="profile-item">A few players in your group may be curious about a more competitive pathway</div>
+      <div class="profile-item">A competitive program exists to open more doors for those players when they are ready</div>
+      <div class="profile-item">Notice them, encourage them, and talk to your club director about what that pathway looks like. Do not promise anything. Just open the door.</div>
+    </div>
+  </div>
+</div>
+<div class="section gold-tint">
+  <div class="eyebrow">Questions?</div>
+  <div class="section-heading">You Are Not Out There on Your Own</div>
+  <p style="font-size:12.5px; color:var(--gray-dark); margin-top:8px; max-width:780px;">Got a question about an activity? Want to talk through what you are seeing at training? Not sure how to introduce a new concept to your group? Your Age Group Coordinator and the club Technical Director are there for exactly this. Reach out any time.</p>
+</div>
+
+<div class="credit-section">
+  <div class="eyebrow navy">Acknowledgements</div>
+  <div class="section-heading" style="font-size:15px;margin-bottom:12px;">About This Guide</div>
+  <p class="credit-text" style="margin-bottom:10px;">This guide was developed by <strong style="color:var(--navy);">Justin Whitaker</strong>, as part of a club-wide player development framework. The framework is grounded in US Soccer's Player Development Framework and adapted for competitive youth player populations.</p>
+  <p class="credit-text">Several activities in this guide are adapted from the YouGotMojo youth soccer coaching library. Find their full video library at <a href="https://www.youtube.com/@YouGotMojo" target="_blank">youtube.com/@YouGotMojo</a>.</p>
+</div>
+
+<div class="footer">
+  <div class="footer-left">Coach Craft &nbsp;&middot;&nbsp; U14 Coach Companion &nbsp;&middot;&nbsp; All five focuses</div>
+  <div class="footer-right">Next: the next level</div>
+</div>
+
+</body></html>
