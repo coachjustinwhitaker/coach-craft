@@ -193,7 +193,7 @@ footer{margin:34px 0 0;padding:16px 0 30px;border-top:1px solid #D5DEE5;font-siz
 <section class="start"><h3>New to coaching? Start here</h3><p>Open the Coach Companion for your age group. It is a short guide with a season plan and sessions.</p><div class="ages"><a href="../../U6_Coach_Companion.html">U6</a><a href="../../U8_Coach_Companion.html">U8</a><a href="../../U10_Coach_Companion.html">U10</a><a href="../../U12_Coach_Companion.html">U12</a><a href="../../U14_Coach_Companion.html">U14</a></div></section>
 <section class="how"><h3>Every session is built from five blocks</h3><p>Plan the season by block, so players build skills in an order that makes sense.</p><ul class="bl">{ROWS}</ul>
 <div class="facts"><div><b>{N_ACT}</b>activities</div><div><b>{N_REC}</b>rec age plans</div><div><b>{N_COMP}</b>comp plan</div></div></section>
-<footer><p class="credit">Designed by Coach Justin Whitaker. Grounded in US Soccer&rsquo;s Player Development Framework.</p><p class="credit">Last updated {UPDATED}</p>For authors: <a href="activity-builder.html">Activity Builder</a></footer>
+<footer><p class="credit">Designed by Coach Justin Whitaker. Grounded in US Soccer&rsquo;s Player Development Framework.</p><p class="credit">Last updated {UPDATED}</p><p class="credit"><a href="https://tally.so/r/5X9NVQ">Suggest an activity or report a problem</a></p>For authors: <a href="activity-builder.html">Activity Builder</a></footer>
 </main></body></html>'''
 
 def build_author():
