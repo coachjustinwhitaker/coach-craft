@@ -54,8 +54,13 @@ fields:
 - key: support_line
   section: Contact
   required: false
-  what: One line telling coaches who to ask. Used when an age has no contact text of its own
+  what: One line telling coaches who to ask. Shown on the static Coach Companion pages, not on the More page of the app
   example: Your Age Group Coordinator and the club Technical Director are there for exactly this.
+- key: feedback_url
+  section: Contact
+  required: false
+  what: Link to your feedback form. Shows as a Send feedback button on the More page. Blank hides it
+  example: https://tally.so/r/xxxx
 - key: pathway_line_1
   section: Pathway
   required: false
@@ -85,5 +90,5 @@ overlay:
     what: List of lines about the competitive pathway for this age
     example: a list of short lines
   - key: contact
-    what: Contact text for this age. Overrides support_line
+    what: Contact text for this age. Shown on the More page
     example: Questions? Ask your coordinator.

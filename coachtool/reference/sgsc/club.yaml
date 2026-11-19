@@ -15,3 +15,4 @@ logo_small_file: logo-small.png
 # Feedback. Leave blank to hide the button.
 help_email: ''
 suggest_form_url: ''
+feedback_url: ''

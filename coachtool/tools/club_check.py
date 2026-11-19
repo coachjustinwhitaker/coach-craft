@@ -14,6 +14,7 @@ def club_report(club):
     for k in ('navy', 'navy_dark', 'gold'):
         if c.get(k) and not re.fullmatch(r'#[0-9a-fA-F]{6}', str(c[k])): errs.append(f'{k}: {c[k]} is not a hex color like #384959')
     if c.get('help_email') and not re.fullmatch(r'[^@\s]+@[^@\s]+\.[^@\s]+', str(c['help_email'])): errs.append('help_email does not look like an email address')
+    if c.get('feedback_url') and not str(c['feedback_url']).startswith('https://'): errs.append('feedback_url must start with https://')
     if c.get('suggest_form_url') and not str(c['suggest_form_url']).startswith('https://'): errs.append('suggest_form_url must start with https://')
     if c.get('id') and c['id'] != club: errs.append(f"id {c['id']} does not match the folder name {club}")
     keys = {k['key'] for k in spec['overlay']['keys']}
