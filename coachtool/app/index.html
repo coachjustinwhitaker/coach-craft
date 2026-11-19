@@ -257,6 +257,9 @@ button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
 .tiles .tile:last-child:nth-child(odd){grid-column:1/-1}
 .say{margin:12px 0;padding:14px 16px;background:#E6F6FF;border-left:6px solid #1E6FD9;border-radius:0 12px 12px 0;font-size:17px;line-height:1.5;color:var(--ink);font-style:italic}
 .say span{display:block;font-style:normal;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#124A96;margin-bottom:4px}
+
+.bgrp a{font-size:13px;font-weight:600;color:#124A96;text-decoration:none;white-space:nowrap}
+.goal .also{display:block;margin-top:4px;font-size:13px;color:#5A6670}
 </style><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script></head><body class="cc-col">
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · {{area}} · prototype</small></div></header>
 <main id="app"></main>
@@ -331,7 +334,7 @@ function viewSetup(){
 }
 const SECTIONS = () => { const P = T.players, sh = P.shape, out = [
   ['who', 'Who is in front of you', `Understanding your ${T.label} players${T.club.format ? ' · ' + T.club.format : ''}.`, () => `<div class="card">${P.who.map(x => `<p><b>${x.label}</b><br>${x.text}</p>`).join('')}</div>`],
-  ['goals', 'Player goals', `By the end of the season, a ${T.label} should be showing these. Tap a block to see why it matters.`, () => goalsHtml()],
+  ['goals', 'Player goals', goalsLead(), () => goalsHtml()],
   ['great', 'What a great session looks like', 'What to watch for, whatever the score.', () => `<div class="card">${P.great_session.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`],
   ['organized', 'How a practice runs', `${plan.sessions_per_week === 1 ? 'The three steps of every practice' : 'The four steps of every practice'}, and how to get ready.`, () => { const one = plan.sessions_per_week === 1; return (sh ? `${sh.why ? `<div class="card"><p>${sh.why}</p></div>` : ''}<p class="note">${sh.note}</p>${one ? '' : `<div class="card"><b>Two practices a week</b><p><b>Day 1 &middot; Introduce.</b> Say the challenge once and let them play. Keep it simple.</p><p><b>Day 2 &middot; Develop.</b> Same opening game. See what they remember, then add a twist.</p></div>`}<div class="pr seq">${gameCard(sh.opening, 'Opening small-sided game')}<div class="card seq-wrap">${one ? `<div class="slot"><div class="lab">Main activity</div><div class="nm">The practice activity</div><p class="note">One activity carries the week.</p></div>` : `<div class="slot"><div class="lab">Main activity &middot; familiar</div><div class="nm">Something they know</div><p class="note">Familiar and physical. Players know it well enough to run it without much explaining.</p></div><div class="slot"><div class="lab">Main activity &middot; new idea</div><div class="nm">The week&rsquo;s idea</div><p class="note">This is where the focus for the week lives.</p></div>`}</div>${gameCard(sh.closing, 'Closing game')}</div>` : '') + `<h2>Before you arrive</h2><div class="card"><p>${P.prepared}</p></div>`; }]];
   if(T.rules && T.rules.length) out.push(['rules', 'Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', () => rulesHtml()]);
@@ -358,7 +361,7 @@ const chunk = (arr, k) => { const o = []; for(let i = 0; i < arr.length; i += k)
 function tourSteps(){
   const P = T.players, sh = P.shape, steps = [], add = (title, sub, pages) => pages.forEach((html, i) => steps.push({title, sub: i === 0 ? sub : '', part: pages.length > 1 ? `${i+1} of ${pages.length}` : '', html}));
   add('Who is in front of you', `Understanding your ${T.label} players${T.club.format ? ' · ' + T.club.format : ''}.`, chunk(P.who, 99).map(g => `<div class="card">${g.map(x => `<p><b>${x.label}</b><br>${x.text}</p>`).join('')}</div>`));
-  add('Player goals', `By the end of the season, a ${T.label} should be showing these.`, chunk(T.goals, 99).map(g => `<div class="card">${g.map(x => `<div class="goal"><span>${x.text}<br>${x.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`));
+  add('Player goals', goalsLead(), [goalsHtml()]);
   add('What a great session looks like', 'What to watch for, whatever the score.', chunk(P.great_session, 99).map(g => `<div class="card">${g.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`));
   const org = [];
   if(sh){ org.push(`${sh.why ? `<div class="card"><p>${sh.why}</p></div>` : ''}<p class="note">${sh.note}</p>${gameCard(sh.opening, 'Opening small-sided game')}`); org.push(`<div class="card"><b>The middle</b><div class="nm">${plan.sessions_per_week === 1 ? 'The main activity' : 'Two main activities'}</div><p class="note">${plan.sessions_per_week === 1 ? 'One activity carries the week.' : 'The first is familiar and physical. The second carries the week\'s idea.'}</p></div>`); org.push(gameCard(sh.closing, 'Closing game')); }
@@ -379,7 +382,11 @@ function viewTour(n){
   $('#nx').onclick = () => i === last ? finishTour('now') : go('onb/' + (i+1));
   $('#sk').onclick = e => { e.preventDefault(); finishTour('now'); };
 }
-const goalsHtml = () => `<div class="card">${T.goals.map(g => `<div class="goal"><span>${g.text}<br>${g.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`;
+const BCOL = b => ({B1:'var(--b1)', B2:'var(--b2)', B3:'var(--b3)', B4:'var(--b4)', B5:'var(--b5)'})[b] || '#66C4FF';
+const goalGroups = () => { const ord = T.ladder.concat(Object.keys(DATA.blocks).filter(b => !T.ladder.includes(b))), by = {}, all = []; T.goals.forEach(g => { if(g.season || g.blocks.length >= 3) all.push(g); else { const lead = g.blocks.slice().sort((x, y) => ord.indexOf(x) - ord.indexOf(y))[0]; (by[lead] = by[lead] || []).push([g, lead]); } }); return {ord, by, all}; };
+const goalsLead = () => { const G = goalGroups(), one = Object.keys(G.by).length + (G.all.length ? 1 : 0) < 2; return `By the end of the season, a ${T.label} should be showing these.${one ? '' : ' They are grouped by the block that builds them.'}`; };
+const goalsHtml = () => { const G = goalGroups(), row = ([g, lead]) => { const more = !lead ? [] : g.blocks.filter(x => x !== lead).map(x => DATA.blocks[x].name); return `<div class="goal"><span>${g.text}${more.length ? `<span class="also">Also builds ${more.join(' and ')}</span>` : ''}</span></div>`; };
+  return G.ord.filter(b => G.by[b]).map(b => `<div class="bgrp" style="--bc:${BCOL(b)}"><b>${DATA.blocks[b].name}</b>${T.framework.blocks[b] ? `<a href="#" data-nav="why/${b}">Why it matters</a>` : ''}</div><div class="card">${G.by[b].map(row).join('')}</div>`).join('') + (G.all.length ? `<div class="bgrp" style="--bc:#66C4FF"><b>All season</b><span>Across every block</span></div><div class="card">${G.all.map(g => row([g, ''])).join('')}</div>` : ''); };
 const seasonHtml = () => plan.weeks.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('');
 const lib = {q: '', type: '', block: '', skill: '', fit: false, all: false, view: 'activities'};
 function viewLibrary(){
@@ -417,7 +424,7 @@ function viewMore(){
   app.innerHTML = tabs('more') + `<h1>More</h1>` + (ask || hl || fb ? `<h2>Feedback</h2>${ask ? `<div class="card"><p>${ask}</p></div>` : ''}<p class="note">Something not working, or an activity your players love? Tell us.</p><div class="noprint">${fb}</div>${hl}` : '') + `<h2>Your setup</h2><a class="card row" href="#" data-nav="setup"><b>Setup</b><div class="note">Age group, players, space and season start.</div></a>`;
 }
 function viewGoals(){
-  app.innerHTML = '<a class="back" href="#" data-nav="more">&larr; More</a>' + `<h1>Player goals</h1><p class="lead">By the end of the season, a ${T.label} should be showing these. Tap a block to see why it matters. The plan builds toward them.</p>` + goalsHtml();
+  app.innerHTML = '<a class="back" href="#" data-nav="more">&larr; More</a>' + `<h1>Player goals</h1><p class="lead">${goalsLead()} The plan builds toward them.</p>` + goalsHtml();
 }
 function viewPlan(){
   const n = plan.sessions_per_week, cw = curWeek(), ph = w => (plan.phases || []).find(p => p.weeks[0] === w.week);

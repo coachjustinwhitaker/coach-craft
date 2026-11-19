@@ -5712,6 +5712,7 @@
     {
      "id": "competes-with-joy",
      "text": "Competes with genuine joy and wants to come back next season",
+     "season": true,
      "blocks": [
       "B1",
       "B2"
