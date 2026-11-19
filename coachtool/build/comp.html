@@ -404,7 +404,7 @@ function openingAlts(w, key0){
 }
 function playCard(w, g, si){
   if(!w.opening) return gameCard(g, 'Opening small-sided game');
-  const key = `${w.week}-o`, swapped = (state.swaps||{})[key], ref = swapped || w.opening.activity, a = A(ref), alts = openingAlts(w, key), two = w.sessions.length > 1, hard = ((a.progression || []).find(x => /harder/i.test(x.title)) || {}).text, stage = !two ? '' : (si ? `<div class="stage"><b>Day 2 · Develop</b>Same game as Practice A. See what they remember, then add a twist.${hard ? ' Try: ' + hard : ''}</div>` : `<div class="stage"><b>Day 1 · Introduce</b>Say the challenge once and let them play. Keep it simple.</div>`), blk = w.block || (w.sessions[0] || {}).block;
+  const key = `${w.week}-o`, swapped = (state.swaps||{})[key], ref = swapped || w.opening.activity, a = A(ref), alts = openingAlts(w, key), two = w.sessions.length > 1, hard = ((a.progression || []).find(x => /harder/i.test(x.title)) || {}).text, stage = !two ? '' : (si ? `<div class="stage"><b>Day 2 · Develop</b>Same game as Day 1. See what they remember, then add a twist.${hard ? ' Try: ' + hard : ''}</div>` : `<div class="stage"><b>Day 1 · Introduce</b>Say the challenge once and let them play. Keep it simple.</div>`), blk = w.block || (w.sessions[0] || {}).block;
   return `<div class="card game"><b>${g.label} · Opening small-sided game</b> <span class="note">${a.minutes ? a.minutes + ' min' : g.minutes}</span><div class="lab">Game</div><div class="nm">${a.name}</div>
     <div class="note">${[swapped ? 'Swapped in' : w.opening.note].filter(Boolean).join(' · ')}</div>${stage}
     <details><summary>How to run it</summary>${runIt(a)}<div class="lbl">Your job</div>Say the rule once, start the game, then step back. Watch whether the players solve the problem on their own. Save your voice for the question at the end.</details>
@@ -425,7 +425,7 @@ function weekText(n){
   const one = plan.sessions_per_week === 1;
   if(shape){ const g = shape.opening; if(w.opening){ const oa = A((state.swaps||{})[`${w.week}-o`] || w.opening.activity); L.push(`${g.label} (${oa.minutes ? oa.minutes + ' min' : g.minutes}): ${oa.name}`, ...actLines(oa), ''); } else L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup, ''); }
   { const r = w.routine && R(w.routine); if(r) L.push(`Start with: ${r.name}${r.dosage ? ' (' + r.dosage + ')' : ''}`, ...r.steps.map((x, i) => `  ${i + 1}. ${x.name}: ${x.how}`), ''); }
-  w.sessions.forEach((ses, si) => { L.push((one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')) + (ses.block ? ` · ${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}` : ''));
+  w.sessions.forEach((ses, si) => { L.push((one ? 'Practice' : 'Day ' + (si + 1)) + (ses.block ? ` · ${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}` : ''));
     if(ses.block){ const items = buildOf(w, si); if(!items.length) L.push('- Nothing added yet'); items.forEach(it => { const o = itemInfo(it); L.push(`- ${o.name}${it.m ? ' (' + it.m + ' min)' : ''}`, ...(o.own ? ownLines(o.own) : actLines(o.a))); }); if(items.some(x => x.m)) L.push(`Total: ${items.reduce((t, x) => t + (+x.m || 0), 0)} min`); }
     slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot); if(!ref){ L.push('- Activity not chosen yet'); return; } const a = A(ref.split('#')[0]); const ls = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v]; L.push(`- ${actName(ref)}`, ...actLines(a)); }); L.push(''); });
   if(shape){ const g = shape.closing; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup); }
@@ -476,7 +476,7 @@ function practiceCard(w, si, one){
   const rows = items.map((it, i) => { const o = itemInfo(it); return `<div class="slot"><div class="nm">${o.name}</div><div class="note">${o.own ? 'Your activity' : TYPE(o.a.type)}</div>
     <details><summary>How to run it</summary>${o.own ? runOwn(o.own) : runIt(o.a)}</details>
     <div class="brow"><label class="mn">Minutes <input type="number" min="1" max="90" value="${it.m || ''}" data-m="${key}|${i}"></label>${i ? `<button class="small ghost" data-up="${key}|${i}">Move up</button>` : ''}${o.own ? `<button class="small ghost" data-edit="${it.r.slice(4)}|${key}">Edit</button>` : ''}<button class="small ghost" data-rm="${key}|${i}">Remove</button></div></div>`; }).join('');
-  return `<div class="card" data-pc="${key}"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b> <span class="note">${one ? '' : (si ? 'Second practice this week · ' : 'First practice this week · ')}${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>
+  return `<div class="card" data-pc="${key}"><b>${one ? 'Practice' : 'Day ' + (si + 1)}</b> <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>
     ${items.length ? rows + (total ? `<p class="note">Total ${total} min</p>` : '') : `<p class="note" style="margin:10px 0 4px">Your practice. Add from the library, or add your own.</p>`}
     <details class="swap" ${ui.open === 'lib' ? 'open' : ''}><summary>Add from the library</summary>
       <p class="note">${ui.any ? 'Everything for ' + T.label + ' that fits your numbers and space.' : fit.length + ' fit ' + DATA.blocks[ses.block].name + ', ' + (LVL[lvl] || '') + ', your numbers and space.'}</p>
@@ -496,7 +496,7 @@ function viewWeek(n){
   const on = n === cw ? 'now' : 'plan';
   if(w.coach_choice){ app.innerHTML = tabs(on) + strip + bn + `<h1>Week ${w.week}</h1><div class="card"><b>${w.focus}</b><p>${w.note}</p></div>`; return; }
   const one = plan.sessions_per_week === 1;
-  const sessionList = w.sessions.map((ses, si) => ses.block ? practiceCard(w, si, one) : `<div class="card${shape ? ' seq-wrap' : ''}">${shape ? '' : `<b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b>${one ? '' : ` <span class="note">${si ? 'Second practice this week' : 'First practice this week'}</span>`}${ses.block ? ` <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>` : ''}`}` + slotsOf(w, si).map(slot => {
+  const sessionList = w.sessions.map((ses, si) => ses.block ? practiceCard(w, si, one) : `<div class="card${shape ? ' seq-wrap' : ''}">${shape ? '' : `<b>${one ? 'Practice' : 'Day ' + (si + 1)}</b>${ses.block ? ` <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>` : ''}`}` + slotsOf(w, si).map(slot => {
     const ref = slotRef(w, si, slot), key = `${w.week}-${si}-${slot}`, a = ref ? A(ref.split('#')[0]) : null, note = w.sessions[si][slot].note, multi = slotsOf(w, si).length > 1;
     const swapped = (state.swaps||{})[key];
     const alts = alternatives(w, si, slot);
@@ -515,7 +515,7 @@ function viewWeek(n){
   const bits = `<section class="watch"><div class="lab">Watch for this week</div><div class="nm">${gs.title}</div><p>${gs.text}</p>${cue ? `<div class="stage"><b>${cue.when}</b>${cue.say}</div>` : ''}<div class="linkrow noprint">${links}</div></section>${(plan.standing || []).map(x => `<div class="card"><p><b>${x.title}</b><br>${x.text}</p></div>`).join('')}`;
   const tog = !one && sessionList.length > 1, cur = tog ? Math.min(prTab[n] || 0, sessionList.length - 1) : 0;
   const pblock = si => `<div class="pr${shape ? ' seq' : ''}${tog && si !== cur ? ' pr-off' : ''}" data-pr="${si}">` + (shape ? playCard(w, shape.opening, si) : '') + (si === 0 || tog ? routineCard(w) : '') + sessionList[si] + (shape ? gameCard(shape.closing, 'Closing game') : '') + '</div>';
-  const body = (shape ? `<p class="lead">Every practice: play, practice, play.</p>` : '') + (tog ? `<div class="ptog noprint" role="tablist">${sessionList.map((_, i) => `<button type="button" data-pt="${i}" class="${i === cur ? 'on' : ''}">Practice ${'AB'[i]}</button>`).join('')}</div>` + sessionList.map((_, i) => pblock(i)).join('') : pblock(0));
+  const body = (shape ? `<p class="lead">Every practice: play, practice, play.</p>` : '') + (tog ? `<div class="ptog noprint" role="tablist">${sessionList.map((_, i) => `<button type="button" data-pt="${i}" class="${i === cur ? 'on' : ''}">Day ${i + 1}</button>`).join('')}</div>` + sessionList.map((_, i) => pblock(i)).join('') : pblock(0));
   app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + body + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>${helpLinks(n)}`;
   app.querySelectorAll('[data-pt]').forEach(b => b.onclick = () => { prTab[n] = +b.dataset.pt; app.querySelectorAll('[data-pt]').forEach(x => x.classList.toggle('on', x === b)); app.querySelectorAll('.pr').forEach(x => x.classList.toggle('pr-off', +x.dataset.pr !== +b.dataset.pt)); });
   $('#shr').onclick = () => shareWeek(n, $('#shr')); $('#prt').onclick = printWeek;
