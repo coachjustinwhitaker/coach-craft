@@ -260,6 +260,9 @@ button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
 
 .bgrp a{font-size:13px;font-weight:600;color:#124A96;text-decoration:none;white-space:nowrap}
 .goal .also{display:block;margin-top:4px;font-size:13px;color:#5A6670}
+
+.bgrp a.whylink{font-size:13px;font-weight:700;color:#1E6FD9;background:#fff;border:1.5px solid #1E6FD9;border-radius:999px;padding:4px 12px;white-space:nowrap;text-decoration:none;align-self:center}
+.why-eb{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#124A96;margin:4px 0 -6px}
 </style><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script></head><body class="cc-col">
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · {{area}} · prototype</small></div></header>
 <main id="app"></main>
@@ -386,7 +389,7 @@ const BCOL = b => ({B1:'var(--b1)', B2:'var(--b2)', B3:'var(--b3)', B4:'var(--b4
 const goalGroups = () => { const ord = T.ladder.concat(Object.keys(DATA.blocks).filter(b => !T.ladder.includes(b))), by = {}, all = []; T.goals.forEach(g => { if(g.season || g.blocks.length >= 3) all.push(g); else { const lead = g.blocks.slice().sort((x, y) => ord.indexOf(x) - ord.indexOf(y))[0]; (by[lead] = by[lead] || []).push([g, lead]); } }); return {ord, by, all}; };
 const goalsLead = () => { const G = goalGroups(), one = Object.keys(G.by).length + (G.all.length ? 1 : 0) < 2; return `By the end of the season, a ${T.label} should be showing these.${one ? '' : ' They are grouped by the block that builds them.'}`; };
 const goalsHtml = () => { const G = goalGroups(), row = ([g, lead]) => { const more = !lead ? [] : g.blocks.filter(x => x !== lead).map(x => DATA.blocks[x].name); return `<div class="goal"><span>${g.text}${more.length ? `<span class="also">Also builds ${more.join(' and ')}</span>` : ''}</span></div>`; };
-  return G.ord.filter(b => G.by[b]).map(b => `<div class="bgrp" style="--bc:${BCOL(b)}"><b>${DATA.blocks[b].name}</b>${T.framework.blocks[b] ? `<a href="#" data-nav="why/${b}">Why it matters</a>` : ''}</div><div class="card">${G.by[b].map(row).join('')}</div>`).join('') + (G.all.length ? `<div class="bgrp" style="--bc:#66C4FF"><b>All season</b><span>Across every block</span></div><div class="card">${G.all.map(g => row([g, ''])).join('')}</div>` : ''); };
+  return G.ord.filter(b => G.by[b]).map(b => `<div class="bgrp" style="--bc:${BCOL(b)}"><b>${DATA.blocks[b].name}</b>${T.framework.blocks[b] ? `<a class="whylink" href="#" data-nav="why/${b}">Why it matters &rsaquo;</a>` : ''}</div><div class="card">${G.by[b].map(row).join('')}</div>`).join('') + (G.all.length ? `<div class="bgrp" style="--bc:#66C4FF"><b>All season</b><span>Across every block</span></div><div class="card">${G.all.map(g => row([g, ''])).join('')}</div>` : ''); };
 const seasonHtml = () => plan.weeks.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('');
 const lib = {q: '', type: '', block: '', skill: '', fit: false, all: false, view: 'activities'};
 function viewLibrary(){
@@ -580,7 +583,7 @@ function viewWeek(n){
 }
 function viewWhy(b){
   const f = T.framework.blocks[b], areas = T.skills.filter(r => r.block === b && (T.track === 'comp' || r.level === 'intro')), list = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.block === b);
-  app.innerHTML = `${whyFrom.startsWith('onb/') ? `<a class="back" href="#" data-nav="${whyFrom}">&larr; Back to the tour</a>` : '<a class="back" href="#" data-nav="guide/goals">&larr; Player goals</a>'}<h1>${DATA.blocks[b].name}</h1><p class="lead"><i>${f.tagline}</i></p>
+  app.innerHTML = `${whyFrom.startsWith('onb/') ? `<a class="back" href="#" data-nav="${whyFrom}">&larr; Back to the tour</a>` : '<a class="back" href="#" data-nav="guide/goals">&larr; Player goals</a>'}<div class="why-eb">Why it matters</div><h1>${DATA.blocks[b].name}</h1><p class="lead"><i>${f.tagline}</i></p>
   <div class="card"><p>${f.overview}</p><div class="lbl">The game problem</div><p>${f.problem}</p><div class="lbl">Core focus</div><ul>${f.focus.map(x => `<li>${x}</li>`).join('')}</ul></div>
   <h2>What to look for</h2>${T.track === 'comp' ? [...new Set(areas.map(r => r.area))].map(n => `<div class="card"><b>${n}</b>${['intro', 'dev', 'app'].map(lv => areas.filter(r => r.area === n && r.level === lv).map(r => `<div class="lbl">${LVL[lv]}</div><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul>`).join('')).join('')}</div>`).join('') : areas.map(r => `<div class="card"><b>${r.area}</b><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('')}
   <h2>Activities that build it</h2><div class="card">${list.map(a => `<div class="alt"><span><b>${a.name}</b><br><span class="note">${a.skills.join(' · ')}</span></span></div>`).join('') || '<p class="note">None yet.</p>'}</div>`;
