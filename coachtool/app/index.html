@@ -242,6 +242,21 @@ button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
 
 .gh{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#124A96;margin:20px 2px 8px}
 .card.gd{border-left:6px solid var(--bc,var(--gold))}
+
+.gpage .card:has(>p>b:first-child+br){background:none!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0 0 12px}
+.gpage .card:has(>p>b:first-child+br)>p:not(:has(>b:first-child+br)){margin:0 0 14px}
+.gpage .card>p:has(>b:first-child+br){background:#fff!important;border:1px solid var(--line)!important;border-left:6px solid #66C4FF!important;border-radius:12px!important;margin:0 0 10px!important;padding:12px 14px!important;box-shadow:none}
+.g-levels .card>p:has(>b:first-child+br):nth-of-type(1){border-left-color:#BFD9EE!important}
+.g-levels .card>p:has(>b:first-child+br):nth-of-type(2){border-left-color:#66C4FF!important}
+.g-levels .card>p:has(>b:first-child+br):nth-of-type(3){border-left-color:#1E6FD9!important}
+.tag[data-nav="why/B1"]{background:#F2EEFC;box-shadow:inset 0 0 0 1.5px #BCA8F0}
+.tag[data-nav="why/B2"]{background:#E0F3FF;box-shadow:inset 0 0 0 1.5px #66C4FF}
+.tag[data-nav="why/B3"]{background:#E0FDFF;box-shadow:inset 0 0 0 1.5px #66F4FF}
+.tag[data-nav="why/B4"]{background:#EFFBF0;box-shadow:inset 0 0 0 1.5px #ADEBB3}
+.tag[data-nav="why/B5"]{background:#FFF2E1;box-shadow:inset 0 0 0 1.5px #FFC067}
+.tiles .tile:last-child:nth-child(odd){grid-column:1/-1}
+.say{margin:12px 0;padding:14px 16px;background:#E6F6FF;border-left:6px solid #1E6FD9;border-radius:0 12px 12px 0;font-size:17px;line-height:1.5;color:var(--ink);font-style:italic}
+.say span{display:block;font-style:normal;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#124A96;margin-bottom:4px}
 </style><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script></head><body class="cc-col">
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · {{area}} · prototype</small></div></header>
 <main id="app"></main>
@@ -322,7 +337,7 @@ const SECTIONS = () => { const P = T.players, sh = P.shape, out = [
   if(T.rules && T.rules.length) out.push(['rules', 'Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', () => rulesHtml()]);
   if(plan.levels) out.push(['levels', 'Introduction, Development, Application', 'The three levels every block moves through.', () => `<div class="card">${(plan.levels || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
   if(plan.season_note) out.push(['season', 'Why we periodize', 'Why each week has a theme.', () => `<div class="card"><p>${plan.season_note}</p>${(plan.why_periodize || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
-  out.push(['parents', 'The parents on the sideline', 'A 30 second talk before the first session.', () => `<div class="card"><p>${P.parents.intro}</p><p><i>&ldquo;${P.parents.script}&rdquo;</i></p><p>${P.parents.outro}</p></div>`]);
+  out.push(['parents', 'The parents on the sideline', 'A 30 second talk before the first session.', () => `<div class="card"><p>${P.parents.intro}</p><blockquote class="say"><span>Say this</span>&ldquo;${P.parents.script}&rdquo;</blockquote><p>${P.parents.outro}</p></div>`]);
   if(P.cues) out.push(['cues', 'Coaching cues', 'What to say in the moment.', () => `<div class="card">${P.cues.map(c => `<p><b>${c.when}</b><br>${c.say}</p>`).join('')}</div>`]);
   if(T.club.pathway) out.push(['club', 'A player ready for more', 'When a player needs a bigger challenge.', () => `<div class="card"><ul>${T.club.pathway.map(x => `<li>${x}</li>`).join('')}</ul></div>`]);
   return out; };
@@ -336,7 +351,7 @@ function viewGuide(key){
   const S = SECTIONS();
   if(!key){ const G = [['Running a practice', ['organized', 'great', 'cues']], ['Your players and league', ['who', 'goals', 'rules', 'parents', 'club']], ['How the program works', ['levels', 'season']]]; let n = 0; const card = ([k, t, sub]) => `<a class="card row gd" style="--bc:var(--b${(n++ % 5) + 1})" href="#" data-nav="guide/${k}"><b>${t}</b><div class="note">${sub}</div></a>`; app.innerHTML = tabs('guide') + `<h1>Coach guide</h1><p class="lead">Everything from the first-time tour, whenever you want it.</p>` + G.map(([h, ks]) => { const m = ks.map(k => S.find(x => x[0] === k)).filter(Boolean); return m.length ? `<h2 class="gh">${h}</h2>` + m.map(card).join('') : ''; }).join('') + `<button class="ghost" data-nav="onb/1">Replay the tour</button>`; return; }
   const sec = S.find(x => x[0] === key); if(!sec) return viewGuide();
-  app.innerHTML = `<a class="back" href="#" data-nav="guide">&larr; Guide</a><h1>${sec[1]}</h1><p class="lead">${sec[2]}</p>` + sec[3]();
+  app.innerHTML = `<a class="back" href="#" data-nav="guide">&larr; Guide</a><h1>${sec[1]}</h1><p class="lead">${sec[2]}</p><div class="gpage g-${key}">` + sec[3]() + '</div>';
 }
 function finishTour(to){ state.onb = {team: T.id, start: state.start || null}; save(); go(to || 'now'); }
 const chunk = (arr, k) => { const o = []; for(let i = 0; i < arr.length; i += k) o.push(arr.slice(i, i + k)); return o; };
