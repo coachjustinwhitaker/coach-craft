@@ -87,6 +87,7 @@ nav.tabs a{padding-left:2px!important;padding-right:2px!important;font-size:13px
 
 
 
+
 /* cc-theme v2: hybrid palette */
 :root{--navy:#17324F;--navy-dark:#17324F;--navy-deep:#0F2338;--gold:#1E6FD9;--gold-warm:#66C4FF;--cc-ink:#13202B;--cc-tint:#E6F6FF;--cc-line:#D5DEE5;
 --b1:#7D99AA;--b2:#66C4FF;--b3:#66F4FF;--b4:#ADEBB3;--b5:#FFC067;--gray-light:#F3F8FB}
@@ -176,6 +177,15 @@ div[style*="background:var(--gold)"] *,div[style*="background: var(--gold)"] *{c
 
 button,.btn,nav.tabs a.on,.badge,.pillbtn.on,ol.steps li::before{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
 button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
+
+.card>p:has(>b:first-child+br){margin:0 0 10px;padding:10px 14px;background:#F3F8FB;border-left:5px solid var(--b2);border-radius:0 10px 10px 0;color:#3A4D5C;font-size:15px;line-height:1.5}
+.card>p:has(>b:first-child+br):nth-of-type(5n+1){border-left-color:var(--b1)}
+.card>p:has(>b:first-child+br):nth-of-type(5n+3){border-left-color:var(--b3)}
+.card>p:has(>b:first-child+br):nth-of-type(5n+4){border-left-color:var(--b4)}
+.card>p:has(>b:first-child+br):nth-of-type(5n+5){border-left-color:var(--b5)}
+.card>p:has(>b:first-child+br):last-child{margin-bottom:0}
+.card>p:has(>b:first-child+br)>b{display:block;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:2px}
+.card>p:has(>b:first-child+br)>br{display:none}
 </style><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script></head><body class="cc-col">
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · {{area}} · prototype</small></div></header>
 <main id="app"></main>
