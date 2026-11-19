@@ -49,6 +49,7 @@ p.lead{font-size:16px;line-height:1.5}
 .goal{padding:12px 0}
 .slot .nm,.nm{font-size:18px;font-weight:600;color:var(--navy);margin:2px 0 4px}
 .card.game{background:#eef2f8;border:1px solid #dbe3f0}
+.stage{background:#fff;border-left:4px solid var(--gold);border-radius:8px;padding:8px 12px;margin:10px 0 2px;font-size:15px;color:var(--ink)}.stage b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--gold)}
 .ptog{display:flex;gap:6px;background:#E6F6FF;border-radius:12px;padding:4px;margin:14px 0 12px}.ptog button{flex:1;border:0!important;background:transparent!important;color:var(--navy)!important;box-shadow:none!important;font-weight:600;font-size:16px;padding:10px 0;border-radius:9px;cursor:pointer}.ptog button.on{background:var(--gold)!important;color:#fff!important}@media screen{.pr-off{display:none}}
 .card.game .lab{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.04em;margin-top:10px}.card.game>b{font-size:15px;color:var(--navy)}.card.game>b+.note,.card[data-pc]>b+.note{font-size:14px;color:var(--mute)}.card>b+.note{font-size:14px;color:var(--mute)}
 
@@ -396,12 +397,12 @@ function openingAlts(w, key0){
 }
 function playCard(w, g, si){
   if(!w.opening) return gameCard(g, 'Opening small-sided game');
-  const key = si ? `${w.week}-o${si}` : `${w.week}-o`, swapped = (state.swaps||{})[key], ref = swapped || w.opening.activity, a = A(ref), alts = openingAlts(w, key), blk = w.block || (w.sessions[0] || {}).block;
+  const key = `${w.week}-o`, swapped = (state.swaps||{})[key], ref = swapped || w.opening.activity, a = A(ref), alts = openingAlts(w, key), two = w.sessions.length > 1, hard = ((a.progression || []).find(x => /harder/i.test(x.title)) || {}).text, stage = !two ? '' : (si ? `<div class="stage"><b>Day 2 · Develop</b>Same game as Practice A. See what they remember, then add a twist.${hard ? ' Try: ' + hard : ''}</div>` : `<div class="stage"><b>Day 1 · Introduce</b>Say the challenge once and let them play. Keep it simple.</div>`), blk = w.block || (w.sessions[0] || {}).block;
   return `<div class="card game"><b>${g.label} · Opening small-sided game</b> <span class="note">${a.minutes ? a.minutes + ' min' : g.minutes}</span><div class="lab">Game</div><div class="nm">${a.name}</div>
-    <div class="note">${[swapped ? 'Swapped in' : w.opening.note].filter(Boolean).join(' · ')}</div>
+    <div class="note">${[swapped ? 'Swapped in' : w.opening.note].filter(Boolean).join(' · ')}</div>${stage}
     <details><summary>How to run it</summary>${runIt(a)}<div class="lbl">Your job</div>Say the rule once, start the game, then step back. Watch whether the players solve the problem on their own. Save your voice for the question at the end.</details>
-    <details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' more opening games' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}<br><span class="note">${DATA.blocks[x.block].name}</span></span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
-    ${swapped ? `<button class="small ghost" data-k="${key}" data-id="">Put the original back</button>` : ''}</details></div>`;
+    ${si ? '' : `<details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' more opening games' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}<br><span class="note">${DATA.blocks[x.block].name}</span></span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
+    ${swapped ? `<button class="small ghost" data-k="${key}" data-id="">Put the original back</button>` : ''}</details>`}</div>`;
 }
 const buildKey = (w, si) => `${w.week}-${si}`;
 const buildOf = (w, si) => ((state.build || {})[buildKey(w, si)] || []);
