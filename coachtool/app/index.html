@@ -49,6 +49,8 @@ p.lead{font-size:16px;line-height:1.5}
 .goal{padding:12px 0}
 .slot .nm,.nm{font-size:18px;font-weight:600;color:var(--navy);margin:2px 0 4px}
 .card.game{background:#eef2f8;border:1px solid #dbe3f0}
+.card.game .lab{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.04em;margin-top:10px}.card.game>b{font-size:15px;color:var(--navy)}.card.game>b+.note,.card[data-pc]>b+.note{font-size:14px;color:var(--mute)}.card>b+.note{font-size:14px;color:var(--mute)}
+
 button,.btn{border-radius:12px;padding:14px 16px;box-shadow:0 1px 2px rgba(20,30,50,.12)}
 button.ghost,.btn.ghost{box-shadow:none;border-color:#c5cfe0}
 .tag{font-weight:600}
@@ -295,7 +297,7 @@ const SECTIONS = () => { const P = T.players, sh = P.shape, out = [
   ['who', 'Who is in front of you', `Understanding your ${T.label} players${T.club.format ? ' · ' + T.club.format : ''}.`, () => `<div class="card">${P.who.map(x => `<p><b>${x.label}</b><br>${x.text}</p>`).join('')}</div>`],
   ['goals', 'Player goals', `By the end of the season, a ${T.label} should be showing these. Tap a block to see why it matters.`, () => goalsHtml()],
   ['great', 'What a great session looks like', 'What to watch for, whatever the score.', () => `<div class="card">${P.great_session.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`],
-  ['organized', 'Play, Practice, Play', 'How a session is organized, and how to get ready.', () => (sh ? `${sh.why ? `<div class="card"><p>${sh.why}</p></div>` : ''}<p class="note">${sh.note}</p>${gameCard(sh.opening)}<div class="card"><b>The middle</b><div class="nm">${plan.sessions_per_week === 1 ? 'The practice activity' : 'Activity A and Activity B'}</div><p class="note">${plan.sessions_per_week === 1 ? 'One activity carries the week.' : 'A is familiar and physical. B carries the week\'s idea.'}</p></div>${gameCard(sh.closing)}` : '') + `<h2>Before you arrive</h2><div class="card"><p>${P.prepared}</p></div>`]];
+  ['organized', 'Play, Practice, Play', 'How a session is organized, and how to get ready.', () => (sh ? `${sh.why ? `<div class="card"><p>${sh.why}</p></div>` : ''}<p class="note">${sh.note}</p>${gameCard(sh.opening, 'Opening small-sided game')}<div class="card"><b>The middle</b><div class="nm">${plan.sessions_per_week === 1 ? 'The practice activity' : 'Activity A and Activity B'}</div><p class="note">${plan.sessions_per_week === 1 ? 'One activity carries the week.' : 'A is familiar and physical. B carries the week\'s idea.'}</p></div>${gameCard(sh.closing, 'Closing game')}` : '') + `<h2>Before you arrive</h2><div class="card"><p>${P.prepared}</p></div>`]];
   if(T.rules && T.rules.length) out.push(['rules', 'Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', () => rulesHtml()]);
   if(plan.levels) out.push(['levels', 'Introduction, Development, Application', 'The three levels every block moves through.', () => `<div class="card">${(plan.levels || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
   if(plan.season_note) out.push(['season', 'Why we periodize', 'Why each week has a theme.', () => `<div class="card"><p>${plan.season_note}</p>${(plan.why_periodize || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
@@ -323,7 +325,7 @@ function tourSteps(){
   add('Player goals', `By the end of the season, a ${T.label} should be showing these.`, chunk(T.goals, 99).map(g => `<div class="card">${g.map(x => `<div class="goal"><span>${x.text}<br>${x.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`));
   add('What a great session looks like', 'What to watch for, whatever the score.', chunk(P.great_session, 99).map(g => `<div class="card">${g.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`));
   const org = [];
-  if(sh){ org.push(`${sh.why ? `<div class="card"><p>${sh.why}</p></div>` : ''}<p class="note">${sh.note}</p>${gameCard(sh.opening)}`); org.push(`<div class="card"><b>The middle</b><div class="nm">${plan.sessions_per_week === 1 ? 'The main activity' : 'Two main activities'}</div><p class="note">${plan.sessions_per_week === 1 ? 'One activity carries the week.' : 'The first is familiar and physical. The second carries the week\'s idea.'}</p></div>`); org.push(gameCard(sh.closing)); }
+  if(sh){ org.push(`${sh.why ? `<div class="card"><p>${sh.why}</p></div>` : ''}<p class="note">${sh.note}</p>${gameCard(sh.opening, 'Opening small-sided game')}`); org.push(`<div class="card"><b>The middle</b><div class="nm">${plan.sessions_per_week === 1 ? 'The main activity' : 'Two main activities'}</div><p class="note">${plan.sessions_per_week === 1 ? 'One activity carries the week.' : 'The first is familiar and physical. The second carries the week\'s idea.'}</p></div>`); org.push(gameCard(sh.closing, 'Closing game')); }
   org.push(`<div class="card"><p>${P.prepared}</p></div>`);
   add('Play, Practice, Play', 'How a session is organized, and how to get ready.', [org.join('')]);
   if(T.rules && T.rules.length) add('Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', [rulesHtml()]);
@@ -385,16 +387,16 @@ function viewPlan(){
   const n = plan.sessions_per_week, cw = curWeek(), ph = w => (plan.phases || []).find(p => p.weeks[0] === w.week);
   app.innerHTML = tabs('plan') + `<h1>Your season</h1><p class="lead">${plan.weeks.length} weeks, ${n === 1 ? 'one practice' : 'two practices'} a week. Tap a week to see the session${n === 1 ? '' : 's'}.</p>` + (plan.season_note ? `<div class="card"><p>${plan.season_note}</p></div>` : '') + plan.weeks.map(w => (ph(w) ? `<div class="phase"><div class="eb">${ph(w).name} · weeks ${ph(w).weeks[0]} to ${ph(w).weeks[1]}</div><b>${ph(w).goal}</b><p>${ph(w).text}</p><p class="note"><b>What to see:</b> ${ph(w).success}</p></div>` : '') + `<a class="card wk" href="#" data-nav="week/${w.week}"><b>Week ${w.week}${w.week === cw ? ' · this week' : ''}</b><div class="f">${w.focus}</div>${w.sessions && w.sessions[0].block ? `<div class="note">${w.sessions.map(x => x.block + ' ' + (LVS[x.level] || '')).join(' · ')}</div>` : ''}</a>`).join('');
 }
-function gameCard(g){ return `<div class="card game"><b>${g.label}</b> <span class="note">${g.minutes}</span><div class="nm">${g.title}</div>
+function gameCard(g, kind){ return `<div class="card game"><b>${g.label}${kind ? ' · ' + kind : ''}</b> <span class="note">${g.minutes}</span><div class="lab">Game</div><div class="nm">${g.title}</div>
   <details><summary>How to run it</summary><div class="lbl">Setup</div>${g.setup}${g.job ? `<div class="lbl">Your job</div>${g.job}` : ''}<div class="lbl">Ask</div>&ldquo;${g.question}&rdquo;<div class="lbl">Equipment</div>${g.kit}</details></div>`; }
 function openingAlts(w){
   const key = `${w.week}-o`, ref = (state.swaps||{})[key] || (w.opening && w.opening.activity), blk = w.block || (w.sessions[0] || {}).block, ok = T.ladder;
   return DATA.activities.filter(a => a.type === 'opening-play' && a.ages.includes(T.age) && a.tracks.includes(T.track) && a.id !== ref && fits(a) && ok.indexOf(a.block) <= ok.indexOf(blk)).sort((x, y) => (y.block === blk) - (x.block === blk));
 }
 function playCard(w, g){
-  if(!w.opening) return gameCard(g);
+  if(!w.opening) return gameCard(g, 'Opening small-sided game');
   const key = `${w.week}-o`, swapped = (state.swaps||{})[key], ref = swapped || w.opening.activity, a = A(ref), alts = openingAlts(w), blk = w.block || (w.sessions[0] || {}).block;
-  return `<div class="card game"><b>${g.label}</b> <span class="note">${a.minutes ? a.minutes + ' min' : g.minutes}</span><div class="nm">${a.name}</div>
+  return `<div class="card game"><b>${g.label} · Opening small-sided game</b> <span class="note">${a.minutes ? a.minutes + ' min' : g.minutes}</span><div class="lab">Game</div><div class="nm">${a.name}</div>
     <div class="note">${[swapped ? 'Swapped in' : w.opening.note].filter(Boolean).join(' · ')}</div>
     <details><summary>How to run it</summary>${runIt(a)}<div class="lbl">Your job</div>Say the rule once, start the game, then step back. Watch whether the players solve the problem on their own. Save your voice for the question at the end.</details>
     <details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' more opening games' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}<br><span class="note">${DATA.blocks[x.block].name}</span></span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
@@ -465,7 +467,7 @@ function practiceCard(w, si, one){
   const rows = items.map((it, i) => { const o = itemInfo(it); return `<div class="slot"><div class="nm">${o.name}</div><div class="note">${o.own ? 'Your activity' : TYPE(o.a.type)}</div>
     <details><summary>How to run it</summary>${o.own ? runOwn(o.own) : runIt(o.a)}</details>
     <div class="brow"><label class="mn">Minutes <input type="number" min="1" max="90" value="${it.m || ''}" data-m="${key}|${i}"></label>${i ? `<button class="small ghost" data-up="${key}|${i}">Move up</button>` : ''}${o.own ? `<button class="small ghost" data-edit="${it.r.slice(4)}|${key}">Edit</button>` : ''}<button class="small ghost" data-rm="${key}|${i}">Remove</button></div></div>`; }).join('');
-  return `<div class="card" data-pc="${key}"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b> <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>
+  return `<div class="card" data-pc="${key}"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b> <span class="note">${one ? '' : (si ? 'Second practice this week · ' : 'First practice this week · ')}${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>
     ${items.length ? rows + (total ? `<p class="note">Total ${total} min</p>` : '') : `<p class="note" style="margin:10px 0 4px">Your practice. Add from the library, or add your own.</p>`}
     <details class="swap" ${ui.open === 'lib' ? 'open' : ''}><summary>Add from the library</summary>
       <p class="note">${ui.any ? 'Everything for ' + T.label + ' that fits your numbers and space.' : fit.length + ' fit ' + DATA.blocks[ses.block].name + ', ' + (LVL[lvl] || '') + ', your numbers and space.'}</p>
@@ -484,7 +486,7 @@ function viewWeek(n){
   const on = n === cw ? 'now' : 'plan';
   if(w.coach_choice){ app.innerHTML = tabs(on) + strip + bn + `<h1>Week ${w.week}</h1><div class="card"><b>${w.focus}</b><p>${w.note}</p></div>`; return; }
   const one = plan.sessions_per_week === 1;
-  const sessions = w.sessions.map((ses, si) => ses.block ? practiceCard(w, si, one) : `<div class="card"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b>${ses.block ? ` <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>` : ''}` + slotsOf(w, si).map(slot => {
+  const sessions = w.sessions.map((ses, si) => ses.block ? practiceCard(w, si, one) : `<div class="card"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b>${one ? '' : ` <span class="note">${si ? 'Second practice this week' : 'First practice this week'}</span>`}${ses.block ? ` <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>` : ''}` + slotsOf(w, si).map(slot => {
     const ref = slotRef(w, si, slot), key = `${w.week}-${si}-${slot}`, a = ref ? A(ref.split('#')[0]) : null, note = w.sessions[si][slot].note, multi = slotsOf(w, si).length > 1;
     const swapped = (state.swaps||{})[key];
     const alts = alternatives(w, si, slot);
@@ -499,7 +501,7 @@ function viewWeek(n){
   }).join('') + '</div>').join('');
   const gs = P.great_session[(n-1) % P.great_session.length], cue = P.cues && P.cues[(n-1) % P.cues.length];
   const bits = `<h2>This week, watch for</h2><div class="card"><p><b>${gs.title}</b><br>${gs.text}</p>${cue ? `<p><b>${cue.when}</b><br>${cue.say}</p>` : ''}${n === 1 ? `<p><a href="#" data-nav="guide/parents">Before the first session: a word for parents</a></p>` : ''}<p class="note">${[...new Set(w.sessions.map((x, i) => sesBlock(w, i)))].map(b => `<a href="#" data-nav="why/${b}">Why this block: ${DATA.blocks[b].name}</a>`).join(' · ')} · <a href="#" data-nav="guide">Coach guide</a></p></div>${(plan.standing || []).map(x => `<div class="card"><p><b>${x.title}</b><br>${x.text}</p></div>`).join('')}`;
-  app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? `<p class="lead">Play, practice, play. Start with the game and finish with the game.</p>` + playCard(w, shape.opening) : '') + routineCard(w) + sessions + (shape ? gameCard(shape.closing) : '') + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>${helpLinks(n)}`;
+  app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? `<p class="lead">Play, practice, play. Start with the game and finish with the game.</p>` + playCard(w, shape.opening) : '') + routineCard(w) + sessions + (shape ? gameCard(shape.closing, 'Closing game') : '') + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>${helpLinks(n)}`;
   $('#shr').onclick = () => shareWeek(n, $('#shr')); $('#prt').onclick = printWeek;
   const wk = k => { const [wn, si] = k.split('-'); return [plan.weeks.find(x => x.week === +wn), +si]; };
   const done = () => viewWeek(n);
