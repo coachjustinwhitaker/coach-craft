@@ -174,9 +174,10 @@ a.path h2{margin:0 0 4px;font-size:21px;font-weight:700;display:flex;justify-con
 a.path p{margin:0;color:#3A4D5C;font-size:16px}a.path em{display:inline-block;margin-top:10px;font-style:normal;font-size:13px;font-weight:600;color:#124A96;background:#D9F0FF;border-radius:6px;padding:3px 9px}
 .tip{color:#5A6670;font-size:14px;margin:14px 0 0;text-align:center}
 .how{margin:34px 0 0;padding-top:26px;border-top:1px solid #D5DEE5}.how h3{font-size:19px;margin:0 0 4px}.how>p{margin:0 0 14px;color:#3A4D5C;font-size:16px}
-.how ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.how li{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;background:#fff;border:1px solid #D5DEE5;border-left:6px solid var(--c);border-radius:10px;padding:9px 14px}
-.how li b{grid-row:span 2;min-width:34px;text-align:center;background:var(--c);color:#13202B;border-radius:6px;padding:3px 8px;font-size:13px}.how li span{font-weight:600;font-size:16px}.how li small{color:#5A6670;font-size:13.5px;line-height:1.35}
+.how ul.bl{list-style:none;margin:0;padding:0;display:grid;gap:8px}.how .bl li{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;background:#fff;border:1px solid #D5DEE5;border-left:6px solid var(--c);border-radius:10px;padding:9px 14px}
+.how .bl li b{grid-row:span 2;min-width:34px;text-align:center;background:var(--c);color:#13202B;border-radius:6px;padding:3px 8px;font-size:13px}.how .bl li span{font-weight:600;font-size:16px}.how .bl li small{color:#5A6670;font-size:13.5px;line-height:1.35}
 .facts{display:flex;gap:8px;margin:18px 0 0;flex-wrap:wrap}.facts div{background:#E6F6FF;border-radius:10px;padding:8px 12px;font-size:14px;color:#3A4D5C}.facts b{display:block;font-size:20px;color:#13202B;line-height:1.1}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:s}.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;font-size:16px;color:#3A4D5C}.steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;background:{BLUE};color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}.steps b{color:#13202B;display:block}.start{margin:34px 0 0;padding-top:26px;border-top:1px solid #D5DEE5}.start h3{font-size:19px;margin:0 0 4px}.start>p{margin:0 0 12px;color:#3A4D5C;font-size:16px}.ages{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.ages a{background:#fff;border:1px solid #D5DEE5;border-radius:10px;padding:12px 0;text-align:center;text-decoration:none;color:#13202B;font-weight:700}.ages a:hover{background:#F0F8FF}footer .credit{margin:0 0 4px}
 footer{margin:34px 0 0;padding:16px 0 30px;border-top:1px solid #D5DEE5;font-size:14px;color:#5A6670}footer a{color:#5A6670}
 </style></head><body>
 <header><div class="wrap"><img src="{LOGO}" alt=""><div><b>Coach Craft</b><small>Season planner</small></div></div></header>
@@ -188,9 +189,11 @@ footer{margin:34px 0 0;padding:16px 0 30px;border-top:1px solid #D5DEE5;font-siz
 <a class="path" href="comp.html"><h2>Comp planner <span>&rsaquo;</span></h2><p>Build a competitive season across all five blocks, with the activities to run it.</p><em>U14 comp</em></a>
 </div>
 <p class="tip">Tip: save this page to your phone's home screen so it opens like an app.</p>
-<section class="how"><h3>Every session is built from five blocks</h3><p>Plan the season by block, so players build skills in an order that makes sense.</p><ul>{ROWS}</ul>
+<section class="how"><h3>How it works</h3><ol class="steps"><li><span><b>Pick your planner</b>Rec or comp, then your age group.</span></li><li><span><b>Open this week's session</b>Each week has a short plan and the activities to run.</span></li><li><span><b>Run it, then adjust</b>Every activity has setup, coaching points and how to make it easier or harder.</span></li></ol></section>
+<section class="start"><h3>New to coaching? Start here</h3><p>Open the Coach Companion for your age group. It is a short guide with a season plan and sessions.</p><div class="ages"><a href="../../U6_Coach_Companion.html">U6</a><a href="../../U8_Coach_Companion.html">U8</a><a href="../../U10_Coach_Companion.html">U10</a><a href="../../U12_Coach_Companion.html">U12</a><a href="../../U14_Coach_Companion.html">U14</a></div></section>
+<section class="how"><h3>Every session is built from five blocks</h3><p>Plan the season by block, so players build skills in an order that makes sense.</p><ul class="bl">{ROWS}</ul>
 <div class="facts"><div><b>{N_ACT}</b>activities</div><div><b>{N_REC}</b>rec age plans</div><div><b>{N_COMP}</b>comp plan</div></div></section>
-<footer>For authors: <a href="activity-builder.html">Activity Builder</a></footer>
+<footer><p class="credit">Designed by Coach Justin Whitaker. Grounded in US Soccer&rsquo;s Player Development Framework.</p><p class="credit">Last updated {UPDATED}</p>For authors: <a href="activity-builder.html">Activity Builder</a></footer>
 </main></body></html>'''
 
 def build_author():
@@ -212,7 +215,7 @@ def build_author():
     plans = sorted((ROOT / 'data' / 'plans').glob('*.yaml'))
     n_rec = sum(1 for f in plans if f.stem.endswith('-rec')); n_comp = len(plans) - n_rec
     n_act = len(data['activities'])
-    root = LANDING.replace('{LOGO}', logo).replace('{ROWS}', rows).replace('{N_ACT}', str(n_act)).replace('{N_REC}', str(n_rec)).replace('{N_COMP}', str(n_comp)).replace('{BLUE}', brand['gold'])
+    root = LANDING.replace('{LOGO}', logo).replace('{ROWS}', rows).replace('{N_ACT}', str(n_act)).replace('{N_REC}', str(n_rec)).replace('{N_COMP}', str(n_comp)).replace('{BLUE}', brand['gold']).replace('{UPDATED}', __import__('datetime').date.today().strftime('%b %-d, %Y'))
     (ROOT / 'build' / 'index.html').write_text(root, encoding='utf-8')
     return out
 if __name__ == '__main__':
