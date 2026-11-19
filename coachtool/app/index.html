@@ -263,6 +263,12 @@ button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
 
 .bgrp a.whylink{font-size:13px;font-weight:700;color:#1E6FD9;background:#fff;border:1.5px solid #1E6FD9;border-radius:999px;padding:4px 12px;white-space:nowrap;text-decoration:none;align-self:center}
 .why-eb{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#124A96;margin:4px 0 -6px}
+
+.whyhd{border-bottom:4px solid var(--bc,#66C4FF);margin:0 0 12px;padding-bottom:6px}.whyhd .why-eb{margin:4px 0 0}.whyhd h1{margin:2px 0 6px}
+.tagline{margin:0 0 14px;padding:10px 14px;background:#fff;border-left:6px solid var(--bc,#66C4FF);border-radius:0 12px 12px 0;font-size:17px;font-weight:600;color:var(--navy)}
+.card.focus{border-left:6px solid var(--bc,#66C4FF)}.card.focus ul{margin:0;padding-left:20px}.card.focus li{font-size:17px;line-height:1.45;margin:6px 0;color:var(--ink)}
+details.card.sk summary{font-weight:700;color:var(--navy);font-size:16px;cursor:pointer}details.card.sk[open] summary{margin-bottom:6px}
+.card.sk .note{margin:2px 0 6px}
 </style><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script></head><body class="cc-col">
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · {{area}} · prototype</small></div></header>
 <main id="app"></main>
@@ -389,7 +395,7 @@ const BCOL = b => ({B1:'var(--b1)', B2:'var(--b2)', B3:'var(--b3)', B4:'var(--b4
 const goalGroups = () => { const ord = T.ladder.concat(Object.keys(DATA.blocks).filter(b => !T.ladder.includes(b))), by = {}, all = []; T.goals.forEach(g => { if(g.season || g.blocks.length >= 3) all.push(g); else { const lead = g.blocks.slice().sort((x, y) => ord.indexOf(x) - ord.indexOf(y))[0]; (by[lead] = by[lead] || []).push([g, lead]); } }); return {ord, by, all}; };
 const goalsLead = () => { const G = goalGroups(), one = Object.keys(G.by).length + (G.all.length ? 1 : 0) < 2; return `By the end of the season, a ${T.label} should be showing these.${one ? '' : ' They are grouped by the block that builds them.'}`; };
 const goalsHtml = () => { const G = goalGroups(), row = ([g, lead]) => { const more = !lead ? [] : g.blocks.filter(x => x !== lead).map(x => DATA.blocks[x].name); return `<div class="goal"><span>${g.text}${more.length ? `<span class="also">Also builds ${more.join(' and ')}</span>` : ''}</span></div>`; };
-  return G.ord.filter(b => G.by[b]).map(b => `<div class="bgrp" style="--bc:${BCOL(b)}"><b>${DATA.blocks[b].name}</b>${T.framework.blocks[b] ? `<a class="whylink" href="#" data-nav="why/${b}">Why it matters &rsaquo;</a>` : ''}</div><div class="card">${G.by[b].map(row).join('')}</div>`).join('') + (G.all.length ? `<div class="bgrp" style="--bc:#66C4FF"><b>All season</b><span>Across every block</span></div><div class="card">${G.all.map(g => row([g, ''])).join('')}</div>` : ''); };
+  return G.ord.filter(b => G.by[b]).map(b => `<div class="bgrp" style="--bc:${BCOL(b)}"><b>${DATA.blocks[b].name}</b>${T.framework.blocks[b] ? `<a href="#" data-nav="why/${b}">Why it matters</a>` : ''}</div><div class="card">${G.by[b].map(row).join('')}</div>`).join('') + (G.all.length ? `<div class="bgrp" style="--bc:#66C4FF"><b>All season</b><span>Across every block</span></div><div class="card">${G.all.map(g => row([g, ''])).join('')}</div>` : ''); };
 const seasonHtml = () => plan.weeks.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('');
 const lib = {q: '', type: '', block: '', skill: '', fit: false, all: false, view: 'activities'};
 function viewLibrary(){
@@ -582,11 +588,15 @@ function viewWeek(n){
   app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
 }
 function viewWhy(b){
-  const f = T.framework.blocks[b], areas = T.skills.filter(r => r.block === b && (T.track === 'comp' || r.level === 'intro')), list = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.block === b);
-  app.innerHTML = `${whyFrom.startsWith('onb/') ? `<a class="back" href="#" data-nav="${whyFrom}">&larr; Back to the tour</a>` : '<a class="back" href="#" data-nav="guide/goals">&larr; Player goals</a>'}<div class="why-eb">Why it matters</div><h1>${DATA.blocks[b].name}</h1><p class="lead"><i>${f.tagline}</i></p>
-  <div class="card"><p>${f.overview}</p><div class="lbl">The game problem</div><p>${f.problem}</p><div class="lbl">Core focus</div><ul>${f.focus.map(x => `<li>${x}</li>`).join('')}</ul></div>
-  <h2>What to look for</h2>${T.track === 'comp' ? [...new Set(areas.map(r => r.area))].map(n => `<div class="card"><b>${n}</b>${['intro', 'dev', 'app'].map(lv => areas.filter(r => r.area === n && r.level === lv).map(r => `<div class="lbl">${LVL[lv]}</div><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul>`).join('')).join('')}</div>`).join('') : areas.map(r => `<div class="card"><b>${r.area}</b><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('')}
-  <h2>Activities that build it</h2><div class="card">${list.map(a => `<div class="alt"><span><b>${a.name}</b><br><span class="note">${a.skills.join(' · ')}</span></span></div>`).join('') || '<p class="note">None yet.</p>'}</div>`;
+  const f = T.framework.blocks[b], areas = T.skills.filter(r => r.block === b && (T.track === 'comp' || r.level === 'intro')), comp = T.track === 'comp', names = comp ? [...new Set(areas.map(r => r.area))] : areas.map(r => r.area);
+  const rest = n => { const m = f.focus.find(x => x.startsWith(n)); const r = m ? m.slice(n.length).replace(/^:\s*/, '') : ''; return r.charAt(0).toUpperCase() + r.slice(1); };
+  const fold = !comp && f.focus.length === names.length && names.every(n => f.focus.some(x => x.startsWith(n)));
+  const body = (n, inner) => names.length > 3 ? `<details class="card sk"><summary>${n}</summary>${inner}</details>` : `<div class="card sk"><b>${n}</b>${inner}</div>`;
+  const ul = bl => `<ul>${bl.map(x => `<li>${x}</li>`).join('')}</ul>`;
+  const looks = comp ? names.map(n => body(n, ['intro', 'dev', 'app'].map(lv => areas.filter(r => r.area === n && r.level === lv).map(r => `<div class="lbl">${LVL[lv]}</div>${ul(r.bullets)}`).join('')).join(''))).join('') : areas.map(r => body(r.area, (fold && rest(r.area) ? `<p class="note">${rest(r.area)}</p>` : '') + ul(r.bullets))).join('');
+  app.innerHTML = `${whyFrom.startsWith('onb/') ? `<a class="back" href="#" data-nav="${whyFrom}">&larr; Back to the tour</a>` : '<a class="back" href="#" data-nav="guide/goals">&larr; Player goals</a>'}<div class="whyhd" style="--bc:${BCOL(b)}"><div class="why-eb">Why it matters</div><h1>${DATA.blocks[b].name}</h1></div><p class="tagline" style="--bc:${BCOL(b)}">${f.tagline}</p>
+  <div class="card"><p>${f.overview}</p><div class="lbl">The game problem</div><p>${f.problem}</p></div>
+  ${fold ? `<h2>Core focus and what to look for</h2>${looks}` : `<h2>Core focus</h2><div class="card focus" style="--bc:${BCOL(b)}">${ul(f.focus)}</div><h2>What to look for</h2>${looks}`}`;
 }
 function foot(h){
   const el = $('#foot'); if(!el) return; if(h.startsWith('onb/')){ el.innerHTML = ''; return; }
