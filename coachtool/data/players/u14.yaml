@@ -27,16 +27,16 @@ great_session:
 - title: Players talking to each other
   text: 'Voices on the field: "Man on," "Turn," "Switch." Player-to-player coaching is a development goal.
     Step back when it happens.'
-- title: Practice A concept in Practice B
+- title: A Day 1 concept on Day 2
   text: If something from the first session of the week shows up in the second without you asking, the
     concept is taking hold.
 - title: Everyone gets a turn in goal
   text: Rotate the goalkeeper. Finishing practice is also goalkeeper practice, so nobody should miss out
     on a turn.
 prepared: Preparation at U14 is simpler than at U12, because the group already knows the language. Pick
-  the week's focus before you arrive and choose Activity A as something familiar. Activity B is where
+  the week's focus before you arrive and choose a familiar activity first. The new-idea activity is where
   the new idea lives. If the group needs more time on a concept, run the revisit instead of moving on.
-  With two practices a week, Practice A introduces and Practice B deepens. Both are correct. Try to avoid
+  With two practices a week, Day 1 introduces and Day 2 deepens. Both are correct. Try to avoid
   pairing two new concepts in the same session.
 parents:
   intro: 'Before the session starts, take 30 seconds to walk over. Something like:'
@@ -48,7 +48,7 @@ parents:
 shape:
   title: The session
   why: 'Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.'
-  note: Up to 90 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.
+  note: Up to 90 minutes. Arrive 15 minutes early. Play, familiar activity, new idea, play.
   opening:
     label: Play
     minutes: 12 min
@@ -56,10 +56,10 @@ shape:
     setup: Same setup every session. Smaller than the closing game, so more touches, more shots and cleaner
       decisions. Half a field, with a full-size or large goal at each end. Teams of 6 or 7. Add a goalkeeper
       if you have one willing. Quick restarts. Let them play the first 8 minutes without saying anything.
-      On Practice B days, watch for whether the concept from Practice A earlier in the week shows up.
+      On Day 2, watch for whether the concept from Day 1 earlier in the week shows up.
     job: Watch the moments in front of goal. Do players shoot? Do they pick their moment or force it?
-      Watch the transitions too. Come in with Activity A already chosen and let the opening play confirm
-      your read for Activity B.
+      Watch the transitions too. Come in with the familiar activity already chosen and let the opening play confirm
+      your read for the new-idea activity.
     question: When you had a chance to shoot today, what made you take it or pass it up?
     kit: 1 ball per team · Full-size or large goals · Disc cones · Pinnies in 2 colors
   closing:

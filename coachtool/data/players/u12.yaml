@@ -30,7 +30,7 @@ great_session:
 - title: Players coaching each other
   text: 'US Soccer notes this explicitly at U12: player-to-player coaching is a development goal, not
     just a nice thing to see. Step back when it happens.'
-- title: Practice A concept in Practice B
+- title: A Day 1 concept on Day 2
   text: If a concept introduced in the first session of the week appears in the second session without
     you asking for it, that is the whole point of two practices a week.
 - title: Everyone gets time in goal
@@ -38,10 +38,10 @@ great_session:
     for it, encourage that too. Positional identity starts forming at this age.
 prepared: 'Preparation at U12 matters more than at any previous age. You have four active focuses and
   a season arc that builds deliberately. Know which focus is the priority for this week before you arrive.
-  With two practices per week, Practice A introduces the concept and Practice B deepens it. If the group
+  With two practices per week, Day 1 introduces the concept and Day 2 deepens it. If the group
   needs more time on the same concept before moving forward, run the consolidation instead. Both are correct
-  responses. Try to avoid pairing two new concepts in the same session: Activity A works best as something
-  players already know well enough to run without much explanation, and Activity B is where the new concept
+  responses. Try to avoid pairing two new concepts in the same session: the familiar activity works best as something
+  players already know well enough to run without much explanation, and the new-idea activity is where the new concept
   lives.'
 parents:
   intro: 'Before the session starts, take 30 seconds to walk over. Something like:'
@@ -54,15 +54,15 @@ parents:
 shape:
   title: The session
   why: 'Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.'
-  note: Up to 90 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.
+  note: Up to 90 minutes. Arrive 15 minutes early. Play, familiar activity, new idea, play.
   opening:
     label: Play
     minutes: 12 min
     title: 5v5 or 6v6 free small-sided game
     setup: Same setup every session. Smaller than the closing game, so more touches and cleaner decisions.
       Small goals or full goals depending on space. Teams of 5 or 6, no goalkeeper. Quick restarts. Let
-      them play the first 8 minutes without saying anything. On Practice B days, watch specifically for
-      whether the concept from Practice A earlier in the week shows up.
+      them play the first 8 minutes without saying anything. On Day 2, watch specifically for
+      whether the concept from Day 1 earlier in the week shows up.
     job: Watch the transition moments specifically. What happens in the first couple of seconds after
       the ball changes hands? That tells you which focus area to prioritize today. Come in with Activity
       A already chosen and let the opening play confirm your read.
@@ -76,7 +76,7 @@ shape:
       it so every player experiences the position across the season. No offside until players are genuinely
       ready for it. Let the game run without stopping. Watch for the focus you introduced that week showing
       up without being asked for: a compact defensive shape, or a player who sprints to press the instant
-      possession is lost. On Practice B days, notice whether anything from the first session carried over.'
+      possession is lost. On Day 2, notice whether anything from the first session carried over.'
     question: Was there a moment today where your whole team did something together, attacking or defending,
       that one player could not have done alone?
     kit: Proper goals if possible · Disc cones · Pinnies in 2 colors
@@ -92,7 +92,7 @@ cues:
     idea."'
 - when: Players coaching each other
   say: 'Step further back. Let it run. Come back and ask: "What did you tell your teammate there?"'
-- when: Concept from Practice A shows up in Practice B
+- when: Concept from Day 1 shows up on Day 2
   say: '"You did that in the first session this week. Your body remembered. That is exactly what two practices
     is for."'
 - when: Players too self-critical

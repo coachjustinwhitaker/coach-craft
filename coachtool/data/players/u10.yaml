@@ -15,23 +15,23 @@ great_session:
 shape:
   title: The session
   why: 'Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.'
-  note: About 75 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.
+  note: About 75 minutes. Arrive 15 minutes early. Play, familiar activity, new idea, play.
   opening:
     label: Play
     minutes: 10 to 12 min
     title: Small-sided game, one added rule
     setup: 'Keep it small, 3v3 or 4v4, with mini goals or cone goals and no goalkeepers. Smaller than the game means more touches and more decisions. The added rule is the challenge for the week. Say it once, start the game, then step back. Quick restarts. With more than eight players, run two games side by side and rotate teams.'
-    job: Say the rule, then watch. Look for players solving the problem without being told how. One thing you see will tell you how to use Activity A. Do not stop the game to coach. Save your voice for the question.
+    job: Say the rule, then watch. Look for players solving the problem without being told how. One thing you see will tell you how to use the familiar activity. Do not stop the game to coach. Save your voice for the question.
     question: What did your team figure out today that made the rule easier?
     kit: 1 ball per game · Mini goals or cone goals · Disc cones · Pinnies in 2 colors
   closing:
     label: Play
     minutes: 15 to 20 min
     title: 7v7 game
-    setup: 'The biggest game of the session. Full 7v7 with goalkeepers if you have them, rotating the position so every player gets a turn across the season. Let it run without stopping. Watch for the focus you introduced that week showing up without being asked. On Practice B days, notice whether anything from Practice A carried over.'
+    setup: 'The biggest game of the session. Full 7v7 with goalkeepers if you have them, rotating the position so every player gets a turn across the season. Let it run without stopping. Watch for the focus you introduced that week showing up without being asked. On Day 2, notice whether anything from Day 1 carried over.'
     question: Was there a moment today where you and a teammate figured something out together?
     kit: Goals · Disc cones · Pinnies in 2 colors
-prepared: "The best sessions start before the first player arrives. Mark the fields, set up the goals and know your two activities before anyone shows up. Practice A is the familiar anchor. Practice B carries the concept for the week. Know which one you are running."
+prepared: "The best sessions start before the first player arrives. Mark the fields, set up the goals and know your two activities before anyone shows up. The first is the familiar one. The second carries the idea for the week. Know which is which."
 parents:
   intro: "Before the session, take 30 seconds to walk over and say something like:"
   script: "Today we are working on passing and moving: making a pass and then finding space to get it back. The most helpful thing you can do is cheer when they pass to a teammate, especially if they then keep running."

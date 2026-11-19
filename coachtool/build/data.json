@@ -6432,13 +6432,13 @@
     "shape": {
      "title": "The session",
      "why": "Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.",
-     "note": "About 75 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.",
+     "note": "About 75 minutes. Arrive 15 minutes early. Play, familiar activity, new idea, play.",
      "opening": {
       "label": "Play",
       "minutes": "10 to 12 min",
       "title": "Small-sided game, one added rule",
       "setup": "Keep it small, 3v3 or 4v4, with mini goals or cone goals and no goalkeepers. Smaller than the game means more touches and more decisions. The added rule is the challenge for the week. Say it once, start the game, then step back. Quick restarts. With more than eight players, run two games side by side and rotate teams.",
-      "job": "Say the rule, then watch. Look for players solving the problem without being told how. One thing you see will tell you how to use Activity A. Do not stop the game to coach. Save your voice for the question.",
+      "job": "Say the rule, then watch. Look for players solving the problem without being told how. One thing you see will tell you how to use the familiar activity. Do not stop the game to coach. Save your voice for the question.",
       "question": "What did your team figure out today that made the rule easier?",
       "kit": "1 ball per game · Mini goals or cone goals · Disc cones · Pinnies in 2 colors"
      },
@@ -6446,12 +6446,12 @@
       "label": "Play",
       "minutes": "15 to 20 min",
       "title": "7v7 game",
-      "setup": "The biggest game of the session. Full 7v7 with goalkeepers if you have them, rotating the position so every player gets a turn across the season. Let it run without stopping. Watch for the focus you introduced that week showing up without being asked. On Practice B days, notice whether anything from Practice A carried over.",
+      "setup": "The biggest game of the session. Full 7v7 with goalkeepers if you have them, rotating the position so every player gets a turn across the season. Let it run without stopping. Watch for the focus you introduced that week showing up without being asked. On Day 2, notice whether anything from Day 1 carried over.",
       "question": "Was there a moment today where you and a teammate figured something out together?",
       "kit": "Goals · Disc cones · Pinnies in 2 colors"
      }
     },
-    "prepared": "The best sessions start before the first player arrives. Mark the fields, set up the goals and know your two activities before anyone shows up. Practice A is the familiar anchor. Practice B carries the concept for the week. Know which one you are running.",
+    "prepared": "The best sessions start before the first player arrives. Mark the fields, set up the goals and know your two activities before anyone shows up. The first is the familiar one. The second carries the idea for the week. Know which is which.",
     "parents": {
      "intro": "Before the session, take 30 seconds to walk over and say something like:",
      "script": "Today we are working on passing and moving: making a pass and then finding space to get it back. The most helpful thing you can do is cheer when they pass to a teammate, especially if they then keep running.",
@@ -7168,7 +7168,7 @@
       "text": "US Soccer notes this explicitly at U12: player-to-player coaching is a development goal, not just a nice thing to see. Step back when it happens."
      },
      {
-      "title": "Practice A concept in Practice B",
+      "title": "A Day 1 concept on Day 2",
       "text": "If a concept introduced in the first session of the week appears in the second session without you asking for it, that is the whole point of two practices a week."
      },
      {
@@ -7176,7 +7176,7 @@
       "text": "Rotate the goalkeeper so every player experiences the position. If someone shows real enthusiasm for it, encourage that too. Positional identity starts forming at this age."
      }
     ],
-    "prepared": "Preparation at U12 matters more than at any previous age. You have four active focuses and a season arc that builds deliberately. Know which focus is the priority for this week before you arrive. With two practices per week, Practice A introduces the concept and Practice B deepens it. If the group needs more time on the same concept before moving forward, run the consolidation instead. Both are correct responses. Try to avoid pairing two new concepts in the same session: Activity A works best as something players already know well enough to run without much explanation, and Activity B is where the new concept lives.",
+    "prepared": "Preparation at U12 matters more than at any previous age. You have four active focuses and a season arc that builds deliberately. Know which focus is the priority for this week before you arrive. With two practices per week, Day 1 introduces the concept and Day 2 deepens it. If the group needs more time on the same concept before moving forward, run the consolidation instead. Both are correct responses. Try to avoid pairing two new concepts in the same session: the familiar activity works best as something players already know well enough to run without much explanation, and the new-idea activity is where the new concept lives.",
     "parents": {
      "intro": "Before the session starts, take 30 seconds to walk over. Something like:",
      "script": "Today we are working on what happens when the ball changes hands, in the first second after we win it or lose it. The most helpful thing you can do is cheer the team moments: the player who sprints to press the second they lose the ball, the player who finds a teammate the instant they win it.",
@@ -7185,12 +7185,12 @@
     "shape": {
      "title": "The session",
      "why": "Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.",
-     "note": "Up to 90 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.",
+     "note": "Up to 90 minutes. Arrive 15 minutes early. Play, familiar activity, new idea, play.",
      "opening": {
       "label": "Play",
       "minutes": "12 min",
       "title": "5v5 or 6v6 free small-sided game",
-      "setup": "Same setup every session. Smaller than the closing game, so more touches and cleaner decisions. Small goals or full goals depending on space. Teams of 5 or 6, no goalkeeper. Quick restarts. Let them play the first 8 minutes without saying anything. On Practice B days, watch specifically for whether the concept from Practice A earlier in the week shows up.",
+      "setup": "Same setup every session. Smaller than the closing game, so more touches and cleaner decisions. Small goals or full goals depending on space. Teams of 5 or 6, no goalkeeper. Quick restarts. Let them play the first 8 minutes without saying anything. On Day 2, watch specifically for whether the concept from Day 1 earlier in the week shows up.",
       "job": "Watch the transition moments specifically. What happens in the first couple of seconds after the ball changes hands? That tells you which focus area to prioritize today. Come in with Activity A already chosen and let the opening play confirm your read.",
       "question": "When the ball changed hands today, when you won it or lost it, what was your first reaction?",
       "kit": "1 ball per team · Small or full goals · Disc cones · Pinnies in 2 colors"
@@ -7199,7 +7199,7 @@
       "label": "Play",
       "minutes": "25 min",
       "title": "Full game",
-      "setup": "The biggest game of the session. Proper goals if possible. Include a goalkeeper and rotate it so every player experiences the position across the season. No offside until players are genuinely ready for it. Let the game run without stopping. Watch for the focus you introduced that week showing up without being asked for: a compact defensive shape, or a player who sprints to press the instant possession is lost. On Practice B days, notice whether anything from the first session carried over.",
+      "setup": "The biggest game of the session. Proper goals if possible. Include a goalkeeper and rotate it so every player experiences the position across the season. No offside until players are genuinely ready for it. Let the game run without stopping. Watch for the focus you introduced that week showing up without being asked for: a compact defensive shape, or a player who sprints to press the instant possession is lost. On Day 2, notice whether anything from the first session carried over.",
       "question": "Was there a moment today where your whole team did something together, attacking or defending, that one player could not have done alone?",
       "kit": "Proper goals if possible · Disc cones · Pinnies in 2 colors"
      }
@@ -7222,7 +7222,7 @@
       "say": "Step further back. Let it run. Come back and ask: \"What did you tell your teammate there?\""
      },
      {
-      "when": "Concept from Practice A shows up in Practice B",
+      "when": "Concept from Day 1 shows up on Day 2",
       "say": "\"You did that in the first session this week. Your body remembered. That is exactly what two practices is for.\""
      },
      {
@@ -7926,7 +7926,7 @@
       "text": "Voices on the field: \"Man on,\" \"Turn,\" \"Switch.\" Player-to-player coaching is a development goal. Step back when it happens."
      },
      {
-      "title": "Practice A concept in Practice B",
+      "title": "A Day 1 concept on Day 2",
       "text": "If something from the first session of the week shows up in the second without you asking, the concept is taking hold."
      },
      {
@@ -7934,7 +7934,7 @@
       "text": "Rotate the goalkeeper. Finishing practice is also goalkeeper practice, so nobody should miss out on a turn."
      }
     ],
-    "prepared": "Preparation at U14 is simpler than at U12, because the group already knows the language. Pick the week's focus before you arrive and choose Activity A as something familiar. Activity B is where the new idea lives. If the group needs more time on a concept, run the revisit instead of moving on. With two practices a week, Practice A introduces and Practice B deepens. Both are correct. Try to avoid pairing two new concepts in the same session.",
+    "prepared": "Preparation at U14 is simpler than at U12, because the group already knows the language. Pick the week's focus before you arrive and choose a familiar activity first. The new-idea activity is where the new idea lives. If the group needs more time on a concept, run the revisit instead of moving on. With two practices a week, Day 1 introduces and Day 2 deepens. Both are correct. Try to avoid pairing two new concepts in the same session.",
     "parents": {
      "intro": "Before the session starts, take 30 seconds to walk over. Something like:",
      "script": "This season we are working on finishing and on the moment the ball changes hands. The most helpful thing you can do is cheer the brave decisions: the player who shoots, the player who sprints back, the player who tries the pass that might not work.",
@@ -7943,13 +7943,13 @@
     "shape": {
      "title": "The session",
      "why": "Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.",
-     "note": "Up to 90 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.",
+     "note": "Up to 90 minutes. Arrive 15 minutes early. Play, familiar activity, new idea, play.",
      "opening": {
       "label": "Play",
       "minutes": "12 min",
       "title": "6v6 or 7v7 free small-sided game",
-      "setup": "Same setup every session. Smaller than the closing game, so more touches, more shots and cleaner decisions. Half a field, with a full-size or large goal at each end. Teams of 6 or 7. Add a goalkeeper if you have one willing. Quick restarts. Let them play the first 8 minutes without saying anything. On Practice B days, watch for whether the concept from Practice A earlier in the week shows up.",
-      "job": "Watch the moments in front of goal. Do players shoot? Do they pick their moment or force it? Watch the transitions too. Come in with Activity A already chosen and let the opening play confirm your read for Activity B.",
+      "setup": "Same setup every session. Smaller than the closing game, so more touches, more shots and cleaner decisions. Half a field, with a full-size or large goal at each end. Teams of 6 or 7. Add a goalkeeper if you have one willing. Quick restarts. Let them play the first 8 minutes without saying anything. On Day 2, watch for whether the concept from Day 1 earlier in the week shows up.",
+      "job": "Watch the moments in front of goal. Do players shoot? Do they pick their moment or force it? Watch the transitions too. Come in with the familiar activity already chosen and let the opening play confirm your read for the new-idea activity.",
       "question": "When you had a chance to shoot today, what made you take it or pass it up?",
       "kit": "1 ball per team · Full-size or large goals · Disc cones · Pinnies in 2 colors"
      },
@@ -8955,7 +8955,7 @@
       "text": "Voices on the field: \"Man on,\" \"Turn,\" \"Switch.\" Player-to-player coaching is a development goal. Step back when it happens."
      },
      {
-      "title": "Practice A concept in Practice B",
+      "title": "A Day 1 concept on Day 2",
       "text": "If something from the first session of the week shows up in the second without you asking, the concept is taking hold."
      },
      {
@@ -8963,7 +8963,7 @@
       "text": "Rotate the goalkeeper. Finishing practice is also goalkeeper practice, so nobody should miss out on a turn."
      }
     ],
-    "prepared": "Before you arrive, read the week's theme and the block and level for each practice. Build each practice from the library or your own activities. With two practices a week, Practice A introduces and Practice B deepens. Both are correct. Try not to pair two new concepts in the same practice. If the group needs more time on a concept, stay with it instead of moving on.",
+    "prepared": "Before you arrive, read the week's theme and the block and level for each practice. Build each practice from the library or your own activities. With two practices a week, Day 1 introduces and Day 2 deepens. Both are correct. Try not to pair two new concepts in the same practice. If the group needs more time on a concept, stay with it instead of moving on.",
     "parents": {
      "intro": "Before the session starts, take 30 seconds to walk over. Something like:",
      "script": "This season we are working on finishing and on the moment the ball changes hands. The most helpful thing you can do is cheer the brave decisions: the player who shoots, the player who sprints back, the player who tries the pass that might not work.",
