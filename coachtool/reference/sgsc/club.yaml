@@ -1,0 +1,17 @@
+id: sgsc
+short_name: Sierra Gold SC
+club_label: Sierra Gold Soccer Club &nbsp;|&nbsp; Player Development
+logo_file: logo.png
+pathway_line_1: Sierra Gold&rsquo;s competitive program exists to open more doors for those players when they are ready
+pathway_line_2: Talk to your club director about what that pathway looks like
+support_line: Your Age Group Coordinator and the club Technical Director are there for exactly this.
+credit_html: This guide was developed by <strong style="color:var(--navy);">Justin Whitaker</strong>, Technical Director at
+  Sierra Gold Soccer Club, as part of a club-wide player development framework. The framework is grounded in US Soccer's Player
+  Development Framework and adapted for Sierra Gold's player population and competitive context.
+navy: '#01428A'
+navy_dark: '#103E77'
+gold: '#C89D3F'
+logo_small_file: logo-small.png
+# Feedback. Leave blank to hide the button.
+help_email: ''
+suggest_form_url: ''
