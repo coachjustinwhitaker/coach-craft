@@ -34,7 +34,7 @@
       try { localStorage.setItem(c.storageKey, "1"); } catch (x) {}
       document.documentElement.style.overflow = prevOverflow; d.remove();
     };
-    var body = new URLSearchParams(); body.set(c.field, email);
+    var body = new URLSearchParams(); body.set(c.field, email); var x = c.extra || {}; Object.keys(x).forEach(function (k) { body.set(k, x[k]); });
     fetch(c.endpoint, { method: "POST", mode: "no-cors", body: body }).then(done, done);
   });
 })();

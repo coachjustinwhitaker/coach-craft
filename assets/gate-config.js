@@ -4,6 +4,9 @@
 window.CC_GATE = {
   endpoint: "",
   field: "email",
+  extra: {},
+  // MailerLite: endpoint = the form action URL from Forms > Embedded forms,
+  // field = "fields[email]", extra = { "ml-submit": "1" }
   title: "Get the Coach Craft library",
   body: "Enter your email to open the guides. You will get occasional updates. Unsubscribe any time.",
   button: "Continue",
