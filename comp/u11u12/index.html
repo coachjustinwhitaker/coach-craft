@@ -131,6 +131,7 @@
 
 
 
+
 /* cc-theme v2: hybrid palette */
 :root{--navy:#17324F;--navy-dark:#17324F;--navy-deep:#0F2338;--gold:#1E6FD9;--gold-warm:#66C4FF;--cc-ink:#13202B;--cc-tint:#E6F6FF;--cc-line:#D5DEE5;
 --b1:#7D99AA;--b2:#66C4FF;--b3:#66F4FF;--b4:#ADEBB3;--b5:#FFC067;--gray-light:#F3F8FB}
@@ -217,6 +218,11 @@ div[style*="background:var(--gold)"] *,div[style*="background: var(--gold)"] *{c
 .act-head .num,.act-head .num *{background:var(--gold)!important;color:#fff!important}
 .act-head .num{background:var(--gold)!important}
 @media(min-width:900px){.header-content{padding-left:32px}}
+/* level columns: no bullets, hairline dividers */
+.level-card-body li{padding:.5rem 0!important;padding-left:0!important;border-top:1px solid #E3EDF3}
+.level-card-body li:first-child{border-top:0;padding-top:.15rem!important}
+.level-card-body li::before{display:none!important;content:none!important}
+
 </style>
 <script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script></head>
 <body class="cc-col">
