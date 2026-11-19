@@ -269,6 +269,10 @@ button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
 .card.focus{border-left:6px solid var(--bc,#66C4FF)}.card.focus ul{margin:0;padding-left:20px}.card.focus li{font-size:17px;line-height:1.45;margin:6px 0;color:var(--ink)}
 details.card.sk summary{font-weight:700;color:var(--navy);font-size:16px;cursor:pointer}details.card.sk[open] summary{margin-bottom:6px}
 .card.sk .note{margin:2px 0 6px}
+
+.idea{margin:0 0 14px;padding:14px 16px;background:#fff;border:1px solid var(--line);border-left:6px solid var(--bc,#66C4FF);border-radius:0 14px 14px 0;font-size:18px;line-height:1.45;font-weight:600;color:var(--ink)}
+.idea span{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#124A96;margin-bottom:4px}
+.idea.long{font-size:16px;font-weight:500}
 </style><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script></head><body class="cc-col">
 <header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · {{area}} · prototype</small></div></header>
 <main id="app"></main>
@@ -595,7 +599,8 @@ function viewWhy(b){
   const ul = bl => `<ul>${bl.map(x => `<li>${x}</li>`).join('')}</ul>`;
   const looks = comp ? names.map(n => body(n, ['intro', 'dev', 'app'].map(lv => areas.filter(r => r.area === n && r.level === lv).map(r => `<div class="lbl">${LVL[lv]}</div>${ul(r.bullets)}`).join('')).join(''))).join('') : areas.map(r => body(r.area, (fold && rest(r.area) ? `<p class="note">${rest(r.area)}</p>` : '') + ul(r.bullets))).join('');
   app.innerHTML = `${whyFrom.startsWith('onb/') ? `<a class="back" href="#" data-nav="${whyFrom}">&larr; Back to the tour</a>` : '<a class="back" href="#" data-nav="guide/goals">&larr; Player goals</a>'}<div class="whyhd" style="--bc:${BCOL(b)}"><div class="why-eb">Why it matters</div><h1>${DATA.blocks[b].name}</h1></div><p class="tagline" style="--bc:${BCOL(b)}">${f.tagline}</p>
-  <div class="card"><p>${f.overview}</p><div class="lbl">The game problem</div><p>${f.problem}</p></div>
+  <div class="idea${f.problem.length > 180 ? ' long' : ''}" style="--bc:${BCOL(b)}"><span>${comp ? 'The game problem' : 'The big idea'}</span>${f.problem}</div>
+  <div class="card"><div class="lbl">About this block</div><p>${f.overview}</p></div>
   ${fold ? `<h2>Core focus and what to look for</h2>${looks}` : `<h2>Core focus</h2><div class="card focus" style="--bc:${BCOL(b)}">${ul(f.focus)}</div><h2>What to look for</h2>${looks}`}`;
 }
 function foot(h){
