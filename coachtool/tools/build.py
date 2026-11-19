@@ -160,6 +160,39 @@ def build_all(brand_id=DEFAULT_BRAND):
     outs = [build_app('u10-rec', brand_id, a) for a in ('rec', 'comp')]
     (ROOT / 'build' / f'planner.{brand_id}.html').write_text('<!DOCTYPE html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=rec.html"><title>Coach Companion</title><a href="rec.html">Open the rec planner</a>', encoding='utf-8')
     return outs
+LANDING = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coach Craft</title><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script><style>
+*{box-sizing:border-box}body{margin:0;font:17px/1.5 -apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#13202B;background:#F3F8FB}
+.wrap{max-width:600px;margin:0 auto;padding:0 18px}
+header{background:#E6F6FF;padding:14px 0}header .wrap{display:flex;align-items:center;gap:12px}header img{height:42px;border-radius:10px}header b{font-size:17px;font-weight:600;display:block;line-height:1.2}header small{display:block;color:#3A4D5C;font-size:13px}
+.strip{display:flex;height:5px}.strip i{flex:1}
+.hero{padding:34px 0 8px}.eyebrow{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#124A96;margin:0 0 8px}
+h1{text-wrap:balance;font-size:32px;line-height:1.15;margin:0 0 12px;font-weight:700;letter-spacing:-.01em}.lead{color:#3A4D5C;margin:0 0 6px;font-size:18px}
+.paths{display:grid;gap:12px;margin:22px 0 6px}
+a.path{display:block;background:#fff;border:1px solid #D5DEE5;border-radius:14px;padding:18px 18px 16px;text-decoration:none;color:#13202B;box-shadow:0 1px 2px rgba(23,50,79,.06);border-left:6px solid {BLUE}}
+a.path:active,a.path:hover{background:#F0F8FF}
+a.path h2{margin:0 0 4px;font-size:21px;font-weight:700;display:flex;justify-content:space-between;align-items:center}a.path h2 span{color:{BLUE};font-size:24px;line-height:1}
+a.path p{margin:0;color:#3A4D5C;font-size:16px}a.path em{display:inline-block;margin-top:10px;font-style:normal;font-size:13px;font-weight:600;color:#124A96;background:#D9F0FF;border-radius:6px;padding:3px 9px}
+.tip{color:#5A6670;font-size:14px;margin:14px 0 0;text-align:center}
+.how{margin:34px 0 0;padding-top:26px;border-top:1px solid #D5DEE5}.how h3{font-size:19px;margin:0 0 4px}.how>p{margin:0 0 14px;color:#3A4D5C;font-size:16px}
+.how ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.how li{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;background:#fff;border:1px solid #D5DEE5;border-left:6px solid var(--c);border-radius:10px;padding:9px 14px}
+.how li b{grid-row:span 2;min-width:34px;text-align:center;background:var(--c);color:#13202B;border-radius:6px;padding:3px 8px;font-size:13px}.how li span{font-weight:600;font-size:16px}.how li small{color:#5A6670;font-size:13.5px;line-height:1.35}
+.facts{display:flex;gap:8px;margin:18px 0 0;flex-wrap:wrap}.facts div{background:#E6F6FF;border-radius:10px;padding:8px 12px;font-size:14px;color:#3A4D5C}.facts b{display:block;font-size:20px;color:#13202B;line-height:1.1}
+footer{margin:34px 0 0;padding:16px 0 30px;border-top:1px solid #D5DEE5;font-size:14px;color:#5A6670}footer a{color:#5A6670}
+</style></head><body>
+<header><div class="wrap"><img src="{LOGO}" alt=""><div><b>Coach Craft</b><small>Season planner</small></div></div></header>
+<div class="strip"><i style="background:#BCA8F0"></i><i style="background:#66C4FF"></i><i style="background:#66F4FF"></i><i style="background:#ADEBB3"></i><i style="background:#FFC067"></i></div>
+<main class="wrap">
+<section class="hero"><p class="eyebrow">Youth soccer, coach to coach</p><h1>Ideas for your season, one week at a time</h1><p class="lead">Suggested sessions and how-tos for every activity, in one shared language.</p></section>
+<div class="paths">
+<a class="path" href="rec.html"><h2>Rec planner <span>&rsaquo;</span></h2><p>Pick your age group and get a season of sessions, week by week.</p><em>U6 to U14 rec</em></a>
+<a class="path" href="comp.html"><h2>Comp planner <span>&rsaquo;</span></h2><p>Build a competitive season across all five blocks, with the activities to run it.</p><em>U14 comp</em></a>
+</div>
+<p class="tip">Tip: save this page to your phone's home screen so it opens like an app.</p>
+<section class="how"><h3>Every session is built from five blocks</h3><p>Plan the season by block, so players build skills in an order that makes sense.</p><ul>{ROWS}</ul>
+<div class="facts"><div><b>{N_ACT}</b>activities</div><div><b>{N_REC}</b>rec age plans</div><div><b>{N_COMP}</b>comp plan</div></div></section>
+<footer>For authors: <a href="activity-builder.html">Activity Builder</a></footer>
+</main></body></html>'''
+
 def build_author():
     import json
     errs, acts = check()
@@ -174,12 +207,12 @@ def build_author():
     (ROOT / 'build' / 'skills-matrix.html').write_text((ROOT / 'app' / 'matrix.html').read_text(encoding='utf-8').replace('/*DATA*/', json.dumps({'skills': skills, 'blocks': data['blocks']}, ensure_ascii=False)), encoding='utf-8')
     brand = load(ROOT / 'theme' / DEFAULT_BRAND / 'club.yaml')
     logo = 'data:image/png;base64,' + base64.b64encode((ROOT / 'theme' / DEFAULT_BRAND / brand['logo_file']).read_bytes()).decode()
-    root = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coach Companion</title><script src="../../assets/gate-config.js"></script><script src="../../assets/gate.js" defer></script><style>
-body{{margin:0;font:18px/1.5 -apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#13202B;background:#F3F8FB}}header{{background:#E6F6FF;border-bottom:4px solid #66C4FF;padding:14px 16px;color:#13202B;display:flex;align-items:center;gap:12px}}header img{{height:44px;border-radius:10px}}header b{{font-size:17px;font-weight:600}}header small{{display:block;color:#3A4D5C;font-size:13px}}
-main{{max-width:560px;margin:0 auto;padding:28px 16px}}h1{{font-size:28px;margin:0 0 8px}}p.lead{{color:#555;margin:0 0 22px}}a.go{{display:block;background:{brand['gold']};color:#fff;text-align:center;text-decoration:none;font-weight:700;border-radius:12px;padding:16px;font-size:19px}}.tip{{color:#6b7280;font-size:15px;margin:14px 0 0;text-align:center}}footer{{max-width:560px;margin:30px auto 0;padding:16px;border-top:1px solid #e3e7ee;font-size:14px;color:#6b7280}}footer a{{color:#6b7280}}</style></head><body>
-<header><img src="{logo}" alt=""><div><b>Coach Companion</b><small>{'' if brand['short_name'] == 'Coach Companion' else brand['short_name']}</small></div></header>
-<main><h1>Ideas for your season, one week at a time</h1><p class="lead">Suggested sessions and how-tos for every activity, in one shared language across the club.</p><a class="go" href="rec.html">Open the rec planner</a><a class="go" href="comp.html" style="margin-top:10px">Open the comp planner</a><p class="tip">Tip: save this page to your phone's home screen so it opens like an app.</p></main>
-<footer>For authors: <a href="activity-builder.html">Activity Builder</a></footer></body></html>'''
+    BC = {'B1': '#BCA8F0', 'B2': '#66C4FF', 'B3': '#66F4FF', 'B4': '#ADEBB3', 'B5': '#FFC067'}
+    rows = ''.join(f'<li style="--c:{BC[k]}"><b>{k}</b><span>{data["blocks"][k]["name"]}</span><small>{data["blocks"][k]["group_label"]}</small></li>' for k in ['B1', 'B2', 'B3', 'B4', 'B5'])
+    plans = sorted((ROOT / 'data' / 'plans').glob('*.yaml'))
+    n_rec = sum(1 for f in plans if f.stem.endswith('-rec')); n_comp = len(plans) - n_rec
+    n_act = len(data['activities'])
+    root = LANDING.replace('{LOGO}', logo).replace('{ROWS}', rows).replace('{N_ACT}', str(n_act)).replace('{N_REC}', str(n_rec)).replace('{N_COMP}', str(n_comp)).replace('{BLUE}', brand['gold'])
     (ROOT / 'build' / 'index.html').write_text(root, encoding='utf-8')
     return out
 if __name__ == '__main__':
