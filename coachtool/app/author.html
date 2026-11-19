@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Activity Builder</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:16px/1.45 -apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#222;background:#f6f7fa}
+main{max-width:680px;margin:0 auto;padding:16px}h1{font-size:22px;margin:6px 0 4px}h2{font-size:17px;margin:22px 0 8px}
+p.lead{color:#6b7280;margin:0 0 14px}.card{background:#fff;border:1px solid #e3e7ee;border-radius:12px;padding:14px;margin:10px 0}
+label.t{display:block;font-weight:600;margin:14px 0 4px}small{color:#6b7280;font-weight:400}
+input[type=text],input[type=number],select,textarea{width:100%;padding:10px;font:inherit;border:1px solid #c9d0db;border-radius:8px;background:#fff}
+textarea{min-height:96px}.row{display:flex;gap:10px}.row>*{flex:1}
+.chk{display:flex;flex-wrap:wrap;gap:6px 14px}.chk label{font-weight:400;display:flex;align-items:center;gap:5px;margin:0}
+button{font:inherit;font-weight:700;padding:12px 16px;border:0;border-radius:10px;background:#384959;color:#fff;margin-top:14px;cursor:pointer}
+button.sec{background:#fff;color:#384959;border:1px solid #384959}button.sm{padding:6px 10px;margin:0;font-size:14px}
+.warn{background:#F2F7FC;border:1px solid #BDDDFC;border-radius:8px;padding:8px 10px;margin-top:10px;font-size:14px}
+.err{background:#fde8e8;border:1px solid #f1a9a9;border-radius:8px;padding:8px 10px;margin-top:10px;font-size:14px}
+.q{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-top:1px solid #eef0f4}
+img.pv{max-width:100%;border-radius:8px;margin-top:8px}
+</style></head><body><main>
+<h1>Activity Builder</h1>
+<p class="lead">Add a new activity, or load an existing one to edit it. Add each to the batch, then download the batch and send it over to be imported.</p>
+<div class="card"><label class="t">Edit an existing activity <small>(optional)</small></label><select id="load"></select></div>
+<div class="card">
+<label class="t">Name</label><input type="text" id="name">
+<label class="t">Block</label><select id="block"></select>
+<label class="t">Type</label><select id="type"></select>
+<label class="t">Ages</label><div class="chk" id="ages"></div>
+<label class="t">Tracks <small>(rec = recreational, comp = competitive)</small></label><div class="chk" id="tracks"></div>
+<label class="t">Levels <small id="lvnote"></small></label><div class="chk" id="levels"></div>
+<div id="fit"></div>
+<label class="t">Skills <small>(pick 1 to 3. Need a tag that isn't here? Ask before adding one.)</small></label><div class="chk" id="skills"></div>
+<div class="row"><div><label class="t">Players, min</label><input type="number" id="pmin" min="2" max="30"></div><div><label class="t">Players, max</label><input type="number" id="pmax" min="2" max="30"></div><div><label class="t">Minutes</label><input type="number" id="min" min="5" max="45" value="15"></div></div>
+<label class="t">Space <small>(the smallest space it works in)</small></label><select id="space"></select>
+<label class="t">Objective <small>(one or two short sentences. It shows in the library, so say what the game is and what it is for)</small></label><input type="text" id="objective">
+<label class="t">Setup <small>(one line per bullet: layout, who starts where, how it restarts)</small></label><textarea id="setup"></textarea>
+<label class="t">Scoring <small>(how each team scores, or write none)</small></label><textarea id="scoring" style="min-height:60px"></textarea>
+<label class="t">Rules <small>(optional, one line per rule)</small></label><textarea id="rules" style="min-height:60px"></textarea>
+<label class="t">Progressions <small>(optional, one per line: Title (minutes) :: what changes. Say what you would see that tells you to use it.)</small></label><textarea id="progression" style="min-height:80px" placeholder="Two touches (7 min) :: Play with a two touch limit past the midline."></textarea>
+<label class="t">Coach note <small>(optional: how to coach it, one line per note. For example: do not dictate the choice, ask what they saw.)</small></label><textarea id="coach_note" style="min-height:60px"></textarea>
+<label class="t">Coach it <small>(2 to 4 pairs. A cue, then the question that goes with it)</small></label><div id="coachrows"></div>
+<label class="t">Diagram caption <small>(optional: say in plain words what the diagram shows)</small></label><input type="text" id="diagram_caption">
+<label class="t">Video link <small>(optional: a web link to an example, like YouTube or Vimeo)</small></label><input type="url" id="video" placeholder="https://">
+<label class="t">Source credit (optional)</label><input type="text" id="source" placeholder="YouGotMojo, club name, your name. Leave blank if it is yours.">
+<label class="t">Equipment</label><input type="text" id="equipment" placeholder="1 ball per group · 4 cones · Pinnies">
+<label class="t">Pairs well with <small>(optional)</small></label><div class="chk" id="pairs"></div>
+<label class="t">Diagram <small>(PNG, JPG, WebP or SVG)</small></label><input type="file" id="file" accept="image/*"><div id="pv"></div>
+<div id="msg"></div>
+<button id="add">Add to batch</button> <button class="sec" id="clear">Clear form</button>
+</div>
+<h2>Batch</h2><div class="card" id="batch"></div>
+<button id="dl">Download batch</button> <button class="sec" id="cp">Copy batch</button>
+</main>
+<script>
+const D = /*DATA*/;
+const $ = s => document.querySelector(s), SP = {quarter:'1/4 field: heavy constraints, runs anywhere', half:'1/2 field: normal spacing', full:'Full field: needs the whole field'};
+const ages = [...new Set(['rec','comp'].flatMap(t => Object.keys(D.ladder[t])))], levels = ['intro','dev','app'], LV = {intro:'Introduction', dev:'Development', app:'Application'};
+const chk = (id, items, name) => { $(id).innerHTML = items.map(([v,l]) => `<label><input type="checkbox" name="${name}" value="${v}">${l}</label>`).join(''); };
+chk('#ages', ages.map(a => [a, a.toUpperCase()]), 'age'); chk('#tracks', [['rec','Rec'],['comp','Comp']], 'track'); chk('#levels', levels.map(l => [l, LV[l]]), 'level');
+function drawSkills(keep){ $('#skills').innerHTML = [['Player actions', D.tags.actions], ['Game concepts', D.tags.concepts]].map(([h, l]) => `<div style="width:100%"><small>${h}</small></div>` + l.map(t => `<label><input type="checkbox" name="skill" value="${t}">${t}</label>`).join('')).join(''); setv('skill', keep); }
+chk('#pairs', D.activities.map(a => [a.id, a.name]), 'pair');
+$('#coachrows').innerHTML = [1,2,3,4].map(i => `<div class="card" style="margin:6px 0"><input type="text" id="cue${i}" placeholder="Cue ${i}${i===1?'':' (optional)'}"><input type="text" id="ask${i}" placeholder="Ask ${i}" style="margin-top:6px"></div>`).join('');
+$('#type').innerHTML = '<option value="">Choose a type</option>' + D.types.map(t => `<option value="${t.id}">${t.label}</option>`).join('');
+$('#block').innerHTML = Object.keys(D.blocks).map(b => `<option value="${b}">${b} · ${D.blocks[b].name}</option>`).join('');
+$('#space').innerHTML = Object.keys(SP).map(k => `<option value="${k}">${SP[k]}</option>`).join('');
+$('#load').innerHTML = '<option value="">New activity</option>' + D.activities.map(a => `<option value="${a.id}">${a.name} (${a.block}, ${a.ages.join(' ')})</option>`).join('');
+let editing = null, diagram = null, batch = [];
+try { batch = JSON.parse(localStorage.getItem('authorbatch.v1') || '[]'); } catch(e) {}
+const vals = n => [...document.querySelectorAll(`input[name=${n}]:checked`)].map(x => x.value);
+const setv = (n, arr) => document.querySelectorAll(`input[name=${n}]`).forEach(x => x.checked = (arr||[]).includes(x.value));
+
+function saveBatch(){ try { localStorage.setItem('authorbatch.v1', JSON.stringify(batch)); } catch(e) {} }
+function fit(){
+  const b = $('#block').value, issues = [];
+  vals('age').forEach(a => vals('track').forEach(t => { const ok = D.ladder[t][a]; if(ok === undefined) issues.push(`${t} has no ${a.toUpperCase()}`); else if(!ok.includes(b)) issues.push(`${t} ${a.toUpperCase()} does not work on ${b}`); }));
+  vals('level').forEach(l => vals('track').forEach(t => { if(!D.ladder.levels[t].includes(l)) issues.push(`${t} does not use the ${LV[l]} level`); }));
+  $('#fit').innerHTML = issues.length ? `<div class="warn">${[...new Set(issues)].join('<br>')}</div>` : '';
+}
+function syncLevels(){
+  const t = vals('track'), recOnly = t.length && !t.includes('comp');
+  document.querySelectorAll('input[name=level]').forEach(x => { if(recOnly){ x.checked = x.value === 'intro'; x.disabled = true; } else x.disabled = false; });
+  const note = $('#lvnote'); if(note) note.textContent = recOnly ? 'Rec always works at Introduction, so this is set for you.' : (t.includes('comp') ? 'Comp uses all three. Check every level this activity works at.' : 'Pick a track first.');
+}
+document.addEventListener('change', () => { syncLevels(); fit(); });
+$('#file').onchange = e => { const f = e.target.files[0]; if(!f) return; const r = new FileReader(); r.onload = () => { diagram = {name: f.name.toLowerCase().replace(/[^a-z0-9._-]+/g,'-'), data: r.result}; $('#pv').innerHTML = `<img class="pv" src="${r.result}">`; }; r.readAsDataURL(f); };
+function fill(a){
+  editing = a ? a.id : null; diagram = null; $('#file').value = '';
+  $('#name').value = a ? a.name : ''; $('#block').value = a ? a.block : 'B1'; $('#type').value = a ? (a.type || '') : ''; $('#objective').value = a && a.objective ? a.objective : '';
+  setv('age', a && a.ages); setv('track', a && a.tracks); setv('level', a && a.levels); drawSkills(a && a.skills); setv('pair', a && a.pairs_with);
+  $('#pmin').value = a ? a.players.min : ''; $('#pmax').value = a ? a.players.max : ''; $('#min').value = a ? a.minutes : 15; $('#space').value = a ? a.space : 'quarter';
+  const J = v => Array.isArray(v) ? v.join('\n') : (v || ''); ['setup','equipment'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); ['rules','scoring','coach_note'].forEach(k => $('#'+k).value = a ? J(a[k]) : ''); $('#progression').value = a && a.progression ? a.progression.map(p => `${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''} :: ${p.text}`).join('\n') : ''; $('#diagram_caption').value = a && typeof a.diagram_caption === 'string' ? a.diagram_caption : ''; $('#video').value = a && a.video ? a.video : ''; [1,2,3,4].forEach(i => { const c = a && a.coach && a.coach[i-1]; $('#cue'+i).value = c ? c.cue : ''; $('#ask'+i).value = c ? c.ask : ''; }); $('#source').value = a && a.source ? a.source : '';
+  $('#pv').innerHTML = a && a.figs ? `<img class="pv" src="${a.figs[0].src}"><small>${a.figs.length > 1 ? a.figs.length + ' diagrams are set. Choosing a file here replaces them all with one. To change one, ask in the chat thread.' : 'Current diagram. Choose a file to replace it.'}</small>` : '';
+  $('#msg').innerHTML = ''; syncLevels(); fit();
+}
+$('#load').onchange = e => fill(D.activities.find(a => a.id === e.target.value));
+$('#clear').onclick = () => { $('#load').value = ''; fill(null); };
+const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+$('#add').onclick = () => {
+  const a = {name: $('#name').value.trim(), block: $('#block').value, type: $('#type').value, scoring: $('#scoring').value.trim(), objective: $('#objective').value.trim(), rules: $('#rules').value.trim(), coach_note: $('#coach_note').value.trim(), progression: $('#progression').value.trim(), ages: vals('age'), tracks: vals('track'), levels: vals('level'), skills: vals('skill'),
+    players_min: +$('#pmin').value, players_max: +$('#pmax').value, minutes: +$('#min').value || 15, space: $('#space').value,
+    setup: $('#setup').value.trim(), coach: [1,2,3,4].map(i => ({cue: $('#cue'+i).value.trim(), ask: $('#ask'+i).value.trim()})).filter(c => c.cue || c.ask), diagram_caption: $('#diagram_caption').value.trim(), equipment: $('#equipment').value.trim(), source: $('#source').value.trim(), video: $('#video').value.trim(), pairs_with: vals('pair')};
+  const miss = []; [['name','Name'],['type','Type'],['objective','Objective'],['ages','Ages'],['tracks','Tracks'],['levels','Levels'],['skills','Skills'],['setup','Setup'],['coach','Coach it'],['equipment','Equipment']].forEach(([k,l]) => { if(!a[k] || !a[k].length) miss.push(l); });
+  if(a.coach.some(c => !c.cue || !c.ask)) miss.push('Each cue needs its question');
+  if(!(a.players_min >= 2) || !(a.players_max >= a.players_min)) miss.push('Players (min and max)');
+  if(miss.length){ $('#msg').innerHTML = `<div class="err">Still needed: ${miss.join(', ')}</div>`; return; }
+  a.id = editing || slug(a.name); a.update = !!editing;
+  if(!editing && D.activities.some(x => x.id === a.id)){ $('#msg').innerHTML = `<div class="err">An activity with this name already exists. Load it above to edit it, or change the name.</div>`; return; }
+  if(diagram){ a.diagram = diagram.name; a.diagram_data = diagram.data; } else { const old = D.activities.find(x => x.id === editing); if(old && old.diagram){ a.diagram = old.diagram; if(Array.isArray(old.diagram) && old.diagram_caption) a.diagram_caption = old.diagram_caption; } }
+  batch = batch.filter(x => x.id !== a.id).concat(a); saveBatch(); drawBatch(); $('#load').value = ''; fill(null); window.scrollTo(0, document.body.scrollHeight);
+};
+function drawBatch(){
+  $('#batch').innerHTML = batch.length ? batch.map((a,i) => `<div class="q"><span><b>${a.name}</b><br><small>${a.block} · ${a.ages.join(', ')} · ${a.tracks.join(', ')} · ${a.update ? 'edit' : 'new'}${a.diagram_data ? ' · diagram' : ''}</small></span><button class="sec sm" data-i="${i}">Remove</button></div>`).join('') : '<small>Nothing added yet.</small>';
+  document.querySelectorAll('#batch button').forEach(b => b.onclick = () => { batch.splice(+b.dataset.i, 1); saveBatch(); drawBatch(); });
+}
+const bundle = () => JSON.stringify({kind: 'activity-batch', activities: batch}, null, 1);
+$('#dl').onclick = () => { if(!batch.length) return; const u = URL.createObjectURL(new Blob([bundle()], {type:'application/json'})); const l = document.createElement('a'); l.href = u; l.download = 'activity-batch.json'; document.body.appendChild(l); l.click(); l.remove(); };
+$('#cp').onclick = async () => { try { await navigator.clipboard.writeText(bundle()); $('#cp').textContent = 'Copied'; } catch(e) { $('#cp').textContent = 'Copy failed, use Download'; } };
+drawBatch(); fill(null);
+</script></body></html>

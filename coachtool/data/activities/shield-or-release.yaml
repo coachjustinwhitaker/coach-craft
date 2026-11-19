@@ -1,0 +1,46 @@
+id: shield-or-release
+order: 67
+name: Shield or Release
+block: B1
+skills:
+- Protecting
+- Passing
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- app
+players:
+  min: 10
+  max: 11
+space: quarter
+minutes: 18
+pairs_with: []
+equipment: Balls · Cones · 2 goals · 5 circles · 4 flags · Pinnies in 2 colors
+setup:
+- '5v5 on the smallest grid. Flags split the field into thirds. Two goals and five circles: one in the
+  center and two at each end.'
+- Defenders press live, right up to the circle. There are no requirements on how the ball reaches the
+  shielder.
+rules:
+- Shots only from inside the final thirds. No shooting from midfield.
+- The coach counts out loud. The count resets if the ball leaves the circle or is lost.
+scoring:
+- 'Goal alone: 1 point.'
+- 'Ball on or in a circle, shielded away from a defender for 3 seconds: 1 point each time, no cap.'
+- 'Shield, then goal on the same possession: 3 points total.'
+coach:
+- cue: Body between the ball and the defender.
+  ask: Where was your body when the defender arrived?
+- cue: Feel the defender with your arm and back, not your eyes. Keep the head up.
+  ask: What did you feel, and what did you do about it?
+- cue: Shield or release.
+  ask: What told you which one?
+diagram: shield-or-release.jpg
+type: small-sided
+objective: Learn the shielding body shape against a live defender, then decide in the moment to shield
+  it or release it.
+diagram_caption: A grid split into thirds by flags with two goals and five circles. Two teams of five
+  press and shield around the circles.

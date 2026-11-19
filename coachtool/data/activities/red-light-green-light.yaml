@@ -1,0 +1,45 @@
+id: red-light-green-light
+order: 17
+name: Red Light Green Light
+block: B1
+type: ball-mastery
+objective: Dribble fast on green, small touches on yellow, stop with a foot on the ball at red.
+skills:
+- Driving
+- Controlling
+ages:
+- u6
+- u8
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 16
+space: quarter
+minutes: 20
+setup: 'Grid about 25 by 20 yards. Every player has a ball. Green light: dribble fast. Yellow light: slow
+  down with small touches to keep the ball close. Red light: stop with one foot on the ball. Call lights
+  at random as players move around the grid. After a minute, ask players to suggest a new color and give
+  it a new action (orange means swing your arms, purple means dance) and repeat each new color a few times.'
+coach:
+- cue: Players keeping the ball within arm's reach at yellow. Heads up to avoid collisions. On red light,
+    emphasize using the sole of the foot to stop rather than letting the ball roll away.
+  ask: When I called yellow, what did you have to do with your feet to keep the ball close?
+pairs_with:
+- gates-dribbling
+- 101-dalmatians
+equipment: 1 ball per player · Disc cones for grid
+for_age:
+  u6:
+    setup: 'Grid about 25 by 20 yards. Every player has a ball. Green light: dribble fast. Yellow light:
+      slow down with small touches. Red light: stop with one foot on the ball. Call lights at random.
+      After a minute, ask players to suggest a new color and assign it a new action: orange means spin
+      around, purple means jump. Add each new color a few times before introducing the next one.'
+    coach:
+    - cue: This game is simple, familiar, and brilliant at this age. Most players already know the concept
+        from the road. The player-generated colors keep it fresh and give them ownership. Look for players
+        keeping the ball within arm's reach at yellow and actually stopping on red rather than letting
+        the ball roll away.
+      ask: What was the hardest color to remember? What action did you pick?

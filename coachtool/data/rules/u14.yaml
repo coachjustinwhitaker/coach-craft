@@ -1,0 +1,21 @@
+age: u14
+rules:
+- label: Format
+  text: 11v11. US Soccer's small-sided chart ends at U12, so U13 and up play the full game.
+  source: US Soccer Player Development Initiatives (chart covers U6 to U12)
+- label: Ball
+  text: Size 5
+  source: Laws of the Game
+- label: Offside
+  text: Offside applies.
+  source: Laws of the Game
+- label: Heading
+  tracks:
+  - rec
+  text: 'Allowed for the whole age group. Rec groups mix two birth years, so one rule covers every player.
+    Build up slowly in training: light balls, short distances, very few headers.'
+  source: 'Methodology default: rec players start heading at U14, comp players at U12'
+- label: Head injuries
+  text: If a head injury is suspected, play stops for evaluation. The player may be substituted. Return
+    requires clearance from a health care professional or certified athletic trainer.
+  source: US Soccer Player Development Initiatives, small-sided games chart

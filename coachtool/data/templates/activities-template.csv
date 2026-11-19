@@ -1,0 +1,8 @@
+name,block,type,objective,skills,ages,tracks,levels,players_min,players_max,space,minutes,setup,rules,scoring,progression,coach,coach_note,equipment,pairs_with,diagram,diagram_caption,video,source
+Example Activity,B2,small-sided,One line: what this activity is for.,Passing; Supporting,u10,rec,intro,6,12,quarter,15,"One line per bullet.
+How the grid is laid out.
+Who starts where and how it restarts.","Optional. One line per rule.
+Touch limits, what counts as a foul.","Each team scores in its own goal. Write none if there is no scoring.","Optional. One line per step: Title (minutes) :: what changes.
+Two touches (7 min) :: Play with a two touch limit.
+One touch (7 min) :: Switch to one touch.","What to watch for :: What to ask the players about it.
+A second cue :: A second question.","Optional. How to coach it, not what to watch for. For example: do not dictate the choice, ask what they saw.",1 ball per group; 4 cones; pinnies,gates-passing,example-activity.png,"Optional. Say in plain words what the diagram shows.",

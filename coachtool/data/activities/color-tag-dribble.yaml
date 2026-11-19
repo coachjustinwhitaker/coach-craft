@@ -1,0 +1,34 @@
+id: color-tag-dribble
+order: 25
+name: Color Tag Dribble
+block: B1
+type: ball-mastery
+objective: Dribble freely, then race to touch the cone color you call. Heads up while the ball stays close.
+skills:
+- Scanning
+- Driving
+ages:
+- u8
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 16
+space: quarter
+minutes: 20
+setup: Grid about 25 by 20 yards with colored tall cones placed around the space. Every player has a ball
+  and dribbles freely. Hold up a colored cone and all players must dribble to touch a cone of that color
+  before you count to ten. Vary the colors and the pace.
+coach:
+- cue: 'Players who keep their head up while dribbling reach the color fastest. Let the game teach the
+    lesson. After the question, you can name it: "That is scanning."'
+  ask: Who got to the cone fastest? What were you doing with your head while you were dribbling?
+pairs_with:
+- gates-dribbling
+- red-light-green-light
+equipment: 1 ball per player · Multiple colored tall cones · Disc cones for grid
+progression:
+- title: Two callers
+  text: Have two callers with different colors at the same time so players must split their attention.

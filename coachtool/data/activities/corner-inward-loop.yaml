@@ -1,0 +1,39 @@
+id: corner-inward-loop
+order: 75
+name: 'Corner: Inward Loop'
+block: B4
+skills:
+- Supporting
+- Shooting
+- Restarts
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 6
+  max: 11
+space: half
+minutes: 5
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper · Corner flag or marker cone
+setup: Walk-through with no opposition. A short-corner taker, three decoys, a target and a blocker.
+rules:
+- Three decoys sprint together toward the far post to drag their markers and create traffic.
+- The target loops around the outside of that traffic to arrive free at the near post. A blocker steps
+  across the target's marker to seal them off.
+- The ball is played short, then along the ground for a first-time finish.
+coach_note: Target runners want good spatial timing more than pure speed.
+coach:
+- cue: Let the traffic build before you loop. Arrive last, arrive free.
+  ask: What had to happen before you looped?
+- cue: 'Blocker: step across the marker without moving the target.'
+  ask: Where did you stand to block, and did the target get free?
+diagram: corner-inward-loop.jpg
+type: set-piece
+objective: On a short corner, three decoys drag markers toward the far post while the target loops outside
+  the traffic to arrive free at the near post.
+diagram_caption: Three decoys run together toward the far post. The target loops around the outside of
+  them to arrive free at the near post.

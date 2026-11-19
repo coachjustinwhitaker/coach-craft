@@ -1,0 +1,51 @@
+id: 3v3-four-goals
+order: 101
+name: 3v3 Four Goals
+block: B1
+skills:
+- Scanning
+- Controlling
+- Decision-Making
+ages:
+- u8
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Two mini goals on each end line, about 6 yards apart. Each team defends the two goals on its end and attacks the
+  two on the other. No goalkeepers.
+- 3v3. Extra players wait on the sideline and rotate in after each goal.
+- Have the team that is waiting stand behind one end line and count goals out loud.
+rules:
+- 'The challenge: two goals to attack and two to defend, so you have to look to find the open one.'
+- Kick in from the sideline to restart. No offside.
+- After a goal, the other team starts with the ball from their end line.
+scoring: One point for a goal in either goal. First team to 3, then rotate teams.
+coach:
+- cue: Look before the ball arrives.
+  ask: Which goal was open, and how did you know?
+- cue: Shoot at the goal the defender is not covering.
+  ask: Where was the defender when you picked your goal?
+- cue: Take your first touch toward the open goal.
+  ask: Which way did your first touch take you, and why?
+type: opening-play
+objective: Look up before you shoot. With two goals to attack and two to defend, the player who scans finds the
+  open goal.
+progression:
+- title: Easier
+  text: Make the goals wider so the open goal is easy to see.
+- title: Harder
+  text: Use three goals per end, or add a second ball to the game.

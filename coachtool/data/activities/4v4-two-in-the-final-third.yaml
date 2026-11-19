@@ -1,0 +1,53 @@
+id: 4v4-two-in-the-final-third
+order: 110
+name: 4v4 Two in the Final Third
+block: B3
+skills:
+- Compact Shape
+- Pressing
+- Numerical Advantage
+ages:
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Use cones to mark the final third at each end, about a third of the field. Mini goals or cone goals at each end.
+  No goalkeepers.
+- 4v4. Extra players wait on the sideline and rotate in after each goal.
+- Walk the final-third lines once so players see where the limit is.
+rules:
+- 'The challenge: attackers can only send two players into the final third. The other two have to stay behind it.'
+- If a third attacker enters the final third, the defending team gets the ball.
+- Defenders can all be in their own final third. Stay close together and win it.
+- Teams can pass the ball back to the players behind the line to reset.
+- If the defending team wins the ball, they attack the other way with the same rule.
+- Kick in from the sideline to restart.
+scoring: One point per goal. First team to 4.
+coach:
+- cue: 'Defenders: stay close together. Shrink the space.'
+  ask: How close were you to your teammates when you won it?
+- cue: 'Attackers: nothing there? Pass it back and reset.'
+  ask: What did you see that told you to pass back?
+- cue: Win it, then go. Attack the other way right away.
+  ask: What did you do the moment you won the ball?
+type: opening-play
+objective: Defend with the numbers advantage and win the ball. Attackers can only send two players into the final
+  third, so the defense is always outnumbered in your favor.
+progression:
+- title: Easier
+  text: Let attackers send three players forward after the ball has been passed back once.
+- title: Harder
+  text: Only one attacker can enter the final third at U12 and U14, with a shorter field.

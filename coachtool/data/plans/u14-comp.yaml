@@ -1,0 +1,248 @@
+season_note: The weekly themes are a suggested order, so the season builds skill step by step instead
+  of chasing whatever last weekend showed. Use them as the frame. If a game exposes a real problem, work
+  it into your practice and keep the theme.
+id: u14-comp
+age: u14
+track: comp
+sessions_per_week: 2
+phases:
+- name: Preseason
+  weeks:
+  - 1
+  - 6
+  goal: Set the baseline
+  text: 'No Application-level work yet. Players install the habits and technique every later block depends
+    on: individual technique, combination play and collective defending shape.'
+  success: Players are comfortable receiving under light pressure, understand basic team mechanics and
+    defensive shape, and show early decision-making instead of hesitation.
+- name: In-Season
+  weeks:
+  - 7
+  - 12
+  goal: Apply under real pressure
+  text: Games provide the pressure Application needs. B4 and B5 come online, and B1 to B3 start Application
+    reps against real defenders.
+  success: Decisions hold up at game speed, transitions trigger without prompting, and finishing chances
+    start to convert more consistently.
+- name: Peak Performance
+  weeks:
+  - 13
+  - 18
+  goal: Perform at the highest level
+  text: Every block cycles at Application through repeated performance, not new content. Composure and
+    game management are built through reps, not lectures.
+  success: Composure in finishing moments, informed choices late in games, and communication and ownership
+    without prompting.
+standing:
+- title: 'Every week: one live set-piece rep'
+  text: 'Attacking or defending: a corner, a free kick or a throw-in. It is a background layer, not a
+    themed week.'
+weeks:
+- week: 1
+  focus: First Touch & Awareness
+  block: B1
+  level: intro
+  sessions:
+  - block: B1
+    level: intro
+  - block: B2
+    level: intro
+- week: 2
+  focus: Defending Starts With Shape
+  block: B3
+  level: intro
+  sessions:
+  - block: B3
+    level: intro
+  - block: B1
+    level: intro
+- week: 3
+  focus: Supporting the Ball Carrier
+  block: B2
+  level: intro
+  sessions:
+  - block: B2
+    level: intro
+  - block: B3
+    level: intro
+- week: 4
+  focus: Receiving Under Pressure
+  block: B1
+  level: dev
+  sessions:
+  - block: B1
+    level: dev
+  - block: B2
+    level: dev
+- week: 5
+  focus: Compactness & Cover
+  block: B3
+  level: dev
+  sessions:
+  - block: B3
+    level: dev
+  - block: B1
+    level: dev
+- week: 6
+  focus: Combination Play
+  block: B2
+  level: dev
+  sessions:
+  - block: B2
+    level: dev
+  - block: B3
+    level: dev
+- week: 7
+  focus: Reading the Transition Moment
+  block: B4
+  level: intro
+  sessions:
+  - block: B4
+    level: intro
+  - block: B1
+    level: app
+- week: 8
+  focus: Speed of Play
+  block: B4
+  level: dev
+  sessions:
+  - block: B4
+    level: dev
+  - block: B2
+    level: app
+- week: 9
+  focus: First Touches in the Box
+  block: B5
+  level: intro
+  sessions:
+  - block: B5
+    level: intro
+  - block: B3
+    level: app
+- week: 10
+  focus: Decision-Making Under Pressure
+  block: B4
+  level: app
+  sessions:
+  - block: B4
+    level: app
+  - block: B1
+    level: app
+- week: 11
+  focus: Finishing the Attack
+  block: B5
+  level: dev
+  sessions:
+  - block: B5
+    level: dev
+  - block: B2
+    level: app
+- week: 12
+  focus: Pressing Triggers
+  block: B4
+  level: app
+  sessions:
+  - block: B4
+    level: app
+  - block: B3
+    level: app
+- week: 13
+  focus: Composure in the Box
+  block: B5
+  level: app
+  sessions:
+  - block: B5
+    level: app
+  - block: B1
+    level: app
+- week: 14
+  focus: Tempo Control
+  block: B4
+  level: app
+  sessions:
+  - block: B4
+    level: app
+  - block: B2
+    level: app
+- week: 15
+  focus: Winning Moments
+  block: B5
+  level: app
+  sessions:
+  - block: B5
+    level: app
+  - block: B3
+    level: app
+- week: 16
+  focus: Composure at Speed
+  block: B1
+  level: app
+  sessions:
+  - block: B1
+    level: app
+  - block: B4
+    level: app
+- week: 17
+  focus: Game Management
+  block: B2
+  level: app
+  sessions:
+  - block: B2
+    level: app
+  - block: B5
+    level: app
+- week: 18
+  focus: Player Ownership
+  coach_choice: true
+  note: Flex week. Players drive their own priorities heading into the break. Ask them what they want
+    to work on, then build practice around it.
+why_periodize:
+- title: Plan, do not react
+  text: 'Periodization ties every week to a developmental standard: what players need to be building at
+    this point in their growth, in the order that lets those habits compound. It is a plan built against
+    a framework, and it holds regardless of how last Saturday went.'
+- title: The alternative treats symptoms
+  text: After a tough loss it is tempting to chase the scoreline. Conceded on transitions, so Tuesday
+    becomes a transition drill. Missed chances, so Wednesday is finishing. It feels responsive, but it
+    treats symptoms instead of building players, and nothing compounds. A periodized plan stays with the
+    standard. Trust the sequence, and problems like transitions and finishing tend to solve themselves,
+    because the foundation underneath them is solid.
+- title: The season is a spiral
+  text: Blocks do not run once and finish. A concept is introduced, the team moves to other work, then
+    returns to it at a deeper level, with real spacing so each return is a genuine retention check. Introduction
+    becomes Development. Development becomes Application. At U13, Application is also where specialization
+    begins, grouped by who executes the action together rather than assigned upfront.
+- title: Weekly themes are a lens
+  text: 'Every week carries a theme, something a player can hold onto: a focus idea you can build a practice
+    around or talk about before or after training. The themes are not a second curriculum. They are a
+    lens on the same week''s work, connecting the technical content to something bigger like tempo, composure,
+    decision-making and ownership.'
+- title: Why this protects your players
+  text: 'A coach who reacts to every result sends a message: what we work on depends on whether we won
+    last week. Players feel that instability and start playing not to make mistakes. A periodized plan
+    says we know where we are going and this week connects to last week''s and next week''s. Players build
+    confidence in the process, not just their skills.'
+- title: What it asks of you
+  text: Hold the line when the instinct to fix things is strong. After a hard game you will want to throw
+    the plan out. Sometimes that is the right call. But the default should be the plan, because it was
+    built when you were thinking clearly, not in the 24 hours after a loss.
+levels:
+- title: Introduction
+  text: Players are becoming aware of a concept and trying it. Decisions are slow and execution is inconsistent.
+    Every player at every position works through this level the same way.
+- title: Development
+  text: Players make repeatable, intentional choices. They understand the concept and are beginning to
+    apply it under pressure, but it is not yet automatic. Still universal, with no position differentiation.
+- title: Application
+  text: Decisions are fast and reliable under real game pressure. This is where position-specific depth
+    begins to show up, grouped by who actually executes the action together, not by fixed labels.
+- title: Your goal
+  text: Not to push every player to Application by the end of the season. Recognize where each player
+    is and create the right conditions for them to move forward from there. Arriving at Introduction and
+    leaving at Development is progress. Reaching Application under pressure by the final weeks is a great
+    season.
+- title: Specialization at U13
+  text: Introduction and Development stay universal in every block. Application is where specialization
+    begins, grouped by function rather than assigned upfront. A player's technique and decision-making
+    at Application are still revealing what kind of player he is becoming. Locking a player into a position
+    too early risks missing who he actually turns out to be.

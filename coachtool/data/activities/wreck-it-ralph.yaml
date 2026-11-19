@@ -1,0 +1,46 @@
+id: wreck-it-ralph
+order: 19
+name: Wreck-It Ralph
+block: B1
+type: ball-mastery
+objective: Dribble through corner goals while Wreck-It Ralph tries to knock balls away. Heads up to find
+  an open goal.
+skills:
+- Dribbling
+- Scanning
+- Shooting
+ages:
+- u6
+- u8
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 16
+space: quarter
+minutes: 20
+setup: 'Grid about 25 by 20 yards with a cone goal in each corner, opening inward. Every player has a
+  ball. Players dribble around the grid and score by dribbling their ball through any corner goal while
+  you (Wreck-It Ralph) roam and try to knock balls away. Ball knocked out: 10 toe taps to re-enter. Play
+  short rounds of about a minute. Cone goals only, no small goals needed.'
+coach:
+- cue: Players who look up to find an open goal before driving toward it. That is scanning in action.
+    Encourage players to beat their own score each round.
+  ask: Before you drove toward a goal, what did you check first?
+pairs_with:
+- 101-dalmatians
+- shooting-gallery
+equipment: 1 ball per player · Disc cones for grid and corner goals
+for_age:
+  u6:
+    setup: 'Grid about 20 by 20 yards with a cone goal in each corner, opening inward. Every player has
+      a ball. Players dribble around the grid and score by dribbling their ball through any corner goal.
+      You are Wreck-It Ralph, roaming the grid and trying to knock balls away. Ball knocked out: 10 toe
+      taps to re-enter. Play short rounds of about a minute. Encourage players to beat their own score.'
+    coach:
+    - cue: Players who look up to find an open goal before driving toward it are already doing something
+        sophisticated. Most will just head for the nearest goal, and that is completely fine at U6. Celebrate
+        every goal loudly. The game introduces goal-scoring instinct without any coaching required.
+      ask: How many goals did you score? Which goal was easiest to get to?

@@ -1,0 +1,53 @@
+id: 4v4-back-to-back-goals
+order: 48
+name: 4v4 Back to Back Goals
+block: B5
+skills:
+- Passing
+- Shooting
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+- app
+players:
+  min: 10
+  max: 10
+space: quarter
+minutes: 15
+pairs_with: []
+equipment: Balls · Cones · 2 goals · Pinnies in 2 colors
+setup:
+- Two goals back to back in the center, mouths facing opposite ways. A keeper stands in front of each.
+- Corner cones mark an area about 36 by 37 yards. Players will not use all of it, so shrink it if it plays
+  cramped.
+- Two cones, one at the top and one at the bottom of the area, line up with the goals. They mark the split
+  line, the line through the backs of the goals.
+- 4v4 plus a keeper each.
+rules:
+- No touch limit.
+- You can drive the ball across the split line into your attacking side.
+- The player who drives it across cannot score. They have to cross it or cut it back to a teammate to
+  finish.
+- The coach can jump in as a neutral who plays for the team with the ball. Passing only, no shooting.
+- The coach plays a ball in to start, and a new ball after a goal or the ball going out.
+scoring: One point per goal.
+coach:
+- cue: Move to the ball when it is coming across.
+  ask: What did you see that told you to move?
+- cue: Put the ball where your teammate can meet it.
+  ask: Where did you want the cross to land, and did it?
+- cue: Cross it or cut it back to the center.
+  ask: Who was free in the center when you delivered?
+- cue: Missed it? Reset right away.
+  ask: What did you do straight after the miss?
+diagram: 4v4-back-to-back-goals.png
+type: small-sided
+objective: Deliver a cross or cutback with the weight and pace to reach a moving target, recognize the
+  moment to deliver early or late, set the body to finish a moving ball, and reset right after a miss.
+diagram_caption: Two goals back to back in the middle, each with its own keeper in front. Corner cones
+  mark the area and the two center cones mark the split line. The coach feeds balls and can join as a
+  neutral.

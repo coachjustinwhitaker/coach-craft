@@ -1,0 +1,32 @@
+id: 2v2-to-endlines-attacking
+order: 8
+name: 2v2 to Endlines — Attacking
+block: B2
+type: small-sided
+objective: 2v2 to the end line. Drive at one defender to commit them while the second attacker finds space.
+skills:
+- Supporting
+- Numerical Advantage
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 12
+space: quarter
+minutes: 15
+setup: Small rectangular space. Two attackers vs two defenders. Attackers score by dribbling ball over
+  opponent’s end line within arm’s distance. Defenders can steal and score too. Rotate new players when
+  scoring or ball out. Keep it fast. Run multiple games simultaneously.
+coach:
+- cue: Encourage the attacker with the ball to drive at one defender to commit them, while the second
+    attacker finds open space. When they spread out and use that advantage, celebrate it. The moment a
+    player passes around a committed defender, even once, is worth highlighting for the whole group.
+  ask: When you had the ball and a defender coming at you, what options did you have?
+pairs_with:
+- 1v1-to-endlines-goals
+- flying-numbers
+equipment: 1 ball per game · 4 cones per game · Pinnies

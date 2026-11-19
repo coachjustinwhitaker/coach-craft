@@ -1,0 +1,39 @@
+id: corner-bus-queue
+order: 74
+name: 'Corner: Bus Queue'
+block: B4
+skills:
+- Supporting
+- Shooting
+- Restarts
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 6
+  max: 11
+space: half
+minutes: 5
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper · Corner flag or marker cone
+setup: Walk-through with no opposition. A corner taker, four runners in a single file from the edge of
+  the box toward the penalty spot, and a decoy.
+rules:
+- On the taker's first step the decoy makes a diagonal run toward goal to open space.
+- The four queued runners peel off to different parts of the goal.
+- The runner starting furthest back hits the near post hardest, using the run-up.
+coach_note: The runner at the back of the queue wants your most explosive mover.
+coach:
+- cue: Use the run-up. The farther back you start, the more speed you carry into the ball.
+  ask: How much speed did you have when you got there?
+- cue: Peel to a different part of the goal from the runner before you.
+  ask: Where did you go, and where did the runner before you go?
+diagram: corner-the-bus-queue.jpg
+type: set-piece
+objective: Four runners queue vertically and peel to different parts of the goal while a diagonal decoy
+  opens space. The player furthest back gets the longest run-up.
+diagram_caption: Four runners queue in a single file toward the penalty spot. A decoy runs diagonally
+  at goal and the queue peels off to different parts of the goal.

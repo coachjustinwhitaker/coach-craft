@@ -1,0 +1,38 @@
+id: u10
+age: u10
+who:
+  - {label: How they have grown, text: "More sustained attention. They can begin to understand that their actions affect teammates, and they are ready to solve problems together, not just individually."}
+  - {label: What motivates them, text: "Scoring, competing and belonging. The social side of the game intensifies and they care about their teammates. Celebrate assists as loudly as goals."}
+  - {label: The big shift, text: "Passing is no longer just an option, it is becoming a tool. Players are beginning to understand that combining with a teammate can beat a defender. That insight is what this year is built around."}
+  - {label: What they are ready for, text: "2v1 situations, moving after passing, body shape to receive and basic combination play. Set plays and formations come later. Right now the game itself is the best teacher."}
+great_session:
+  - {title: Players move after passing, text: "The give-and-go instinct is forming. Any session where players pass and then stand still is a session where that habit is not developing."}
+  - {title: Body shape opens to the field, text: "Players receive with hips at 45-90 degrees toward goal. Name it when you see it. This takes years to become automatic."}
+  - {title: 2v1 situations recognized, text: "Players start to sense when a teammate is free. They don't always use it yet. The recognition is the first step."}
+  - {title: Players talk to each other, text: "Even one player calling for the ball is a win. Communication starts with the simplest signal."}
+  - {title: High energy across both practices, text: "Two practices a week is twice the chance to build habits. Keep both varied and active. The second builds on the first."}
+  - {title: Coach with intention, text: "Pick one thing to look for before the session starts. Watch for it. When it happens, ask one good question. That beats a dozen instructions from the sideline."}
+shape:
+  title: The session
+  why: 'Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.'
+  note: About 75 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.
+  opening:
+    label: Play
+    minutes: 10 to 12 min
+    title: Small-sided game, one added rule
+    setup: 'Keep it small, 3v3 or 4v4, with mini goals or cone goals and no goalkeepers. Smaller than the game means more touches and more decisions. The added rule is the challenge for the week. Say it once, start the game, then step back. Quick restarts. With more than eight players, run two games side by side and rotate teams.'
+    job: Say the rule, then watch. Look for players solving the problem without being told how. One thing you see will tell you how to use Activity A. Do not stop the game to coach. Save your voice for the question.
+    question: What did your team figure out today that made the rule easier?
+    kit: 1 ball per game · Mini goals or cone goals · Disc cones · Pinnies in 2 colors
+  closing:
+    label: Play
+    minutes: 15 to 20 min
+    title: 7v7 game
+    setup: 'The biggest game of the session. Full 7v7 with goalkeepers if you have them, rotating the position so every player gets a turn across the season. Let it run without stopping. Watch for the focus you introduced that week showing up without being asked. On Practice B days, notice whether anything from Practice A carried over.'
+    question: Was there a moment today where you and a teammate figured something out together?
+    kit: Goals · Disc cones · Pinnies in 2 colors
+prepared: "The best sessions start before the first player arrives. Mark the fields, set up the goals and know your two activities before anyone shows up. Practice A is the familiar anchor. Practice B carries the concept for the week. Know which one you are running."
+parents:
+  intro: "Before the session, take 30 seconds to walk over and say something like:"
+  script: "Today we are working on passing and moving: making a pass and then finding space to get it back. The most helpful thing you can do is cheer when they pass to a teammate, especially if they then keep running."
+  outro: "Most parents want to know what is happening and how to help. Give them a role and they will take it."

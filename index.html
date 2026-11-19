@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coach Craft</title>
+<link rel="icon" type="image/svg+xml" href="assets/coach-craft-favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--slate:#384959;--slate-blue:#6A89A7;--sky:#88BDF2;--pale:#BDDDFC;--gray:#CBCBCB;--paper:#F6F8FA;--ink:#1F2A33;--muted:#5A6670;
+    --b1:#6A89A7;--b2:#88BDF2;--b3:#AFEEEE;--b4:#ADEBB3;--b5:#FFC067}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:24px}
+  header{background:var(--slate)}
+  .bar{max-width:880px;margin:0 auto;padding:16px}
+  .bar img{height:40px;width:auto;display:block}
+  .strip{display:flex;height:4px}
+  .strip span{flex:1}
+  main{max-width:880px;margin:0 auto;padding:24px 16px 8px}
+  h1{font-size:32px;line-height:38px;font-weight:500;margin:0 0 8px;color:var(--slate)}
+  .lead{margin:0 0 24px;color:var(--muted);max-width:560px}
+  h2{font-size:22px;line-height:28px;font-weight:500;margin:32px 0 12px;color:var(--slate)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+  a.card{display:block;background:#fff;border:1px solid var(--gray);border-radius:12px;padding:16px;text-decoration:none;color:inherit}
+  a.card:hover,a.card:focus-visible{border-color:var(--slate-blue);outline:none}
+  a.card b{display:block;font-weight:500;color:var(--slate)}
+  a.card span{display:block;font-size:13px;line-height:18px;color:var(--muted);margin-top:4px}
+  footer{max-width:880px;margin:32px auto 0;padding:16px 16px 32px;border-top:1px solid var(--gray);font-size:13px;line-height:18px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar"><img src="assets/coach-craft-lockup-light.svg" alt="Coach Craft"></div>
+  <div class="strip" aria-hidden="true"><span style="background:var(--b1)"></span><span style="background:var(--b2)"></span><span style="background:var(--b3)"></span><span style="background:var(--b4)"></span><span style="background:var(--b5)"></span></div>
+</header>
+<main>
+  <h1>Reference and sessions for youth soccer coaches</h1>
+  <p class="lead">Built on the B1 to B5 block framework and grounded in US Soccer's Player Development Framework.</p>
+
+  <h2>Coach Companions</h2>
+  <div class="grid">
+    <a class="card" href="U6_Coach_Companion.html"><b>U6</b><span>Season guide and sessions</span></a>
+    <a class="card" href="U8_Coach_Companion.html"><b>U8</b><span>Season guide and sessions</span></a>
+    <a class="card" href="U10_Coach_Companion.html"><b>U10</b><span>Season guide and sessions</span></a>
+    <a class="card" href="U12_Coach_Companion.html"><b>U12</b><span>Season guide and sessions</span></a>
+  </div>
+
+  <h2>Competitive methodology</h2>
+  <div class="grid">
+    <a class="card" href="comp/u11u12/index.html"><b>U11 to U12</b><span>B1 to B5 methodology, season plan, sessions</span></a>
+    <a class="card" href="comp/u13u14/index.html"><b>U13 to U14</b><span>B1 to B5 methodology, season plan, sessions</span></a>
+    <a class="card" href="comp/goalkeeper/CJW_GK_Set_Move_Decide.html"><b>Goalkeeper</b><span>Set, move, decide</span></a>
+  </div>
+
+  <h2>Planner and library</h2>
+  <div class="grid">
+    <a class="card" href="coachtool/build/index.html"><b>Season planner</b><span>Ideas for your season, one week at a time</span></a>
+    <a class="card" href="coachtool/build/all-activities.html"><b>Activity library</b><span>Every activity in one place</span></a>
+    <a class="card" href="coachtool/build/skills-matrix.html"><b>Skills matrix</b><span>Skills by age and block</span></a>
+  </div>
+</main>
+<footer>Coach Craft. Designed by Coach Justin Whitaker.</footer>
+</body>
+</html>

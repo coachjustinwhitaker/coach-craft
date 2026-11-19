@@ -1,0 +1,34 @@
+id: end-zone-passing
+order: 6
+name: End Zone Passing
+block: B2
+type: small-sided
+objective: Score by passing to a teammate who has run into the end zone. Moving off the ball is the point.
+skills:
+- Supporting
+- Combination Play
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 15
+setup: Rectangular grid with a small end zone marked at each end (about 4 yards deep). Two teams of 3
+  or 4. Players can dribble freely in the middle of the field, but the only way to score is to pass the
+  ball to a teammate who has run into the opponent's end zone to receive it. The receiver must have both
+  feet inside the end zone when they catch the ball.
+coach:
+- cue: This game makes movement off the ball essential. A team that stands still cannot score because
+    no one is in the end zone to receive. Look for players who time their run to arrive as the ball is
+    being played. Any player who calls for the ball while running into the end zone is showing real game
+    intelligence. Celebrate those moments explicitly.
+  ask: When did you run into the end zone? What were you watching to know when to go?
+pairs_with:
+- gates-passing
+- flying-numbers
+equipment: 1 ball · Disc cones for grid and end zones · Pinnies

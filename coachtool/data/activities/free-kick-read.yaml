@@ -1,0 +1,36 @@
+id: free-kick-read
+order: 76
+name: Free Kick Read
+block: B4
+skills:
+- Decision-Making
+- Passing
+- Restarts
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 8
+  max: 16
+space: half
+minutes: 15
+pairs_with: []
+equipment: Balls · Cones · Pinnies in 2 colors
+setup: A half-field grid with live opposition. The attacking team has a free kick in its own half or the
+  middle third.
+rules:
+- 'Opponent still scattered and not reset: play forward immediately to a moving target.'
+- 'Opponent set, or the team is up by 2 or more goals: slow it down, go long, protect the result.'
+coach_note: Let a few reps go wrong on purpose first so the cost of rushing it is visible before you correct
+  it.
+coach:
+- cue: Are they set or not? That decides quick or slow, not habit.
+  ask: What did the defense look like when you decided?
+- cue: Does rushing this gain us anything right now?
+  ask: What did the rush gain or cost you?
+type: set-piece
+objective: 'Replace the automatic long boot with a read: play it quick while the opponent is scattered,
+  slow it down when the game state calls for it.'

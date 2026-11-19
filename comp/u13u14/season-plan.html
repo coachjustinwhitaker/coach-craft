@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Season Plan — Coach Craft U13/U14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:#384959; --navy-dark:#384959; --navy-deep:#2A3744;
+    --gold:#6A89A7; --gold-warm:#88BDF2;
+    --gray-body:#333333; --gray-mid:#666666; --gray-light:#F5F6FA; --white:#ffffff;
+    --p1:#384959; --p2:#384959; --p3:#2A3744;
+    --radius:8px; --shadow:0 2px 10px rgba(56,73,89,.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family:"Inter",sans-serif; font-size:clamp(14px,1.8vw,16px); color:var(--gray-body); background:var(--gray-light); line-height:1.6; }
+
+  .site-nav { background:var(--navy-deep); padding:.6rem 1.5rem; display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
+  .site-nav a { color:var(--gold-warm); text-decoration:none; font-family:"Inter",sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; opacity:.7; transition:opacity .2s; }
+  .site-nav a:hover { opacity:1; } .site-nav a.active { color:var(--white); opacity:1; }
+  .nav-sep { color:var(--gold); opacity:.4; font-size:.7rem; }
+
+  .site-header { background:var(--navy); border-bottom:4px solid var(--gold); padding:clamp(1rem,3vw,1.5rem) clamp(1.25rem,5vw,3rem); }
+  .site-header-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; gap:1.25rem; }
+  .site-header img { width:clamp(52px,9vw,72px); display:block; flex-shrink:0; }
+  .site-header-text h1 { font-family:"Inter",sans-serif; font-weight:800; font-size:clamp(1.1rem,3vw,1.6rem); color:var(--white); line-height:1.15; margin-bottom:.2rem; }
+  .site-header-text p { font-family:"Inter",sans-serif; font-size:clamp(.65rem,1.4vw,.75rem); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--gold-warm); opacity:.8; }
+
+  .content { max-width:960px; margin:0 auto; padding:clamp(1.75rem,4vw,2.5rem) clamp(1.25rem,3vw,2rem); }
+
+  .page-title { margin-bottom:2rem; }
+  .page-label { font-family:"Inter",sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+  .page-title h2 { font-family:"Inter",sans-serif; font-weight:800; font-size:clamp(1.4rem,4vw,2rem); color:var(--navy); line-height:1.1; margin-bottom:.6rem; }
+  .page-title .intro { font-size:clamp(.9rem,1.8vw,1rem); color:var(--gray-mid); max-width:660px; line-height:1.7; }
+
+  .section-head { font-family:"Inter",sans-serif; font-size:clamp(.8rem,1.6vw,.9rem); font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--navy); border-bottom:2px solid var(--gold); padding-bottom:.4rem; margin-bottom:1.1rem; margin-top:2rem; }
+
+  .phase-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-bottom:2rem; }
+  .phase-card { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
+  .phase-card-head { padding:.75rem 1.1rem; }
+  .ph1 .phase-card-head { background:var(--p1); }
+  .ph2 .phase-card-head { background:var(--p2); }
+  .ph3 .phase-card-head { background:var(--p3); }
+  .phase-card-head .ph-label { font-family:"Inter",sans-serif; font-size:.63rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:.2rem; }
+  .phase-card-head h3 { font-family:"Inter",sans-serif; font-weight:700; font-size:clamp(.88rem,1.8vw,.95rem); color:var(--white); margin-bottom:.15rem; }
+  .phase-card-head .ph-weeks { font-family:"Inter",sans-serif; font-size:.63rem; color:rgba(255,255,255,.5); font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+  .phase-card-body { background:var(--white); padding:.85rem 1.1rem; border:1px solid #e2e8f0; border-top:none; }
+  .phase-card-body p { font-size:clamp(.8rem,1.55vw,.88rem); line-height:1.65; color:var(--gray-body); margin-bottom:.5rem; }
+  .phase-card-body p:last-child { margin-bottom:0; }
+  .phase-card-body .success { font-size:clamp(.76rem,1.45vw,.83rem); color:var(--gray-mid); font-style:italic; }
+
+  .spiral-strip { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); padding:1.1rem 1.25rem; margin-bottom:2rem; overflow-x:auto; }
+  .spiral-strip h3 { font-family:"Inter",sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-mid); margin-bottom:.85rem; }
+  .spiral-grid { display:grid; grid-template-columns:repeat(18,1fr); gap:3px; min-width:760px; }
+  .spiral-wk { text-align:center; }
+  .spiral-wk .wk-label { font-family:"Inter",sans-serif; font-size:.58rem; font-weight:700; color:var(--gray-mid); margin-bottom:3px; }
+  .spiral-cell { border-radius:3px; padding:3px 2px; font-family:"Inter",sans-serif; font-size:.55rem; font-weight:700; text-align:center; color:var(--white); margin-bottom:3px; line-height:1.3; }
+  .sc-ph { border-radius:3px; height:4px; margin-bottom:4px; }
+  .sc-ph1 { background:var(--p1); } .sc-ph2 { background:var(--p2); } .sc-ph3 { background:var(--p3); }
+  .spiral-legend { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.75rem; }
+  .legend-item { display:flex; align-items:center; gap:.3rem; }
+  .legend-dot { width:10px; height:10px; border-radius:2px; flex-shrink:0; }
+  .legend-label { font-family:"Inter",sans-serif; font-size:.62rem; font-weight:700; color:var(--gray-mid); text-transform:uppercase; letter-spacing:.05em; }
+
+  .table-wrap { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin-bottom:1.5rem; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:560px; }
+  thead tr { background:var(--navy); }
+  thead th { font-family:"Inter",sans-serif; font-size:.67rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-warm); padding:.65rem .85rem; text-align:left; }
+  tbody tr { border-bottom:1px solid var(--gray-light); }
+  tbody tr:last-child { border-bottom:none; }
+  tbody tr:hover { background:#f0f4fa; }
+  tbody td { padding:.6rem .85rem; font-size:clamp(.78rem,1.45vw,.86rem); vertical-align:top; }
+  .phase-header td { background:var(--navy-dark); color:var(--gold-warm); font-family:"Inter",sans-serif; font-size:.67rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.45rem .85rem; }
+  .wk-cell { font-family:"Inter",sans-serif; font-weight:700; font-size:.75rem; color:var(--navy); white-space:nowrap; }
+  .block-pill { display:inline-block; color:var(--white); font-family:"Inter",sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:.18rem .55rem; border-radius:20px; white-space:nowrap; }
+  .focus-cell { color:var(--gray-body); line-height:1.5; }
+  .intent-cell { color:var(--navy); font-weight:700; font-family:"Inter",sans-serif; font-size:.82rem; letter-spacing:.02em; }
+
+  .totals-strip { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
+  .total-chip { background:var(--white); box-shadow:var(--shadow); border-radius:var(--radius); padding:.6rem 1rem; display:flex; align-items:center; gap:.5rem; }
+  .total-chip .tc-dot { width:10px; height:10px; border-radius:2px; flex-shrink:0; }
+  .total-chip .tc-label { font-family:"Inter",sans-serif; font-size:.72rem; font-weight:700; color:var(--navy); }
+  .total-chip .tc-count { font-family:"Inter",sans-serif; font-size:.72rem; font-weight:700; color:var(--gray-mid); }
+
+  .callout { background:var(--navy-deep); border-left:4px solid var(--gold); border-radius:var(--radius); padding:1.2rem 1.5rem; margin-bottom:1.5rem; }
+  .callout p { font-style:italic; font-size:clamp(.9rem,1.8vw,1.02rem); color:var(--gold-warm); line-height:1.7; }
+
+  .page-footer { background:var(--navy-deep); color:var(--gold-warm); padding:1rem clamp(1.25rem,5vw,3rem); display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:.5rem; font-family:"Inter",sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border-top:3px solid var(--gold); margin-top:1rem; }
+  .footer-left { color:rgba(255,255,255,.55); } .footer-right { opacity:.4; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html">U13-U14</a>
+  <span class="nav-sep">&rsaquo;</span>
+  <a href="#" class="active">Season Plan</a>
+</nav>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <img src="data:image/png;base64,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" alt="Coach Craft">
+    <div class="site-header-text">
+      <h1>U13&ndash;U14 Player Development</h1>
+      <p>Coach Craft</p>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <div class="page-title">
+    <div class="page-label">Season Plan &middot; Fall 2026</div>
+    <h2>18-Week Block Sequence</h2>
+    <p class="intro">The fall season runs three six-week phases: Preseason, In-Season, and Peak Performance. Each week runs two training sessions in parallel. Blocks return at higher levels across the season as the spiral deepens, real gaps between repetitions so each return visit tests retention rather than just continuing where the last session left off. Week 18 is flex: players drive their own priorities heading into the break.</p>
+  </div>
+
+  <div class="section-head">The Three Phases</div>
+  <div class="phase-grid">
+    <div class="phase-card ph1">
+      <div class="phase-card-head">
+        <div class="ph-label">Phase 1 &middot; Weeks 1-6</div>
+        <h3>Preseason</h3>
+        <div class="ph-weeks">Objective: Set the baseline</div>
+      </div>
+      <div class="phase-card-body">
+        <p>No Application-level work yet, there is no real pressure to apply anything against until games start. Players install and repeat the universal habits and technique that every later block depends on: individual technique, combination play, and collective defending shape.</p>
+        <p class="success">Success looks like: players are comfortable receiving under light pressure, understand basic team mechanics and defensive shape, and show early decision-making rather than hesitation.</p>
+      </div>
+    </div>
+    <div class="phase-card ph2">
+      <div class="phase-card-head">
+        <div class="ph-label">Phase 2 &middot; Weeks 7-12</div>
+        <h3>In-Season</h3>
+        <div class="ph-weeks">Objective: Apply under real pressure</div>
+      </div>
+      <div class="phase-card-body">
+        <p>Games provide the pressure that Application requires. B4 and B5 come online, transitions and finishing, while B1-B3 begin their Application reps against real defenders instead of training constraints.</p>
+        <p class="success">Success looks like: decisions holding up at game speed, transitions triggering without prompting, and finishing chances beginning to convert more consistently.</p>
+      </div>
+    </div>
+    <div class="phase-card ph3">
+      <div class="phase-card-head">
+        <div class="ph-label">Phase 3 &middot; Weeks 13-18</div>
+        <h3>Peak Performance</h3>
+        <div class="ph-weeks">Objective: Perform at the highest level</div>
+      </div>
+      <div class="phase-card-body">
+        <p>This is not mastery, it is the point in the season where players are the fittest and best trained they will be before the break. Every block cycles at Application through repeated performance, not new content. Composure and game management are built through reps, not lectures.</p>
+        <p class="success">Success looks like: composure in finishing moments, informed choices late in games, communication and ownership without prompting.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head">Block Totals</div>
+  <div class="totals-strip">
+    <div class="total-chip"><span class="tc-dot" style="background:#4F6D8A"></span><span class="tc-label">B1</span><span class="tc-count">8 sessions</span></div>
+    <div class="total-chip"><span class="tc-dot" style="background:#1e6b4a"></span><span class="tc-label">B2</span><span class="tc-count">8 sessions</span></div>
+    <div class="total-chip"><span class="tc-dot" style="background:#7d3c1c"></span><span class="tc-label">B3</span><span class="tc-count">7 sessions</span></div>
+    <div class="total-chip"><span class="tc-dot" style="background:#5b2c6f"></span><span class="tc-label">B4</span><span class="tc-count">6 sessions</span></div>
+    <div class="total-chip"><span class="tc-dot" style="background:#922b21"></span><span class="tc-label">B5</span><span class="tc-count">5 sessions</span></div>
+    <div class="total-chip"><span class="tc-dot" style="background:#8a8f98"></span><span class="tc-label">Flex</span><span class="tc-count">2 sessions</span></div>
+  </div>
+
+  <div class="section-head">Visual Overview</div>
+  <div class="spiral-strip">
+    <h3>18-Week Spiral</h3>
+    <div class="spiral-grid">
+      <div class="spiral-wk"><div class="wk-label">W1</div><div class="sc-ph sc-ph1"></div><div class="spiral-cell" style="background:#4F6D8A">B1<br>Intro</div><div class="spiral-cell" style="background:#1e6b4a">B2<br>Intro</div></div>
+      <div class="spiral-wk"><div class="wk-label">W2</div><div class="sc-ph sc-ph1"></div><div class="spiral-cell" style="background:#7d3c1c">B3<br>Intro</div><div class="spiral-cell" style="background:#4F6D8A">B1<br>Intro</div></div>
+      <div class="spiral-wk"><div class="wk-label">W3</div><div class="sc-ph sc-ph1"></div><div class="spiral-cell" style="background:#1e6b4a">B2<br>Intro</div><div class="spiral-cell" style="background:#7d3c1c">B3<br>Intro</div></div>
+      <div class="spiral-wk"><div class="wk-label">W4</div><div class="sc-ph sc-ph1"></div><div class="spiral-cell" style="background:#4F6D8A">B1<br>Dev</div><div class="spiral-cell" style="background:#1e6b4a">B2<br>Dev</div></div>
+      <div class="spiral-wk"><div class="wk-label">W5</div><div class="sc-ph sc-ph1"></div><div class="spiral-cell" style="background:#7d3c1c">B3<br>Dev</div><div class="spiral-cell" style="background:#4F6D8A">B1<br>Dev</div></div>
+      <div class="spiral-wk"><div class="wk-label">W6</div><div class="sc-ph sc-ph1"></div><div class="spiral-cell" style="background:#1e6b4a">B2<br>Dev</div><div class="spiral-cell" style="background:#7d3c1c">B3<br>Dev</div></div>
+      <div class="spiral-wk"><div class="wk-label">W7</div><div class="sc-ph sc-ph2"></div><div class="spiral-cell" style="background:#5b2c6f">B4<br>Intro</div><div class="spiral-cell" style="background:#4F6D8A">B1<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W8</div><div class="sc-ph sc-ph2"></div><div class="spiral-cell" style="background:#5b2c6f">B4<br>Dev</div><div class="spiral-cell" style="background:#1e6b4a">B2<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W9</div><div class="sc-ph sc-ph2"></div><div class="spiral-cell" style="background:#922b21">B5<br>Intro</div><div class="spiral-cell" style="background:#7d3c1c">B3<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W10</div><div class="sc-ph sc-ph2"></div><div class="spiral-cell" style="background:#5b2c6f">B4<br>App</div><div class="spiral-cell" style="background:#4F6D8A">B1<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W11</div><div class="sc-ph sc-ph2"></div><div class="spiral-cell" style="background:#922b21">B5<br>Dev</div><div class="spiral-cell" style="background:#1e6b4a">B2<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W12</div><div class="sc-ph sc-ph2"></div><div class="spiral-cell" style="background:#5b2c6f">B4<br>App</div><div class="spiral-cell" style="background:#7d3c1c">B3<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W13</div><div class="sc-ph sc-ph3"></div><div class="spiral-cell" style="background:#922b21">B5<br>App</div><div class="spiral-cell" style="background:#4F6D8A">B1<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W14</div><div class="sc-ph sc-ph3"></div><div class="spiral-cell" style="background:#5b2c6f">B4<br>App</div><div class="spiral-cell" style="background:#1e6b4a">B2<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W15</div><div class="sc-ph sc-ph3"></div><div class="spiral-cell" style="background:#922b21">B5<br>App</div><div class="spiral-cell" style="background:#7d3c1c">B3<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W16</div><div class="sc-ph sc-ph3"></div><div class="spiral-cell" style="background:#4F6D8A">B1<br>App</div><div class="spiral-cell" style="background:#5b2c6f">B4<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W17</div><div class="sc-ph sc-ph3"></div><div class="spiral-cell" style="background:#1e6b4a">B2<br>App</div><div class="spiral-cell" style="background:#922b21">B5<br>App</div></div>
+      <div class="spiral-wk"><div class="wk-label">W18</div><div class="sc-ph sc-ph3"></div><div class="spiral-cell" style="background:#8a8f98">Flex</div><div class="spiral-cell" style="background:#8a8f98">Flex</div></div>
+    </div>
+    <div class="spiral-legend">
+      <div class="legend-item"><span class="legend-dot" style="background:#4F6D8A"></span><span class="legend-label">B1 &middot; Me &amp; the Ball</span></div>
+      <div class="legend-item"><span class="legend-dot" style="background:#1e6b4a"></span><span class="legend-label">B2 &middot; Teammates</span></div>
+      <div class="legend-item"><span class="legend-dot" style="background:#7d3c1c"></span><span class="legend-label">B3 &middot; Defending</span></div>
+      <div class="legend-item"><span class="legend-dot" style="background:#5b2c6f"></span><span class="legend-label">B4 &middot; The Game</span></div>
+      <div class="legend-item"><span class="legend-dot" style="background:#922b21"></span><span class="legend-label">B5 &middot; The Moment</span></div>
+      <div class="legend-item"><span class="legend-dot" style="background:#8a8f98"></span><span class="legend-label">Flex / Ownership</span></div>
+    </div>
+  </div>
+
+  <div class="section-head">Week-by-Week Detail</div>
+
+  <div class="callout" style="margin-bottom:1.25rem;">
+    <p><strong>Standing reminder:</strong> one live set-piece rep, attacking or defending, corner, free kick, or throw-in, worked into training each week.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Week</th><th>Slot A</th><th>Slot B</th><th>Weekly Theme</th></tr>
+      </thead>
+      <tbody>
+        <tr class="phase-header"><td colspan="4">Preseason &middot; Weeks 1&ndash;6 &middot; Set the Baseline</td></tr>
+        <tr><td class="wk-cell">W1</td><td><span class="block-pill" style="background:#4F6D8A">B1 Intro</span></td><td><span class="block-pill" style="background:#1e6b4a">B2 Intro</span></td><td class="intent-cell">First Touch &amp; Awareness</td></tr>
+        <tr><td class="wk-cell">W2</td><td><span class="block-pill" style="background:#7d3c1c">B3 Intro</span></td><td><span class="block-pill" style="background:#4F6D8A">B1 Intro</span></td><td class="intent-cell">Defending Starts With Shape</td></tr>
+        <tr><td class="wk-cell">W3</td><td><span class="block-pill" style="background:#1e6b4a">B2 Intro</span></td><td><span class="block-pill" style="background:#7d3c1c">B3 Intro</span></td><td class="intent-cell">Supporting the Ball Carrier</td></tr>
+        <tr><td class="wk-cell">W4</td><td><span class="block-pill" style="background:#4F6D8A">B1 Dev</span></td><td><span class="block-pill" style="background:#1e6b4a">B2 Dev</span></td><td class="intent-cell">Receiving Under Pressure</td></tr>
+        <tr><td class="wk-cell">W5</td><td><span class="block-pill" style="background:#7d3c1c">B3 Dev</span></td><td><span class="block-pill" style="background:#4F6D8A">B1 Dev</span></td><td class="intent-cell">Compactness &amp; Cover</td></tr>
+        <tr><td class="wk-cell">W6</td><td><span class="block-pill" style="background:#1e6b4a">B2 Dev</span></td><td><span class="block-pill" style="background:#7d3c1c">B3 Dev</span></td><td class="intent-cell">Combination Play</td></tr>
+
+        <tr class="phase-header"><td colspan="4">In-Season &middot; Weeks 7&ndash;12 &middot; Apply Under Real Pressure</td></tr>
+        <tr><td class="wk-cell">W7</td><td><span class="block-pill" style="background:#5b2c6f">B4 Intro</span></td><td><span class="block-pill" style="background:#4F6D8A">B1 App</span></td><td class="intent-cell">Reading the Transition Moment</td></tr>
+        <tr><td class="wk-cell">W8</td><td><span class="block-pill" style="background:#5b2c6f">B4 Dev</span></td><td><span class="block-pill" style="background:#1e6b4a">B2 App</span></td><td class="intent-cell">Speed of Play</td></tr>
+        <tr><td class="wk-cell">W9</td><td><span class="block-pill" style="background:#922b21">B5 Intro</span></td><td><span class="block-pill" style="background:#7d3c1c">B3 App</span></td><td class="intent-cell">First Touches in the Box</td></tr>
+        <tr><td class="wk-cell">W10</td><td><span class="block-pill" style="background:#5b2c6f">B4 App</span></td><td><span class="block-pill" style="background:#4F6D8A">B1 App</span></td><td class="intent-cell">Decision-Making Under Pressure</td></tr>
+        <tr><td class="wk-cell">W11</td><td><span class="block-pill" style="background:#922b21">B5 Dev</span></td><td><span class="block-pill" style="background:#1e6b4a">B2 App</span></td><td class="intent-cell">Finishing the Attack</td></tr>
+        <tr><td class="wk-cell">W12</td><td><span class="block-pill" style="background:#5b2c6f">B4 App</span></td><td><span class="block-pill" style="background:#7d3c1c">B3 App</span></td><td class="intent-cell">Pressing Triggers</td></tr>
+
+        <tr class="phase-header"><td colspan="4">Peak Performance &middot; Weeks 13&ndash;18 &middot; Perform at the Highest Level</td></tr>
+        <tr><td class="wk-cell">W13</td><td><span class="block-pill" style="background:#922b21">B5 App</span></td><td><span class="block-pill" style="background:#4F6D8A">B1 App</span></td><td class="intent-cell">Composure in the Box</td></tr>
+        <tr><td class="wk-cell">W14</td><td><span class="block-pill" style="background:#5b2c6f">B4 App</span></td><td><span class="block-pill" style="background:#1e6b4a">B2 App</span></td><td class="intent-cell">Tempo Control</td></tr>
+        <tr><td class="wk-cell">W15</td><td><span class="block-pill" style="background:#922b21">B5 App</span></td><td><span class="block-pill" style="background:#7d3c1c">B3 App</span></td><td class="intent-cell">Winning Moments</td></tr>
+        <tr><td class="wk-cell">W16</td><td><span class="block-pill" style="background:#4F6D8A">B1 App</span></td><td><span class="block-pill" style="background:#5b2c6f">B4 App</span></td><td class="intent-cell">Composure at Speed</td></tr>
+        <tr><td class="wk-cell">W17</td><td><span class="block-pill" style="background:#1e6b4a">B2 App</span></td><td><span class="block-pill" style="background:#922b21">B5 App</span></td><td class="intent-cell">Game Management</td></tr>
+        <tr><td class="wk-cell">W18</td><td><span class="block-pill" style="background:#8a8f98">Flex</span></td><td><span class="block-pill" style="background:#8a8f98">Flex</span></td><td class="intent-cell">Player Ownership</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <p>The spring season picks up from here.</p>
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="footer-left">Coach Justin Whitaker &nbsp;&middot;&nbsp; Coach Craft</div>
+  <div class="footer-right">coachjustinwhitaker.github.io/coach-craft</div>
+</footer>
+
+</body>
+</html>

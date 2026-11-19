@@ -1,0 +1,37 @@
+age: u12
+goals:
+- id: keeps-ball-pressure
+  text: Keeps the ball under pressure with confidence
+  blocks:
+  - B1
+- id: passes-and-moves
+  text: Passes and moves without needing to be reminded
+  blocks:
+  - B2
+- id: defends-as-team
+  text: Defends as part of a team, not just individually
+  blocks:
+  - B3
+- id: reacts-to-turnover
+  text: Reacts to the moment the ball changes hands
+  blocks:
+  - B4
+- id: communicates
+  text: Communicates with and coaches teammates on the field
+  blocks:
+  - B2
+  - B3
+- id: team-identity
+  text: Competes in 9v9 with real team identity
+  blocks:
+  - B1
+  - B2
+  - B3
+  - B4
+- id: wants-to-play
+  text: Shows up wanting to play again
+  blocks:
+  - B1
+  - B2
+  - B3
+  - B4

@@ -1,0 +1,35 @@
+id: waves
+order: 45
+name: Waves
+block: B5
+type: small-sided
+objective: 'Three attackers against two defenders in waves toward a full goal. Numbers-up decisions: carry,
+  pass or shoot.'
+skills:
+- Numerical Advantage
+- Passing
+- Shooting
+ages:
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 8
+  max: 20
+space: full
+minutes: 15
+setup: Full-size goal with a goalkeeper. Three attackers start from the halfway line against two defenders
+  and attack in waves. When the wave finishes (goal, save, or ball out), the three attackers become the
+  next wave's defenders, and the two defenders go to the back of the attacking line. Coach feeds a new
+  ball in right away so play is continuous.
+coach:
+- cue: Numbers-up decisions are the heart of this one. Watch for the attacker who carries the ball until
+    a defender commits, then passes. Watch for the third attacker arriving late into the box. Celebrate
+    a good final pass as loudly as the goal.
+  ask: With three against two, who decided when to pass and when to shoot? How did you know?
+pairs_with:
+- duels-to-goal
+- wide-service-finishing
+equipment: Balls in a bag · 1 full-size goal · Disc cones · Pinnies in 2 colors

@@ -1,0 +1,150 @@
+id: u10-rec
+age: u10
+track: rec
+sessions_per_week: 2
+weeks:
+- week: 1
+  focus: Me & the Ball under pressure — settling into 7v7
+  opening:
+    activity: 3v3-beat-your-player-bonus
+    note: Take on a defender, then score
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: Variable pressure, high energy, lots of touches
+    b:
+      activity: 1v1-to-endlines-goals
+      note: Ball mastery, dribbling past, shooting decision
+  - a:
+      activity: flying-numbers
+      note: 'Revisit with uneven numbers: 2v1 or 3v2'
+    b:
+      activity: shrinking-field
+      note: Body shape under pressure, first touch forward
+  block: B1
+  level: intro
+- week: 2
+  focus: Me & the Ball — control and scanning in space
+  opening:
+    activity: 3v3-four-goals
+    note: Look up to find the open goal
+  sessions:
+  - a:
+      activity: 1v1-to-endlines-goals
+      note: Familiar from week 1 — push the challenge level
+    b:
+      activity: rondo
+      note: Diamond shape, hips open, spreading the space
+  - a:
+      activity: shrinking-field
+      note: Revisit — defending focus this time
+    b:
+      activity: rondo
+      note: Add a second defender if passing is flowing well
+  block: B1
+  level: intro
+- week: 3
+  focus: 'Me & My Teammates — introduced: pass and move'
+  opening:
+    activity: 4v4-pass-and-move
+    note: Pass, then move
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: Anchor — familiar, high energy, resets attention
+    b:
+      activity: gates-passing
+      note: 'Pass and move: the core habit for this focus area'
+  - a:
+      activity: gates-passing
+      note: Revisit — add verbal communication requirement
+    b:
+      activity: gates-passing#triangle-goal-game
+      note: Tell your partner where you’re going before you pass
+  block: B2
+  level: intro
+- week: 4
+  focus: Me & My Teammates — combination play deepens
+  opening:
+    activity: 3v3-give-and-go-bonus
+    note: Pass and run to get it back
+  sessions:
+  - a:
+      activity: gates-passing#triangle-goal-game
+      note: Revisit — now keep count and beat last round
+    b:
+      activity: numbers-passing
+      note: Sequence, body shape, anticipation before ball arrives
+  - a:
+      activity: numbers-passing
+      note: Add second ball — demands quicker decision-making
+    b:
+      activity: 2v2-to-endlines-attacking
+      note: Use the 2v1 — drive at one, pass to the other
+  block: B2
+  level: intro
+- week: 5
+  focus: Me & My Teammates — numerical advantage and finishing
+  opening:
+    activity: 5v4-with-a-floater
+    note: Use the extra player
+  sessions:
+  - a:
+      activity: 2v2-to-endlines-attacking
+      note: Revisit — now explicitly ask about the 2v1 decision
+    b:
+      activity: 3v2-to-goal
+      note: Spread out, force the defender, pass around
+  - a:
+      activity: 3v2-to-goal
+      note: Revisit — celebrate every pass around a committed defender
+    b:
+      activity: five-goal-game
+      note: Change target when path is blocked — keep moving
+  block: B2
+  level: intro
+- week: 6
+  focus: 'Me & My Team Defending, introduced: press, delay, cover'
+  opening:
+    activity: 3v3-pressure-and-cover
+    note: One presses, the others cover
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: 'Anchor: familiar, high energy, resets attention'
+    b:
+      activity: approach-delay
+      note: Fast approach, slow arrival, sideways stance
+  - a:
+      activity: approach-delay
+      note: Revisit with a second defender who calls cover
+    b:
+      activity: pressure-cover-3v3
+      note: 'First, second and third defender: who does what'
+  block: B3
+  level: intro
+- week: 7
+  focus: 'Me & My Team Defending: marking and staying compact'
+  opening:
+    activity: 4v4-two-in-the-final-third
+    note: Defend with numbers up
+  sessions:
+  - a:
+      activity: pressure-cover-3v3
+      note: 'Revisit: celebrate every step-in after a teammate is beaten'
+    b:
+      activity: shadow-marking
+      note: Stay goal side, eyes on ball and player
+  - a:
+      activity: shadow-marking
+      note: 'Revisit: swap who marks whom'
+    b:
+      activity: squeeze-the-space
+      note: Narrow in the middle, shift together, make the shot hard
+  block: B3
+  level: intro
+- week: 8
+  focus: Coach’s choice both days
+  coach_choice: true
+  note: What does your group love most? What do they still need most? Run your two best sessions of the
+    season. Both are correct answers.

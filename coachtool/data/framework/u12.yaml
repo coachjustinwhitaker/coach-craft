@@ -1,0 +1,50 @@
+age: u12
+blocks:
+  B1:
+    tagline: Same habits, more pressure.
+    overview: Players know the individual skills from U8 and U10. At U12 they deepen them under more pressure,
+      on a bigger field, with more opponents. Scanning, body shape, first touch, passing range and shooting
+      all get tested at a faster speed.
+    problem: Players receive, protect and move the ball under real pressure, with their head up and body
+      open.
+    focus:
+    - Scanning before and during receiving
+    - First touch away from pressure
+    - Passing at the right speed and time
+    - Reading the goalkeeper when shooting
+  B2:
+    tagline: Pass, move, and switch the picture.
+    overview: This block goes deeper than U10 as the game gets more complex. Players learn to give the
+      team height, width and depth, to switch the point of attack, to use wall passes in small spaces,
+      and to find the third player.
+    problem: 'Players use teammates to move the defense: spreading out, switching the ball and combining
+      to find free players.'
+    focus:
+    - Height, width and depth
+    - Switching the point of attack
+    - Wall passes and third-player runs
+    - Finding free players between the lines
+  B3:
+    tagline: Defend together.
+    overview: Compact team shape and team defending are reinforced and emphasized from U10. One player
+      pressures the ball, one covers behind, and the rest support to cut off space. Defending moves from
+      individual actions to how the team defends.
+    problem: 'Players defend as a team: pressure, cover and support, with a compact shape and a plan for
+      the far side.'
+    focus:
+    - Pressure, cover and support
+    - Compact shape and distances
+    - Marking and intercepting
+    - Recovering and preventing the switch
+  B4:
+    tagline: React in the first second.
+    overview: 'This block is introduced at U12. It covers both transition moments: what we do the instant
+      we lose the ball, and the instant we win it. At this age the aim is the habit of reacting at once,
+      not complex decisions.'
+    problem: Players recognize the moment possession changes and react at once, pressing or recovering
+      when it is lost and looking forward when it is won.
+    focus:
+    - Recognizing the turnover instantly
+    - Immediate pressure or recovery
+    - First pass forward on winning the ball
+    - Urgency repeated across the game

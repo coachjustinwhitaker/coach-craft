@@ -1,0 +1,50 @@
+id: 3v3-beat-your-player-bonus
+order: 102
+name: 3v3 Beat Your Player Bonus
+block: B1
+skills:
+- Dribbling
+- Decision-Making
+ages:
+- u8
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 3v3. Extra players wait on the sideline and rotate in after each goal.
+- Ask a waiting player to call out when a dribble beats a defender, so the bonus is clear.
+rules:
+- 'The challenge: go past a defender, then score.'
+- If a player dribbles past a defender and scores within about five seconds, the goal counts double. The other team
+  and the sideline can call it.
+- Passing is always allowed. The bonus is a reward, not a rule.
+- Kick in from the sideline to restart.
+scoring: A goal is 1 point. A goal right after beating a defender is 2. First team to 5.
+coach:
+- cue: Take on the defender when you have space and your teammates are covered.
+  ask: What made you decide to dribble instead of pass?
+- cue: Change speed after you beat the defender.
+  ask: What did you do right after you got past?
+- cue: Passed instead? Good, if it was the better choice.
+  ask: When is passing better than taking them on?
+type: opening-play
+objective: Take on a defender when the chance is there. A goal after beating your player is worth double.
+progression:
+- title: Easier
+  text: Give the dribbler a free first touch, with no defender pressure until they have taken two touches.
+- title: Harder
+  text: Only count the bonus if the dribbler beats the defender on the outside, away from the goal.

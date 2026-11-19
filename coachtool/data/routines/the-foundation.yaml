@@ -1,0 +1,52 @@
+id: the-foundation
+name: The Foundation
+kind: ball-mastery
+objective: A daily ball mastery sequence each player does alone before group training. Ten moves, 20 reps
+  of each, working in place.
+ages:
+- u12
+- u14
+tracks:
+- comp
+dosage: 20 reps of each move, every session
+equipment: 1 ball per player
+steps:
+- name: Toe Taps
+  how: Alternate light taps on top of the ball with each foot, staying on your toes.
+  cue: Light contact, fast feet, ball barely moves.
+- name: Foundations
+  how: Tap the ball back and forth between the insides of your feet with short, controlled touches.
+  cue: Stay light, keep a steady rhythm, keep the ball close.
+- name: Sole Rolls
+  how: Put one sole on the ball and roll it sideways to the other foot, which receives it and rolls it
+    back.
+  cue: Balanced weight, smooth touches.
+- name: V-Pulls
+  how: Pull the ball back with the sole, then push it diagonally forward with the inside of the same foot
+    so it travels to the other foot in a V. That foot returns it the same way.
+  cue: Sole pulls back, inside pushes the V forward.
+- name: 'V-Pulls: Laces'
+  how: Same pattern as V-Pulls, but push forward with the laces instead of the inside.
+  cue: Sole pulls back, laces push the V forward.
+- name: La Croqueta
+  how: Push the ball sideways with the inside of one foot and shift your whole body weight with it. The
+    other foot receives it and pushes it back with another full weight shift.
+  cue: Full weight shift. The body moves with the ball, not just the feet.
+- name: Push Pull Laces
+  how: Push forward with the laces, then pull back with the sole on the same foot. Keep touches short.
+    Switch feet after your reps.
+  cue: Laces push, sole pulls, stay balanced.
+- name: Push Pull Insides
+  how: Push across with the inside, then pull back with the sole on the same foot. Switch feet after your
+    reps.
+  cue: Inside pushes across, sole pulls back, stay light.
+- name: Inside Outs
+  how: Push the ball outside with the outside of your right foot, step over it, then push it back to center
+    with the right inside. Repeat on the left. The step-over is part of the move.
+  cue: Outside push, step over, inside back, other side. Keep the rhythm continuous.
+- name: Elastico
+  how: Push the ball outside with the outside of one foot, then flick it back inside with the inside of
+    the same foot. Both touches are nearly simultaneous. Go slow until the touches are clean, then speed
+    up.
+  cue: Outside push, instant inside snap, one fluid move.
+source: The Foundation

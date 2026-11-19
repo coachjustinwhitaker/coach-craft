@@ -1,0 +1,14 @@
+# The player actions used as labels. kind: tech = with the ball, perc = perception and positioning.
+controlling: {label: Controlling, kind: tech}
+protecting: {label: Protecting, kind: tech}
+driving: {label: Driving, kind: tech}
+dribbling: {label: Dribbling, kind: tech}
+passing: {label: Passing, kind: tech}
+shooting: {label: Shooting, kind: tech}
+scanning: {label: Scanning, kind: perc}
+supporting: {label: Supporting, kind: perc}
+body-shape: {label: Body Shape, kind: perc}
+covering: {label: Covering, kind: perc}
+marking: {label: Marking, kind: perc}
+finishing: {label: Finishing, kind: tech}
+timing-runs: {label: Timing Runs, kind: perc}

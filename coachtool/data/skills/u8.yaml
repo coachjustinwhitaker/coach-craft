@@ -1,0 +1,111 @@
+skills:
+- id: u8-b1-controlling-intro
+  age: u8
+  block: B1
+  area: Controlling
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Settle the ball close to the body with small touches
+  - Receive short passes from 5 to 10 yards
+  - Keep the ball close after receiving so the next touch is easy
+- id: u8-b1-protecting-intro
+  age: u8
+  block: B1
+  area: Protecting
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Put the body between the ball and the opponent
+  - Keep the ball on the far foot from the opponent
+  - Keep the ball safe until a good option opens
+- id: u8-b1-driving-intro
+  age: u8
+  block: B1
+  area: Driving
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Push the ball a few steps ahead and run with it
+  - Keep the ball within a few steps of the body
+  - Drive into open space
+- id: u8-b1-dribbling-intro
+  age: u8
+  block: B1
+  area: Dribbling
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Take the ball past an opponent with a change of direction or speed
+  - Try a move when an opponent is close
+  - Use both feet
+- id: u8-b1-passing-intro
+  age: u8
+  block: B1
+  area: Passing
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Play short passes to a teammate's feet or into space
+  - Pass with the inside of the foot
+  - Pass and keep moving
+- id: u8-b1-shooting-intro
+  age: u8
+  block: B1
+  area: Shooting
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Strike the ball on goal from short range
+  - Shoot when in range instead of passing up the chance
+  - Follow the ball after the shot
+- id: u8-b1-perception-preparation-intro
+  age: u8
+  block: B1
+  area: Perception & Preparation
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Look up for the ball and the goal while moving
+  - Build the habit once ball comfort is there
+  - Look first, then decide
+- id: u8-b2-supporting-intro
+  age: u8
+  block: B2
+  area: Supporting
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Spread out instead of bunching around the ball
+  - Find open space with no opponent and no teammate in it
+  - Look at the player with the ball so they can find you
+- id: u8-b2-passing-movement-intro
+  age: u8
+  block: B2
+  area: Passing & Movement
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Look up and find a teammate in open space
+  - Pass to the teammate's feet or into space with the right pace
+  - Move to a new spot after passing
+- id: u8-b2-decision-making-intro
+  age: u8
+  block: B2
+  area: Decision-Making
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Choose between dribbling and passing in the game
+  - Pass when a teammate is free and the dribble is blocked
+  - Celebrate a pass that leads to a goal

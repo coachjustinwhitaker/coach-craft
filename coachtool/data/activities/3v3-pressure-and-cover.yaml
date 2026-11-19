@@ -1,0 +1,51 @@
+id: 3v3-pressure-and-cover
+order: 111
+name: 3v3 Pressure and Cover
+block: B3
+skills:
+- Pressing
+- Covering
+- Communication
+ages:
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 3v3. Extra players wait on the sideline and rotate in after each goal.
+- Show the first defender and the cover once with a slow walk-through, then let them play.
+rules:
+- 'The challenge: one defender goes to the ball and a teammate covers behind.'
+- When the other team has the ball, one defender pressures. The others stand behind and to the side, close enough
+  to step in if the first defender is beaten.
+- If a team wins the ball while a teammate is covering behind, they get a bonus point.
+- Kick in from the sideline to restart.
+scoring: A goal is 1 point. Winning the ball with a teammate covering is 1 point. First team to 5.
+coach:
+- cue: Pressure the ball quickly, then slow down as you get close.
+  ask: How did you close down the space?
+- cue: 'Cover player: stand behind and to the side of your teammate.'
+  ask: Where was your cover when the first defender got beaten?
+- cue: Talk. Say "I have it" or "cover."
+  ask: What did you call out when the first defender went to the ball?
+type: opening-play
+objective: One defender pressures the ball and the other two cover behind. Winning the ball with cover behind you
+  is worth double.
+progression:
+- title: Easier
+  text: Do not count the cover. Any steal is a bonus.
+- title: Harder
+  text: Both teammates must be covering for the steal to count at U12 and U14.

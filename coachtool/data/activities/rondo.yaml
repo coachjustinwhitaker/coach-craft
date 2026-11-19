@@ -1,0 +1,41 @@
+id: rondo
+order: 4
+name: Rondo
+block: B1
+type: rondo
+objective: Four attackers keep the ball from one defender. Spread out, show for the ball, and keep a count
+  of passes.
+skills:
+- Possession
+- Body Shape
+- Passing
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 5
+  max: 15
+space: quarter
+minutes: 15
+setup: Square grid, one defender in the center, four attackers on the outside. This is called a rondo.
+  Attackers keep the ball away from the defender. When the defender wins it or the ball goes out, the
+  attacker who last touched it swaps into the middle. Keep track of consecutive passes.
+coach:
+- cue: Look for attackers spreading out to give the player with the ball multiple options. Players who
+    bunch together make the defender's job easy. The player with the ball should always have at least
+    two teammates they can see. On the receiving end, open hips give a player more time before the defender
+    closes in.
+  ask: When you were in the middle defending, what made it harder to win the ball? What made it easier?
+pairs_with:
+- flying-numbers
+- gates-passing
+equipment: 1 ball per group · 4 cones per square · Pinnies for defenders
+aliases:
+- 4v2 Keep-Away
+progression:
+- title: 4v2 or 3v1
+  text: Add a second defender (4v2) if passing is excellent, or drop to 3v1 to force attackers to move
+    more.

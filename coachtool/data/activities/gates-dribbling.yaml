@@ -1,0 +1,35 @@
+id: gates-dribbling
+order: 23
+name: Gates Dribbling
+block: B1
+type: ball-mastery
+objective: Dribble through as many gates as you can in 60 seconds. Heads up to find the next gate.
+skills:
+- Driving
+- Scanning
+ages:
+- u8
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 16
+space: quarter
+minutes: 20
+setup: 'Grid about 25 by 20 yards with 8 to 10 gates scattered throughout. Each gate is two tall cones
+  placed an arm''s length apart. Every player has a ball. Score a point by dribbling through any gate.
+  60-second challenge: how many gates can you get through? Tell players to imagine a force field the size
+  of their arms, and the ball should stay inside it while they dribble.'
+coach:
+- cue: 'Players who keep their head up find more gates. The game creates the need for scanning without
+    you naming it. After the question, name it: "That looking up while you dribble is called scanning."'
+  ask: How did you find the gates faster? What were you doing with your eyes?
+pairs_with:
+- color-tag-dribble
+- shadow-dribbling
+equipment: 1 ball per player · 8 to 10 tall cones in pairs · Disc cones for grid · Timer
+progression:
+- title: Call a color
+  text: Call a specific cone color and players must look up to find those gates first.

@@ -1,0 +1,12 @@
+# The only activity types. Shown on each activity and used to keep swaps like for like.
+types:
+- {id: ball-mastery, label: Ball mastery}
+- {id: warm-up, label: Warm-up}
+- {id: pattern, label: Passing pattern}
+- {id: rondo, label: Rondo or possession}
+- {id: opening-play, label: Opening play}
+- {id: small-sided, label: Small-sided game}
+- {id: positional, label: Positional work}
+- {id: full-game, label: Full game}
+- {id: set-piece, label: Set piece}
+- {id: fitness, label: Fitness}

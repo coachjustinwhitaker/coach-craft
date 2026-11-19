@@ -1,0 +1,45 @@
+id: scan-and-decide
+order: 66
+name: Scan and Decide
+block: B1
+skills:
+- Scanning
+- Controlling
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- app
+players:
+  min: 8
+  max: 10
+space: quarter
+minutes: 18
+pairs_with: []
+equipment: Balls · Cones · 4 mini goals · Pinnies in 2 colors
+setup:
+- A square grid with four mini goals, one on each side. 4v4 or 5v5.
+- 'The two end goals are the attack and defend targets: each team attacks one and defends the other.'
+- The two side goals are neutral. Either team can score on them.
+rules: No touch limit to start.
+scoring:
+- 'End goals: 3 points.'
+- 'Side goals: 1 point.'
+coach:
+- cue: Make the decision before the ball arrives.
+  ask: What did you see before the ball arrived?
+- cue: Pick the goal that is on.
+  ask: Which goal did you pick, and why?
+- cue: Your first touch opens the next target.
+  ask: Did your first touch open the next target?
+progression:
+- title: Two touch maximum
+  text: Bring it in when the group is comfortable. The coach reads the group. No set time.
+diagram: scan-and-decide.jpg
+type: small-sided
+objective: 'Make the decision before the ball arrives: which goal is on, which is closed, and does the
+  first touch open the next target.'
+diagram_caption: A square grid with a mini goal on each side. Two teams attack the end goals and either
+  team can score on the side goals.

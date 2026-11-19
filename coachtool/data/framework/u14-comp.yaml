@@ -1,0 +1,79 @@
+age: u14
+blocks:
+  B1:
+    tagline: Prepare the body. Read the picture. Execute with intent.
+    overview: 'Every player’s relationship with the ball comes before everything else. B1 establishes
+      the perceptual and technical habits that make all combination play, defending, and finishing possible:
+      scanning before the ball arrives, shaping the body to play forward, and using first touch to create
+      a decision rather than just react to pressure. This block runs through every phase of the season
+      because the habits live here. When a player stalls in B3 or B4, look back at B1 first.'
+    problem: Players must scan, position, and execute first-touch decisions under high pressure in tight
+      spaces. At U13, the skill itself does not change position to position, the environment around it
+      does. First touch is now a decision made under maximum defensive intensity, not just a technical
+      act.
+    focus:
+    - Scanning before, during, and after receiving
+    - Body shape and movement to play forward
+    - Using first touch to create a decision, not just control
+    - Technique executed at full U13 game speed and pressure
+  B2:
+    tagline: Create advantage. Move the ball forward. Solve pressure together.
+    overview: 'Combination play only works if the individual technique from B1 is already in place. A
+      player who cannot control the ball under light pressure cannot execute a wall pass at game speed.
+      B2 takes that individual foundation and asks players to solve pressure together: recognizing a teammate''s
+      run, providing the right angle of support, and timing the next action so the advantage compounds
+      rather than stalls.'
+    problem: Players use teammates to create time, space, and numerical advantages, progressing the ball
+      forward under pressure through deliberate combination play.
+    focus:
+    - Supporting angle, distance, and timing
+    - Combination play to break defensive lines
+    - Recognizing and exploiting overloads
+    - Movement after the pass, not just the pass itself
+  B3:
+    tagline: Compact. Coordinated. Aggressive. Defending is not just for defenders.
+    overview: 'Defending is not just for defenders. Strikers set the tone for the entire pressing structure,
+      they''re often the first line and the players who trigger the whole team''s coordinated press. B3
+      is where every player learns that winning the ball back is a collective action: the nearest player
+      pressures, teammates cover behind, and the team stays connected and compact to protect dangerous
+      space. At U13, the standard is no longer just reacting to losing the ball. Teams are expected to
+      defend proactively, a compact, high defensive block that regains possession as high up the field
+      as possible.'
+    problem: Players create and maintain a compact, high defensive block, applying coordinated pressure-cover-balance
+      to prevent forward play and regain the ball as high as possible.
+    focus:
+    - Coordinated pressure-cover-balance
+    - Compact shape, vertically and horizontally
+    - High defensive line and line management
+    - Immediate reaction after losing the ball
+  B4:
+    tagline: Recognizing moments and acting fast.
+    overview: 'Transitions are the moments that decide games. B4 explicitly links attacking and defending:
+      the instant possession changes, players must recognize the moment and respond, either with maximum
+      intensity to win the ball back, or with immediate speed to attack before the opponent can organize.
+      This block draws directly on B1, B2, and B3. A player who reacts fast in transition is applying
+      all three at once, technique, combination, and defensive shape, compressed into a few seconds of
+      chaos.'
+    problem: Players recognize the moment possession changes and respond immediately, either pressing
+      with maximum intensity to regain the ball or recovering into defensive shape, and on regain, either
+      playing forward at speed or securing possession to build.
+    focus:
+    - Immediate recognition of the transition moment
+    - Reaction speed and acceleration
+    - Press vs. recover, play forward vs. secure
+    - Communication and organization under chaos
+  B5:
+    tagline: Can we turn advantage into goals?
+    overview: All of the work in B1 through B4 is preparation for this block. Players who scan early,
+      combine well, defend collectively, and transition fast create finishing opportunities. B5 is about
+      having the composure and technique to take them. When players struggle to finish, the answer is
+      rarely more finishing drills. Check the quality of preparation touches, the timing of runs, and
+      the decisions made before the shot. The problem usually lives earlier in the chain.
+    problem: Players convert advantage into goals under high defensive pressure, separating to receive,
+      combining for the final pass, and finishing with composure and limited touches, while managing tempo
+      and stakes as the game state demands.
+    focus:
+    - Converting advantage into goals through quality final actions
+    - Separating and unmarking to receive in the box
+    - Finishing with composure and limited touches under pressure
+    - Managing tempo and stakes as the game state demands

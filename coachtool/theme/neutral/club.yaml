@@ -1,0 +1,14 @@
+id: neutral
+short_name: Coach Companion
+club_label: Coach Companion &nbsp;|&nbsp; Player Development
+logo_file: logo.png
+logo_small_file: logo-small.png
+navy: '#1F4E5F'
+navy_dark: '#173A47'
+gold: '#6A89A7'
+support_line: Your age group coordinator or club technical director is there for exactly this.
+pathway_line_1: A competitive program exists to open more doors for players when they are ready
+pathway_line_2: Talk to your club director about what that pathway looks like
+credit_html: This guide was designed by <strong style="color:var(--navy);">Coach Justin Whitaker</strong> and is grounded in US Soccer's Player Development Framework.
+help_email: ''
+suggest_form_url: ''

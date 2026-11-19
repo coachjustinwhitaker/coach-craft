@@ -1,0 +1,39 @@
+id: volleys-and-half-volleys
+order: 59
+name: Volleys and Half-Volleys
+block: B5
+skills:
+- Shooting
+- Body Shape
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 4
+  max: 8
+space: half
+minutes: 7
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper
+setup:
+- A full-size goal with a keeper and a coned target zone. A server with a pile of balls feeds the shooters
+  in a line.
+- 'Mix the feed: some tossed for pure volleys, some bounced to force half-volley timing.'
+rules:
+- First-time volleys and half-volleys only. No ground balls.
+- Call a target corner on some reps and leave others open.
+coach:
+- cue: Knee and hip height match the height of the ball at contact.
+  ask: What height was the ball when you struck it?
+- cue: Short, controlled swing, not a full backswing.
+  ask: How big was your swing, and was it enough?
+- cue: Watch the ball onto your foot through contact.
+  ask: Where were your eyes at contact?
+- cue: 'Half-volley: strike just after the bounce, not at the peak.'
+  ask: When did the ball bounce relative to your strike?
+type: pattern
+objective: Strike first-time volleys and half-volleys, with straight repetition and no game wrapped around
+  it.

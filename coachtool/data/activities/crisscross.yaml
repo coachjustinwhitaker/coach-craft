@@ -1,0 +1,46 @@
+id: crisscross
+order: 34
+name: Crisscross
+block: B4
+type: small-sided
+objective: Two teams attack different goals on a four-goal grid. When you win it, find your goal right
+  away.
+skills:
+- Decision-Making
+- Scanning
+ages:
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 16
+space: quarter
+minutes: 15
+setup: Square grid with a goal on the middle of each side, 4 goals total. One team scores on the two endline
+  goals; the other scores on the two touchline goals. Play 2v2 or 3v3. Score by passing through a goal
+  to a teammate. The cross-axis attack means defenders must constantly re-orient.
+coach:
+- cue: 'Trains the transition instinct directly: the instant you win the ball, find the goal immediately.
+    Players who hesitate give defenders time to recover. Players who look up the moment they win possession
+    and find a goal in one or two actions are showing what the transition block looks like in practice.'
+  ask: How quickly after winning the ball did you find your target? What would have happened if you waited
+    two more seconds?
+pairs_with:
+- flying-numbers-transition
+- hawaii
+equipment: 1 ball · 4 cone goals (pairs, arm's length apart) · Pinnies
+for_age:
+  u14:
+    setup: Square grid with a goal in the middle of each side, 4 goals total. One team scores on the two
+      endline goals, the other on the two touchline goals. Play 3v3 or 4v4. Score by passing through a
+      goal to a teammate. The cross-axis attack forces defenders to re-orient constantly.
+    coach:
+    - cue: The instant a team wins the ball, do they look up and find a target within one or two actions?
+        Players who hesitate give defenders time to recover. That first-second decision is the whole transition
+        idea.
+      ask: How quickly after winning the ball did you find your target? What would have happened if you
+        waited two more seconds?

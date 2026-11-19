@@ -1,0 +1,54 @@
+id: 3v3-with-end-zones
+order: 49
+name: 3v3 With End Zones
+block: B5
+skills:
+- Controlling
+- Scanning
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+- app
+players:
+  min: 10
+  max: 10
+space: quarter
+minutes: 15
+pairs_with: []
+equipment: Balls · Cones · Pinnies in 2 colors
+setup:
+- A field about 30 yards wide. Each end zone is about 7 yards deep and the center is about 28 yards. Cones
+  mark the zones.
+- Each team has 3 players in the center and 1 in each end zone, so every end zone is a 1v1.
+- A ball starts in one end zone.
+rules:
+- The ball has to go through the center. It must touch a center teammate between end zones, so no direct
+  end zone to end zone pass.
+- After a score, move the ball right back the other way. Non-stop.
+- If the defense wins the ball, the game flips and they attack the other way.
+- End zone players stay in their zone.
+- Every 3 to 4 minutes, rotate the end zone players and the center players.
+- When the ball goes out, the coach feeds a new one.
+scoring:
+- A score is the ball received under control in the far end zone.
+- 'The first score is 1 point. Each score in a row doubles: 1, then 2, then 4. A score is never worth
+  more than 4.'
+- The count starts over any time the ball goes out or is turned over.
+coach:
+- cue: End zone player, move to the ball before the defender does.
+  ask: When did you decide to step in?
+- cue: Center players, weight the pass for the person receiving it.
+  ask: Could your teammate step to that pass?
+- cue: After a score, move the ball right back the other way.
+  ask: What did you see before you played it back?
+diagram: 3v3-with-end-zones.png
+type: small-sided
+objective: Move the ball through the center and get it received in the far end zone. The end zone player
+  has a defender on them, so they step to the ball and decide.
+diagram_caption: 3v3 in the middle with a 1v1 in each end zone. The arrow is a pass from the center into
+  the bottom end zone, where the receiver steps to it against a defender. The coach on the left feeds
+  balls.

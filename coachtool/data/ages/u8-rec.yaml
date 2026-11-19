@@ -1,0 +1,22 @@
+id: u8-rec
+age: u8
+track: rec
+label: U8
+pills:
+- controlling
+- protecting
+- driving
+- dribbling
+- passing
+- shooting
+- scanning
+- supporting
+- body-shape
+pills_note: 'Navy pills are technical skills: what the body does with the ball. Gold pills are awareness
+  skills. **Scanning** means looking up to see what is around you before the ball arrives. Every great
+  player in the world does this, and you are starting to teach it at age seven. Pick one focus per session
+  and let the game build the rest.'
+next_age: U10
+goals: u8
+players: u8
+framework: u8

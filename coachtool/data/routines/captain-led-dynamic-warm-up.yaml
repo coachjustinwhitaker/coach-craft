@@ -1,0 +1,40 @@
+id: captain-led-dynamic-warm-up
+name: Captain-Led Dynamic Warm-Up
+kind: dynamic-warm-up
+objective: Prepare the body for a high-tempo session with a captain-led sequence and no ball.
+ages:
+- u14
+tracks:
+- comp
+dosage: Captains lead their line's pace. Straight through with no stopping between movements, about 10 minutes.
+equipment: Cones to mark the working area. No ball.
+steps:
+- name: Light Jog
+  how: Easy jog across the working area and back to loosen up.
+  cue: Easy pace, stay relaxed.
+- name: High Knees
+  how: Run in a straight line, driving the knees up toward the waist.
+  cue: Knees to the waist, quick feet.
+- name: Butt Kicks
+  how: Run in a straight line, kicking the heels up toward the backside.
+  cue: Heels to the backside, stay tall.
+- name: Straight-Leg Walks
+  how: Walk forward, swinging one straight leg up toward the opposite hand, alternating legs.
+  cue: Tall posture, straight leg, reach for the hand.
+- name: Lateral Shuffle
+  how: Stay low and shuffle sideways without crossing the feet. Go one way, then back the other way.
+  cue: Stay low, feet never cross.
+- name: Carioca
+  how: Travel sideways, crossing the trailing foot in front, then behind, with the hips turning. Go one way,
+    then back the other way.
+  cue: Hips turn, feet cross front then back.
+- name: Walking Lunge With Rotation
+  how: Step into a lunge and rotate the upper body toward the front leg. Stand, step, and repeat on the
+    other side.
+  cue: Long step, rotate toward the front leg.
+- name: Leg Swings
+  how: Hold a teammate or stand tall. Swing one leg front to back, then side to side. Switch legs.
+  cue: Control the swing, stay tall.
+- name: Build-Up Strides
+  how: Three strides, building from 75 to 90 percent. Optional, used in the W11 session.
+  cue: Build speed gradually, finish strong.

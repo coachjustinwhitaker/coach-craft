@@ -1,0 +1,25 @@
+age: u8
+blocks:
+  B1:
+    tagline: Keep it close. Head up. Take it with you.
+    overview: 'Every player''s relationship with the ball comes first. At U8, this block builds comfort
+      and confidence: close touches, moving with the ball, taking on an opponent, and shooting. Heads
+      come up as comfort grows, not before.'
+    problem: Players build the comfort and confidence to move with the ball, take on opponents and shoot,
+      with the ball staying close.
+    focus:
+    - Close control while moving
+    - Taking on an opponent 1v1
+    - Shooting from short range
+    - Looking up as ball comfort grows
+  B2:
+    tagline: A teammate is an option.
+    overview: 'The first look at team play. Players start to see that a teammate in open space is an option,
+      and that a pass can solve a problem a dribble cannot. At U8 this is low structured: spread out,
+      be available, and pass to a free teammate when it helps.'
+    problem: 'Players start to use teammates as options: moving into open space to be available, and passing
+      to a free teammate.'
+    focus:
+    - Finding open space away from opponents and teammates
+    - Showing the player with the ball an option to pass to
+    - Passing to a free teammate

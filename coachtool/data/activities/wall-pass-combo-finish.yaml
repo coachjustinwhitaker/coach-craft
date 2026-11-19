@@ -1,0 +1,45 @@
+id: wall-pass-combo-finish
+order: 61
+name: Wall Pass Combo Finish
+block: B5
+skills:
+- Passing
+- Shooting
+- Combination Play
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 4
+  max: 8
+space: half
+minutes: 7
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper
+setup:
+- 'A full-size goal with a keeper and a coach with the balls. Three active roles plus a line: A (builds),
+  B (wall pass), C (higher, back to goal).'
+- 'Conveyor rotation: the shooter becomes the lay-off player, the lay-off player becomes the wall-pass
+  partner, the wall-pass partner exits and the next player enters.'
+rules:
+- 1. A plays a 1-2 wall pass with B.
+- 2. A turns and receives a fresh ball from the coach or another player.
+- 3. A plays a pass between the lines to C, positioned higher with their back to goal.
+- 4. C lays it off first time.
+- 5. A arrives on the lay-off and finishes.
+coach:
+- cue: Finishing is the end of a chain of actions. Feel the sequence, not just the last touch.
+  ask: Which touch set up your strike?
+- cue: 'C: disguise the lay-off. Do not telegraph it.'
+  ask: What did the defender see before you laid it off?
+- cue: 'A: decide placement before the ball arrives. No time to decide and strike separately.'
+  ask: Where did you decide to finish, and when?
+diagram: wall-pass-combo-finish.jpg
+type: pattern
+objective: 'Build quickly into a shot: wall pass, turn, split pass, lay-off, first-time finish. Coaching
+  stays on the lay-off and the strike.'
+diagram_caption: A plays a wall pass, receives a fresh ball, splits a pass to C, and finishes on the lay-off.
+  The numbers show the order.

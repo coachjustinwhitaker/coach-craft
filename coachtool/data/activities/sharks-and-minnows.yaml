@@ -1,0 +1,34 @@
+id: sharks-and-minnows
+order: 38
+name: Sharks and Minnows
+block: D
+type: ball-mastery
+objective: Dribble across the ocean without losing your ball to the shark. Lose it and you become a shark.
+skills:
+- Dribbling
+- Scanning
+ages:
+- u6
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 14
+space: quarter
+minutes: 10
+setup: Mark a rectangle and call it the ocean. Every player is a minnow with their own ball. You are the
+  shark. Minnows line up along one end and on your signal they all dribble to the other side without getting
+  their ball knocked away by you. Any minnow whose ball is knocked out becomes a shark and joins you for
+  the next crossing. Minnows who make it safely line up and go again. Play until everyone has become a
+  shark, then start fresh with a new volunteer as the first shark.
+coach:
+- cue: Encourage minnows to keep their heads up to find gaps, small touches to get around the sharks,
+    and bigger touches to escape when they have space. The game is self-regulating as more sharks appear.
+    Go after your more confident players first.
+  ask: How did you get past the shark? Did you go fast or did you go around?
+pairs_with:
+- octopus
+- kangaroo-jacks
+equipment: 1 ball per player · Disc cones for rectangle

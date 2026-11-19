@@ -1,0 +1,38 @@
+id: wide-service-finishing
+order: 46
+name: Wide Service Finishing
+block: B5
+type: pattern
+objective: Wide players serve into the box while attackers time their runs to finish. Add a defender once
+  it is clean.
+skills:
+- Shooting
+- Supporting
+ages:
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 8
+  max: 18
+space: half
+minutes: 15
+setup: 'Full-size goal with a goalkeeper. Wide players on each flank serve balls into the box while two
+  or three attackers arrive to finish. Start with serves along the ground or driven low, finish with feet.
+  Rotate servers, finishers and the goalkeeper every few turns. Heading is optional: if you include it,
+  use a lighter ball, toss to the head from short range, and keep the total number of headers very low.'
+coach:
+- cue: 'Do the attackers time their runs so they arrive as the ball does, rather than standing in the
+    box waiting? Do they attack the near post and far post with different players? Watch for the serve
+    itself: low and hard, away from the goalkeeper, is hard to defend.'
+  ask: When the cross came in, how did you decide where to run? What did your teammate do differently
+    from you?
+pairs_with:
+- waves
+- flying-numbers
+equipment: Balls in a bag · 1 full-size goal · Disc cones for the wide channels · Pinnies
+progression:
+- title: Add a defender
+  text: Once the group is confident, add a defender in the box.

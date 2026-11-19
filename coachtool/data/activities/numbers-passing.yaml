@@ -1,0 +1,38 @@
+id: numbers-passing
+order: 7
+name: Numbers Passing
+block: B2
+type: pattern
+objective: Pass in number order around a grid with open hips and a soft first touch. Add a second ball
+  when it flows.
+skills:
+- Passing
+- Body Shape
+- Scanning
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 8
+space: quarter
+minutes: 15
+setup: 'Grid with 4 cones. Assign each player a number, their passing order. Players jog around the space
+  passing in numbered order: 1 to 2, 2 to 3, until the last number passes back to 1.'
+coach:
+- cue: Look for players keeping hips open (not square-on), cushioning the ball softly, then taking a purposeful
+    next touch. Players who are always looking for the next number before the ball arrives will stand
+    out. That anticipation is body shape doing its job. Works well as a focus activity after Gates Passing.
+  ask: How did you know where the next number was before the ball came to you?
+pairs_with:
+- 1v1-to-endlines-goals
+- flying-numbers
+equipment: 1 ball (2 when ready) · Disc cones for grid
+progression:
+- title: Second ball
+  text: Add a second ball when they find a rhythm.
+- title: Add a goal
+  text: The last player shoots, then becomes the new number 1.

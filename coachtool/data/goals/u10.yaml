@@ -1,0 +1,11 @@
+# What players should be showing by the end of the season. Each goal names the blocks that build it.
+age: u10
+goals:
+  - {id: keeps-ball, text: Keeps the ball under pressure rather than kicking it away, blocks: [B1]}
+  - {id: looks-up, text: "Looks up before receiving, not just after", blocks: [B1]}
+  - {id: passes-with-reason, text: "Passes with a reason, not just to get rid of the ball", blocks: [B2]}
+  - {id: moves-after-pass, text: "Moves to a new spot after passing, at least sometimes", blocks: [B2]}
+  - {id: finds-free-teammate, text: Recognizes when a teammate is free and tries to find them, blocks: [B2]}
+  - {id: presses-covers, text: "Pressures the ball or covers a teammate, at least sometimes", blocks: [B3]}
+  - {id: competes, text: Competes in 7v7 with confidence and enjoyment, blocks: [B1, B2, B3]}
+  - {id: wants-to-play, text: Shows up wanting to play again, blocks: [B1, B2, B3]}

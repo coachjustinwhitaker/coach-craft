@@ -1,0 +1,39 @@
+id: two-pugg-ssg
+order: 50
+name: Two Pugg SSG
+block: B2
+skills:
+- Scanning
+- Passing
+- Combination Play
+ages:
+- u12
+- u14
+tracks:
+- rec
+- comp
+levels:
+- intro
+players:
+  min: 6
+  max: 8
+space: quarter
+minutes: 12
+pairs_with:
+- wall-pass-grid
+equipment: Balls · Cones · 4 Pugg goals · Pinnies in 2 colors
+setup:
+- Two teams of 3 to 4.
+- A field about 20 by 30 yards.
+- Two Pugg goals on each end line.
+rules: No touch limits.
+coach:
+- cue: Scan before you receive.
+  ask: Before receiving, which Pugg is open?
+- cue: Look for a teammate before the ball arrives.
+  ask: Did you see your teammate before or after the ball arrived?
+coach_note: Observe who looks for a teammate before receiving and who carries. This becomes the coaching
+  point in the wall pass activity.
+type: small-sided
+objective: Get moving while demanding scanning before receiving. The tight field makes a wall pass faster
+  than a dribble.

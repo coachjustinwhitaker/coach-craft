@@ -1,0 +1,3 @@
+# The only skill tags an activity may use. "action" tags match the player actions in skills.yaml; "concept" tags are game ideas.
+actions: [Controlling, Protecting, Driving, Dribbling, Passing, Shooting, Scanning, Supporting, Body Shape, Covering, Marking]
+concepts: [Combination Play, Possession, Numerical Advantage, Decision-Making, Communication, Pressing, Delaying, Compact Shape, Restarts]

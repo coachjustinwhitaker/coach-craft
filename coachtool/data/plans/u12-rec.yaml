@@ -1,0 +1,153 @@
+id: u12-rec
+age: u12
+track: rec
+sessions_per_week: 2
+weeks:
+- week: 1
+  focus: Me & the Ball and Me & My Teammates in a bigger game
+  opening:
+    activity: 3v3-everybody-plays
+    note: Everyone touches it before a goal
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: High energy, variable pressure. Settles the group into the new format
+    b:
+      activity: half-and-half
+      note: 'Depth in shape: at least one player in each half for a goal to count'
+  - a:
+      activity: 3v3-plus-1-keep-away
+      note: Neutral player switches instantly on turnover. Seeds transition
+    b:
+      activity: barcelona
+      note: 'Patience and pass counting: points equal the number of passes before scoring'
+  block: B2
+  level: intro
+- week: 2
+  focus: Consolidating combination play before new focuses
+  opening:
+    activity: 4v4-use-the-width
+    note: Spread out to open the field
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: Call uneven numbers (2v1, 3v2) to demand decisions
+    b:
+      activity: five-goal-game
+      note: 'Change target when the path is blocked: combination play under decision pressure'
+  - a:
+      activity: barcelona
+      note: 'Revisit: can they beat last week''s pass count before scoring?'
+    b:
+      activity: team-handball
+      note: Must score from a pass, so combination play is mandatory
+  block: B2
+  level: intro
+- week: 3
+  focus: Team defending introduced
+  opening:
+    activity: 4v4-two-in-the-final-third
+    note: Defend with numbers up
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: 'Anchor: familiar, resets energy between the two new concepts'
+    b:
+      activity: 2v2v2-keep-away
+      note: Who presses, who covers? The first and second defender chain begins
+  - a:
+      activity: 2v2v2-keep-away
+      note: 'Revisit: add a 2-touch limit to increase pressure on defenders'
+    b:
+      activity: half-court-soccer
+      note: 'Clear the ball over the check line before scoring: compact defending shape'
+  block: B3
+  level: intro
+- week: 4
+  focus: 'Team defending deepens: shape and pressure together'
+  opening:
+    activity: 4v4-dont-dive-in
+    note: Slow the attacker down
+  sessions:
+  - a:
+      activity: half-court-soccer
+      note: 'Revisit: now frame it explicitly as a defending focus'
+    b:
+      activity: shrinking-field-defending
+      note: Compact shape becomes critical as space disappears
+  - a:
+      activity: shrinking-field-defending
+      note: 'Revisit: ask did defending get easier or harder, and why?'
+    b:
+      activity: 2v2v2-keep-away
+      note: 'Consolidation: can the defending pair now communicate without being reminded?'
+  block: B3
+  level: intro
+- week: 5
+  focus: 'Transitions introduced: both moments'
+  opening:
+    activity: 3v3-win-it-back-in-five
+    note: React the moment you lose it
+  sessions:
+  - a:
+      activity: flying-numbers-transition
+      note: Outgoing players sprint off, incoming players sprint on. No walking
+    b:
+      activity: crisscross
+      note: 'Four goals on different axes: find the goal instantly after winning the ball'
+  - a:
+      activity: crisscross
+      note: 'Revisit: how quickly after winning the ball do they find a target?'
+    b:
+      activity: hawaii
+      note: 'Continuous play, no stoppages: relentless transitions both ways'
+  block: B4
+  level: intro
+- week: 6
+  focus: 'Transition moments deepen: urgency becoming habit'
+  opening:
+    activity: 4v4-win-it-and-go
+    note: Attack the moment you win it
+  sessions:
+  - a:
+      activity: hawaii
+      note: 'Revisit: feed new balls in even faster. No celebrations mid-session'
+    b:
+      activity: flying-numbers-transition
+      note: 'Revisit with emphasis: watch who reacts and who watches when the ball goes out'
+  - a:
+      activity: five-goal-game
+      note: 'Win the ball, find the goal immediately: both transitions in one game'
+    b:
+      activity: hotbox
+      note: Switch the point of attack plus an immediate transition reaction
+  block: B4
+  level: intro
+  also_blocks:
+  - B2
+- week: 7
+  focus: 'Integration: all four blocks in play together'
+  sessions:
+  - a:
+      activity: hotbox
+      note: All four blocks in one game. Do not over-coach. Watch
+    b:
+      activity: team-handball
+      note: 'Must assist to score: combination play, positioning and transition'
+  - a:
+      activity: five-goal-game
+      note: 'Integration game: observe all four blocks without coaching any one'
+    b:
+      activity: 3v3-plus-1-keep-away
+      note: 'Final consolidation: transition, possession and defending all present'
+  block: B4
+  level: intro
+  also_blocks:
+  - B1
+  - B2
+  - B3
+- week: 8
+  focus: Coach's choice both days
+  coach_choice: true
+  note: What does your group love most? What do they still need most? Run your two best sessions of the
+    season. Both are correct answers.

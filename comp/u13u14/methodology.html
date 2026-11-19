@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — Coach Craft U13/U14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:#384959; --navy-dark:#384959; --navy-deep:#2A3744;
+    --gold:#6A89A7; --gold-warm:#88BDF2;
+    --gray-body:#333333; --gray-mid:#666666; --gray-light:#F5F6FA; --white:#ffffff;
+    --radius:8px; --shadow:0 2px 10px rgba(56,73,89,.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family:"Inter",sans-serif; font-size:clamp(14px,1.8vw,16px); color:var(--gray-body); background:var(--gray-light); line-height:1.6; }
+
+  .site-nav { background:var(--navy-deep); padding:.6rem 1.5rem; display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
+  .site-nav a { color:var(--gold-warm); text-decoration:none; font-family:"Inter",sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; opacity:.7; transition:opacity .2s; }
+  .site-nav a:hover { opacity:1; } .site-nav a.active { color:var(--white); opacity:1; }
+  .nav-sep { color:var(--gold); opacity:.4; font-size:.7rem; }
+
+  .site-header { background:var(--navy); border-bottom:4px solid var(--gold); padding:clamp(1rem,3vw,1.5rem) clamp(1.25rem,5vw,3rem); }
+  .site-header-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; gap:1.25rem; }
+  .site-header img { width:clamp(52px,9vw,72px); display:block; flex-shrink:0; }
+  .site-header-text h1 { font-family:"Inter",sans-serif; font-weight:800; font-size:clamp(1.1rem,3vw,1.6rem); color:var(--white); line-height:1.15; margin-bottom:.2rem; }
+  .site-header-text p { font-family:"Inter",sans-serif; font-size:clamp(.65rem,1.4vw,.75rem); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--gold-warm); opacity:.8; }
+
+  .content { max-width:960px; margin:0 auto; padding:clamp(1.75rem,4vw,2.5rem) clamp(1.25rem,3vw,2rem); }
+
+  .page-title { margin-bottom:2rem; }
+  .page-label { font-family:"Inter",sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+  .page-title h2 { font-family:"Inter",sans-serif; font-weight:800; font-size:clamp(1.4rem,4vw,2rem); color:var(--navy); line-height:1.1; margin-bottom:.6rem; }
+  .page-title .intro { font-size:clamp(.9rem,1.8vw,1rem); color:var(--gray-mid); max-width:660px; line-height:1.7; }
+
+  .section-head { font-family:"Inter",sans-serif; font-size:clamp(.8rem,1.6vw,.9rem); font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--navy); border-bottom:2px solid var(--gold); padding-bottom:.4rem; margin-bottom:1.1rem; margin-top:2rem; }
+
+  .prose-card { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); padding:clamp(1.25rem,3vw,1.75rem); border-top:3px solid var(--navy); margin-bottom:1.5rem; }
+  .prose-card p { font-size:clamp(.9rem,1.8vw,1rem); line-height:1.8; margin-bottom:.9rem; max-width:660px; }
+  .prose-card p:last-child { margin-bottom:0; }
+
+  /* Framework shift callout */
+  .shift-card { background:var(--navy-dark); border-radius:var(--radius); padding:clamp(1.25rem,3vw,1.75rem); margin-bottom:1.5rem; }
+  .shift-card h3 { font-family:"Inter",sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:.85rem; }
+  .shift-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.75rem; }
+  @media (max-width:640px) { .shift-grid { grid-template-columns:1fr; } }
+  .shift-item { background:rgba(255,255,255,.06); border:1px solid rgba(106,137,167,.25); border-radius:6px; padding:.7rem .9rem; }
+  .shift-item .si-level { font-family:"Inter",sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--gold-warm); display:block; margin-bottom:.25rem; }
+  .shift-item p { font-size:.8rem; color:rgba(255,255,255,.75); line-height:1.55; }
+
+  /* Block cards */
+  .block-stack { display:flex; flex-direction:column; gap:.75rem; margin-bottom:1.5rem; }
+  .block-card { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; text-decoration:none; color:var(--gray-body); display:grid; grid-template-columns:auto 1fr auto; align-items:center; border:1.5px solid transparent; transition:all .2s; }
+  .block-card:hover { border-color:var(--gold); transform:translateX(3px); }
+  .block-card-num { background:var(--navy); color:var(--gold); font-family:"Inter",sans-serif; font-size:clamp(.75rem,1.5vw,.85rem); font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:.9rem 1.1rem; min-width:3.5rem; text-align:center; align-self:stretch; display:flex; align-items:center; justify-content:center; }
+  .block-card-body { padding:.85rem 1.1rem; }
+  .block-card-title { font-family:"Inter",sans-serif; font-size:clamp(.9rem,1.9vw,1rem); font-weight:700; color:var(--navy); margin-bottom:.2rem; }
+  .block-card-tagline { font-size:clamp(.78rem,1.5vw,.86rem); color:var(--gray-mid); font-style:italic; margin-bottom:.35rem; }
+  .block-card-chips { display:flex; flex-wrap:wrap; gap:.3rem; }
+  .chip { background:var(--gray-light); border:1px solid rgba(56,73,89,.15); color:var(--navy); font-family:"Inter",sans-serif; font-size:.6rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:.15rem .5rem; border-radius:20px; }
+  .block-card-arrow { padding:0 1.1rem; color:var(--gold); font-size:1rem; opacity:.6; }
+
+  /* How they connect */
+  .connect-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-bottom:1.5rem; }
+  .connect-card { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); padding:1rem 1.1rem; border-top:3px solid var(--navy); }
+  .connect-card h4 { font-family:"Inter",sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:.5rem; }
+  .connect-card p { font-size:clamp(.8rem,1.55vw,.88rem); line-height:1.6; color:var(--gray-body); }
+
+  .callout { background:var(--navy-deep); border-left:4px solid var(--gold); border-radius:var(--radius); padding:1.2rem 1.5rem; margin-bottom:1.5rem; }
+  .callout p { font-style:italic; font-size:clamp(.9rem,1.8vw,1.02rem); color:var(--gold-warm); line-height:1.7; }
+
+  .page-footer { background:var(--navy-deep); color:var(--gold-warm); padding:1rem clamp(1.25rem,5vw,3rem); display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:.5rem; font-family:"Inter",sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border-top:3px solid var(--gold); margin-top:1rem; }
+  .footer-left { color:rgba(255,255,255,.55); } .footer-right { opacity:.4; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html">U13-U14</a>
+  <span class="nav-sep">&rsaquo;</span>
+  <a href="#" class="active">Methodology</a>
+</nav>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABmJLR0QA/wD/AP+gvaeTAAAULklEQVR4nO3da3QUZZoH8P9T1Z3uJNzBXEi4JBADco3IZcLNhCCIIDowznhj5jjjOuPuDLurs2fP7Dkez36Zs6PumdGZ44zj4OoexwuOorAMAgmOgHIRkJsYQu4NAREICUkn3V317gcNE5Wk3+ruqurqen7fSN6ueh5O/dPVVdXvS7DRu6dElleNlEBTinUSxQQUA5QFEpkQGAogE0CanTWyuIUAdIBwCYI6COKcDpwkQZ9C0au9mufQgiI6b1dxZOXONp4RGZkd2mJdFeUklDJATLa6BpZ0BEBHAX0HEVX5veq20lEUtGrnph98jwuhzK2LlBLR/STwPQCDzN4nc7Q2CLwNBesvFKib7yLSzNyZaQHYUS/8QtcfAMSjAigwaz8shRHqIOjJbl1Zt6yIus3ZRYJtPCMyMrr0h4UQ/0pAbqK3z9xHAC0APRlMV36/YiR1JnLbCQ1AZV1kBQSeBjA2kdtl7EsBQfiXikLPG4naYEICsKNejNV17RkAyxOxPcb6JfCOTupPF4+jpng3FXcAtp+K3EGEdQCGxrstxgxoI8KD5YWe1+PZSMwB2FwjfGlq5Fck6GfxFMBYPAThuZCm/izWD8kxBWD7CTEcXm0TEebE8nrGEmx3OE29fekoumj0hYYDsLVJjFTD+hZATDH6WsZMI8SJCDxLloynZiMvMxSAHfVigtC1rQIYZbhAxszXRKTeUl5I1bIvkA5AZbXIg0fbDWBMzOUxZr7TIHXuokJqlBmsyAzafkIMhxrZxgc/c4A8iMjmLc1imMzgqAHYXCN88GqbQDQxIeUxZjq6wRvSNm6uEb5oI6MGwK9oT/HVHuZApWlq5FfRBvX7GWB7XWQ1CaxPaFmMWYiAVeXjPG/28/tr+/Lxho8BDDatOsbM1wpSp/f1objPUyBd157mg5+lgCEC2m/6+uU1A7D9VOQOACtMLYsxi5DAysq6yDWP52+cAm08IzIygtonfMmTpRIC6v1p6qSvf93yG+8AmZ36P/LBz1KNAAqCIf2hr//8K+8Am2uEz0daHQgjLa2OMQsIoEVV1MKyAurq+dlX3gH8iv5DPvhZqiIgV9P07/f+2dUAPC6EAohHbamMMYsQiZ8LIa6e+VwNwLzayEKevYG5wLiq+sj8nn9cDQAR3W9bSYxZSf/7sU4A8EGzSA+GtBa+8cVcoi09Tc0pHUVBBQC6urRb+OBnLjKoK6SVo+cUSFdFud0VMWYlIUQZegLwxUS1jLmHIGURANC7p0SWh7SzPEszcxldiajZileNlPDBz1xI0TyR6Qo0pdjuShizBSnFik6CA8BciSCKFQW43u5CGLOFQLEiQDl218GYPShHAcRAu8tgzA4EMVABwAFgriSAgQqAAXYXwphNBiq8Di9zMZ/U3KCMpSoOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1j90FWO1y60W0NDeiJdCAs2cC6LzSjmCwE93BIIJdnUj3Z0BRVQwcPBhDho7A8KxsjBxVgPyxhcjMdN7Xp93Wr1FUWRsRdhdhtrOnm3Hk4B4cPbAXFz8/F9M2iAh5YwpQPLkE02eWYtjwrITXmShu6zceKRsAIQSOHdqLHVvexrkzgYRum4hQMH4C5i++DUUTp4LI/qlV3dZvoqRkAD45ehCVm97A2dPNpu8rb0wBlq/+PkYXjDN9X31xW7+JlFIBCHZcwYbXXsCxg/ss3S8RYebccixbdQ+8Xusm2XBbv2ZImQDUVh/HGy89h7bLF22rISsnD/f+w1qMyMo1fV9u69csKRGAg3t24s0/Pw+h63aXgszMgbjvx4+Yeorgtn7N5Pj7APt2VeLNl/+YFAcDAHR0tGPdM79EY12NKdt3W79mc/Q7wJ73t2PT+pcgRGwtEBFGZOdiyNDh8KdnwJ+egWDHFQQ7O9B66SIufn4u5m1nZA7AQ488ltDTA7f1awXHBqDhVDXWPfNLaJpm6HXpGZmYUjILk0tmI39sIXz+9D7HdgU70Vxfi2Mf78ORA3sQ6u4ytK/s3Hz8+NHHkebzGXrdtcTarz89A5NLZmHqjXMc1a9VHBmA9tZL+N2vHkN7W6v0azIHDMLNS2/H7HnlUD1ew/vs7gpi364qVP11g6EDY9bcMqy8+wHD++stln4zMgfg5iW3Y/b8Cni8zurXSo4LgBACf3r6l6ivOSH9mhmlC3Hbqvvg8/nj3v/l1ot4+9UXUH3sY6nxRIQfrf0PjB0f20pUsfQ7fdZcrPjOGvjTM2LaZ29W92s19ftrH3vc7iKMOHpgD3ZV/VVqrMfrxer7H0LZ0pXweBLz2JPfn46pM771xelCQ63Ua1oCDZg5tzymO6hG+lVVD+68+wFULF8d01/9a+npt7u7C831p6ReE0+/VnPUVaBQdze2bHhVaqzq8eLeB9di2szShNdBRLht9X0ou/VOqfEtgSYc/3i/4f0Y6ldVcfcP/wkzShca3k80RIRl374HFctXSY2PtV87OCoAO7dtwuXW6Dd+iAjf/cHDuP6GaabWs2jZnZg0/SapsburNhvevmy/ALB6zY8xceoMw/sw4uYlKzG5ZJbU2Fj6tYNjAhAOh/Dhzu1SY7918xLpAzMeRIRV9z+EocOvizq2qb7W0ENqRvqds6ACU2fMkd52rIgI377vQVP6tYtjAnBk/4cIdlyJOi57ZD6WrrzLkpoAwOfzo1zyVOjwRx9Kb1e236ycPNx65z3S242XWf3axTEB+PD9rVLjbr3z7pguc8Zj+qxSqRtA1ccPSW9Ttt8ld3wvYR94ZZnRr10cEYDTzQ1oCTRFHVdQNBFFE6daUlNviqLixtnzoo47dyaAK+2Xo46T73cCJkyeLl1noiS6Xzs5IgAnj8tdg154y3LTa+lL8eSSqGOEEDjd1BB1nGy/CxanRr92csR3gk99eizqmMFDR2B88WRL6rmWnLxRmDFnAbpD/d811SUeZZDqd8gwFE2YYqjGREpkv3ZK+gB0dwWlbsDMmD0PpNj7hvbt+x6Mexuy/U5PkX7tlvSnQI11J6UeALt+krnX/K0i3a8Nn3VSUdIH4PzZM1HHpPn8GDm6wJJ6zCbTr8frRf6YQkvqSXVJH4DPz7VEHTOmsAiqqlpSj9lk+s0fU2j5pc9UlfQBOP9Z9AMiKzffklqsINVvTur0a7ekD8CFz85GHTNM4ta8U0j1OyJ1+rVb0geg40r0xwGGZ2VbUosVZPodOiI1Z2mzQ1IHQNMi0LRI1HGZAwZZUo/ZZPsdkCL9JoOkDkCoS+6reE6fnKmHdL8O+s5tskvuAES5y9gjzZciAZDtl68AJUxSByAcDkuNs/rpT7PI9uvxpEbgk0FSB0D21EaLyB04yU6230gkZHotbpHUAUiTnMUh1N1tei1WkO5X8p2CRZcSAegOpcZfRNl+wykS+GSQ1AFQVRWqGv2B1Sttyf2lC1nS/Sb5l0ycJKkDAAADBka/5h3rMkDJSKbfC+dTp1+7JX0Ahl8X/S7vxfOfWVKLFWT6vXThvCW1uEHSB+C6nJFRx5w7Y/7SQFaR6zf5pxtxiqQPwIjs6LMPNDWcQiRFrozI9Hu6qS5lrnzZLekDkJWTF3VMJBxGc4PcvJXJTqZfTdPQVO/MBSmSTdIHYHRBkdSd3urjhy2px2xu69duSf+l+DSfD2PHXY/a6uP9jju4dycWr1gtdRnRDEIIvPzHXyMU6v/UZMacBZh2U98T9sr2e3jfbixdeZdtj4HI9jvtplLMmLPAsrqMSvoAAEDRxClRD4iO9jZ8cvgAptw427K6egs01uHEkYNRx81ZeEvUMVL9drTjkyMHk77fmaU3W1JPrJL+FAgGZnz429aNMa9xFa9Pj0WfBpCIMGpU9C/vp0q/AJA/JrlXj3REALJz8zG6oCjquJZAIw7v/8CSmnqLhMM4tGdn1HHZI/MxcMjQ6OMM9Pvx/t3SdSaKbL9ZOXlSM0nbyREBAIA5Cyukxm3d+Aa6gp2m19Pbvl2VUvP4y0wn2EO2323vrEews0N6u4kg2++EKfL92sUxAZhcMgsDBw2JOu7ypc+x4ZV1ltQEAO1trXhv68ao44hIakLZHtL9tl7Ehj//SXq78brSflm632T+8NvDMQFQVQ9Ky5ZIjT16cC8+eO9d02vSNA2vrvstOtrboo4tLJpoaA1dI/0e+3g/dlWavyKLrhvsV+Kmnt0cEwAAmFu2ROpZGQDY/JeXsW/3DtNqEbqOt197AQ2nqqXG33zrHYb3YaTfLRtexZ735VaUiYUQAhtfexH1NZ9KjY+lXzs4KgCqx4vbVt0nNVYIgXdefQFVWzYk/EpJJBzGq+t+iwMf/E1q/LgJk1BYNNHwfoz2u2n9S6jc/BaErhveV396+pX9gxJrv3Zw3DKpI7Jy0BJolJpCEADqT55AY201CoomJmTd3EBDHV5+/jeoPfmJ1HivNw1rfvIIMjIHxLQ/w/3WnEBj7cnE9xvlvkSPePu1muMWygaAYMcV/O6Jx3Dpc/nHglWPF7PnlWP+4uUYNDj6h8uvO9cSwO6qLTi4531D7yi3rboXpWVLDe+vN7f1ayVHBgBfXgP/w1P/iXDY2NchSVEwvngSppTMRn7BeGRl515znn1N03A20IjG+hocO7gXjXXGHz6bOHUG7n1wbUIWjHZbv1ZxbAAA4MiBPXj9xWfjOudN8/kxeOgwpKenw+vzoyvYic6OK2hrbY1rton80QV4YO0v4JP8nq8Mt/VrBUcHAF9e8lz/4rNSi0pYJSsnDz/651+YMmWj2/o1myMehuvPlBtnI83nxyvPP2349MAM+aMLsObhR007GNzWr9kc/w7Q40xzA15/8fc4f/a0bTWUzJqH27/7A6RZMHen2/o1S8oEAADC4RC2vPUK9u6stPQpyfTMAVh25z24cc58y/YJF/ZrhpQKQI/GuhpUbnpD+lp9rFRVRcns+bhlxXeQKTGdiVnc1m8ipWQAetTXfIr33n0btdXHE/oX0udPx/SZpZhXsQzDhifPYhVu6zcRUjoAPdout+LYob04emAvAo110HXjV1B8Pj+KbpiKCVNKMGnaTdLTGNrBbf3GwxUB6C0cDuHc6QBaAg042xJAR3sbuoKdCAY7EAmHoSoq/OkZyBgwCEOGDceIrBzkjS5E9sg8KIrzVqJ0W79GuS4AjPXmqKdBGUs0DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1x88OLUuLhLF3VxWOfPQhzrUEEOrutrukpJLm8yE7Nx/TZpZi1twyqB6v3SVZwhXzArVdvoiXnn0KLYEmu0txhNz80Vjzk0cwaPAwu0sxXcqfAmmRMB/8BrUEmvDSs0/FtWKMU6R8APbuquKDPwYtgSbs3/2e3WWYLuUDcPijD+wuwbEOf7Tb7hJMl/IB+KzljN0lONbZM/atPmOVlA8Ai52TljuNVcoHICt3pN0lOFa2C/7vFAD2LzVooukz59pdgmNNuynl/++6FQBX7K7CTLPmliE3f7TdZThObv5ozJxXZncZZmtXALTbXYWZVI8Xa37yCIfAgJ4bYaqa2g8KENBOlbXaUUBMtrsYs2laBPt37cDhj3bj7JnTCHV32V1SUknz+ZE9Mh/TbyrFzHllKX/wf4GOUFVtZJsAKuwuhTEbbFV04KTdVTBmC0K1ogiqtrsOxuwgQNUKVJ0DwNxJ6NWKJ+I5CCDlH4lm7Gt0hDyHlAVFdB6gY3ZXw5iliA5XTKQLXz4KoVfZXQ9jltK/OOYVfPHQEweAuUrPMa8AgN+rbgNw2e6iGLPIZX+augM9ASgdRUEB/MXuqhizhMDrpaMoiN6PQwtd/K+tRTFmEaH8/Vi/GoDd4z3vg1BnW1WMWePUogLPrp5/XA3A40Q6BD1pW1mMWYAEPUFEV+97feUbYd26sg4C/CValqoCXUJ5sfcPvhKAZUXULRT6b8vLYswCJOiJZUX0lSkBv/Gd4KBfeRZAg6WVMWa+WlKV577+w28EYMVI6oTAw5aVxZgFCFhbVkDf+BbUNWeFWDTe81cIvGNJZYyZ763ycZ7/u9Yv+pwWRSf1pwBaTS2LMfNdigh1bV+/7DMAi8dRkwDu50elmYMJCPxwyXhq7mtAvxNjVYzzbBIknjGlNMZMJ369aLznrf5GRJ0ZLqR5/g0AzzDLnGbnhS7Pv0cbJDX547ZaMViB/jdATEtIaYyZio6H05QFS0fRxagjZTdZWS3y4NF2AxgTd32MmSegQ527eBxJLQohPTnuomI6TaQuAcCrTbBk1SSgLpI9+GF0dujyQqr2quocgI7EVB5jphGfRIQ6r2IcGZrnyvD06AvGUks4TSnjD8YsiexM83jm9Xe5sy8xrQ+wdBRdVJrUhYD4L75PwGwkBImnL3SpFfPH0KVYNhD3EiBVNZGVQsELAIbGuy3GDGgD4UeLCj3r49lI3CvElBd53gapJfzsELPQWxGhTo734Eci3gF6214bWa4ATwugIJHbZQwAQKgjgZ/19WBbbJtMsA+aRXowpD8EiEcB5CV6+8yVAgL0pKoof7jWI83xMG0ZwM01wpdG+g+IxM8BjDNrPyylnSJBT3zerfzPXZPIlLXsLFkHs+pUaIau0BoC3QuB4VbskznWZQi8I0i8tKjQU9n7C+xmsHQh2B31wi90bZGAWCSglBHEVDcs1cr6pYPoMAl9B0CVpKhViT7N6Y+tKyHvqBYjNG+kBFCuJ11MAKEYoCyQGAiBIQAGAEizs0YWtxCAKyC0QlA7IM5B4KRQ6FMIvRohz6GKiXTBruL+H+5mGQN93ULpAAAAAElFTkSuQmCC" alt="Coach Craft">
+    <div class="site-header-text">
+      <h1>U13&ndash;U14 Player Development</h1>
+      <p>Coach Craft</p>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <div class="page-title">
+    <div class="page-label">Methodology</div>
+    <h2>The B1&ndash;B5 Framework</h2>
+    <p class="intro">Five blocks. Each one addresses a specific game problem. Together they cover everything a U13-U14 player needs to develop: individual technique, combination play, collective defending, transition speed, and finishing under pressure.</p>
+  </div>
+
+  <div class="prose-card">
+    <p>The blocks are not a checklist. They are a system. Each block builds on the ones before it, and each one is revisited across the season at a deeper level as players grow. A player working on Me and the Game (B4) is drawing on everything they developed in B1, B2, and B3. When something breaks down late in the season, the answer is usually in an earlier block.</p>
+    <p>The framework is built to US Soccer Progression Phase I standards for U13-U14 players and is designed to be delivered by any coach willing to prepare, observe, and adjust.</p>
+  </div>
+
+  <div class="shift-card">
+    <h3>What's Different From U11-U12</h3>
+    <div class="shift-grid">
+      <div class="shift-item">
+        <span class="si-level">Introduction &amp; Development</span>
+        <p>Stay universal across every block. Every player, regardless of position, still needs the same foundational habits and technique at these levels.</p>
+      </div>
+      <div class="shift-item">
+        <span class="si-level">Application</span>
+        <p>This is where specialization begins. Content is grouped by who executes the action together, not by formation or fixed position labels.</p>
+      </div>
+      <div class="shift-item">
+        <span class="si-level">B1 stays position-blind</span>
+        <p>Me and the Ball never differentiates by position at any level. A player's touch and vision are still revealing what kind of player he is becoming.</p>
+      </div>
+      <div class="shift-item">
+        <span class="si-level">Generalist to specialist</span>
+        <p>The season moves players from broad, universal habits toward deeper, role-specific understanding, matching the cognitive growth of this age group.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head">The Five Blocks</div>
+
+  <div class="block-stack">
+    <a href="B1_Me_and_the_Ball.html" class="block-card">
+      <div class="block-card-num">B1</div>
+      <div class="block-card-body">
+        <div class="block-card-title">Me &amp; the Ball</div>
+        <div class="block-card-tagline">&ldquo;Prepare the body. Read the picture. Execute with intent.&rdquo;</div>
+        <div class="block-card-chips">
+          <span class="chip">Perception</span>
+          <span class="chip">First Touch</span>
+          <span class="chip">Body Shape</span>
+          <span class="chip">Position-Blind</span>
+        </div>
+      </div>
+      <div class="block-card-arrow">&rsaquo;</div>
+    </a>
+    <a href="B2_Me_and_My_Teammates.html" class="block-card">
+      <div class="block-card-num">B2</div>
+      <div class="block-card-body">
+        <div class="block-card-title">Me &amp; My Teammates</div>
+        <div class="block-card-tagline">&ldquo;Create advantage. Move the ball forward. Solve pressure together.&rdquo;</div>
+        <div class="block-card-chips">
+          <span class="chip">Combination Play</span>
+          <span class="chip">Overloads</span>
+          <span class="chip">Supporting</span>
+        </div>
+      </div>
+      <div class="block-card-arrow">&rsaquo;</div>
+    </a>
+    <a href="B3_Team_Defending.html" class="block-card">
+      <div class="block-card-num">B3</div>
+      <div class="block-card-body">
+        <div class="block-card-title">Me &amp; My Team Defending</div>
+        <div class="block-card-tagline">&ldquo;Compact. Coordinated. Aggressive. Defending is not just for defenders.&rdquo;</div>
+        <div class="block-card-chips">
+          <span class="chip">Pressure-Cover-Balance</span>
+          <span class="chip">High Line</span>
+          <span class="chip">Compactness</span>
+        </div>
+      </div>
+      <div class="block-card-arrow">&rsaquo;</div>
+    </a>
+    <a href="B4_Me_and_the_Game.html" class="block-card">
+      <div class="block-card-num">B4</div>
+      <div class="block-card-body">
+        <div class="block-card-title">Me &amp; the Game</div>
+        <div class="block-card-tagline">&ldquo;Recognizing moments and acting fast.&rdquo;</div>
+        <div class="block-card-chips">
+          <span class="chip">Transition Speed</span>
+          <span class="chip">Game Intelligence</span>
+          <span class="chip">Decision Under Chaos</span>
+        </div>
+      </div>
+      <div class="block-card-arrow">&rsaquo;</div>
+    </a>
+    <a href="B5_Me_and_the_Moment.html" class="block-card">
+      <div class="block-card-num">B5</div>
+      <div class="block-card-body">
+        <div class="block-card-title">Me &amp; the Moment</div>
+        <div class="block-card-tagline">&ldquo;Can we turn advantage into goals?&rdquo;</div>
+        <div class="block-card-chips">
+          <span class="chip">Finishing</span>
+          <span class="chip">Composure</span>
+          <span class="chip">Game Management</span>
+        </div>
+      </div>
+      <div class="block-card-arrow">&rsaquo;</div>
+    </a>
+  </div>
+
+  <div class="section-head">How the Blocks Connect</div>
+
+  <div class="connect-grid">
+    <div class="connect-card">
+      <h4>B1 is the foundation</h4>
+      <p>Everything else depends on a player's ability to scan, receive cleanly, and play forward. If any block is breaking down, look here first.</p>
+    </div>
+    <div class="connect-card">
+      <h4>B2 builds on B1</h4>
+      <p>Combination play only works if individual technique is in place. Players who cannot control the ball under pressure cannot execute a wall pass at game speed.</p>
+    </div>
+    <div class="connect-card">
+      <h4>B3 connects to B2</h4>
+      <p>Collective defending begins the moment possession is lost. The counter-press is a direct extension of the combination work in B2, just in the opposite direction.</p>
+    </div>
+    <div class="connect-card">
+      <h4>B4 links everything</h4>
+      <p>Transition speed and game intelligence require B1, B2, and B3 to be functional. Players who react fast in transitions are drawing on all three previous blocks at once.</p>
+    </div>
+    <div class="connect-card">
+      <h4>B5 is the output</h4>
+      <p>Finishing moments are created by the work in B1 through B4. When players miss chances, the answer is rarely more shooting practice. Check the preparation first.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>The blocks are sequenced across the season as a spiral: introduced, revisited, deepened. Introduction becomes Development. Development becomes Application. At U13, Application is also where players begin to specialize, the work compounds, and the specialist identity emerges from the work rather than being assigned upfront.</p>
+  </div>
+
+  <div class="section-head">Next Steps</div>
+  <div class="prose-card">
+    <p>The <a href="the-player.html" style="color:var(--navy);font-weight:600;">Who Is in Front of Us</a> page explains the social, emotional, cognitive, and physical shifts that make this season's methodology different from last year's, and why position-specific depth work is appropriate now in a way it wasn't at U12.</p>
+    <p>Once you're ready to plan the season week by week, the Season Plan will show how the blocks are sequenced across the three phases, Foundation, Integration, and Execution.</p>
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="footer-left">Coach Justin Whitaker &nbsp;&middot;&nbsp; Coach Craft</div>
+  <div class="footer-right">coachjustinwhitaker.github.io/coach-craft</div>
+</footer>
+
+</body>
+</html>

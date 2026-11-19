@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B1: Me &amp; the Ball — Coach Craft U13/U14 Methodology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:       #384959;
+    --navy-dark:  #384959;
+    --navy-deep:  #2A3744;
+    --gold:       #6A89A7;
+    --gold-warm:  #88BDF2;
+    --gray-body:  #333333;
+    --gray-mid:   #666666;
+    --gray-light: #F5F6FA;
+    --white:      #ffffff;
+    --intro-hue:  #4F6D8A;
+    --dev-hue:    #2F4050;
+    --app-hue:    #2A3744;
+    --radius: 6px;
+    --shadow: 0 2px 8px rgba(56,73,89,.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Inter", sans-serif; font-size: clamp(14px, 1.8vw, 16px); color: var(--gray-body); background: var(--gray-light); line-height: 1.6; }
+
+  .site-nav { background: var(--navy-deep); padding: .6rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+  .site-nav a { color: var(--gold-warm); text-decoration: none; font-family: "Inter", sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .7; transition: opacity .2s; }
+  .site-nav a:hover { opacity: 1; }
+  .site-nav a.active { color: var(--white); opacity: 1; }
+  .nav-sep { color: var(--gold); opacity: .4; font-size: .7rem; }
+
+  .site-header { background: var(--navy); border-bottom: 4px solid var(--gold); padding: clamp(1rem,3vw,1.5rem) clamp(1.25rem,5vw,3rem); }
+  .site-header-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; gap: 1.25rem; }
+  .site-header img { width: clamp(52px,9vw,72px); display: block; flex-shrink: 0; }
+  .site-header-text { flex: 1; }
+  .block-label { font-family: "Inter", sans-serif; font-size: clamp(.62rem,1.3vw,.72rem); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .25rem; }
+  .site-header-text h1 { font-family: "Inter", sans-serif; font-weight: 800; font-size: clamp(1.2rem,3.5vw,1.9rem); color: var(--white); line-height: 1.1; margin-bottom: .3rem; }
+  .tagline { font-size: clamp(.82rem,1.6vw,.95rem); color: var(--gold-warm); font-style: italic; margin-bottom: .5rem; }
+  .header-chips { display: flex; flex-wrap: wrap; gap: .35rem; }
+  .chip { background: rgba(255,255,255,.1); border: 1px solid rgba(106,137,167,.3); color: var(--gold-warm); font-family: "Inter", sans-serif; font-size: .63rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .55rem; border-radius: 20px; }
+
+  .content { max-width: 960px; margin: 0 auto; padding: clamp(1rem,3vw,2rem) clamp(1rem,3vw,2rem); }
+
+  .block-nav { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: .65rem .9rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+  .block-nav-label { font-family: "Inter", sans-serif; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-mid); margin-right: .25rem; }
+  .block-nav a { text-decoration: none; font-family: "Inter", sans-serif; font-size: .72rem; font-weight: 700; color: var(--navy); background: var(--gray-light); padding: .35rem .75rem; border-radius: 20px; transition: all .2s; }
+  .block-nav a:hover { background: var(--gold); color: var(--white); }
+  .block-nav a.current { background: var(--navy); color: var(--white); }
+
+  .block-intro { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(1.25rem,3vw,1.75rem); margin-bottom: 1.25rem; border-left: 4px solid var(--gold); }
+  .block-intro p { font-size: clamp(.88rem,1.7vw,.96rem); line-height: 1.8; margin-bottom: .85rem; max-width: 720px; }
+  .block-intro p:last-child { margin-bottom: 0; }
+
+  .meta-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.75rem; }
+  @media (max-width: 700px) { .meta-strip { grid-template-columns: 1fr; } }
+  .meta-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.1rem 1.25rem; }
+  .meta-card h3 { font-family: "Inter", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: .4rem; margin-bottom: .6rem; }
+  .meta-card ul { list-style: none; }
+  .meta-card li { font-size: .82rem; color: var(--gray-mid); padding: .2rem 0; padding-left: 1rem; position: relative; }
+  .meta-card li::before { content: "→"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+  .universal-banner { background: var(--navy-deep); border-radius: var(--radius); padding: .9rem 1.35rem; margin-bottom: 1.75rem; display: flex; align-items: center; gap: .75rem; }
+  .universal-banner .ub-icon { font-family: "Inter", sans-serif; font-weight: 800; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--navy-deep); background: var(--gold); padding: .25rem .6rem; border-radius: 4px; flex-shrink: 0; }
+  .universal-banner p { font-size: .82rem; color: var(--gold-warm); line-height: 1.5; }
+
+  .section-heading { font-family: "Inter", sans-serif; font-size: clamp(.95rem,2vw,1.1rem); font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--navy); margin: 2rem 0 1.1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--navy); }
+
+  .skill-area { margin-bottom: 1.5rem; }
+  .skill-area-title { font-family: "Inter", sans-serif; font-size: clamp(.92rem,1.9vw,1.02rem); font-weight: 700; color: var(--navy-dark); background: var(--white); box-shadow: var(--shadow); padding: .65rem 1.1rem; border-radius: var(--radius) var(--radius) 0 0; border-left: 4px solid var(--navy); }
+  .level-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: #e3e6ee; border-radius: 0 0 var(--radius) var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  @media (max-width: 760px) { .level-grid { grid-template-columns: 1fr; } }
+  .level-card { background: var(--white); padding: 1rem 1.1rem; }
+  .level-card-head { font-family: "Inter", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; display: flex; align-items: center; gap: .4rem; margin-bottom: .65rem; }
+  .level-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .level-intro .level-card-head { color: var(--intro-hue); }
+  .level-intro .level-dot { background: var(--intro-hue); }
+  .level-dev .level-card-head { color: var(--dev-hue); }
+  .level-dev .level-dot { background: var(--dev-hue); }
+  .level-app .level-card-head { color: var(--app-hue); }
+  .level-app .level-dot { background: var(--app-hue); }
+  .level-card-body ul { list-style: none; }
+  .level-card-body li { font-size: .8rem; color: var(--gray-body); line-height: 1.55; padding: .28rem 0; padding-left: .95rem; position: relative; }
+  .level-card-body li::before { content: "•"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+  .page-footer { background: var(--navy-deep); color: var(--gold-warm); padding: 1rem clamp(1.25rem,5vw,3rem); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem; font-family: "Inter", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-top: 3px solid var(--gold); margin-top: 1rem; }
+  .footer-left { color: rgba(255,255,255,.55); }
+  .footer-right { opacity: .4; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html">U13-U14</a>
+  <span class="nav-sep">&rsaquo;</span>
+  <a href="methodology.html">Methodology</a>
+  <span class="nav-sep">&rsaquo;</span>
+  <a href="#" class="active">B1: Me &amp; the Ball</a>
+</nav>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABmJLR0QA/wD/AP+gvaeTAAAULklEQVR4nO3da3QUZZoH8P9T1Z3uJNzBXEi4JBADco3IZcLNhCCIIDowznhj5jjjOuPuDLurs2fP7Dkez36Zs6PumdGZ44zj4OoexwuOorAMAgmOgHIRkJsYQu4NAREICUkn3V317gcNE5Wk3+ruqurqen7fSN6ueh5O/dPVVdXvS7DRu6dElleNlEBTinUSxQQUA5QFEpkQGAogE0CanTWyuIUAdIBwCYI6COKcDpwkQZ9C0au9mufQgiI6b1dxZOXONp4RGZkd2mJdFeUklDJATLa6BpZ0BEBHAX0HEVX5veq20lEUtGrnph98jwuhzK2LlBLR/STwPQCDzN4nc7Q2CLwNBesvFKib7yLSzNyZaQHYUS/8QtcfAMSjAigwaz8shRHqIOjJbl1Zt6yIus3ZRYJtPCMyMrr0h4UQ/0pAbqK3z9xHAC0APRlMV36/YiR1JnLbCQ1AZV1kBQSeBjA2kdtl7EsBQfiXikLPG4naYEICsKNejNV17RkAyxOxPcb6JfCOTupPF4+jpng3FXcAtp+K3EGEdQCGxrstxgxoI8KD5YWe1+PZSMwB2FwjfGlq5Fck6GfxFMBYPAThuZCm/izWD8kxBWD7CTEcXm0TEebE8nrGEmx3OE29fekoumj0hYYDsLVJjFTD+hZATDH6WsZMI8SJCDxLloynZiMvMxSAHfVigtC1rQIYZbhAxszXRKTeUl5I1bIvkA5AZbXIg0fbDWBMzOUxZr7TIHXuokJqlBmsyAzafkIMhxrZxgc/c4A8iMjmLc1imMzgqAHYXCN88GqbQDQxIeUxZjq6wRvSNm6uEb5oI6MGwK9oT/HVHuZApWlq5FfRBvX7GWB7XWQ1CaxPaFmMWYiAVeXjPG/28/tr+/Lxho8BDDatOsbM1wpSp/f1objPUyBd157mg5+lgCEC2m/6+uU1A7D9VOQOACtMLYsxi5DAysq6yDWP52+cAm08IzIygtonfMmTpRIC6v1p6qSvf93yG+8AmZ36P/LBz1KNAAqCIf2hr//8K+8Am2uEz0daHQgjLa2OMQsIoEVV1MKyAurq+dlX3gH8iv5DPvhZqiIgV9P07/f+2dUAPC6EAohHbamMMYsQiZ8LIa6e+VwNwLzayEKevYG5wLiq+sj8nn9cDQAR3W9bSYxZSf/7sU4A8EGzSA+GtBa+8cVcoi09Tc0pHUVBBQC6urRb+OBnLjKoK6SVo+cUSFdFud0VMWYlIUQZegLwxUS1jLmHIGURANC7p0SWh7SzPEszcxldiajZileNlPDBz1xI0TyR6Qo0pdjuShizBSnFik6CA8BciSCKFQW43u5CGLOFQLEiQDl218GYPShHAcRAu8tgzA4EMVABwAFgriSAgQqAAXYXwphNBiq8Di9zMZ/U3KCMpSoOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1j90FWO1y60W0NDeiJdCAs2cC6LzSjmCwE93BIIJdnUj3Z0BRVQwcPBhDho7A8KxsjBxVgPyxhcjMdN7Xp93Wr1FUWRsRdhdhtrOnm3Hk4B4cPbAXFz8/F9M2iAh5YwpQPLkE02eWYtjwrITXmShu6zceKRsAIQSOHdqLHVvexrkzgYRum4hQMH4C5i++DUUTp4LI/qlV3dZvoqRkAD45ehCVm97A2dPNpu8rb0wBlq/+PkYXjDN9X31xW7+JlFIBCHZcwYbXXsCxg/ss3S8RYebccixbdQ+8Xusm2XBbv2ZImQDUVh/HGy89h7bLF22rISsnD/f+w1qMyMo1fV9u69csKRGAg3t24s0/Pw+h63aXgszMgbjvx4+Yeorgtn7N5Pj7APt2VeLNl/+YFAcDAHR0tGPdM79EY12NKdt3W79mc/Q7wJ73t2PT+pcgRGwtEBFGZOdiyNDh8KdnwJ+egWDHFQQ7O9B66SIufn4u5m1nZA7AQ488ltDTA7f1awXHBqDhVDXWPfNLaJpm6HXpGZmYUjILk0tmI39sIXz+9D7HdgU70Vxfi2Mf78ORA3sQ6u4ytK/s3Hz8+NHHkebzGXrdtcTarz89A5NLZmHqjXMc1a9VHBmA9tZL+N2vHkN7W6v0azIHDMLNS2/H7HnlUD1ew/vs7gpi364qVP11g6EDY9bcMqy8+wHD++stln4zMgfg5iW3Y/b8Cni8zurXSo4LgBACf3r6l6ivOSH9mhmlC3Hbqvvg8/nj3v/l1ot4+9UXUH3sY6nxRIQfrf0PjB0f20pUsfQ7fdZcrPjOGvjTM2LaZ29W92s19ftrH3vc7iKMOHpgD3ZV/VVqrMfrxer7H0LZ0pXweBLz2JPfn46pM771xelCQ63Ua1oCDZg5tzymO6hG+lVVD+68+wFULF8d01/9a+npt7u7C831p6ReE0+/VnPUVaBQdze2bHhVaqzq8eLeB9di2szShNdBRLht9X0ou/VOqfEtgSYc/3i/4f0Y6ldVcfcP/wkzShca3k80RIRl374HFctXSY2PtV87OCoAO7dtwuXW6Dd+iAjf/cHDuP6GaabWs2jZnZg0/SapsburNhvevmy/ALB6zY8xceoMw/sw4uYlKzG5ZJbU2Fj6tYNjAhAOh/Dhzu1SY7918xLpAzMeRIRV9z+EocOvizq2qb7W0ENqRvqds6ACU2fMkd52rIgI377vQVP6tYtjAnBk/4cIdlyJOi57ZD6WrrzLkpoAwOfzo1zyVOjwRx9Kb1e236ycPNx65z3S242XWf3axTEB+PD9rVLjbr3z7pguc8Zj+qxSqRtA1ccPSW9Ttt8ld3wvYR94ZZnRr10cEYDTzQ1oCTRFHVdQNBFFE6daUlNviqLixtnzoo47dyaAK+2Xo46T73cCJkyeLl1noiS6Xzs5IgAnj8tdg154y3LTa+lL8eSSqGOEEDjd1BB1nGy/CxanRr92csR3gk99eizqmMFDR2B88WRL6rmWnLxRmDFnAbpD/d811SUeZZDqd8gwFE2YYqjGREpkv3ZK+gB0dwWlbsDMmD0PpNj7hvbt+x6Mexuy/U5PkX7tlvSnQI11J6UeALt+krnX/K0i3a8Nn3VSUdIH4PzZM1HHpPn8GDm6wJJ6zCbTr8frRf6YQkvqSXVJH4DPz7VEHTOmsAiqqlpSj9lk+s0fU2j5pc9UlfQBOP9Z9AMiKzffklqsINVvTur0a7ekD8CFz85GHTNM4ta8U0j1OyJ1+rVb0geg40r0xwGGZ2VbUosVZPodOiI1Z2mzQ1IHQNMi0LRI1HGZAwZZUo/ZZPsdkCL9JoOkDkCoS+6reE6fnKmHdL8O+s5tskvuAES5y9gjzZciAZDtl68AJUxSByAcDkuNs/rpT7PI9uvxpEbgk0FSB0D21EaLyB04yU6230gkZHotbpHUAUiTnMUh1N1tei1WkO5X8p2CRZcSAegOpcZfRNl+wykS+GSQ1AFQVRWqGv2B1Sttyf2lC1nS/Sb5l0ycJKkDAAADBka/5h3rMkDJSKbfC+dTp1+7JX0Ahl8X/S7vxfOfWVKLFWT6vXThvCW1uEHSB+C6nJFRx5w7Y/7SQFaR6zf5pxtxiqQPwIjs6LMPNDWcQiRFrozI9Hu6qS5lrnzZLekDkJWTF3VMJBxGc4PcvJXJTqZfTdPQVO/MBSmSTdIHYHRBkdSd3urjhy2px2xu69duSf+l+DSfD2PHXY/a6uP9jju4dycWr1gtdRnRDEIIvPzHXyMU6v/UZMacBZh2U98T9sr2e3jfbixdeZdtj4HI9jvtplLMmLPAsrqMSvoAAEDRxClRD4iO9jZ8cvgAptw427K6egs01uHEkYNRx81ZeEvUMVL9drTjkyMHk77fmaU3W1JPrJL+FAgGZnz429aNMa9xFa9Pj0WfBpCIMGpU9C/vp0q/AJA/JrlXj3REALJz8zG6oCjquJZAIw7v/8CSmnqLhMM4tGdn1HHZI/MxcMjQ6OMM9Pvx/t3SdSaKbL9ZOXlSM0nbyREBAIA5Cyukxm3d+Aa6gp2m19Pbvl2VUvP4y0wn2EO2323vrEews0N6u4kg2++EKfL92sUxAZhcMgsDBw2JOu7ypc+x4ZV1ltQEAO1trXhv68ao44hIakLZHtL9tl7Ehj//SXq78brSflm632T+8NvDMQFQVQ9Ky5ZIjT16cC8+eO9d02vSNA2vrvstOtrboo4tLJpoaA1dI/0e+3g/dlWavyKLrhvsV+Kmnt0cEwAAmFu2ROpZGQDY/JeXsW/3DtNqEbqOt197AQ2nqqXG33zrHYb3YaTfLRtexZ735VaUiYUQAhtfexH1NZ9KjY+lXzs4KgCqx4vbVt0nNVYIgXdefQFVWzYk/EpJJBzGq+t+iwMf/E1q/LgJk1BYNNHwfoz2u2n9S6jc/BaErhveV396+pX9gxJrv3Zw3DKpI7Jy0BJolJpCEADqT55AY201CoomJmTd3EBDHV5+/jeoPfmJ1HivNw1rfvIIMjIHxLQ/w/3WnEBj7cnE9xvlvkSPePu1muMWygaAYMcV/O6Jx3Dpc/nHglWPF7PnlWP+4uUYNDj6h8uvO9cSwO6qLTi4531D7yi3rboXpWVLDe+vN7f1ayVHBgBfXgP/w1P/iXDY2NchSVEwvngSppTMRn7BeGRl515znn1N03A20IjG+hocO7gXjXXGHz6bOHUG7n1wbUIWjHZbv1ZxbAAA4MiBPXj9xWfjOudN8/kxeOgwpKenw+vzoyvYic6OK2hrbY1rton80QV4YO0v4JP8nq8Mt/VrBUcHAF9e8lz/4rNSi0pYJSsnDz/651+YMmWj2/o1myMehuvPlBtnI83nxyvPP2349MAM+aMLsObhR007GNzWr9kc/w7Q40xzA15/8fc4f/a0bTWUzJqH27/7A6RZMHen2/o1S8oEAADC4RC2vPUK9u6stPQpyfTMAVh25z24cc58y/YJF/ZrhpQKQI/GuhpUbnpD+lp9rFRVRcns+bhlxXeQKTGdiVnc1m8ipWQAetTXfIr33n0btdXHE/oX0udPx/SZpZhXsQzDhifPYhVu6zcRUjoAPdout+LYob04emAvAo110HXjV1B8Pj+KbpiKCVNKMGnaTdLTGNrBbf3GwxUB6C0cDuHc6QBaAg042xJAR3sbuoKdCAY7EAmHoSoq/OkZyBgwCEOGDceIrBzkjS5E9sg8KIrzVqJ0W79GuS4AjPXmqKdBGUs0DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1DgBzNQ4AczUOAHM1x88OLUuLhLF3VxWOfPQhzrUEEOrutrukpJLm8yE7Nx/TZpZi1twyqB6v3SVZwhXzArVdvoiXnn0KLYEmu0txhNz80Vjzk0cwaPAwu0sxXcqfAmmRMB/8BrUEmvDSs0/FtWKMU6R8APbuquKDPwYtgSbs3/2e3WWYLuUDcPijD+wuwbEOf7Tb7hJMl/IB+KzljN0lONbZM/atPmOVlA8Ai52TljuNVcoHICt3pN0lOFa2C/7vFAD2LzVooukz59pdgmNNuynl/++6FQBX7K7CTLPmliE3f7TdZThObv5ozJxXZncZZmtXALTbXYWZVI8Xa37yCIfAgJ4bYaqa2g8KENBOlbXaUUBMtrsYs2laBPt37cDhj3bj7JnTCHV32V1SUknz+ZE9Mh/TbyrFzHllKX/wf4GOUFVtZJsAKuwuhTEbbFV04KTdVTBmC0K1ogiqtrsOxuwgQNUKVJ0DwNxJ6NWKJ+I5CCDlH4lm7Gt0hDyHlAVFdB6gY3ZXw5iliA5XTKQLXz4KoVfZXQ9jltK/OOYVfPHQEweAuUrPMa8AgN+rbgNw2e6iGLPIZX+augM9ASgdRUEB/MXuqhizhMDrpaMoiN6PQwtd/K+tRTFmEaH8/Vi/GoDd4z3vg1BnW1WMWePUogLPrp5/XA3A40Q6BD1pW1mMWYAEPUFEV+97feUbYd26sg4C/CValqoCXUJ5sfcPvhKAZUXULRT6b8vLYswCJOiJZUX0lSkBv/Gd4KBfeRZAg6WVMWa+WlKV577+w28EYMVI6oTAw5aVxZgFCFhbVkDf+BbUNWeFWDTe81cIvGNJZYyZ763ycZ7/u9Yv+pwWRSf1pwBaTS2LMfNdigh1bV+/7DMAi8dRkwDu50elmYMJCPxwyXhq7mtAvxNjVYzzbBIknjGlNMZMJ369aLznrf5GRJ0ZLqR5/g0AzzDLnGbnhS7Pv0cbJDX547ZaMViB/jdATEtIaYyZio6H05QFS0fRxagjZTdZWS3y4NF2AxgTd32MmSegQ527eBxJLQohPTnuomI6TaQuAcCrTbBk1SSgLpI9+GF0dujyQqr2quocgI7EVB5jphGfRIQ6r2IcGZrnyvD06AvGUks4TSnjD8YsiexM83jm9Xe5sy8xrQ+wdBRdVJrUhYD4L75PwGwkBImnL3SpFfPH0KVYNhD3EiBVNZGVQsELAIbGuy3GDGgD4UeLCj3r49lI3CvElBd53gapJfzsELPQWxGhTo734Eci3gF6214bWa4ATwugIJHbZQwAQKgjgZ/19WBbbJtMsA+aRXowpD8EiEcB5CV6+8yVAgL0pKoof7jWI83xMG0ZwM01wpdG+g+IxM8BjDNrPyylnSJBT3zerfzPXZPIlLXsLFkHs+pUaIau0BoC3QuB4VbskznWZQi8I0i8tKjQU9n7C+xmsHQh2B31wi90bZGAWCSglBHEVDcs1cr6pYPoMAl9B0CVpKhViT7N6Y+tKyHvqBYjNG+kBFCuJ11MAKEYoCyQGAiBIQAGAEizs0YWtxCAKyC0QlA7IM5B4KRQ6FMIvRohz6GKiXTBruL+H+5mGQN93ULpAAAAAElFTkSuQmCC" alt="Coach Craft">
+    <div class="site-header-text">
+      <div class="block-label">Training Block 1</div>
+      <h1>Me &amp; the Ball</h1>
+      <div class="tagline">Prepare the body. Read the picture. Execute with intent.</div>
+      <div class="header-chips">
+        <span class="chip">Perception</span>
+        <span class="chip">Technique</span>
+        <span class="chip">Playing Forward</span>
+        <span class="chip">Attack Primary</span>
+        <span class="chip">Universal — All Positions</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <nav class="block-nav">
+    <span class="block-nav-label">Blocks:</span>
+    <a href="B1_Me_and_the_Ball.html" class="current">B1 &middot; Me &amp; the Ball</a>
+    <a href="B2_Me_and_My_Teammates.html">B2 &middot; Teammates</a>
+    <a href="B3_Team_Defending.html">B3 &middot; Defending</a>
+    <a href="B4_Me_and_the_Game.html">B4 &middot; The Game</a>
+    <a href="B5_Me_and_the_Moment.html">B5 &middot; The Moment</a>
+  </nav>
+
+  <div class="block-intro">
+    <p>Every player&rsquo;s relationship with the ball comes before everything else. B1 establishes the perceptual and technical habits that make all combination play, defending, and finishing possible: scanning before the ball arrives, shaping the body to play forward, and using first touch to create a decision rather than just react to pressure.</p>
+    <p>This block runs through every phase of the season because the habits live here. When a player stalls in B3 or B4, look back at B1 first.</p>
+    <p><strong>Primary game problem:</strong> Players must scan, position, and execute first-touch decisions under high pressure in tight spaces. At U13, the skill itself does not change position to position, the environment around it does. First touch is now a decision made under maximum defensive intensity, not just a technical act.</p>
+  </div>
+
+  <div class="meta-strip">
+    <div class="meta-card">
+      <h3>Core Focus</h3>
+      <ul>
+        <li>Scanning before, during, and after receiving</li>
+        <li>Body shape and movement to play forward</li>
+        <li>Using first touch to create a decision, not just control</li>
+        <li>Technique executed at full U13 game speed and pressure</li>
+      </ul>
+    </div>
+    <div class="meta-card">
+      <h3>Game Moments</h3>
+      <ul>
+        <li>Attacking &mdash; primary</li>
+        <li>Def &rarr; Att transition &mdash; secondary</li>
+      </ul>
+    </div>
+    <div class="meta-card">
+      <h3>US Soccer U13 Anchor</h3>
+      <ul>
+        <li>Controlling, protecting, driving, dribbling, passing</li>
+        <li>Scanning and adapting body shape</li>
+        <li>All executed under high pressure in tight spaces</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-heading">Skill Areas by Level</div>
+
+  <!-- PERCEPTION & PREPARATION -->
+  <div class="skill-area">
+    <div class="skill-area-title">Perception &amp; Preparation</div>
+    <div class="level-grid">
+      <div class="level-card level-intro">
+        <div class="level-card-head"><span class="level-dot"></span>Introduction</div>
+        <div class="level-card-body"><ul>
+          <li>Scan before receiving to identify pressure and options</li>
+          <li>Begin orienting the body to see the field before the ball arrives</li>
+          <li>Recognize the obvious difference between time and immediate pressure</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-dev">
+        <div class="level-card-head"><span class="level-dot"></span>Development</div>
+        <div class="level-card-body"><ul>
+          <li>Scan twice before every reception: once for pressure, once for the next pass or run</li>
+          <li>Body shape oriented to see the largest number of options before receiving, not just the nearest one</li>
+          <li>Recognize the difference between time to take a touch and a forced one-touch situation before the ball gets there</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-app">
+        <div class="level-card-head"><span class="level-dot"></span>Application</div>
+        <div class="level-card-body"><ul>
+          <li>Scan and prepare while a defender is actively closing, not against a static picture</li>
+          <li>Recognize disguised pressure, a defender showing late or from a blind angle, and adjust body shape in the moment it appears</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTROLLING -->
+  <div class="skill-area">
+    <div class="skill-area-title">Controlling</div>
+    <div class="level-grid">
+      <div class="level-card level-intro">
+        <div class="level-card-head"><span class="level-dot"></span>Introduction</div>
+        <div class="level-card-body"><ul>
+          <li>Treat first touch as a decision, not just control</li>
+          <li>Receive across the body to begin opening up the field</li>
+          <li>Use small, controlled touches to set up the next action</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-dev">
+        <div class="level-card-head"><span class="level-dot"></span>Development</div>
+        <div class="level-card-body"><ul>
+          <li>First touch redirects the ball into space, not just to the foot</li>
+          <li>Receive across the body to open up the field in one motion</li>
+          <li>Control under direct physical pressure without losing the ball under the body</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-app">
+        <div class="level-card-head"><span class="level-dot"></span>Application</div>
+        <div class="level-card-body"><ul>
+          <li>Make the first-touch decision in real time against a defender who is committed and moving at speed, not jogging into a passive challenge</li>
+          <li>Recover from a heavy or imperfect touch without panicking or losing the ball</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROTECTING -->
+  <div class="skill-area">
+    <div class="skill-area-title">Protecting</div>
+    <div class="level-grid">
+      <div class="level-card level-intro">
+        <div class="level-card-head"><span class="level-dot"></span>Introduction</div>
+        <div class="level-card-body"><ul>
+          <li>Shield and protect the ball when no forward option exists</li>
+          <li>Use the body between the ball and the defender</li>
+          <li>Hold possession until a forward option opens</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-dev">
+        <div class="level-card-head"><span class="level-dot"></span>Development</div>
+        <div class="level-card-body"><ul>
+          <li>Shield with the body positioned between the ball and the defender, not just turned away from it</li>
+          <li>Recognize when holding possession is the right call versus when it is just delaying the inevitable</li>
+          <li>Use the arm and body legally to buy a half-second, not to foul</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-app">
+        <div class="level-card-head"><span class="level-dot"></span>Application</div>
+        <div class="level-card-body"><ul>
+          <li>Make the shield-or-release decision in real time against a fast-closing, fully committed defender</li>
+          <li>Protect the ball and recover composure after a heavy touch instead of losing it under pressure</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRIVING -->
+  <div class="skill-area">
+    <div class="skill-area-title">Driving</div>
+    <div class="level-grid">
+      <div class="level-card level-intro">
+        <div class="level-card-head"><span class="level-dot"></span>Introduction</div>
+        <div class="level-card-body"><ul>
+          <li>Attack the ball under pressure, move toward it rather than waiting</li>
+          <li>Push into open space when it is available</li>
+          <li>Begin to play with the head up while moving with the ball</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-dev">
+        <div class="level-card-head"><span class="level-dot"></span>Development</div>
+        <div class="level-card-body"><ul>
+          <li>Push the ball into space at speed when it is available, head up and aware of the next decision</li>
+          <li>Know the difference between driving to beat a press and driving recklessly into traffic</li>
+          <li>Accelerate out of the first touch rather than touch-and-stop</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-app">
+        <div class="level-card-head"><span class="level-dot"></span>Application</div>
+        <div class="level-card-body"><ul>
+          <li>Execute the driving run against a defender who has scouted the tendency and is sitting on it</li>
+          <li>Read when to abandon the drive and recycle the ball when the picture has closed, without forcing it</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRIBBLING -->
+  <div class="skill-area">
+    <div class="skill-area-title">Dribbling</div>
+    <div class="level-grid">
+      <div class="level-card level-intro">
+        <div class="level-card-head"><span class="level-dot"></span>Introduction</div>
+        <div class="level-card-body"><ul>
+          <li>Use a first action, touch or feint, to create space</li>
+          <li>Begin recognizing obvious 1v1 moments</li>
+          <li>Show basic coordination when changing direction with the ball</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-dev">
+        <div class="level-card-head"><span class="level-dot"></span>Development</div>
+        <div class="level-card-body"><ul>
+          <li>Use a move to beat a defender 1v1 when the picture calls for it, not as a habit</li>
+          <li>Change of pace and direction to create real separation</li>
+          <li>Recognize when dribbling solves the problem and when it creates a worse one</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-app">
+        <div class="level-card-head"><span class="level-dot"></span>Application</div>
+        <div class="level-card-body"><ul>
+          <li>Execute the 1v1 move against a defender who has scouted the tendency and is set to stop it</li>
+          <li>Read when to abandon the dribble and recycle possession when the picture has closed, without forcing it</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASSING -->
+  <div class="skill-area">
+    <div class="skill-area-title">Passing</div>
+    <div class="level-grid">
+      <div class="level-card level-intro">
+        <div class="level-card-head"><span class="level-dot"></span>Introduction</div>
+        <div class="level-card-body"><ul>
+          <li>Play forward when possible, support when not</li>
+          <li>Use one touch when the pass dictates it</li>
+          <li>Begin passing accurately with both feet under light pressure</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-dev">
+        <div class="level-card-head"><span class="level-dot"></span>Development</div>
+        <div class="level-card-body"><ul>
+          <li>Weight and accuracy on both feet under pressure, not just the strong foot</li>
+          <li>Disguise the pass with body shape so the defender cannot read it early</li>
+          <li>Play first time when the picture demands it, not just when it is comfortable</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-app">
+        <div class="level-card-head"><span class="level-dot"></span>Application</div>
+        <div class="level-card-body"><ul>
+          <li>Execute the disguised or first-time pass against a defender actively trying to read body shape and intercept</li>
+          <li>Find the secure release under pressure even when the first option is taken away</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DECISION-MAKING -->
+  <div class="skill-area">
+    <div class="skill-area-title">Decision-Making</div>
+    <div class="level-grid">
+      <div class="level-card level-intro">
+        <div class="level-card-head"><span class="level-dot"></span>Introduction</div>
+        <div class="level-card-body"><ul>
+          <li>Base the decision on body shape and scan before contact</li>
+          <li>Recognize forced one-touch situations versus time to take a touch</li>
+          <li>Decisions are deliberate and often reactive at this level</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-dev">
+        <div class="level-card-head"><span class="level-dot"></span>Development</div>
+        <div class="level-card-body"><ul>
+          <li>Make the right decision fast, not just the right decision</li>
+          <li>Recognize the picture before the ball arrives so the decision is already half-made</li>
+          <li>Hold composure when the first read is wrong and a second option is needed instantly</li>
+        </ul></div>
+      </div>
+      <div class="level-card level-app">
+        <div class="level-card-head"><span class="level-dot"></span>Application</div>
+        <div class="level-card-body"><ul>
+          <li>Make a correct, fast decision when the picture changes after the first scan, the defender arrives sooner than expected, a lane closes late</li>
+          <li>Adjust under pressure without hesitation or panic, trusting the preparation already done</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="footer-left">Coach Justin Whitaker &nbsp;&middot;&nbsp; Coach Craft</div>
+  <div class="footer-right">coachjustinwhitaker.github.io/coach-craft</div>
+</footer>
+
+</body>
+</html>

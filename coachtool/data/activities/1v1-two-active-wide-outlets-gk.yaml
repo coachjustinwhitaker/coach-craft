@@ -1,0 +1,44 @@
+id: 1v1-two-active-wide-outlets-gk
+order: 52
+name: 1v1 + Two Active Wide Outlets + GK
+block: B2
+skills:
+- Combination Play
+- Dribbling
+- Decision-Making
+ages:
+- u12
+- u14
+tracks:
+- rec
+- comp
+levels:
+- intro
+players:
+  min: 5
+  max: 6
+space: quarter
+minutes: 20
+pairs_with:
+- wall-pass-grid
+- 3v3-2-wide-jokers-gk
+equipment: Balls · Cones · 1 full-size goal · 1 small goal
+setup:
+- A 1v1 in the center with a live defender.
+- Two active outlets wide. They check to create angles.
+- A full-size goal with a goalkeeper. A small goal or Pugg is the second target.
+- The coach feeds the ball. The central player reads where the outlets are checking.
+rules:
+- Dribbling is available.
+- 'After a combination, decide: finish directly or play across to the opposite outlet.'
+coach:
+- cue: Read where the wide outlets are checking and use the useful angle.
+  ask: Where are the wide outlets, and which angle is useful?
+- cue: Same weight and surface as the wall pass, first touch forward.
+  ask: Did your first touch move you forward?
+- cue: Do not dictate the choice. Combine or carry.
+  ask: What told you to combine or carry?
+coach_note: Do not dictate the choice. Ask players what they saw that led them to combine or carry.
+type: small-sided
+objective: 'Apply the wall pass under live pressure. The central player chooses among three options: play
+  right, play left, or beat the defender and shoot.'

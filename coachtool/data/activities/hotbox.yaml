@@ -1,0 +1,47 @@
+id: hotbox
+order: 36
+name: Hotbox
+block: B2
+type: small-sided
+objective: Goals at each end and a no-go box in the middle. When the box blocks the way, switch the ball
+  to the other side.
+skills:
+- Combination Play
+- Decision-Making
+ages:
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: half
+minutes: 15
+setup: Rectangular grid with a small goal at each end and a no-go square (the hotbox) in the center. 3v3
+  or 4v4. Players cannot enter the hotbox. Only balls can pass through. When the attackers' path is blocked
+  by the hotbox and a defender on one side, the solution is to switch the ball to the other side.
+coach:
+- cue: 'Naturally brings in all four blocks in a single activity: ball mastery under pressure, switching
+    the point of attack, cutting off lanes around the hotbox, and instant reaction on turnover. Best used
+    in week 7 to observe all four without isolating any one.'
+  ask: When your path was blocked, what did you do? And when the ball turned over, what was your first
+    movement?
+pairs_with:
+- team-handball
+- five-goal-game
+equipment: 1 ball · 2 small goals · Disc cones for outer grid and hotbox square · Pinnies
+for_age:
+  u14:
+    setup: Rectangular grid with a small goal at each end and a no-go square (the hotbox) in the center.
+      4v4 or 5v5. Players cannot enter the hotbox. Only the ball can pass through it. When the attackers'
+      path is blocked by the hotbox and a defender, the solution is to switch the ball to the other side.
+    coach:
+    - cue: 'Generates all five blocks in a single game: ball skills under pressure, switching with teammates,
+        cutting off lanes around the box, instant reaction on turnovers, and a decisive finish when the
+        opening appears. Best used in week 7 to observe without isolating any one block. Do not over-coach.
+        Watch.'
+      ask: When your path was blocked, what did you do? And when the ball turned over, what was your first
+        movement?

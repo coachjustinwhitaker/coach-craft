@@ -1,0 +1,14 @@
+# Which blocks a team works on, by track and age. Rec always works at the Intro standard.
+rec:
+  u6: [D, B1]   # Discovery area, plus a few B1 games borrowed from U8
+  u8: [B1, B2]
+  u10: [B1, B2, B3]
+  u12: [B1, B2, B3, B4]
+  u14: [B1, B2, B3, B4, B5]
+comp:
+  u10: [B1, B2, B3]     # B4 does not start before U11
+  u12: [B1, B2, B3, B4, B5]
+  u14: [B1, B2, B3, B4, B5]
+levels:
+  rec: [intro]
+  comp: [intro, dev, app]

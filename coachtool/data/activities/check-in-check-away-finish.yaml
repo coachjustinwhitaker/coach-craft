@@ -1,0 +1,51 @@
+id: check-in-check-away-finish
+order: 69
+name: Check In, Check Away, Finish
+block: B1
+skills:
+- Controlling
+- Body Shape
+- Shooting
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 6
+  max: 14
+space: half
+minutes: 15
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper
+setup:
+- Two setups at the edge of the box, one on each side, both shooting at the same goal. Keeper in goal.
+- Each side has a passer with a ball, an attacker and a dummy, plus a line of 3 or 4 waiting. The dummy
+  stays behind the cones, passive, and does not tackle.
+- 'Rotation: 1 passes, then becomes the dummy (2). 2 becomes the attacker (3). 3 finishes, then goes to
+  the back of the line. The next in line becomes 1.'
+rules:
+- The passer does not call the speed. Players read it.
+- 'Light pass: keep stepping in, take it, finish.'
+- 'Really hard pass: take a touch first, then finish.'
+- 'In between: check back out, follow the ball and take a one-touch shot.'
+- Look up and make sure the keeper is set before shooting.
+- Walk it first (2 min). First side 6 min. Switch sides (1 min). Second side 6 min.
+coach:
+- cue: Play it through. Work with whatever the pass ends up being.
+  ask: What did the pass weight tell you to do?
+- cue: Make the turn a step and a pop.
+  ask: 'When did you take your step: when the ball was close enough?'
+- cue: Do not take the shooting step until you know you are on the ball.
+  ask: How did you know the ball was yours?
+- cue: If the pass is really hard, take a touch.
+  ask: How did you know it was too hard to step into?
+- cue: Speak up and talk to your teammate.
+  ask: What did you say to the passer?
+diagram: check-in-check-away-finish.png
+type: pattern
+objective: 'Read the weight of the pass: step in if it is light, take a touch if it is hard, otherwise
+  check away, follow the ball and shoot first time.'
+diagram_caption: Two mirrored setups at the edge of the box shooting at one goal. The solid arrow is the
+  pass and the dashed arrows are the attacker's check in and check away.

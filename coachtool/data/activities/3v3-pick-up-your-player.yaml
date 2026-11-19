@@ -1,0 +1,50 @@
+id: 3v3-pick-up-your-player
+order: 113
+name: 3v3 Pick Up Your Player
+block: B3
+skills:
+- Marking
+- Communication
+- Compact Shape
+ages:
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 3v3. Number the pinnies 1, 2 and 3. Each player marks the opponent with the same number.
+- Hand out pinnies by number so every player can see their opponent's number.
+rules:
+- 'The challenge: stay close to your player and between them and the goal.'
+- When the ball is lost, find your number straight away.
+- A goal scored by a player whose marker is more than three steps away does not count for the attackers, and the
+  defense gets a point.
+- Kick in from the sideline to restart.
+scoring: A goal is 1 point. A goal against an unmarked player is 1 point for the defenders. First team to 5.
+coach:
+- cue: Find your player. Stay between them and the goal.
+  ask: Where were you when your player had the ball?
+- cue: Stay close enough to touch them, far enough to see the ball.
+  ask: How close were you, and could you see the ball?
+- cue: Talk to a teammate who has lost their player.
+  ask: What did you say?
+type: opening-play
+objective: Stay close to your player. A goal scored by someone who was left open does not count for the other team.
+progression:
+- title: Easier
+  text: Players can switch markers once, by calling it.
+- title: Harder
+  text: Marks change every two minutes, so players have to find a new opponent.

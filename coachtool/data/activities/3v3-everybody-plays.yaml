@@ -1,0 +1,49 @@
+id: 3v3-everybody-plays
+order: 105
+name: 3v3 Everybody Plays
+block: B2
+skills:
+- Passing
+- Supporting
+- Combination Play
+ages:
+- u8
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 3v3. Extra players wait on the sideline and rotate in after each goal.
+- Have each team count its touches out loud, one, two, three, so everyone knows who has played.
+rules:
+- 'The challenge: all three teammates touch the ball before a goal counts.'
+- If a team scores without all three touching it, the goal does not count and the other team gets the ball.
+- Kick in from the sideline to restart. No offside.
+scoring: One point per goal that counts. First team to 4.
+coach:
+- cue: Show for the ball. Be somewhere your teammate can see you.
+  ask: How did you let your teammate know you were free?
+- cue: After you pass, move to a new spot.
+  ask: Where did you go after your pass?
+- cue: Find the teammate who has not touched it yet.
+  ask: Who had not touched the ball, and how did you get it to them?
+type: opening-play
+objective: Get everyone involved. A goal only counts once all three teammates have touched the ball.
+progression:
+- title: Easier
+  text: Only two different players need to touch the ball.
+- title: Harder
+  text: A pass has to be one or two touches, and the goal counts only if the last pass is a first-time pass.

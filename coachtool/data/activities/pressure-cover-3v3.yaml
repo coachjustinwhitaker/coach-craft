@@ -1,0 +1,33 @@
+id: pressure-cover-3v3
+order: 14
+name: Pressure & Cover 3v3
+block: B3
+type: small-sided
+objective: 3v3 where defenders name first, second and third. The second defender covers behind the first.
+skills:
+- Covering
+- Communication
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 12
+space: quarter
+minutes: 15
+setup: Grid about 25 by 20 yards with three cone gates on one end line. Attackers (3) score by passing
+  or dribbling through any gate. Defenders (3) win the ball and play it out across the opposite end line.
+  Before each round, defenders name who is first (presses), who is second (covers), and who is third.
+  Freeze the game once or twice per round and ask each defender where they are standing.
+coach:
+- cue: 'The second defender stands behind and to the side of the first, close enough to step in if they
+    are beaten. Look for the defender who steps in after a teammate is dribbled past instead of watching.
+    Look for players who talk: “I have cover.” Do not fix everything at once. Pick one picture per round.'
+  ask: When your teammate pressed, where did you stand? What did you do when they got beaten?
+pairs_with:
+- approach-delay
+- flying-numbers
+equipment: 1 ball · 3 gates (6 tall cones) · Disc cones for the grid · Pinnies

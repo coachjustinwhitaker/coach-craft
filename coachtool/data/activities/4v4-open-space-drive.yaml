@@ -1,0 +1,51 @@
+id: 4v4-open-space-drive
+order: 103
+name: 4v4 Open Space Drive
+block: B1
+skills:
+- Driving
+- Scanning
+- Decision-Making
+ages:
+- u8
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mark a halfway line with cones. Mini goals or cone goals at each end. No goalkeepers.
+- 4v4. Extra players wait on the sideline and rotate in after each goal.
+- Put a cone in the middle of the halfway line so it is easy to see.
+rules:
+- 'The challenge: open grass ahead of you, so drive the ball into it.'
+- When a team has the ball in its own half, the other team must stay behind the halfway line.
+- Once the ball crosses the halfway line, everyone can play.
+- If the ball goes out, restart with a kick-in. The team that did not touch it last gets the ball.
+scoring: One point per goal. First team to 4.
+coach:
+- cue: Take your first touch into the space, not away from it.
+  ask: Where did you see the space, and when?
+- cue: Look up as you drive.
+  ask: What did you see when you lifted your head?
+- cue: Slow down, or pass, when the defense catches up.
+  ask: What told you to stop driving?
+type: opening-play
+objective: Spot the open grass ahead of you and drive the ball into it. The other team has to stay back until you
+  cross halfway.
+progression:
+- title: Easier
+  text: Make the field a little wider so the open space is bigger.
+- title: Harder
+  text: The defense can step over the halfway line once the ball carrier has taken three touches.

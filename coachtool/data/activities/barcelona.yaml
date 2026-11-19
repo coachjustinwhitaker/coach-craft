@@ -1,0 +1,57 @@
+id: barcelona
+order: 11
+name: Barcelona
+block: B2
+type: small-sided
+objective: Goals count for the number of passes made first. Teams learn to be patient and combine before
+  they shoot.
+skills:
+- Possession
+- Passing
+- Combination Play
+ages:
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 15
+setup: 'Rectangular grid with goals at each end. 3v3 or 4v4, no goalkeeper. Score points equal to the
+  number of passes completed before scoring: 8 passes before a goal = 8 points. A missed shot scores nothing.
+  Play short rounds of 3–4 minutes.'
+coach:
+- cue: Teams that learn to move the ball patiently before shooting will outscore teams that rush. Watch
+    for players who switch the ball to the far side before going to goal. That is combination play at
+    its most sophisticated. Best as a focus activity late in the season when passing habits are forming.
+  ask: Before you scored, was there a moment where you switched the ball to the other side? What did that
+    open up?
+pairs_with:
+- rondo-5v2
+- five-goal-game
+equipment: 1 ball · 2 small goals · Disc cones · Pinnies
+for_age:
+  u12:
+    setup: 'Rectangular grid with goals at each end. 3v3 or 4v4, no goalkeeper. Score points equal to
+      the number of passes completed before scoring: 8 passes before a goal = 8 points. A missed shot
+      scores nothing. Play short rounds of 3 to 4 minutes.'
+    coach:
+    - cue: Watch for players who switch the ball to the far side before going to goal, drawing defenders
+        before finding the opening. Celebrate it when it happens by name. Best as a focus activity, not
+        an anchor.
+      ask: Before you scored, was there a moment where you switched the ball to the other side? What did
+        that open up?
+  u14:
+    setup: 'Rectangular grid with goals at each end. 4v4, no goalkeeper. Score points equal to the number
+      of passes completed before scoring: 8 passes before a goal is 8 points. A missed shot scores nothing.
+      Play short rounds of 3 to 4 minutes.'
+    coach:
+    - cue: Watch for players who switch the ball to the far side before going to goal, drawing defenders
+        across before finding the opening. Name it when it happens. Best as a focus activity, not an anchor.
+      ask: Before you scored, was there a moment you switched the ball to the other side? What did that
+        open up?

@@ -1,0 +1,46 @@
+id: 2v2-first-touch-transition-game
+order: 55
+name: 2v2 First-Touch Transition Game
+block: B4
+skills:
+- Controlling
+- Decision-Making
+- Supporting
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 4
+  max: 12
+space: quarter
+minutes: 20
+pairs_with: []
+equipment: Balls · Cones · 4 small goals · Pinnies in 2 colors
+setup:
+- Square box. Two small goals on the top edge and two on the bottom edge.
+- At each end there is a central gate (the gap between the two middle cones) and a side gap (between the
+  corner cone and the far goal).
+- Red attacks up into the top goals. Blue attacks down into the bottom goals. One Red and one Blue enter
+  together from the top. Another Red and Blue pair enter together from the bottom.
+- Each team already has a player waiting near the goal it attacks.
+rules:
+- The coach serves one ball per rep to the Red player. Alternate which end serves.
+- Red's first touch has to go through the central gate.
+- Blue enters through the side gap at the same moment, with no ball, straight into the contest.
+coach:
+- cue: 'Red: the first touch through the gate is on purpose, not just any touch.'
+  ask: What did your first touch do to the defender?
+- cue: 'Blue: get through your gap early. Arriving late means defending from behind.'
+  ask: When did you start your run?
+- cue: You already have a teammate near your goal. Look for them before solving it alone.
+  ask: Who did you see before you decided?
+- cue: Whoever wins the entry duel decides who attacks and who recovers.
+  ask: What did you do in the first second after you won or lost it?
+diagram: 2v2-first-touch-transition-game.jpg
+type: small-sided
+objective: Take a first touch through a gate under pressure and win a live 2v2 at the start of every rep.
+diagram_caption: A square box with two small goals at each end. Red enters from the top and bottom through
+  the central gate, Blue through the side gap, and each team attacks the goals at the far end.

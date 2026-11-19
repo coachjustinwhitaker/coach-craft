@@ -1,0 +1,25 @@
+id: u12-rec
+age: u12
+track: rec
+label: U12
+pills:
+- controlling
+- protecting
+- driving
+- dribbling
+- passing
+- shooting
+- scanning
+- supporting
+- body-shape
+- covering
+- marking
+pills_note: Covering and Marking are the two defending perceptual skills players first met at U10. At
+  U12 they move from individual actions into how the team defends. **Covering** means positioning close
+  enough to the first defender to step in if they are beaten. **Marking** means tracking a specific opponent
+  and denying them the ball in a good position. Together these two skills are how team defending starts
+  to function rather than just individual reactions to the ball.
+next_age: U14
+goals: u12
+players: u12
+framework: u12

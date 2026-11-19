@@ -1,0 +1,103 @@
+id: u6-rec
+age: u6
+track: rec
+sessions_per_week: 1
+slot_labels:
+  a: First activity
+  b: Second activity
+weeks:
+- week: 1
+  focus: Moving with the ball
+  sessions:
+  - a:
+      activity: red-light-green-light
+      note: Ball close at yellow, a real stop at red
+    b:
+      activity: octopus
+      note: Small touches to dodge, bigger touches to escape
+  block: D
+  level: intro
+  also_blocks:
+  - B1
+- week: 2
+  focus: Dodging and changing direction
+  sessions:
+  - a:
+      activity: sharks-and-minnows
+      note: Heads up to find the gaps
+    b:
+      activity: kangaroo-jacks
+      note: Let the hopping be silly. The coordination work is real
+  block: D
+  level: intro
+  also_blocks:
+  - B1
+- week: 3
+  focus: Counting, scoring and heads up
+  sessions:
+  - a:
+      activity: 101-dalmatians
+      note: Count together and raise the target each round
+    b:
+      activity: snake
+      note: Players calling out who they are chasing
+  block: D
+  level: intro
+  also_blocks:
+  - B1
+- week: 4
+  focus: Both feet, turns and hops
+  sessions:
+  - a:
+      activity: dinosaur-tag
+      note: Watch for both feet on the turns
+    b:
+      activity: bunny-trail
+      note: Keep hopping segments to three in a row at most
+  block: D
+  level: intro
+  also_blocks:
+  - B1
+- week: 5
+  focus: Finding the goal
+  sessions:
+  - a:
+      activity: wreck-it-ralph
+      note: Celebrate every goal loudly
+    b:
+      activity: sharks-and-minnows
+      note: 'Revisit: can they find the gaps faster?'
+  block: D
+  level: intro
+  also_blocks:
+  - B1
+- week: 6
+  focus: Silly games, real skills
+  sessions:
+  - a:
+      activity: mosquitoes
+      note: Dribble close before striking. Keep the grid small
+    b:
+      activity: octopus
+      note: 'Revisit: dodging with a smile'
+  block: D
+  level: intro
+  also_blocks:
+  - B1
+- week: 7
+  focus: Favorites
+  sessions:
+  - a:
+      activity: 101-dalmatians
+      note: 'Revisit: beat last time''s group total'
+    b:
+      activity: mosquitoes
+      note: 'Revisit: keep shots below the knee'
+  block: D
+  level: intro
+  also_blocks:
+  - B1
+- week: 8
+  focus: Coach's choice
+  coach_choice: true
+  note: Run what your group loves most. If they are begging for more, you picked right.

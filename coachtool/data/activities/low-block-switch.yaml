@@ -1,0 +1,61 @@
+id: low-block-switch
+order: 65
+name: Low Block Switch
+block: B5
+skills:
+- Passing
+- Combination Play
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- app
+players:
+  min: 8
+  max: 15
+space: half
+minutes: 37
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper · Pinnies in 2 colors · Timer or watch
+setup:
+- Half field, full-size goal with a keeper. Eight attackers (11, 8, 6, 7, 9, 10, 2, 3) and six defenders.
+- 'Stage 1 pattern, no defense: 11 dribbles and plays to 8, who has dropped. 8 switches to 6, who has
+  also dropped. 6 plays to 7, who checks in to receive and shoots. 3 and 2 wait behind 11 and 7 and rotate
+  in.'
+- 'Run it left to right, then mirror it right to left. Rotations: 11 and 7, 8 and 6, 9 and 10, 2 and 3.'
+- Learn the shape of the pattern first. Kept short on purpose (about 8 min).
+rules: Every rep in stage 1 is the same pass sequence.
+scoring:
+- 'Half Pressure stage: attack scores 2 for a goal after a switch, 1 for a goal without one.'
+- 'Defense: 1 point for every 30 seconds they hold the low block.'
+- The clock starts on the first pass and resets after a goal. A blocked shot, a won ball or a ball out
+  restarts the attack from 11 with the clock still running.
+coach:
+- cue: '6: did 7''s defender step to him before the ball arrived?'
+  ask: What did you see before you played it?
+- cue: '2: start the run when 7 checks in, not when the ball is played.'
+  ask: Did your run start when 7 checked in, or when the ball was played?
+- cue: '9 and 10: which defender are you keeping out of the lane?'
+  ask: Who did you screen, and did they step out?
+- cue: Was that a shooting window or a moving window?
+  ask: What told you which one it was?
+- cue: When neither 7 nor 2 is on, who is your recycle?
+  ask: Where did the ball go instead?
+progression:
+- title: Passive and shifting
+  text: 'Six defenders and the keeper slide ball side with every pass but do not tackle. 9 and 10 screen
+    in the box to stop the two nearest defenders stepping out. 6 reads 7''s defender: play 7 if the defender
+    stays off and the lane is clear. Play 2 if the defender steps to 7. 7 checks in to pull a defender
+    and 2 starts the run when 7 checks in. Recycle to 8 or 3 if neither is on.'
+  minutes: 17
+- title: Half pressure
+  text: The defense can win the ball at about half intensity. Add the 30 second clock and the scoring
+    above.
+  minutes: 12
+diagram: low-block-switch.png
+type: positional
+objective: 'Move the block with a switch of play, then read the window: shoot, play the late runner or
+  recycle.'
+diagram_caption: 'The no-defense pattern: 11 plays to 8, 8 switches to 6, and 6 plays to 7 to finish.'

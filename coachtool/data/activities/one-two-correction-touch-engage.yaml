@@ -1,0 +1,50 @@
+id: one-two-correction-touch-engage
+order: 70
+name: One-Two, Correction Touch, Engage
+block: B1
+skills:
+- Dribbling
+- Combination Play
+- Shooting
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 4
+  max: 14
+space: half
+minutes: 15
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper
+setup:
+- Two mirrored setups on either side of the goal, both shooting at the same goal. Keeper in goal.
+- Four players per setup, numbered 1 to 4, with a line of 2 or 3 waiting. Player 2 is the dummy and does
+  not tackle. The pair of cones in the box is where 4 engages.
+- 'Rotation: after 4 shoots, 4 jogs to the back of the line. The next in line becomes 1, 1 moves to 2,
+  2 to 3 and 3 to 4.'
+rules:
+- 1 passes to 4.
+- 4 passes to 3 and dodges their own cone with the movement.
+- 3 plays it back into 4's run.
+- 4 takes a correction touch, engages 2 and finishes.
+- Walk it first (2 min). First side 6 min. Switch sides (1 min). Second side 6 min.
+coach:
+- cue: First touch changes the angle. Second touch drives.
+  ask: What did your first touch say, and what did your second say?
+- cue: Soft and forward. Do not go across.
+  ask: How far did that touch take you off your line?
+- cue: Do not rush to play the ball. Take a touch, then engage.
+  ask: 'Why did you take that touch: a bad ball, or to control the tempo?'
+- cue: Show nothing. Stay relaxed, then pop.
+  ask: What did your body show the defender before you moved?
+- cue: Once you go inside, do not keep going inside.
+  ask: Where did you take the space after the correction touch?
+diagram: one-two-correction-touch-engage.png
+type: pattern
+objective: Dodge the first defender with the first touch, then engage the second and finish. This is how
+  one player beats more than one defender.
+diagram_caption: 'A right-hand setup: 1 passes to 4, 4 and 3 combine, and 4 engages the dummy (2) before
+  finishing. The left side is a mirror.'

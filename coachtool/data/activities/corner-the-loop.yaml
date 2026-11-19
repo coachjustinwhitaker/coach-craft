@@ -1,0 +1,43 @@
+id: corner-the-loop
+order: 73
+name: 'Corner: The Loop'
+block: B4
+skills:
+- Supporting
+- Shooting
+- Restarts
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 6
+  max: 11
+space: half
+minutes: 5
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper · Corner flag or marker cone
+setup:
+- Walk-through with no opposition. A corner taker, a target runner and three decoys.
+- The target starts closest to the ball among the runners. The three decoys cluster between the target
+  and the back post.
+rules:
+- As the taker steps to strike, the target spins away from the ball and loops around the outside of the
+  cluster to arrive free at the back post.
+- The decoys peel off toward the near post and the center of goal.
+coach_note: 'Assign roles by who you have. The target wants good spatial timing more than pure speed.
+  Defending is secondary today: full man-marking, every attacker has a defender assigned before the serve,
+  called out loud, with the keeper organizing.'
+coach:
+- cue: Go last, arrive first. Let your teammates clear the path before you spin.
+  ask: When did you spin, and what had cleared?
+- cue: 'Defenders: know your mark before the serve.'
+  ask: Who was your mark?
+diagram: corner-the-loop.jpg
+type: set-piece
+objective: A target runner loops free at the back post while decoys drag the markers toward the near post
+  and center.
+diagram_caption: The target starts nearest the taker with three decoys between them and the back post.
+  The target loops around the outside to arrive free at the back post.

@@ -1,0 +1,35 @@
+id: team-handball
+order: 37
+name: Team Handball
+block: B2
+type: small-sided
+objective: Pass and catch with hands, score with feet. Heads up and teammates seen, with movement off
+  the ball.
+skills:
+- Combination Play
+- Supporting
+ages:
+- u12
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 8
+  max: 18
+space: half
+minutes: 15
+setup: Mark space with 4 cones, goals at each end. Two teams. Players use their hands to pass and catch.
+  They can run with the ball but only for three steps. Score with your feet, but only after a teammate
+  passes you the ball. No dropping to yourself. If the ball hits the ground, goes out, or is intercepted,
+  it is a turnover.
+coach:
+- cue: Using their hands makes it easier for players to keep their heads up and see their teammates' positions.
+    Because scoring requires an assist, combination play is mandatory, not optional. The three-step limit
+    creates natural transition moments. Good final-week activity before the closing game.
+  ask: Because you had to score from a pass, what did you do differently in terms of your positioning
+    than in a normal game?
+pairs_with:
+- hotbox
+- five-goal-game
+equipment: 1 ball (any type) · 2 goals · Disc cones · Pinnies

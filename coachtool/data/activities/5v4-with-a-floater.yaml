@@ -1,0 +1,52 @@
+id: 5v4-with-a-floater
+order: 107
+name: 5v4 With a Floater
+block: B2
+skills:
+- Numerical Advantage
+- Passing
+- Possession
+ages:
+- u8
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- Two teams of four, plus one floater who plays for whichever team has the ball.
+- Extra players wait on the sideline and rotate in after each goal.
+- Give the floater a different color pinnie from both teams.
+rules:
+- 'The challenge: the team with the ball always has an extra player.'
+- The floater switches teams the moment the ball changes hands. They cannot score.
+- Kick in from the sideline to restart.
+- If the defending team wins the ball, the floater joins them straight away.
+scoring: One point per goal by one of the four. The floater cannot score. First team to 4.
+coach:
+- cue: Use the floater when you are under pressure.
+  ask: When was the floater free, and did you find them?
+- cue: Move into a spot where the defense cannot see you and the ball.
+  ask: Where were you when you got the ball?
+- cue: Look for the free player before you pass.
+  ask: Who was free, and how did you see that?
+type: opening-play
+objective: Use the extra player. The team with the ball always has five, so keep the ball moving and find the free
+  player.
+progression:
+- title: Easier
+  text: The floater can score.
+- title: Harder
+  text: The floater can only play two touches.

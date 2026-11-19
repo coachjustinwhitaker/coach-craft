@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{brand.short_name}} Coach Companion</title>
+<style>
+:root{--navy:{{brand.navy}};--navy-dark:{{brand.navy_dark}};--gold:{{brand.gold}};--ink:#222;--mute:#6b7280;--line:#e3e7ee;--bg:#f6f7fa}
+*{box-sizing:border-box}button,select,input{font-family:inherit}body{margin:0;font:16px/1.45 -apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--navy-dark);color:#fff;padding:12px 16px;border-bottom:3px solid var(--gold);display:flex;align-items:center;gap:10px}
+header img{height:34px}header b{font-size:15px}header small{display:block;opacity:.7;font-size:12px}
+main{max-width:640px;margin:0 auto;padding:16px}
+h1{font-size:22px;margin:6px 0 4px}h2{font-size:17px;margin:20px 0 8px}p.lead{color:var(--mute);margin:0 0 14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}select,input[type=number]{width:100%;padding:10px;font-size:16px;border:1px solid #c9d0db;border-radius:8px;background:#fff}
+button,.btn{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-size:16px;font-weight:600;cursor:pointer;width:100%;margin-top:14px;text-align:center;text-decoration:none;display:block}
+button.ghost,.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--navy)}button.small{width:auto;padding:7px 12px;font-size:14px;margin:0}
+.goal{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}.goal:first-child{border-top:0}
+.tag{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:#e8eef8;border-radius:999px;padding:2px 8px;margin-right:4px}
+.wk{display:block;color:inherit;text-decoration:none}.wk b{color:var(--navy)}.wk .f{font-size:14px;color:var(--mute)}
+.slot{border-top:1px solid var(--line);padding:12px 0}.slot:first-child{border-top:0}.slot .lab{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.04em}
+.slot .nm{font-size:18px;font-weight:700;color:var(--navy)}.slot .note{font-size:14px;color:var(--mute)}
+details summary{cursor:pointer;color:var(--navy);font-weight:600;margin-top:8px}
+.alt{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.alt span{font-size:15px}
+.dg{width:100%;height:auto;border-radius:8px;margin-top:10px}
+.lbl{font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase;margin-top:10px}
+.tag{text-decoration:none}
+.back{display:inline-block;margin:4px 0 8px;color:var(--navy);text-decoration:none;font-weight:600}
+nav.tabs{display:flex;gap:6px;margin:6px 0 12px}nav.tabs a{flex:1;text-align:center;padding:8px;border-radius:8px;background:#fff;border:1px solid var(--line);color:var(--navy);text-decoration:none;font-size:14px;font-weight:600}nav.tabs a.on{background:var(--navy);color:#fff}
+.strip{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:2px 0 10px}.strip a{color:var(--navy);text-decoration:none;font-weight:700;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:#fff}.strip a.off{opacity:.3;pointer-events:none}.strip span{font-size:13px;color:var(--mute);text-align:center}
+.dots{display:flex;gap:5px;margin:4px 0 10px}.dots i{flex:1;height:4px;border-radius:2px;background:var(--line)}.dots i.on{background:var(--gold)}
+.skip{display:block;text-align:center;color:var(--mute);font-size:14px;margin-top:14px}.banner{background:#F2F7FC;border:1px solid #BDDDFC;border-radius:10px;padding:10px 12px;font-size:14px;margin:8px 0}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px}.tile{background:#fff;border:1px solid #e3e8f1;border-radius:14px;padding:10px 12px;position:relative}.tile span{display:block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);margin-bottom:2px}.tile b{font-size:15px;line-height:1.25;color:var(--navy)}.tile .club{position:absolute;top:10px;right:10px}
+.rule .src{font-size:12px;color:var(--mute)}.rule .club{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase}
+.row{display:block;color:inherit;text-decoration:none}.row b{color:var(--navy)}
+@media print{header,nav.tabs,.strip a,.noprint,button,summary{display:none!important}body{background:#fff}main{max-width:none;padding:0}.card{break-inside:avoid;border-color:#bbb}details>*{display:block}}
+.share{display:flex;gap:8px;margin:14px 0}.share button{margin:0;flex:1}
+nav.tabs{gap:0!important;margin:0 0 12px!important;border-bottom:1px solid var(--line)}nav.tabs a{flex:1;background:none!important;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;padding:10px 4px!important;font-size:15px!important;color:var(--mute)!important}nav.tabs a.on{color:var(--navy)!important;border-bottom-color:var(--gold)!important}
+.card>p:first-child{margin-top:0}.card>p:last-child{margin-bottom:0}.card.game{background:#f0f3f9;border-style:dashed}
+.swap summary{font-size:14px;color:var(--mute);font-weight:500}.bar{height:4px;border-radius:2px;background:var(--line);margin:4px 0 8px}.bar i{display:block;height:100%;border-radius:2px;background:var(--gold)}
+input[type=date]{-webkit-appearance:none;appearance:none;display:block;max-width:100%;min-width:0;text-align:left;box-sizing:border-box;width:100%;padding:10px;font:inherit;font-size:16px;border:1px solid #c9d0db;border-radius:8px;background:#fff;min-height:46px}
+.reset a{color:var(--mute)}.note a{color:var(--navy)}select:invalid{color:var(--mute)}
+.reset{color:var(--mute);font-size:13px;text-align:center;margin:24px 0}
+/* softer look */
+:root{--ink:#3b4350;--bg:#f4f5f2}
+body{line-height:1.55}
+h1{color:var(--navy);font-size:24px;font-weight:700;letter-spacing:-.01em;margin:8px 0 6px}
+p.lead{font-size:16px;line-height:1.5}
+.card{border-radius:14px;padding:16px 18px;margin:12px 0;border-color:#e6e8e3;box-shadow:0 1px 2px rgba(20,30,50,.05)}
+.card b{font-weight:600;color:var(--navy)}
+.card p{margin:10px 0}
+.goal{padding:12px 0}
+.slot .nm,.nm{font-size:18px;font-weight:600;color:var(--navy);margin:2px 0 4px}
+.card.game{background:#eef2f8;border:1px solid #dbe3f0}
+button,.btn{border-radius:12px;padding:14px 16px;box-shadow:0 1px 2px rgba(20,30,50,.12)}
+button.ghost,.btn.ghost{box-shadow:none;border-color:#c5cfe0}
+.tag{font-weight:600}
+.tourtop{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:2px 0 4px}.badge{background:var(--navy);color:#fff;font-size:13px;font-weight:600;border-radius:999px;padding:4px 12px}.tourtop .note{font-size:13px;color:var(--mute)}
+.fig{margin:10px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}.fig figcaption{font-size:12px;color:var(--mute);padding:7px 12px;background:#fafbfd;border-bottom:1px solid var(--line)}.fig .dg{display:block;margin:0;border-radius:0;cursor:zoom-in}
+.car .cartop{display:flex;justify-content:space-between;padding:7px 12px;font-size:12px;color:var(--mute);background:#fafbfd;border-bottom:1px solid var(--line)}.car .carn{font-weight:700;color:var(--navy)}.car .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}.car .track::-webkit-scrollbar{display:none}.car figure{flex:0 0 100%;scroll-snap-align:center;margin:0}.car figcaption{font-size:12px;color:var(--mute);padding:7px 12px;border-bottom:1px solid var(--line);min-height:2.6em}.car .dots{display:flex;justify-content:center;gap:6px;padding:8px 0;background:#fafbfd;border-top:1px solid var(--line)}.car .dots i{display:block;flex:none;width:7px;height:7px;min-width:7px;border-radius:50%;background:#c5cfe0}.car .dots i.on{background:var(--navy)}.vid{display:inline-block;margin:0 0 10px;padding:8px 14px;border-radius:999px;border:1px solid #c5cfe0;background:#fff;color:var(--navy);font-weight:600;font-size:14px;text-decoration:none}
+.dg.big{position:fixed;inset:0;z-index:50;width:100vw;height:100vh;object-fit:contain;background:rgba(10,20,40,.92);padding:12px;cursor:zoom-out}
+.obj{background:#F2F7FC;border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 8px 8px 0;margin:10px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}.chips span{font-size:12px;font-weight:600;background:#eaf0f9;color:var(--navy);padding:3px 10px;border-radius:999px}
+ul.plain{list-style:none;padding:0;margin:4px 0}ul.plain li{position:relative;padding:3px 0 3px 18px}ul.plain li::before{content:"";position:absolute;left:3px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+details p{margin:4px 0}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:6px 0}ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 36px;border-top:1px solid var(--line)}ol.steps li:first-child{border-top:0}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:12px;text-align:center;line-height:24px}
+ol.steps .cue{display:block;font-style:normal;font-size:13px;color:var(--mute);margin-top:2px}ol.steps .mins{font-size:12px;font-weight:600;color:var(--gold);margin-left:4px}
+.coachbox{background:var(--navy-dark);color:#fff;border-radius:12px;padding:12px 16px;margin:14px 0 6px}.coachbox .eb{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.coachbox ul{list-style:none;margin:0;padding:0}.coachbox li{padding:9px 0;border-top:1px solid rgba(255,255,255,.12)}.coachbox li:first-child{border-top:0}.coachbox em{display:block;color:#88BDF2;font-size:15px;margin-top:3px}
+.lsearch{width:100%;padding:11px 12px;font-size:16px;border:1px solid #c9d0db;border-radius:10px;background:#fff;margin:2px 0 8px;-webkit-appearance:none;appearance:none}
+.filters{display:flex;gap:6px}.filters select{flex:1;min-width:0;padding:9px 6px;font-size:14px}
+.toggles{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px}.pillbtn{width:auto;margin:0;padding:6px 12px;font-size:13px;font-weight:600;border-radius:999px;background:#fff;color:var(--navy);border:1px solid #c5cfe0;box-shadow:none}.pillbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+nav.tabs a{padding-left:2px!important;padding-right:2px!important;font-size:13px!important}
+.cnote{background:#eef2f9;border-radius:10px;padding:10px 14px;margin-top:14px}.cnote b{color:var(--navy);font-size:12px;letter-spacing:.06em;text-transform:uppercase}.cnote p,.cnote ul{margin:4px 0 0}
+.desc{margin:6px 0 2px!important}
+/*own*/.brow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}.mn{display:flex;align-items:center;gap:6px;font-size:13px;margin:0;font-weight:600}.mn input{width:64px;padding:6px 8px;margin:0}.ownform label{display:block;font-weight:600;font-size:14px;margin:10px 0 3px}.ownform input[type=text],.ownform textarea{width:100%}.ownform textarea{min-height:90px}
+/*phase*/.phase{margin:18px 0 8px;padding:12px 14px;border-left:4px solid var(--gold);background:#fff;border-radius:0 12px 12px 0}.phase .eb{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}.phase b{font-size:17px;color:var(--navy)}.phase p{margin:4px 0 0}
+#foot{max-width:640px;margin:8px auto 0;padding:18px 16px 28px;text-align:center;font-size:13px;color:var(--mute);border-top:1px solid var(--line)}#foot a{color:var(--navy);font-weight:600;text-decoration:none}#foot .u{margin-top:2px;font-size:12px}
+</style></head><body>
+<header><img src="{{brand.logo_src}}" alt=""><div><b>Coach Companion</b><small>{{brand.short_name}} · {{area}} · prototype</small></div></header>
+<main id="app"></main>
+<footer id="foot" class="noprint"></footer>
+<script>
+const DATA = /*DATA*/;
+const KEY = 'coachplanner.v1' + (DATA.area === 'comp' ? '.comp' : '');
+const SPACE = {quarter: 1, half: 2, full: 3};
+const SPACE_LABEL = {quarter: '1/4 field', half: '1/2 field', full: 'Full field'};
+let state = load();
+if(state.space && !SPACE[state.space]) state.space = 'half';
+let route = '';
+try { route = location.hash.slice(1); } catch(e){}
+function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+const $ = s => document.querySelector(s), app = $('#app');
+const acts = Object.fromEntries(DATA.activities.map(a => [a.id, a]));
+if(state.players && !state.team) state.team = 'u10-rec';
+const teamOf = id => DATA.teams.find(t => t.id === id) || DATA.teams[0];
+let T = teamOf(state.team), plan = T.plan;
+function setTeam(id){ T = teamOf(id); plan = T.plan; state.team = T.id; }
+const A = id => { const a = acts[id], o = (a.for_age || {})[T.age]; return o ? Object.assign({}, a, o) : a; };
+function actName(ref){ const [b, v] = ref.split('#'); const a = acts[b]; if(!v) return a.name; return (a.variants||[]).find(x => x.id === v).name; }
+const LVL = {intro: 'Introduction', dev: 'Development', app: 'Application'}, LVS = {intro: 'Intro', dev: 'Dev', app: 'App'};
+const sesBlock = (w, si) => w.sessions[si].block || w.block, sesLevel = (w, si) => w.sessions[si].level;
+const slotsOf = (w, si) => ['a','b'].filter(k => w.sessions[si][k]);
+function slotRef(w, si, slot){ const k = `${w.week}-${si}-${slot}`; return (state.swaps||{})[k] || w.sessions[si][slot].activity; }
+function fits(a){ return (!state.players || (a.players.min <= state.players && state.players <= a.players.max)) && (!state.space || SPACE[a.space] <= SPACE[state.space]); }
+function alternatives(w, si, slot){
+  const slots = slotsOf(w, si), ref = slotRef(w, si, slot), cur = ref ? ref.split('#')[0] : '', others = slots.filter(k => k !== slot).map(k => { const r = slotRef(w, si, k); return r ? r.split('#')[0] : ''; });
+  const ok = T.ladder, blk = sesBlock(w, si), lvl = sesLevel(w, si), same = [blk].concat(w.also_blocks || []), anchor = slots.length > 1 && slot === 'a';
+  const curT = cur ? (A(cur) || {}).type : '';
+  const list = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.id !== cur && !others.includes(a.id) && fits(a) && (!lvl || (a.levels || []).includes(lvl)) && (anchor ? (ok.indexOf(a.block) <= ok.indexOf(blk) || same.includes(a.block)) : same.includes(a.block)));
+  return list.sort((x, y) => (y.type === curT) - (x.type === curT));
+}
+const DAY = 864e5, iso = d => { const z = new Date(d.getTime() - d.getTimezoneOffset()*6e4); return z.toISOString().slice(0,10); }, parse = t => { const [y,m,d] = t.split('-').map(Number); return new Date(y, m-1, d); };
+const todayD = () => { const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); };
+const nice = t => parse(t).toLocaleDateString(undefined, {month: 'short', day: 'numeric'});
+function curWeek(){ const N = plan.weeks.length; if(!state.start) return Math.min(state.week || 1, N); return Math.max(1, Math.min(N, Math.floor((todayD() - parse(state.start)) / (7*DAY)) + 1)); }
+function needTour(){ const o = state.onb; if(!o || o.team !== T.id) return true; return !state.start || !o.start || Math.abs(parse(state.start) - parse(o.start)) > 90*DAY; }
+let whyFrom = '';
+const TYPE = id => ((DATA.types || []).find(t => t.id === id) || {}).label || '';
+function go(h){ if(h.startsWith('why/')) whyFrom = route || ''; route = h; try { history.replaceState(null, '', '#' + h); } catch(e){} render(); }
+document.addEventListener('click', e => { const im = e.target.closest('.dg'); if(im){ im.classList.toggle('big'); return; } const a = e.target.closest('[data-nav]'); if(a){ e.preventDefault(); go(a.dataset.nav); } });
+function rulesHtml(){
+  const loc = r => r.origin === 'club' ? '<span class="club">Local</span>' : '';
+  const short = T.rules.filter(r => r.text.length <= 40), long = T.rules.filter(r => r.text.length > 40);
+  return (short.length ? `<div class="tiles">${short.map(r => `<div class="tile"><span>${r.label}</span><b>${r.text}</b>${loc(r)}</div>`).join('')}</div>` : '') + (long.length ? `<div class="card">${long.map(r => `<p class="rule"><b>${r.label}</b> ${loc(r)}<br>${r.text}</p>`).join('')}</div>` : '');
+}
+function tabs(on){ return `<nav class="tabs">${[['now','This week'],['plan','Season'],['library','Library'],['guide','Guide'],['more','More']].map(([h,l]) => `<a href="#" data-nav="${h}" class="${on===h||(h==='more'&&(on==='goals'||on==='setup'))?'on':''}">${l}</a>`).join('')}</nav>`; }
+function viewWelcome(){
+  const comp = DATA.area === 'comp';
+  app.innerHTML = comp ? `<h1 style="margin-top:18px">Welcome to the Coach Companion</h1><p class="lead">A season frame and a library of activities. You plan the practices.</p>
+  <div class="card"><p><b>A frame for the season</b><br>Each week has a theme, a block and a level. It builds skill across the whole season, so you are not chasing last weekend's game.</p><p><b>Your practices</b><br>Pick from the library or add your own activities. Set the minutes and the order.</p><p><b>One shared language</b><br>The same blocks and words from U6 to U14, so coaches and players talk about the game the same way.</p></div>
+  <p class="note">Setup takes a few minutes the first time. Your plans stay on this device. The club does not see them.</p><button id="gs">Get started</button>`
+  : `<h1 style="margin-top:18px">Welcome to the Coach Companion</h1><p class="lead">Ideas for every week of your season, and a how-to for every activity. Use what helps. Change what does not.</p>
+  <div class="card"><p><b>A suggested practice for each week</b><br>Run it as written, or make it yours.</p><p><b>Swaps when something does not fit</b><br>Change any activity to suit your numbers and your space.</p><p><b>One shared language</b><br>The same ideas and words from U6 to U14, so coaches and players talk about the game the same way.</p></div>
+  <p class="note">Setup takes a few minutes the first time. After that it opens on this week.</p><button id="gs">Get started</button>`;
+  $('#gs').onclick = () => go('setup');
+}
+function viewSetup(){
+  const first = !state.players;
+  app.innerHTML = (first ? '' : needTour() ? '<a class="back" href="#" data-nav="onb/1">&larr; Back to the tour</a>' : '<a class="back" href="#" data-nav="more">&larr; More</a>') + `<h1>Set up your team</h1><p class="lead">${first ? 'A few quick questions, then a short tour of your age group.' : 'Change any of this at any time.'}</p>
+  <div class="card"><label>Age group</label><select id="ag" required>${first ? '<option value="" disabled selected>Choose your age group</option>' : ''}${DATA.teams.map(t => `<option value="${t.id}" ${!first && T.id===t.id?'selected':''}>${t.label}</option>`).join('')}</select>
+  <label>Players at a typical practice</label><input id="pl" type="number" min="4" max="24" value="${state.players||12}">
+  <label>Space you usually have for a session</label><select id="sp">${Object.keys(SPACE_LABEL).map(k => `<option value="${k}" ${(state.space||'half')===k?'selected':''}>${SPACE_LABEL[k]}</option>`).join('')}</select>
+  <label>First week of your season</label><input id="st" type="date" value="${state.start || iso(todayD())}"><p class="note" style="margin:6px 0 0">The app opens on the week you are in. Not sure yet? Leave it as today.</p><p class="note" style="margin:10px 0 0">Everything you set up and change stays on this device. The club does not see it.</p>
+  <button id="ok">${first ? 'Next: your players' : 'Save'}</button></div>
+  <p class="reset"><a href="#" id="rs">Start over</a></p>`;
+  $('#ok').onclick = () => { if(!$('#ag').value){ $('#ag').focus(); return; } if($('#ag').value !== T.id){ state.swaps = {}; setTeam($('#ag').value); } state.players = +$('#pl').value; state.space = $('#sp').value; state.start = $('#st').value || iso(todayD()); save(); go(needTour() ? 'onb/1' : 'now'); };
+  $('#rs').onclick = e => { e.preventDefault(); state = {}; save(); setTeam(DATA.teams[0].id); go('setup'); };
+}
+const SECTIONS = () => { const P = T.players, sh = P.shape, out = [
+  ['who', 'Who is in front of you', `Understanding your ${T.label} players${T.club.format ? ' · ' + T.club.format : ''}.`, () => `<div class="card">${P.who.map(x => `<p><b>${x.label}</b><br>${x.text}</p>`).join('')}</div>`],
+  ['goals', 'Player goals', `By the end of the season, a ${T.label} should be showing these. Tap a block to see why it matters.`, () => goalsHtml()],
+  ['great', 'What a great session looks like', 'What to watch for, whatever the score.', () => `<div class="card">${P.great_session.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`],
+  ['organized', 'Play, Practice, Play', 'How a session is organized, and how to get ready.', () => (sh ? `${sh.why ? `<div class="card"><p>${sh.why}</p></div>` : ''}<p class="note">${sh.note}</p>${gameCard(sh.opening)}<div class="card"><b>The middle</b><div class="nm">${plan.sessions_per_week === 1 ? 'The practice activity' : 'Activity A and Activity B'}</div><p class="note">${plan.sessions_per_week === 1 ? 'One activity carries the week.' : 'A is familiar and physical. B carries the week\'s idea.'}</p></div>${gameCard(sh.closing)}` : '') + `<h2>Before you arrive</h2><div class="card"><p>${P.prepared}</p></div>`]];
+  if(T.rules && T.rules.length) out.push(['rules', 'Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', () => rulesHtml()]);
+  if(plan.levels) out.push(['levels', 'Introduction, Development, Application', 'The three levels every block moves through.', () => `<div class="card">${(plan.levels || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
+  if(plan.season_note) out.push(['season', 'Why we periodize', 'Why each week has a theme.', () => `<div class="card"><p>${plan.season_note}</p>${(plan.why_periodize || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
+  out.push(['parents', 'The parents on the sideline', 'A 30 second talk before the first session.', () => `<div class="card"><p>${P.parents.intro}</p><p><i>&ldquo;${P.parents.script}&rdquo;</i></p><p>${P.parents.outro}</p></div>`]);
+  if(P.cues) out.push(['cues', 'Coaching cues', 'What to say in the moment.', () => `<div class="card">${P.cues.map(c => `<p><b>${c.when}</b><br>${c.say}</p>`).join('')}</div>`]);
+  if(T.club.pathway) out.push(['club', 'A player ready for more', 'When a player needs a bigger challenge.', () => `<div class="card"><ul>${T.club.pathway.map(x => `<li>${x}</li>`).join('')}</ul></div>`]);
+  return out; };
+function helpLinks(n){
+  const H = DATA.help || {}, ctx = `${T.label} ${T.track}${n ? ', week ' + n : ''}`, out = [];
+  if(H.email) out.push(`<a class="btn ghost" href="mailto:${H.email}?subject=${encodeURIComponent('Coach help: ' + ctx)}&body=${encodeURIComponent('Hi,\n\nI could use some help.\n\nTeam: ' + ctx + '\nWhat is going on:\n')}">Ask for help</a>`);
+  if(H.form) out.push(`<a class="btn ghost" href="${H.form}" target="_blank" rel="noopener">Suggest an activity</a>`);
+  return out.length ? `<div class="noprint">${out.join('')}</div>` : '';
+}
+function viewGuide(key){
+  const S = SECTIONS();
+  if(!key){ app.innerHTML = tabs('guide') + `<h1>Coach guide</h1><p class="lead">Everything from the first-time tour, whenever you want it.</p>` + S.map(([k, t, sub]) => `<a class="card row" href="#" data-nav="guide/${k}"><b>${t}</b><div class="note">${sub}</div></a>`).join('') + `<button class="ghost" data-nav="onb/1">Replay the tour</button>`; return; }
+  const sec = S.find(x => x[0] === key); if(!sec) return viewGuide();
+  app.innerHTML = `<a class="back" href="#" data-nav="guide">&larr; Guide</a><h1>${sec[1]}</h1><p class="lead">${sec[2]}</p>` + sec[3]();
+}
+function finishTour(to){ state.onb = {team: T.id, start: state.start || null}; save(); go(to || 'now'); }
+const chunk = (arr, k) => { const o = []; for(let i = 0; i < arr.length; i += k) o.push(arr.slice(i, i + k)); return o; };
+function tourSteps(){
+  const P = T.players, sh = P.shape, steps = [], add = (title, sub, pages) => pages.forEach((html, i) => steps.push({title, sub: i === 0 ? sub : '', part: pages.length > 1 ? `${i+1} of ${pages.length}` : '', html}));
+  add('Who is in front of you', `Understanding your ${T.label} players${T.club.format ? ' · ' + T.club.format : ''}.`, chunk(P.who, 99).map(g => `<div class="card">${g.map(x => `<p><b>${x.label}</b><br>${x.text}</p>`).join('')}</div>`));
+  add('Player goals', `By the end of the season, a ${T.label} should be showing these.`, chunk(T.goals, 99).map(g => `<div class="card">${g.map(x => `<div class="goal"><span>${x.text}<br>${x.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`));
+  add('What a great session looks like', 'What to watch for, whatever the score.', chunk(P.great_session, 99).map(g => `<div class="card">${g.map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`));
+  const org = [];
+  if(sh){ org.push(`${sh.why ? `<div class="card"><p>${sh.why}</p></div>` : ''}<p class="note">${sh.note}</p>${gameCard(sh.opening)}`); org.push(`<div class="card"><b>The middle</b><div class="nm">${plan.sessions_per_week === 1 ? 'The main activity' : 'Two main activities'}</div><p class="note">${plan.sessions_per_week === 1 ? 'One activity carries the week.' : 'The first is familiar and physical. The second carries the week\'s idea.'}</p></div>`); org.push(gameCard(sh.closing)); }
+  org.push(`<div class="card"><p>${P.prepared}</p></div>`);
+  add('Play, Practice, Play', 'How a session is organized, and how to get ready.', [org.join('')]);
+  if(T.rules && T.rules.length) add('Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', [rulesHtml()]);
+  if(plan.levels) add('Introduction, Development, Application', 'The three levels every block moves through.', [`<div class="card">${(plan.levels || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
+  if(plan.why_periodize) add('Why we periodize', 'Why each week has a theme.', [`<div class="card"><p>${plan.season_note || ''}</p>${(plan.why_periodize || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
+  add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. ${DATA.area === 'comp' ? 'Each week has a theme and a block. You plan the practices.' : 'Each week has one focus.'}`, chunk(plan.weeks, 99).map(g => g.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('')));
+  const seen = [], topics = steps.filter(s => !seen.includes(s.title) && seen.push(s.title)).map(s => `<li style="margin:8px 0"><b>${s.title}</b><br><span class="note">${s.sub}</span></li>`).join(''), mins = Math.max(5, Math.round((steps.length + 1) * 0.7));
+  steps.unshift({title: 'Before you start', sub: `A short tour of your ${T.label} group. Here is what is coming.`, part: '', html: `<div class="card"><ul style="padding-left:20px;margin:6px 0">${topics}</ul></div><p>About ${mins} minutes. You can skip any of it, and all of it stays in the Guide for later.</p>`});
+  return steps;
+}
+function viewTour(n){
+  const steps = tourSteps(), last = steps.length, i = Math.max(1, Math.min(last, n)), st = steps[i-1];
+  app.innerHTML = `<div class="bar"><i style="width:${Math.round(i / last * 100)}%"></i></div><div class="tourtop"><span class="badge">${[T.label, T.track === 'rec' ? 'Rec' : T.track.charAt(0).toUpperCase() + T.track.slice(1), T.club.format].filter(Boolean).join(' · ')}</span><span class="note">Step ${i} of ${last} · <a href="#" data-nav="setup">Change</a></span></div><h1>${st.title}${st.part ? ` <span class="note" style="font-size:14px;font-weight:500">${st.part}</span>` : ''}</h1>${st.sub ? `<p class="lead">${st.sub}</p>` : ''}${st.html}
+    <button id="nx">${i === last ? 'Start with this week' : i === 1 ? 'Start the tour' : 'Next'}</button><button class="ghost" data-nav="${i > 1 ? 'onb/' + (i-1) : 'setup'}">${i > 1 ? 'Back' : 'Back to setup'}</button><a class="skip" href="#" id="sk">Skip the tour. It is all in the Guide.</a>`;
+  $('#nx').onclick = () => i === last ? finishTour('now') : go('onb/' + (i+1));
+  $('#sk').onclick = e => { e.preventDefault(); finishTour('now'); };
+}
+const goalsHtml = () => `<div class="card">${T.goals.map(g => `<div class="goal"><span>${g.text}<br>${g.blocks.map(b => `<a href="#" data-nav="why/${b}" class="tag">${DATA.blocks[b].name}</a>`).join('')}</span></div>`).join('')}</div>`;
+const seasonHtml = () => plan.weeks.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('');
+const lib = {q: '', type: '', block: '', skill: '', fit: false, all: false, view: 'activities'};
+function viewLibrary(){
+  const rbase = (DATA.routines || []).filter(r => r.tracks.includes(T.track) && (lib.all && T.track === 'comp' ? true : r.ages.includes(T.age)));
+  if(lib.view === 'routines' && !rbase.length) lib.view = 'activities';
+  if(lib.view === 'routines'){
+    app.innerHTML = tabs('library') + `<h1>Activity library</h1><div class="toggles"><button class="pillbtn" id="vact">Activities</button><button class="pillbtn on">Routines</button></div><p class="lead">Repeatable sequences, not games. Tap one to see the moves.</p><div id="liblist"></div>`;
+    $('#liblist').innerHTML = rbase.map(r => `<div class="card"><div class="nm">${r.name}</div><div class="note">${[RK(r.kind), r.minutes ? r.minutes + ' min' : '', r.steps.length + ' moves'].filter(Boolean).join(' · ')}</div><p class="desc">${r.objective}</p><details><summary>How to run it</summary>${runRoutine(r)}</details></div>`).join('');
+    $('#vact').onclick = () => { lib.view = 'activities'; viewLibrary(); };
+    return;
+  }
+  const comp = T.track === 'comp', base = DATA.activities.filter(a => a.tracks.includes(T.track) && (lib.all && comp ? true : a.ages.includes(T.age)));
+  const skills = [...new Set(base.flatMap(a => a.skills))].sort(), types = (DATA.types || []).filter(t => base.some(a => a.type === t.id)), blocks = Object.keys(DATA.blocks).filter(b => base.some(a => a.block === b));
+  const opt = (v, cur, l) => `<option value="${v}"${cur === v ? ' selected' : ''}>${l}</option>`;
+  app.innerHTML = tabs('library') + `<h1>Activity library</h1><p class="lead">${lib.all && comp ? 'Every comp activity.' : 'Activities that suit ' + T.label + ' ' + (comp ? 'comp' : 'rec') + '.'} Tap one to see how to run it.</p>
+    <input type="search" id="lq" placeholder="Search" value="${lib.q.replace(/"/g, '&quot;')}" class="lsearch">
+    <div class="filters"><select id="lt">${opt('', lib.type, 'Any type')}${types.map(t => opt(t.id, lib.type, t.label)).join('')}</select><select id="lb">${opt('', lib.block, 'Any block')}${blocks.map(b => opt(b, lib.block, DATA.blocks[b].name)).join('')}</select><select id="ls">${opt('', lib.skill, 'Any skill')}${skills.map(x => opt(x, lib.skill, x)).join('')}</select></div>
+    <div class="toggles"><button class="pillbtn${lib.fit ? ' on' : ''}" id="lfit">Fits my numbers and space</button>${comp ? `<button class="pillbtn${lib.all ? ' on' : ''}" id="lall">All ages</button>` : ''}</div>
+    ${rbase.length ? `<div class="toggles"><button class="pillbtn on" id="vact">Activities</button><button class="pillbtn" id="vrt">Routines (${rbase.length})</button></div>` : ''}<p class="note" id="lcount"></p><div id="liblist"></div>`;
+  const draw = () => {
+    const q = lib.q.trim().toLowerCase(), list = base.filter(a => (!q || a.name.toLowerCase().includes(q) || (a.objective || '').toLowerCase().includes(q)) && (!lib.type || a.type === lib.type) && (!lib.block || a.block === lib.block) && (!lib.skill || a.skills.includes(lib.skill)) && (!lib.fit || fits(a)))
+      .sort((x, y) => x.block.localeCompare(y.block) || x.order - y.order);
+    $('#lcount').textContent = `${list.length} ${list.length === 1 ? 'activity' : 'activities'}`;
+    $('#liblist').innerHTML = list.map(x => { const a = A(x.id), pl = a.players.min === a.players.max ? `${a.players.min} players` : `${a.players.min} to ${a.players.max} players`;
+      return `<div class="card"><div class="nm">${a.name}</div><div class="note">${[TYPE(a.type), DATA.blocks[a.block].name, pl, SPACE_LABEL[a.space]].filter(Boolean).join(' · ')}</div>${a.objective ? `<p class="desc">${a.objective}</p>` : ''}<details><summary>How to run it</summary>${runIt(a)}</details></div>`; }).join('') || '<p class="note">Nothing matches. Clear a filter or the search.</p>';
+  };
+  $('#lq').oninput = e => { lib.q = e.target.value; draw(); };
+  $('#lt').onchange = e => { lib.type = e.target.value; draw(); }; $('#lb').onchange = e => { lib.block = e.target.value; draw(); }; $('#ls').onchange = e => { lib.skill = e.target.value; draw(); };
+  $('#lfit').onclick = () => { lib.fit = !lib.fit; viewLibrary(); }; if($('#lall')) $('#lall').onclick = () => { lib.all = !lib.all; lib.type = lib.block = lib.skill = ''; viewLibrary(); };
+  if($('#vrt')) $('#vrt').onclick = () => { lib.view = 'routines'; viewLibrary(); };
+  draw();
+}
+function viewMore(){
+  const ask = T.club.contact || (DATA.help && DATA.help.support), hl = helpLinks();
+  app.innerHTML = tabs('more') + `<h1>More</h1>` + (ask || hl ? `<h2>Who to ask</h2>${ask ? `<div class="card"><p>${ask}</p></div>` : ''}${hl ? `<p class="note">Stuck on something, or have an activity your players love? Tell us.</p>${hl}` : ''}` : '') + `<h2>Your setup</h2><a class="card row" href="#" data-nav="setup"><b>Setup</b><div class="note">Age group, players, space and season start.</div></a>`;
+}
+function viewGoals(){
+  app.innerHTML = '<a class="back" href="#" data-nav="more">&larr; More</a>' + `<h1>Player goals</h1><p class="lead">By the end of the season, a ${T.label} should be showing these. Tap a block to see why it matters. The plan builds toward them.</p>` + goalsHtml();
+}
+function viewPlan(){
+  const n = plan.sessions_per_week, cw = curWeek(), ph = w => (plan.phases || []).find(p => p.weeks[0] === w.week);
+  app.innerHTML = tabs('plan') + `<h1>Your season</h1><p class="lead">${plan.weeks.length} weeks, ${n === 1 ? 'one practice' : 'two practices'} a week. Tap a week to see the session${n === 1 ? '' : 's'}.</p>` + (plan.season_note ? `<div class="card"><p>${plan.season_note}</p></div>` : '') + plan.weeks.map(w => (ph(w) ? `<div class="phase"><div class="eb">${ph(w).name} · weeks ${ph(w).weeks[0]} to ${ph(w).weeks[1]}</div><b>${ph(w).goal}</b><p>${ph(w).text}</p><p class="note"><b>What to see:</b> ${ph(w).success}</p></div>` : '') + `<a class="card wk" href="#" data-nav="week/${w.week}"><b>Week ${w.week}${w.week === cw ? ' · this week' : ''}</b><div class="f">${w.focus}</div>${w.sessions && w.sessions[0].block ? `<div class="note">${w.sessions.map(x => x.block + ' ' + (LVS[x.level] || '')).join(' · ')}</div>` : ''}</a>`).join('');
+}
+function gameCard(g){ return `<div class="card game"><b>${g.label}</b> <span class="note">${g.minutes}</span><div class="nm">${g.title}</div>
+  <details><summary>How to run it</summary><div class="lbl">Setup</div>${g.setup}${g.job ? `<div class="lbl">Your job</div>${g.job}` : ''}<div class="lbl">Ask</div>&ldquo;${g.question}&rdquo;<div class="lbl">Equipment</div>${g.kit}</details></div>`; }
+function openingAlts(w){
+  const key = `${w.week}-o`, ref = (state.swaps||{})[key] || (w.opening && w.opening.activity), blk = w.block || (w.sessions[0] || {}).block, ok = T.ladder;
+  return DATA.activities.filter(a => a.type === 'opening-play' && a.ages.includes(T.age) && a.tracks.includes(T.track) && a.id !== ref && fits(a) && ok.indexOf(a.block) <= ok.indexOf(blk)).sort((x, y) => (y.block === blk) - (x.block === blk));
+}
+function playCard(w, g){
+  if(!w.opening) return gameCard(g);
+  const key = `${w.week}-o`, swapped = (state.swaps||{})[key], ref = swapped || w.opening.activity, a = A(ref), alts = openingAlts(w), blk = w.block || (w.sessions[0] || {}).block;
+  return `<div class="card game"><b>${g.label}</b> <span class="note">${a.minutes ? a.minutes + ' min' : g.minutes}</span><div class="nm">${a.name}</div>
+    <div class="note">${[swapped ? 'Swapped in' : w.opening.note].filter(Boolean).join(' · ')}</div>
+    <details><summary>How to run it</summary>${runIt(a)}<div class="lbl">Your job</div>Say the rule once, start the game, then step back. Watch whether the players solve the problem on their own. Save your voice for the question at the end.</details>
+    <details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' more opening games' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}<br><span class="note">${DATA.blocks[x.block].name}</span></span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
+    ${swapped ? `<button class="small ghost" data-k="${key}" data-id="">Put the original back</button>` : ''}</details></div>`;
+}
+const buildKey = (w, si) => `${w.week}-${si}`;
+const buildOf = (w, si) => ((state.build || {})[buildKey(w, si)] || []);
+const setBuild = (w, si, list) => { state.build = state.build || {}; if(list.length) state.build[buildKey(w, si)] = list; else delete state.build[buildKey(w, si)]; save(); };
+function itemInfo(it){ if(it.r.startsWith('own:')){ const o = (state.own || {})[it.r.slice(4)] || {name: 'Removed activity'}; return {name: o.name, own: o}; } const a = A(it.r.slice(4)); return {name: a.name, a}; }
+const ownLines = o => [...(o.notes ? lsx(o.notes.split('\n').filter(x => x.trim())) : []), ...(o.cue ? [`  Look for: ${o.cue}`] : []), ...(o.ask ? [`  Ask: "${o.ask}"`] : [])];
+function runOwn(o){ return `<div class="obj">Your activity. Only you can see it.</div>` + (o.notes ? `<div class="lbl">Notes</div>${o.notes.split('\n').filter(x => x.trim()).map(x => `<p>${x}</p>`).join('')}` : '') + ((o.cue || o.ask) ? `<div class="coachbox"><div class="eb">Coach it: cue, then ask</div><ul><li>${o.cue || ''}<em>${o.ask || ''}</em></li></ul></div>` : ''); }
+const lsx = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v];
+const actLines = a => { const ls = lsx; return [...(a.objective ? [`  ${a.objective}`] : []), '  Setup:', ...ls(a.setup), ...(a.rules ? ['  Rules:', ...ls(a.rules)] : []), ...(a.scoring ? ['  Scoring:', ...ls(a.scoring)] : []), ...(a.progression ? ['  Progressions:', ...a.progression.map((p, n) => `  ${n+1}. ${p.title}${p.minutes ? ' (' + p.minutes + ' min)' : ''}: ${p.text}`)] : []), ...(a.coach_note ? ['  Coach note:', ...ls(a.coach_note)] : []), ...(a.video ? ['  Video: ' + a.video] : []), ...a.coach.map(c => `  Look for: ${c.cue}\n  Ask: "${c.ask}"`), `  Equipment: ${a.equipment}`]; };
+function weekText(n){
+  const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, L = [`${T.label} · Week ${n} of ${plan.weeks.length}`, w.focus, ''];
+  if(w.coach_choice){ L.push(w.note); return L.join('\n'); }
+  const one = plan.sessions_per_week === 1;
+  if(shape){ const g = shape.opening; if(w.opening){ const oa = A((state.swaps||{})[`${w.week}-o`] || w.opening.activity); L.push(`${g.label} (${oa.minutes ? oa.minutes + ' min' : g.minutes}): ${oa.name}`, ...actLines(oa), ''); } else L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup, ''); }
+  { const r = w.routine && R(w.routine); if(r) L.push(`Start with: ${r.name}${r.dosage ? ' (' + r.dosage + ')' : ''}`, ...r.steps.map((x, i) => `  ${i + 1}. ${x.name}: ${x.how}`), ''); }
+  w.sessions.forEach((ses, si) => { L.push((one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')) + (ses.block ? ` · ${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}` : ''));
+    if(ses.block){ const items = buildOf(w, si); if(!items.length) L.push('- Nothing added yet'); items.forEach(it => { const o = itemInfo(it); L.push(`- ${o.name}${it.m ? ' (' + it.m + ' min)' : ''}`, ...(o.own ? ownLines(o.own) : actLines(o.a))); }); if(items.some(x => x.m)) L.push(`Total: ${items.reduce((t, x) => t + (+x.m || 0), 0)} min`); }
+    slotsOf(w, si).forEach(slot => { const ref = slotRef(w, si, slot); if(!ref){ L.push('- Activity not chosen yet'); return; } const a = A(ref.split('#')[0]); const ls = v => Array.isArray(v) ? v.map(x => '  - ' + x) : ['  ' + v]; L.push(`- ${actName(ref)}`, ...actLines(a)); }); L.push(''); });
+  if(shape){ const g = shape.closing; L.push(`${g.label} (${g.minutes}): ${g.title}`, g.setup); }
+  (plan.standing || []).forEach(x => L.push('', `${x.title}: ${x.text}`));
+  return L.join('\n').trim();
+}
+async function shareWeek(n, btn){
+  const text = weekText(n), title = `${T.label} week ${n}`;
+  try { if(navigator.share){ await navigator.share({title, text}); return; } } catch(e){ if(e && e.name === 'AbortError') return; }
+  try { await navigator.clipboard.writeText(text); btn.textContent = 'Copied. Paste it anywhere.'; }
+  catch(e){ const t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); btn.textContent = 'Copied. Paste it anywhere.'; } catch(x){ btn.textContent = 'Could not copy'; } t.remove(); }
+}
+function printWeek(){ const ds = [...document.querySelectorAll('details')], was = ds.map(d => d.open); ds.forEach(d => d.open = true); window.print(); ds.forEach((d, i) => d.open = was[i]); }
+const bul = v => Array.isArray(v) ? `<ul class="plain">${v.map(x => `<li>${x}</li>`).join('')}</ul>` : `<p>${v}</p>`;
+function figHtml(a){
+  const f = a.figs || []; if(!f.length) return '';
+  const alt = (x, n) => x.caption || `${a.name} diagram${f.length > 1 ? ' ' + (n + 1) : ''}`;
+  if(f.length === 1) return `<figure class="fig">${f[0].caption ? `<figcaption>${f[0].caption} Tap to enlarge.</figcaption>` : ''}<img class="dg" src="${f[0].src}" alt="${alt(f[0], 0)}"></figure>`;
+  return `<div class="fig car"><div class="cartop"><span class="carn">1 of ${f.length}</span><span class="carh">Swipe for the next one</span></div><div class="track">${f.map((x, n) => `<figure><figcaption>${x.caption ? x.caption + ' ' : ''}<span class="note">Tap to enlarge.</span></figcaption><img class="dg" src="${x.src}" alt="${alt(x, n)}"></figure>`).join('')}</div><div class="dots">${f.map((x, n) => `<i class="${n ? '' : 'on'}"></i>`).join('')}</div></div>`;
+}
+function videoHtml(a){ return a.video ? `<a class="vid" href="${a.video}" target="_blank" rel="noopener">&#9654; Watch an example</a>` : ''; }
+document.addEventListener('scroll', e => { const t = e.target; if(!t.classList || !t.classList.contains('track')) return; const n = Math.round(t.scrollLeft / t.clientWidth), c = t.parentElement; c.querySelectorAll('.dots i').forEach((d, i) => d.classList.toggle('on', i === n)); const el = c.querySelector('.carn'); if(el) el.textContent = `${n + 1} of ${t.children.length}`; }, true);
+const RK = id => ((DATA.routine_kinds || []).find(k => k.id === id) || {}).label || id;
+const R = id => (DATA.routines || []).find(r => r.id === id);
+function runRoutine(r){
+  return (r.video ? videoHtml(r) : '') + `<div class="chips">${[r.minutes ? r.minutes + ' min' : '', r.dosage].filter(Boolean).map(x => `<span>${x}</span>`).join('')}</div>`
+   + `<div class="lbl">Moves, in order</div><ol class="steps">${r.steps.map(x => `<li><b>${x.name}</b> ${x.how}${x.cue ? `<em class="cue">${x.cue}</em>` : ''}</li>`).join('')}</ol>`
+   + (r.coach_note ? `<div class="cnote"><b>Coach note</b>${bul(r.coach_note)}</div>` : '') + `<div class="lbl">Equipment</div><p>${r.equipment}</p>` + (r.source ? `<div class="lbl">Source</div><p>${r.source}</p>` : '');
+}
+function runIt(a){
+  const pl = a.players ? (a.players.min === a.players.max ? `${a.players.min} players` : `${a.players.min} to ${a.players.max} players`) : '', sec = (t, v) => v ? `<div class="lbl">${t}</div>${bul(v)}` : '';
+  return figHtml(a) + videoHtml(a)
+   + (a.objective ? `<div class="obj">${a.objective}</div>` : '')
+   + `<div class="chips">${[pl, SPACE_LABEL[a.space], a.minutes ? a.minutes + ' min' : ''].filter(Boolean).map(x => `<span>${x}</span>`).join('')}</div>`
+   + sec('Setup', a.setup) + sec('Rules', a.rules) + sec('Scoring', a.scoring)
+   + (a.progression ? `<div class="lbl">Progressions</div><ol class="steps">${a.progression.map(p => `<li><b>${p.title}${p.minutes ? ` <span class="mins">${p.minutes} min</span>` : ''}</b> ${p.text}</li>`).join('')}</ol>` : '')
+   + (a.coach_note ? `<div class="cnote"><b>Coach note</b>${bul(a.coach_note)}</div>` : '')
+   + `<div class="coachbox"><div class="eb">Coach it: cue, then ask</div><ul>${a.coach.map(c => `<li>${c.cue}<em>${c.ask}</em></li>`).join('')}</ul></div>`
+   + `<div class="lbl">Equipment</div><p>${a.equipment}</p>` + (a.source ? `<div class="lbl">Source</div><p>${a.source}</p>` : '');
+}
+function routineCard(w){ const r = w.routine && R(w.routine); return r ? `<div class="card"><div class="lab">Start with</div><div class="nm">${r.name}</div><div class="note">${[RK(r.kind), r.minutes ? r.minutes + ' min' : '', r.dosage].filter(Boolean).join(' · ')}</div><details><summary>How to run it</summary>${runRoutine(r)}</details></div>` : ''; }
+const buildUI = {};
+function practiceCard(w, si, one){
+  const ses = w.sessions[si], key = buildKey(w, si), items = buildOf(w, si), ui = buildUI[key] || (buildUI[key] = {any: false}), have = items.map(x => x.r);
+  const lvl = ses.level, pool = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && fits(a) && !have.includes('lib:' + a.id)), fit = pool.filter(a => a.block === ses.block && (!lvl || (a.levels || []).includes(lvl))), list = ui.any ? pool : fit;
+  const own = Object.entries(state.own || {}).filter(([id]) => !have.includes('own:' + id));
+  const total = items.reduce((t, x) => t + (+x.m || 0), 0);
+  const rows = items.map((it, i) => { const o = itemInfo(it); return `<div class="slot"><div class="nm">${o.name}</div><div class="note">${o.own ? 'Your activity' : TYPE(o.a.type)}</div>
+    <details><summary>How to run it</summary>${o.own ? runOwn(o.own) : runIt(o.a)}</details>
+    <div class="brow"><label class="mn">Minutes <input type="number" min="1" max="90" value="${it.m || ''}" data-m="${key}|${i}"></label>${i ? `<button class="small ghost" data-up="${key}|${i}">Move up</button>` : ''}${o.own ? `<button class="small ghost" data-edit="${it.r.slice(4)}|${key}">Edit</button>` : ''}<button class="small ghost" data-rm="${key}|${i}">Remove</button></div></div>`; }).join('');
+  return `<div class="card" data-pc="${key}"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b> <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>
+    ${items.length ? rows + (total ? `<p class="note">Total ${total} min</p>` : '') : `<p class="note" style="margin:10px 0 4px">Your practice. Add from the library, or add your own.</p>`}
+    <details class="swap" ${ui.open === 'lib' ? 'open' : ''}><summary>Add from the library</summary>
+      <p class="note">${ui.any ? 'Everything for ' + T.label + ' that fits your numbers and space.' : fit.length + ' fit ' + DATA.blocks[ses.block].name + ', ' + (LVL[lvl] || '') + ', your numbers and space.'}</p>
+      ${list.map(x => `<div class="alt"><span>${x.name}<br><span class="note">${TYPE(x.type)}${ui.any ? ' · ' + DATA.blocks[x.block].name : ''}</span></span><button class="small" data-add="${key}|lib:${x.id}">Add</button></div>`).join('') || '<p class="note">Nothing fits. Try showing every block, or a different space in Setup.</p>'}
+      <button class="small ghost" data-any="${key}">${ui.any ? 'Only this block and stage' : 'Show every block'}</button></details>
+    <details class="swap" ${ui.open === 'own' ? 'open' : ''}><summary>Add my own</summary>
+      ${own.map(([id, o]) => `<div class="alt"><span>${o.name}<br><span class="note">Your activity</span></span><button class="small" data-add="${key}|own:${id}">Add</button></div>`).join('')}
+      <div class="ownform" data-of="${key}"><label>Name</label><input type="text" class="o-name" maxlength="80"><label>Notes <small>(setup, rules, what it is for. One idea per line)</small></label><textarea class="o-notes"></textarea><label>Look for <small>(optional)</small></label><input type="text" class="o-cue"><label>Ask <small>(optional)</small></label><input type="text" class="o-ask"><input type="hidden" class="o-id"><button class="small" data-saveown="${key}">Save and add</button></div></details></div>`;
+}
+function viewWeek(n){
+  const w = plan.weeks.find(x => x.week === n), shape = T.players.shape, N = plan.weeks.length, cw = curWeek(), P = T.players;
+  if(!state.start){ state.week = n; save(); }
+  let bn = '';
+  if(state.start){ const sd = parse(state.start), ed = new Date(sd.getTime() + N*7*DAY); if(todayD() < sd) bn = `<div class="banner">Your season starts ${nice(state.start)}. Here is week 1.</div>`; else if(todayD() >= ed) bn = `<div class="banner">Your ${N} weeks are done. Here is the last week. Start a new season in Setup.</div>`; }
+  const strip = `<div class="strip"><a href="#" data-nav="week/${n-1}" class="${n <= 1 ? 'off' : ''}">&larr;</a><span><b>${T.label} · Week ${n} of ${N}</b>${n === cw ? ' · this week' : ''}<br><a href="#" data-nav="plan" style="border:0;padding:0;background:none;font-weight:600">Whole season</a></span><a href="#" data-nav="week/${n+1}" class="${n >= N ? 'off' : ''}">&rarr;</a></div>`;
+  const on = n === cw ? 'now' : 'plan';
+  if(w.coach_choice){ app.innerHTML = tabs(on) + strip + bn + `<h1>Week ${w.week}</h1><div class="card"><b>${w.focus}</b><p>${w.note}</p></div>`; return; }
+  const one = plan.sessions_per_week === 1;
+  const sessions = w.sessions.map((ses, si) => ses.block ? practiceCard(w, si, one) : `<div class="card"><b>${one ? 'Practice' : 'Practice ' + (si ? 'B' : 'A')}</b>${ses.block ? ` <span class="note">${DATA.blocks[ses.block].name} · ${LVL[ses.level] || ''}</span>` : ''}` + slotsOf(w, si).map(slot => {
+    const ref = slotRef(w, si, slot), key = `${w.week}-${si}-${slot}`, a = ref ? A(ref.split('#')[0]) : null, note = w.sessions[si][slot].note, multi = slotsOf(w, si).length > 1;
+    const swapped = (state.swaps||{})[key];
+    const alts = alternatives(w, si, slot);
+    if(!a) return `<div class="slot"><div class="lab">Main activity</div><div class="nm">Not chosen yet</div>
+      <div class="note">${alts.length ? alts.length + ' fit this block, level, your numbers and space. Tap Use to pick one.' : 'Nothing fits yet. Try a different space in Setup, or check the Library.'}</div>
+      ${alts.map(x => `<div class="alt"><span>${x.name}<br><span class="note">${TYPE(x.type)}</span></span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('')}</div>`;
+    return `<div class="slot"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? (slot==='a' ? 'Main activity · familiar' : 'Main activity · new idea') : 'Main activity')}</div><div class="nm">${actName(ref)}</div>
+      <div class="note">${[TYPE(a.type), swapped ? 'Swapped in' : note].filter(Boolean).join(' · ')}</div>
+      <details><summary>How to run it</summary>${runIt(a)}</details>
+      <details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' fit your numbers and space' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
+      ${swapped ? `<button class="small ghost" data-k="${key}" data-id="">${w.sessions[si][slot].activity ? 'Put the original back' : 'Clear my choice'}</button>` : ''}</details></div>`;
+  }).join('') + '</div>').join('');
+  const gs = P.great_session[(n-1) % P.great_session.length], cue = P.cues && P.cues[(n-1) % P.cues.length];
+  const bits = `<h2>This week, watch for</h2><div class="card"><p><b>${gs.title}</b><br>${gs.text}</p>${cue ? `<p><b>${cue.when}</b><br>${cue.say}</p>` : ''}${n === 1 ? `<p><a href="#" data-nav="guide/parents">Before the first session: a word for parents</a></p>` : ''}<p class="note">${[...new Set(w.sessions.map((x, i) => sesBlock(w, i)))].map(b => `<a href="#" data-nav="why/${b}">Why this block: ${DATA.blocks[b].name}</a>`).join(' · ')} · <a href="#" data-nav="guide">Coach guide</a></p></div>${(plan.standing || []).map(x => `<div class="card"><p><b>${x.title}</b><br>${x.text}</p></div>`).join('')}`;
+  app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + (shape ? `<p class="lead">Play, practice, play. Start with the game and finish with the game.</p>` + playCard(w, shape.opening) : '') + routineCard(w) + sessions + (shape ? gameCard(shape.closing) : '') + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>${helpLinks(n)}`;
+  $('#shr').onclick = () => shareWeek(n, $('#shr')); $('#prt').onclick = printWeek;
+  const wk = k => { const [wn, si] = k.split('-'); return [plan.weeks.find(x => x.week === +wn), +si]; };
+  const done = () => viewWeek(n);
+  app.querySelectorAll('[data-add]').forEach(b => b.onclick = () => { const [k, r] = b.dataset.add.split('|'); const [ww, si] = wk(k); setBuild(ww, si, buildOf(ww, si).concat({r})); buildUI[k].open = r.startsWith('own:') ? 'own' : 'lib'; done(); });
+  app.querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { const [k, i] = b.dataset.rm.split('|'); const [ww, si] = wk(k), l = buildOf(ww, si).slice(); l.splice(+i, 1); setBuild(ww, si, l); done(); });
+  app.querySelectorAll('[data-up]').forEach(b => b.onclick = () => { const [k, i] = b.dataset.up.split('|'); const [ww, si] = wk(k), l = buildOf(ww, si).slice(), x = +i; [l[x - 1], l[x]] = [l[x], l[x - 1]]; setBuild(ww, si, l); done(); });
+  app.querySelectorAll('[data-m]').forEach(inp => inp.onchange = () => { const [k, i] = inp.dataset.m.split('|'); const [ww, si] = wk(k), l = buildOf(ww, si).map(x => Object.assign({}, x)); const v = +inp.value; if(v > 0) l[+i].m = v; else delete l[+i].m; setBuild(ww, si, l); done(); });
+  app.querySelectorAll('[data-any]').forEach(b => b.onclick = () => { const u = buildUI[b.dataset.any]; u.any = !u.any; u.open = 'lib'; done(); });
+  app.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => { const [id, k] = b.dataset.edit.split('|'), o = state.own[id], f = app.querySelector(`[data-of="${k}"]`); f.querySelector('.o-name').value = o.name; f.querySelector('.o-notes').value = o.notes || ''; f.querySelector('.o-cue').value = o.cue || ''; f.querySelector('.o-ask').value = o.ask || ''; f.querySelector('.o-id').value = id; f.closest('details').open = true; f.scrollIntoView({block: 'center'}); });
+  app.querySelectorAll('[data-saveown]').forEach(b => b.onclick = () => { const k = b.dataset.saveown, f = app.querySelector(`[data-of="${k}"]`), name = f.querySelector('.o-name').value.trim(); if(!name){ f.querySelector('.o-name').focus(); return; }
+    state.own = state.own || {}; const eid = f.querySelector('.o-id').value, id = eid || 'o' + Date.now().toString(36); state.own[id] = {name, notes: f.querySelector('.o-notes').value.trim(), cue: f.querySelector('.o-cue').value.trim(), ask: f.querySelector('.o-ask').value.trim()};
+    const [ww, si] = wk(k); if(!eid) setBuild(ww, si, buildOf(ww, si).concat({r: 'own:' + id})); else save(); buildUI[k].open = 'own'; done(); });
+  app.querySelectorAll('button[data-k]').forEach(b => b.onclick = () => { state.swaps = state.swaps || {}; if(b.dataset.id) state.swaps[b.dataset.k] = b.dataset.id; else delete state.swaps[b.dataset.k]; save(); viewWeek(n); });
+}
+function viewWhy(b){
+  const f = T.framework.blocks[b], areas = T.skills.filter(r => r.block === b && (T.track === 'comp' || r.level === 'intro')), list = DATA.activities.filter(a => a.ages.includes(T.age) && a.tracks.includes(T.track) && a.block === b);
+  app.innerHTML = `${whyFrom.startsWith('onb/') ? `<a class="back" href="#" data-nav="${whyFrom}">&larr; Back to the tour</a>` : '<a class="back" href="#" data-nav="guide/goals">&larr; Player goals</a>'}<h1>${DATA.blocks[b].name}</h1><p class="lead"><i>${f.tagline}</i></p>
+  <div class="card"><p>${f.overview}</p><div class="lbl">The game problem</div><p>${f.problem}</p><div class="lbl">Core focus</div><ul>${f.focus.map(x => `<li>${x}</li>`).join('')}</ul></div>
+  <h2>What to look for</h2>${T.track === 'comp' ? [...new Set(areas.map(r => r.area))].map(n => `<div class="card"><b>${n}</b>${['intro', 'dev', 'app'].map(lv => areas.filter(r => r.area === n && r.level === lv).map(r => `<div class="lbl">${LVL[lv]}</div><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul>`).join('')).join('')}</div>`).join('') : areas.map(r => `<div class="card"><b>${r.area}</b><ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('')}
+  <h2>Activities that build it</h2><div class="card">${list.map(a => `<div class="alt"><span><b>${a.name}</b><br><span class="note">${a.skills.join(' · ')}</span></span></div>`).join('') || '<p class="note">None yet.</p>'}</div>`;
+}
+function foot(h){
+  const el = $('#foot'); if(!el) return; if(h.startsWith('onb/')){ el.innerHTML = ''; return; }
+  const H = DATA.help || {}, C = DATA.credit || {};
+  el.innerHTML = (H.email ? `<div><a href="mailto:${H.email}?subject=${encodeURIComponent('Coach help: ' + T.label + ' ' + T.track)}">Ask for help</a></div>` : '') + (C.author ? `<div>Designed by ${C.author}</div>` : '') + (DATA.updated ? `<div class="u">Updated ${DATA.updated}</div>` : '');
+}
+function render(){
+  let h = route || (!state.players ? 'welcome' : needTour() ? 'onb/1' : 'now');
+  if(!state.players && h !== 'setup' && h !== 'welcome'){ route = 'welcome'; return render(); }
+  if(h === 'welcome') viewWelcome(); else if(h === 'setup') viewSetup(); else if(h === 'now') viewWeek(curWeek()); else if(h === 'goals') viewGuide('goals'); else if(h === 'guide') viewGuide(); else if(h.startsWith('guide/')) viewGuide(h.split('/')[1]); else if(h.startsWith('onb/')) viewTour(+h.split('/')[1]); else if(h === 'more') viewMore(); else if(h === 'library') viewLibrary(); else if(h === 'goals') viewGoals(); else if(h.startsWith('week/')) viewWeek(Math.max(1, Math.min(plan.weeks.length, +h.split('/')[1]))); else if(h.startsWith('why/')) viewWhy(h.split('/')[1]); else viewPlan();
+  { const hs = document.querySelector('header small'); if(hs){ if(!hs.dataset.base) hs.dataset.base = hs.textContent; hs.textContent = state.players ? hs.dataset.base.replace(' · prototype', ' · ' + T.label + ' · prototype') : hs.dataset.base; } }
+  foot(h); window.scrollTo(0,0);
+}
+render();
+</script></body></html>

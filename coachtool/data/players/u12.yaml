@@ -1,0 +1,99 @@
+id: u12
+age: u12
+who:
+- label: They have been around the game
+  text: Most of these players have been playing for several years. They are still developing their understanding
+    that passing creates space and that defending takes real collective effort. They are ready to be coached
+    on how their individual actions connect to what the team is doing.
+- label: How you deliver feedback matters
+  text: Players at this age are more aware of how they look in front of their peers. When you have something
+    to say to an individual, find something they did right first. Save whole-group feedback for moments
+    of collective success, not individual correction.
+- label: Two practices build habits
+  text: With two sessions a week, what you introduce on day one has time to settle before day two builds
+    on it. Pay attention to what shows up in the second session without you asking for it. That carry-over
+    is the sign the concept is taking hold.
+- label: Ask them why, not just what
+  text: Players at this age can answer deeper questions. "Why does switching the ball make the defender's
+    job harder?" is a question a U12 player can genuinely engage with. Use that.
+great_session:
+- title: Immediate reaction to transition
+  text: When the ball turns over, do players react instantly? Or do they watch it happen? That first-second
+    reaction is the whole introduction to the game-moments block.
+- title: Compact defending shape
+  text: Are defenders close enough to support each other? The distance between first and second defender
+    tells you everything about their shape.
+- title: Combination play happening naturally
+  text: Players who are passing and moving without being asked are showing that the habits from U10 are
+    sticking. If it is not happening yet, go back to a simpler passing activity. The habit builds with
+    repetition.
+- title: Players coaching each other
+  text: 'US Soccer notes this explicitly at U12: player-to-player coaching is a development goal, not
+    just a nice thing to see. Step back when it happens.'
+- title: Practice A concept in Practice B
+  text: If a concept introduced in the first session of the week appears in the second session without
+    you asking for it, that is the whole point of two practices a week.
+- title: Everyone gets time in goal
+  text: Rotate the goalkeeper so every player experiences the position. If someone shows real enthusiasm
+    for it, encourage that too. Positional identity starts forming at this age.
+prepared: 'Preparation at U12 matters more than at any previous age. You have four active focuses and
+  a season arc that builds deliberately. Know which focus is the priority for this week before you arrive.
+  With two practices per week, Practice A introduces the concept and Practice B deepens it. If the group
+  needs more time on the same concept before moving forward, run the consolidation instead. Both are correct
+  responses. Try to avoid pairing two new concepts in the same session: Activity A works best as something
+  players already know well enough to run without much explanation, and Activity B is where the new concept
+  lives.'
+parents:
+  intro: 'Before the session starts, take 30 seconds to walk over. Something like:'
+  script: 'Today we are working on what happens when the ball changes hands, in the first second after
+    we win it or lose it. The most helpful thing you can do is cheer the team moments: the player who
+    sprints to press the second they lose the ball, the player who finds a teammate the instant they win
+    it.'
+  outro: At this age players are more aware of what the sideline is saying than they were at U8 or U10.
+    Positive sideline energy is genuinely useful. Critical sideline energy genuinely disrupts.
+shape:
+  title: The session
+  why: 'Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.'
+  note: Up to 90 minutes. Arrive 15 minutes early. Play, Activity A, Activity B, play.
+  opening:
+    label: Play
+    minutes: 12 min
+    title: 5v5 or 6v6 free small-sided game
+    setup: Same setup every session. Smaller than the closing game, so more touches and cleaner decisions.
+      Small goals or full goals depending on space. Teams of 5 or 6, no goalkeeper. Quick restarts. Let
+      them play the first 8 minutes without saying anything. On Practice B days, watch specifically for
+      whether the concept from Practice A earlier in the week shows up.
+    job: Watch the transition moments specifically. What happens in the first couple of seconds after
+      the ball changes hands? That tells you which focus area to prioritize today. Come in with Activity
+      A already chosen and let the opening play confirm your read.
+    question: When the ball changed hands today, when you won it or lost it, what was your first reaction?
+    kit: 1 ball per team · Small or full goals · Disc cones · Pinnies in 2 colors
+  closing:
+    label: Play
+    minutes: 25 min
+    title: Full game
+    setup: 'The biggest game of the session. Proper goals if possible. Include a goalkeeper and rotate
+      it so every player experiences the position across the season. No offside until players are genuinely
+      ready for it. Let the game run without stopping. Watch for the focus you introduced that week showing
+      up without being asked for: a compact defensive shape, or a player who sprints to press the instant
+      possession is lost. On Practice B days, notice whether anything from the first session carried over.'
+    question: Was there a moment today where your whole team did something together, attacking or defending,
+      that one player could not have done alone?
+    kit: Proper goals if possible · Disc cones · Pinnies in 2 colors
+cues:
+- when: Team defends compactly
+  say: '"That shape right there, everyone close enough to support each other. That is exactly what we
+    are building toward."'
+- when: Player presses instantly after turnover
+  say: 'Name it in the moment: "Did everyone see that? No hesitation, immediate reaction. That is what
+    we are building toward."'
+- when: Player switches the point of attack
+  say: '"That pass across the field: what did it do to the defenders? It made them run. That is the whole
+    idea."'
+- when: Players coaching each other
+  say: 'Step further back. Let it run. Come back and ask: "What did you tell your teammate there?"'
+- when: Concept from Practice A shows up in Practice B
+  say: '"You did that in the first session this week. Your body remembered. That is exactly what two practices
+    is for."'
+- when: Players too self-critical
+  say: '"The best players in the world make mistakes in every game. The difference is what they do next."'

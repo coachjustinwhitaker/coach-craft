@@ -1,0 +1,38 @@
+age: u10
+blocks:
+  B1:
+    tagline: Look up. Open your body. Shoot when you can.
+    overview: 'This block builds the individual habits every other block depends on: looking before the
+      ball arrives, opening the body to the field, using the first touch to go forward, and shooting.
+      At U10 the ball also comes under pressure, so the touch has to work with an opponent close by.'
+    problem: Players receive the ball with their head up and body open, use the first touch to go forward,
+      and take on or shoot when it creates danger.
+    focus:
+    - Scanning before the ball arrives
+    - Body open to the field when receiving
+    - First touch that moves the ball toward goal
+    - Dribbling and shooting to create danger
+  B2:
+    tagline: Pass, move, and be an option.
+    overview: 'This is where passing becomes a tool. Players learn that a teammate can solve a problem
+      a dribble cannot. The first habit is the give and go: pass, then move to a new spot to receive again.
+      The second is the 2v1: recognize when a teammate is free and use them to beat a defender.'
+    problem: 'Players use teammates to beat opponents: passing, then moving to a new position, and creating
+      a 2v1.'
+    focus:
+    - Moving after the pass (give and go)
+    - Finding open space and showing the passer
+    - Recognizing and using a 2v1
+    - Passing options that go forward
+  B3:
+    tagline: Close the ball. Cover your teammate.
+    overview: Defending is a team job. At U10 this block introduces the idea that the nearest player pressures
+      the ball, the next player covers, and the team stays close together. The aim is to stop the opponent
+      from playing forward and win the ball back as high up the field as possible.
+    problem: 'Players defend together: the nearest player pressures the ball, a teammate covers, and the
+      team stays close to protect the goal.'
+    focus:
+    - Pressing the ball carrier
+    - Covering the pressing teammate
+    - Staying compact and close together
+    - Denying the finish near goal

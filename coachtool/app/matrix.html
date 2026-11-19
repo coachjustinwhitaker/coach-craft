@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Skills matrix</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:14px/1.45 -apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#1c2330;background:#f4f6fa}
+main{max-width:1500px;margin:0 auto;padding:16px}h1{font-size:22px;margin:6px 0 2px}h2{font-size:16px;margin:22px 0 8px}.sub{color:#6b7280;margin:0 0 12px}
+.bar{position:sticky;top:0;background:#f4f6fa;padding:8px 0 10px;z-index:5;border-bottom:1px solid #dfe5ee;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+select{padding:7px 8px;font:inherit;border:1px solid #c5cfe0;border-radius:8px;background:#fff}label{color:#6b7280;font-size:13px}
+table{border-collapse:collapse;background:#fff;border:1px solid #e1e6ef}th,td{border:1px solid #e1e6ef;padding:6px 8px;vertical-align:top;text-align:left}
+th{background:#eef2f8;color:#384959;font-size:13px;position:sticky;top:0}
+.cov td{text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap}.cov td.z{color:#b4bcc9}.cov th:first-child,.cov td:first-child{text-align:left}
+.wrap{overflow-x:auto}.grid td{min-width:230px;max-width:300px}.grid td.a{min-width:160px;font-weight:700;color:#384959;background:#fafbfd}
+.grid td.empty{background:#fbf1f1;color:#b4938f;text-align:center;vertical-align:middle}
+.ent{margin:0 0 8px}.ent:last-child{margin:0}.ent ul{margin:3px 0 0;padding-left:16px}.ent li{margin:2px 0}
+.tg{display:inline-block;font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px;margin-right:4px;vertical-align:1px}.r{background:#e3f1e7;color:#23653a}.c{background:#e4ebf8;color:#384959}
+.nm{font-size:12px;color:#6b7280}.note{color:#6b7280;font-size:13px}
+</style></head><body><main>
+<h1>Skills matrix</h1>
+<p class="sub">Skill areas by age, block and level. Author view, not linked from the app. Red cells are gaps. Area names are matched loosely across ages, so check any gap for a renamed area before filling it.</p>
+<h2>Coverage</h2><p class="note">Rows with content, shown as Introduction · Development · Application. R is rec, C is comp.</p><div class="wrap" id="cov"></div>
+<h2>Compare across ages</h2>
+<div class="bar"><label>Block <select id="b"></select></label><label>Level <select id="l"><option value="intro">Introduction</option><option value="dev">Development</option><option value="app">Application</option></select></label><label>Track <select id="t"><option value="">Rec and comp</option><option value="rec">Rec</option><option value="comp">Comp</option></select></label></div>
+<div class="wrap" id="grid" style="margin-top:10px"></div>
+</main><script>
+const D = /*DATA*/;
+const AGES = ['u6','u8','u10','u12','u14'], AL = a => a.toUpperCase(), BL = ['D','B1','B2','B3','B4','B5'], LV = ['intro','dev','app'];
+const S = D.skills, $ = id => document.getElementById(id);
+const norm = s => s.toLowerCase().replace(/&/g,'and').replace(/\(.*?\)/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+const bname = b => (D.blocks.blocks && D.blocks.blocks[b] && D.blocks.blocks[b].name) || (D.blocks[b] && D.blocks[b].name) || b;
+function cov(){
+  const cell = (a, tr, b) => { const c = LV.map(l => S.filter(r => r.age === a && r.block === b && r.level === l && r.tracks.includes(tr)).length); return c.every(x => !x) ? '<td class="z">·</td>' : `<td>${c.map(x => x || '<span style="color:#b4bcc9">0</span>').join(' · ')}</td>`; };
+  const blocks = BL.filter(b => S.some(r => r.block === b));
+  $('cov').innerHTML = `<table class="cov"><tr><th>Age</th><th>Track</th>${blocks.map(b => `<th>${b}</th>`).join('')}</tr>` + AGES.flatMap(a => ['rec','comp'].map(tr => `<tr><td>${AL(a)}</td><td><span class="tg ${tr[0]}">${tr === 'rec' ? 'R' : 'C'}</span></td>${blocks.map(b => cell(a, tr, b)).join('')}</tr>`)).join('') + '</table>';
+}
+function grid(){
+  const b = $('b').value, l = $('l').value, t = $('t').value;
+  const rows = S.filter(r => r.block === b && r.level === l && (!t || r.tracks.includes(t)));
+  const areas = []; rows.forEach(r => { const k = norm(r.area); if(!areas.find(x => x.k === k)) areas.push({k, name: r.area}); });
+  const tags = r => r.tracks.map(x => `<span class="tg ${x[0]}">${x === 'rec' ? 'R' : 'C'}</span>`).join('');
+  const cell = (a, k) => { const m = rows.filter(r => r.age === a && norm(r.area) === k); return m.length ? '<td>' + m.map(r => `<div class="ent">${tags(r)}${norm(r.area) !== k ? '' : ''}<ul>${r.bullets.map(x => `<li>${x}</li>`).join('')}</ul></div>`).join('') + '</td>' : '<td class="empty">gap</td>'; };
+  $('grid').innerHTML = areas.length ? `<table class="grid"><tr><th>Skill area</th>${AGES.map(a => `<th>${AL(a)}</th>`).join('')}</tr>${areas.map(x => `<tr><td class="a">${x.name}</td>${AGES.map(a => cell(a, x.k)).join('')}</tr>`).join('')}</table>` : '<p class="note">Nothing at this block, level and track yet.</p>';
+}
+$('b').innerHTML = BL.filter(b => S.some(r => r.block === b)).map(b => `<option value="${b}">${b} ${b === 'D' ? 'Discovery' : bname(b)}</option>`).join('');
+['b','l','t'].forEach(i => $(i).onchange = grid); cov(); grid();
+</script></body></html>

@@ -1,0 +1,102 @@
+id: u6
+age: u6
+who:
+- label: They are just starting
+  text: For many of these players, this is their first experience on a team. Some have never kicked a
+    ball. Start with zero assumptions about what they know. Everything is new and that is a gift. You
+    get to be the person who introduces them to the game.
+- label: Fun is the curriculum
+  text: At this age, fun is not a means to an end. It is the end. A player who loves being on the field
+    at age 6 is a player who is still playing at 16. A player who has a bad experience now may never come
+    back. That is the real stakes here.
+- label: Movement matters more than you think
+  text: The hopping, the turning, the chasing, the changing direction. These are not just games. They
+    are building the coordination, balance and agility that underpin every athletic skill your players
+    will ever develop. The animal games are doing real work, even when it looks like pure chaos. You do
+    not need to tell the players any of that. Just run the game and let them be ridiculous.
+- label: Short attention spans are normal
+  text: A six-year-old has about 6 to 8 minutes of focused attention before they need a reset. This is
+    not misbehavior, it is how kids this age work. Keep activities short. Switch often. If something is
+    not working, just move on. You do not need to fix it.
+great_session:
+- title: Constant movement
+  text: Players are running, chasing, dribbling, hopping or laughing for almost every minute of the session.
+    If players are standing still waiting, the game needs to change.
+- title: Noise and joy
+  text: The louder and more chaotic it sounds, the better. Squealing, giggling, shouting animal names.
+    This is exactly what success sounds like at U6.
+- title: Every player has a ball
+  text: During practice activities, every player should have their own ball at their feet as much as possible.
+    Waiting in line or sharing kills engagement at this age.
+- title: Lots of goals
+  text: Set up games where players score frequently. Nothing builds confidence and excitement faster than
+    scoring a goal. Celebrate every single one.
+- title: The coach is playing too
+  text: At U6, you are not standing on the sideline with a clipboard. You are the shark. You are Wreck-It
+    Ralph. Get in there. Your energy sets the tone for the whole session.
+- title: It ends too soon
+  text: If players are asking "can we play more?" when the session ends, you have done your job perfectly.
+    End while they still want more, every single week.
+prepared: Preparation at U6 is simple. Know which two activities you are going to run. Have your cones
+  laid out before the first player arrives. Put a ball at every player's starting spot. That is it. You
+  do not need a session plan with timing breakdowns. You need to show up with energy and an idea of what
+  game you are playing first. The rest follows.
+parents:
+  intro: 'U6 parents are more anxious than any other age group, and more likely to intervene. Before the
+    session, walk over and say something like:'
+  script: These sessions are going to look like organized chaos, and that is completely intentional. The
+    games are silly on purpose. Every one of them is building coordination, confidence, and a love of
+    the ball. The best thing you can do is cheer loudly and let them figure things out for themselves.
+    If they run to you mid-game, just point them back to the field with a smile.
+  outro: At this age, a crying player who came to the field is still a win. Stay warm, stay calm, and
+    keep things moving. Most players warm up within a few sessions.
+shape:
+  title: The session
+  why: 'Kids join a team to play. At U6 the play is the point, so there is no challenge to solve yet. Start with play, do a couple of short activities, and finish with play.'
+  note: About 45 to 50 minutes. Arrive 15 minutes early. Play, two activities of about 10 minutes, play.
+  opening:
+    label: Play
+    minutes: 8 to 10 min
+    title: Small-sided game, free play
+    setup: Same setup every week. Mini or pop-up goals at each end if you have them, cone goals otherwise.
+      Pop-up goals give players the satisfaction of the ball going into a net, which matters at this age.
+      Split however many players you have into two roughly equal teams. No goalkeeper, no offside, no
+      rules beyond kick-in restarts. Keep the field small enough that every player is near the action
+      most of the time. When in doubt, go smaller. Mark the space, put the ball down, and step back. Restart
+      quickly after every goal and celebrate each one.
+    job: Get in there a little. Encourage. High-five. React to goals like they are the greatest thing
+      you have ever seen. At U6, your energy is contagious in both directions. Do not coach. Do not correct.
+      Just play.
+    question: What was your favorite part of today?
+    kit: 1 ball per team · Mini or pop-up goals (cone goals as fallback) · Disc cones for boundaries ·
+      Pinnies in 2 colors
+  closing:
+    label: Play
+    minutes: 10 min
+    title: Back to play
+    setup: Same small-sided game as the opening. Same teams or mix them up, either works. Let it run without
+      interruption. Your job is to restart quickly after goals and keep the energy up. Bring everyone
+      in at the end. High-fives all around, then one very simple question to close the loop. End while
+      they still want more.
+    question: What was your favorite part of today?
+    kit: 1 ball per team · Mini or pop-up goals (cone goals as fallback) · Disc cones for boundaries ·
+      Pinnies in 2 colors
+cues:
+- when: Player is standing still or disengaged
+  say: Go to them. Get a ball at their feet. Get them moving. Do not ask what is wrong in front of the
+    group. Just play alongside them for a minute.
+- when: Player is upset or crying
+  say: Kneel down, speak quietly, and give them a moment. Do not rush them back in. Most players come
+    back on their own when they are ready. Keep the game going so they have something to come back to.
+- when: Player runs to their parents mid-game
+  say: Normal. Let the parent redirect them back. If it happens every session, have a quiet word with
+    the parent about how to respond.
+- when: Player scores a goal
+  say: React like it is the greatest thing you have ever seen. Name the player. Make the celebration visible.
+    At U6, that moment of recognition is more valuable than any coaching point.
+- when: Game is getting too chaotic
+  say: That is usually fine. If it genuinely breaks down, call a quick freeze, give one simple instruction,
+    and restart. Do not stop the game for more than 30 seconds.
+- when: Players are not listening to instructions
+  say: Keep instructions to one sentence. Demonstrate rather than explain. If they are not listening,
+    start the game and they will figure it out.

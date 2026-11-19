@@ -1,0 +1,39 @@
+id: throw-in-check-and-run
+order: 72
+name: Throw-In Check and Run
+block: B4
+skills:
+- Scanning
+- Driving
+- Restarts
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 4
+  max: 16
+space: quarter
+minutes: 6
+pairs_with: []
+equipment: Balls · Cones
+setup:
+- Two facing lines per grid, 3 or more grids, same as the chest control shuttle.
+- Target and thrower. The thrower steps into the target's spot after each rep, ready to make the same
+  run next.
+rules:
+- The target checks in toward the thrower, then breaks away on a run while the ball is thrown long, over
+  the shoulder, timed to the run.
+- The target collects, drives and passes across to the front of the opposite line.
+coach:
+- cue: Check your shoulder before the long throw arrives so the turn is already decided.
+  ask: Which way did you decide to turn, and when?
+- cue: Both feet down, equal release on the throw.
+  ask: Was the throw the same weight each time, and could the runner time it?
+- cue: Every touch has a purpose.
+  ask: What did you do with your first touch?
+type: set-piece
+objective: Check toward the thrower, then break on a run for a long throw timed over the shoulder, and
+  drive it away.

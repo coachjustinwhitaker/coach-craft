@@ -1,0 +1,36 @@
+age: u8
+rules:
+- label: Format
+  text: 4v4
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Ball
+  text: Size 3
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Field
+  text: 25 to 35 yards long, 15 to 25 yards wide
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Goals
+  text: Up to 4 feet high, 6 feet wide
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Game time
+  text: 4 quarters of 10 minutes
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Goalkeeper
+  text: No goalkeeper
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Offside
+  text: No offside
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Heading
+  text: Not allowed in practice or games
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Substitutions
+  text: Unlimited, at any time
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Rosters
+  text: No formal rosters. About 6 players per team is suggested.
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Head injuries
+  text: If a head injury is suspected, play stops for evaluation. The player may be substituted. Return
+    requires clearance from a health care professional or certified athletic trainer.
+  source: US Soccer Player Development Initiatives, small-sided games chart

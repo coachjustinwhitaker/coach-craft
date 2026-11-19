@@ -1,0 +1,32 @@
+age: u8
+goals:
+- id: keeps-ball-close
+  text: Keeps a moving ball close while running
+  blocks:
+  - B1
+- id: changes-direction
+  text: Changes direction without losing control
+  blocks:
+  - B1
+- id: looks-up
+  text: Looks up sometimes while dribbling, the habit is forming
+  blocks:
+  - B1
+- id: receives-with-intent
+  text: Receives a short pass and does something intentional with it
+  blocks:
+  - B1
+  - B2
+- id: beats-defenders
+  text: Tries to beat defenders rather than just kicking away
+  blocks:
+  - B1
+- id: notices-teammates
+  text: Notices teammates and occasionally tries to involve them
+  blocks:
+  - B2
+- id: competes-with-joy
+  text: Competes with genuine joy and wants to come back next season
+  blocks:
+  - B1
+  - B2

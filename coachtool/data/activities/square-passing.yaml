@@ -1,0 +1,52 @@
+id: square-passing
+order: 54
+name: Square Passing
+block: B2
+skills:
+- Passing
+- Body Shape
+- Combination Play
+ages:
+- u14
+tracks:
+- comp
+levels:
+- app
+players:
+  min: 4
+  max: 15
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones
+setup:
+- 'One square per group of 5, about 8 by 8 yards. Corners are numbered 1 to 4: top left, top right, bottom
+  right, bottom left.'
+- Four players on the corners. The fifth swaps in on a rotation so nobody regroups between variations.
+rules:
+- 'Variation 1, back foot (about 2 min): the ball goes corner to corner around the square. Receive on
+  the back foot and open the body before passing on.'
+- 'Variation 2, third man (about 3 min): 1 passes to 2. 2 lays it back to the midpoint between them, where
+  1 meets it and redirects to 3, not back to 2. Continue 3 to 4, then 4 to 1. The same two players never
+  swap passes twice.'
+- 'Variation 3, one-two combo (about 3 min): a give-and-go on each edge. 1 to 2, 2 lays back to the midpoint,
+  1 plays it back out to the midpoint. Move to the next edge, using that corner as the new start, until
+  the loop closes.'
+- 'Variation 4, diagonal (about 2 min): pass to the adjacent corner first, then diagonally across to the
+  far corner. Time the runs so the paths do not collide.'
+coach_note: Time is a ceiling. Get through as many variations as the group can handle cleanly.
+coach:
+- cue: Receive on the back foot with the body already open to the next target.
+  ask: Where is your body pointing when the ball arrives?
+- cue: Weight the pass to the receiver's feet.
+  ask: Could your teammate play that first time? What would have made it easier?
+- cue: The movement after the pass is part of the pass.
+  ask: After you pass, where are you going and why?
+- cue: Call for it before the ball arrives. Do not receive in silence.
+  ask: What did you say, and when did you say it?
+diagram: square-passing.jpg
+type: pattern
+objective: 'Pass and receive in a square with the body open to the next pass: back foot, third man, one-two
+  and diagonal.'
+diagram_caption: Four squares, one per variation, with arrows showing the passing order for back foot,
+  third man, one-two combo and diagonal.

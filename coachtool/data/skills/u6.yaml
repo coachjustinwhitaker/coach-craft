@@ -1,0 +1,34 @@
+skills:
+- id: u6-d-move-with-the-ball-intro
+  age: u6
+  block: D
+  area: Move with the ball
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Keep the ball close
+  - Use your feet to take it with you
+  - Run toward the ball instead of away from it
+- id: u6-d-heads-up-intro
+  age: u6
+  block: D
+  area: Heads up
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - See what is around you
+  - Find space
+  - See your teammates
+- id: u6-d-have-fun-intro
+  age: u6
+  block: D
+  area: Have fun
+  level: intro
+  tracks:
+  - rec
+  bullets:
+  - Smile, laugh and make noise while playing
+  - Celebrate every goal
+  - Show up excited for the next session

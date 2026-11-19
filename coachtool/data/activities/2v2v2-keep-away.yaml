@@ -1,0 +1,33 @@
+id: 2v2v2-keep-away
+order: 30
+name: 2v2v2 Keep-Away
+block: B3
+type: rondo
+objective: Two pairs keep the ball from a defending pair. Defenders talk to press and cover, and swap
+  roles right away.
+skills:
+- Pressing
+- Covering
+ages:
+- u12
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 18
+space: quarter
+minutes: 15
+setup: Square of cones for every 6 players. Three pairs in different colors. Two pairs attack and keep
+  the ball away from the defending pair. When defenders steal or force a mistake, they replace the attacking
+  pair who last touched the ball. Immediately, no stoppages. The new defenders must get into position
+  fast.
+coach:
+- cue: 'The defending pair must communicate constantly: who pressures the ball, who covers behind. Look
+    for the pair who splits those jobs naturally. The team that defends compactly wins the ball most often.'
+  ask: When you were the defending pair, how did you decide who would press the ball and who would cover?
+pairs_with:
+- flying-numbers
+- half-court-soccer
+equipment: 1 ball per grid · 4 cones per square · 3 colors of pinnies

@@ -1,0 +1,51 @@
+id: 4v4-pass-and-move
+order: 106
+name: 4v4 Pass and Move
+block: B2
+skills:
+- Passing
+- Supporting
+- Communication
+ages:
+- u8
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 4v4. Extra players wait on the sideline and rotate in after each goal.
+- Stand on the sideline so you can see every player after a pass.
+rules:
+- 'The challenge: after you pass, you move.'
+- Any player the coach sees standing still after a pass costs the team the ball. Call it out and give the ball to
+  the other team.
+- Everyone can play. No other rules.
+- Kick in from the sideline to restart.
+scoring: One point per goal. First team to 4.
+coach:
+- cue: Pass, then go. Move to a space your teammate can pass to.
+  ask: Where did you move after your pass, and why there?
+- cue: Tell your teammate where you are going.
+  ask: What did you tell your teammate before the pass?
+- cue: Move to the side of the defender, not behind them.
+  ask: Where were you when your teammate looked up?
+type: opening-play
+objective: Pass, then move. Players who stand still after a pass give the ball away.
+progression:
+- title: Easier
+  text: Call the freeze only after a second still moment.
+- title: Harder
+  text: After a pass, the passer has to move before the next pass can be played.

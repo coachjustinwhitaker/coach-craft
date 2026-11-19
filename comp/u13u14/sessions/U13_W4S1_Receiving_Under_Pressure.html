@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Receiving Under Pressure · Coach Craft U13 W4·S1</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#384959;--navy-dark:#384959;--gold:#6A89A7;--gold-warm:#88BDF2;--white:#FFF;--gray-light:#F5F6FA;--gray-mid:#888;--gray-dark:#333;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{font-size:14px;}
+  body{font-family:"Inter",Arial,sans-serif;background:var(--gray-light);color:var(--gray-dark);line-height:1.6;width:100%;}
+  .wrap{max-width:900px;margin:0 auto;}
+  .header{background:var(--navy);border-bottom:4px solid var(--gold);}
+  .header-inner{display:flex;align-items:stretch;}
+  .header-logo{background:var(--navy-dark);padding:14px 20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .header-logo-text{font-family:"Inter",Arial,sans-serif;font-weight:800;color:var(--gold);font-size:22px;letter-spacing:1px;text-align:center;line-height:1.1;}
+  .header-content{padding:16px clamp(14px,3vw,28px) 14px;flex:1;min-width:0;}
+  .club-label{font-family:"Inter",Arial,sans-serif;font-size:clamp(8px,1.2vw,9.5px);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+  .session-title{font-family:"Inter",Arial,sans-serif;font-size:clamp(17px,3.5vw,24px);font-weight:800;color:white;line-height:1.15;margin-bottom:4px;}
+  .header-dateline{font-size:clamp(10px,1.5vw,12px);color:rgba(255,255,255,0.5);margin-bottom:8px;}
+  .header-chips{display:flex;flex-wrap:wrap;gap:5px;}
+  .hchip{font-family:"Inter",Arial,sans-serif;font-size:clamp(8.5px,1.3vw,10px);font-weight:700;padding:3px 9px;border-radius:3px;background:rgba(106,137,167,0.18);border:1px solid rgba(106,137,167,0.38);color:var(--gold);}
+  .philosophy{background:var(--navy-dark);border-bottom:3px solid var(--gold);padding:clamp(14px,2.5vw,18px) clamp(14px,3vw,28px);}
+  .eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+  .philosophy p{font-size:clamp(12px,1.6vw,13.5px);color:rgba(255,255,255,0.88);line-height:1.65;}
+  .obj-section{background:white;padding:clamp(14px,2.5vw,20px) clamp(14px,3vw,28px);border-bottom:1px solid #e2e6ef;}
+  .section-heading{font-family:"Inter",Arial,sans-serif;font-size:clamp(13px,2vw,16px);font-weight:800;color:var(--navy);margin-bottom:10px;}
+  .obj-list{list-style:none;}
+  .obj-list li{padding:5px 0 5px 18px;position:relative;font-size:clamp(11.5px,1.5vw,13px);border-bottom:1px solid #f0f2f7;line-height:1.5;color:var(--gray-dark);}
+  .obj-list li:last-child{border-bottom:none;}
+  .obj-list li::before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  .meta-bar{background:var(--navy);padding:clamp(12px,2vw,16px) clamp(14px,3vw,28px);border-bottom:2px solid rgba(106,137,167,0.3);}
+  .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:rgba(255,255,255,0.12);border-radius:4px;overflow:hidden;margin-bottom:14px;}
+  .meta-cell{background:var(--navy);padding:10px 12px;}
+  .meta-cell-label{font-family:"Inter",Arial,sans-serif;font-size:8px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px;}
+  .meta-cell-val{font-size:clamp(11px,1.5vw,13px);color:white;font-weight:600;}
+  .flow-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .flow-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+  .flow-row:last-child{border-bottom:none;}
+  .flow-name{font-size:clamp(11px,1.5vw,12.5px);color:white;font-weight:600;flex:1;line-height:1.35;}
+  .flow-time{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;color:var(--gold-warm);min-width:32px;text-align:right;white-space:nowrap;}
+  .flow-badge{font-family:"Inter",Arial,sans-serif;font-size:8.5px;font-weight:700;padding:2px 8px;border-radius:3px;white-space:nowrap;}
+  .fb-warmup{background:var(--gold);color:white;}
+  .fb-block{background:var(--navy-dark);color:var(--gold);border:1px solid var(--gold);}
+  .fb-game{background:#1a6b3a;color:white;}
+  .fb-reflect{background:#555;color:white;}
+  .equip-bar{background:white;border-bottom:1px solid #e2e6ef;padding:clamp(10px,2vw,14px) clamp(14px,3vw,28px);}
+  .equip-inner{display:flex;flex-wrap:wrap;gap:8px 20px;}
+  .equip-item{font-size:clamp(11px,1.5vw,12.5px);color:var(--gray-dark);}
+  .act-wrap{background:white;border-bottom:2px solid #e2e6ef;}
+  .act-header{background:var(--navy);padding:clamp(10px,2vw,14px) clamp(14px,3vw,28px);display:flex;align-items:flex-start;gap:14px;}
+  .act-num{font-family:"Inter",Arial,sans-serif;font-size:clamp(22px,4vw,32px);font-weight:800;color:var(--gold);line-height:1;min-width:36px;}
+  .act-head-content{flex:1;}
+  .act-type{font-family:"Inter",Arial,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(106,137,167,0.7);margin-bottom:3px;}
+  .act-name{font-family:"Inter",Arial,sans-serif;font-size:clamp(14px,2.5vw,18px);font-weight:800;color:white;line-height:1.2;margin-bottom:4px;}
+  .act-sub{font-size:clamp(10px,1.4vw,12px);color:rgba(255,255,255,0.55);}
+  .act-body{padding:clamp(14px,2.5vw,20px) clamp(14px,3vw,28px);}
+  .act-specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:1px;background:#e8eaf0;border-radius:4px;overflow:hidden;margin-bottom:16px;}
+  .spec-cell{background:#f8f9fc;padding:8px 12px;}
+  .spec-label{font-family:"Inter",Arial,sans-serif;font-size:8px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:2px;}
+  .spec-val{font-size:clamp(11px,1.5vw,13px);color:var(--gray-dark);font-weight:600;}
+  .act-obj{background:#f0f4ff;border-left:3px solid var(--navy);padding:10px 14px;margin-bottom:14px;font-size:clamp(11.5px,1.5vw,13px);line-height:1.6;}
+  .act-obj strong{color:var(--navy);font-weight:700;display:block;margin-bottom:3px;font-family:"Inter",Arial,sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+  .phases-wrap{margin-bottom:14px;}
+  .phases-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:6px;}
+  .phase-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #f0f2f7;}
+  .phase-row:last-child{border-bottom:none;}
+  .pbadge{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;padding:3px 10px;border-radius:3px;white-space:nowrap;flex-shrink:0;}
+  .p1{background:var(--navy);color:var(--gold);}
+  .p2{background:var(--gold);color:white;}
+  .p3{background:#1a6b3a;color:white;}
+  .phase-text{font-size:clamp(11px,1.5vw,12.5px);color:var(--gray-dark);line-height:1.5;}
+  .notes-box{background:#F6F8FA;border:1px solid rgba(106,137,167,0.35);border-radius:4px;padding:10px 14px;margin-bottom:14px;}
+  .nb-label{font-family:"Inter",Arial,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .notes-box p{font-size:clamp(11px,1.5vw,12.5px);color:var(--gray-dark);line-height:1.6;}
+  .cp-block{margin-top:4px;}
+  .cp-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:6px;}
+  .cp-list{list-style:none;}
+  .cp-list li{padding:5px 0 5px 16px;position:relative;font-size:clamp(11px,1.5vw,12.5px);border-bottom:1px solid #f0f2f7;line-height:1.5;}
+  .cp-list li:last-child{border-bottom:none;}
+  .cp-list li::before{content:"→";position:absolute;left:0;top:5px;color:var(--gold);font-size:11px;font-weight:700;}
+  .huddle{background:var(--navy);padding:clamp(14px,2.5vw,20px) clamp(14px,3vw,28px);}
+  .huddle-head{margin-bottom:16px;border-bottom:1px solid rgba(106,137,167,0.25);padding-bottom:12px;}
+  .huddle-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .huddle-title{font-family:"Inter",Arial,sans-serif;font-size:clamp(16px,3vw,22px);font-weight:800;color:white;margin-bottom:3px;}
+  .huddle-meta{font-size:clamp(10px,1.4vw,12px);color:rgba(255,255,255,0.45);}
+  .hq{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.07);}
+  .hq:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .hq-num{font-family:"Inter",Arial,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+  .hq-q{font-size:clamp(12px,1.7vw,14px);color:white;font-weight:600;margin-bottom:5px;line-height:1.4;}
+  .hq-listen{font-size:clamp(11px,1.5vw,12.5px);color:rgba(255,255,255,0.65);line-height:1.55;}
+  .hq-listen strong{color:var(--gold-warm);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px;}
+  .stretch-section{background:var(--navy-dark);padding:clamp(12px,2vw,16px) clamp(14px,3vw,28px);border-top:1px solid rgba(106,137,167,0.2);}
+  .stretch-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .stretch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px;}
+  .stretch-item{font-size:clamp(11px,1.5vw,12.5px);color:rgba(255,255,255,0.8);padding:4px 0;}
+  .footer{background:var(--navy-dark);border-top:2px solid var(--gold);padding:10px clamp(14px,3vw,28px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+  .footer-l{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1px;}
+  .footer-r{font-size:10px;color:rgba(255,255,255,0.4);}
+  .footer-confidential{font-size:9px;color:rgba(255,255,255,0.3);width:100%;text-align:center;padding-top:4px;border-top:1px solid rgba(255,255,255,0.08);margin-top:4px;}
+
+  .diagram-wrap{margin-bottom:14px;text-align:center;}
+  .diagram-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:8px;text-align:left;}
+  .diagram-caption{font-size:clamp(10px,1.3vw,11.5px);color:var(--gray-mid);margin-top:6px;font-style:italic;}
+
+.water-break{background:#e8f1fb;border-top:1px solid #cfe0f3;border-bottom:1px solid #cfe0f3;text-align:center;padding:8px;}
+.water-break p{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:1px;}
+.fb-water{background:#2a7fc1;color:white;}
+.scoring-box{background:#f8f9fc;border:1px solid #e2e6ef;border-radius:4px;padding:10px 14px;margin-bottom:14px;}
+.scoring-label{font-family:"Inter",Arial,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
+.score-row{display:flex;gap:10px;align-items:center;padding:4px 0;font-size:12.5px;}
+.score-pts{font-family:"Inter",Arial,sans-serif;font-weight:800;color:var(--gold);min-width:22px;}
+</style></head><body><div class="wrap">
+<div class="header"><div class="header-inner"><div class="header-logo"><div class="header-logo-text">CC</div></div><div class="header-content">
+<div class="club-label">Coach Craft &nbsp;·&nbsp; Sessions &nbsp;·&nbsp; U13</div><div class="session-title">Receiving Under Pressure</div><div class="header-dateline">Week 4 · Session 1 · Monday</div>
+<div class="header-chips"><span class="hchip">B1 &mdash; Me &amp; the Ball</span><span class="hchip">Development</span><span class="hchip">Combined teams</span><span class="hchip">Receiving</span></div></div></div></div>
+<div class="philosophy"><div class="eyebrow">Philosophy Connection</div><p>The field teaches the half turn before we name it. Corner goals with open scoring remove every safe retreat, so a player who receives square or flat-footed has nowhere to go. Players feel the problem first, then we give it a name. The technical block then makes the scan and the directional first touch a repeatable habit before it comes back under pressure in the games.</p></div>
+<div class="obj-section"><div class="section-heading">Session Objectives</div><ul class="obj-list"><li>Scan before receiving</li><li>Use a directional first touch to exit pressure</li><li>Receive on the half turn, not square</li><li>Choose the open exit when one is cut off</li></ul></div>
+<div class="meta-bar"><div class="meta-grid"><div class="meta-cell"><div class="meta-cell-label">Primary Block</div><div class="meta-cell-val">B1 - Me &amp; the Ball</div></div><div class="meta-cell"><div class="meta-cell-label">Level</div><div class="meta-cell-val">Development</div></div><div class="meta-cell"><div class="meta-cell-label">Weekly Theme</div><div class="meta-cell-val">Receiving Under Pressure</div></div><div class="meta-cell"><div class="meta-cell-label">Day</div><div class="meta-cell-val">Monday, combined</div></div></div>
+<div class="flow-eyebrow">Session Flow</div><div class="flow-row"><span class="flow-name">The Foundation, Activation Course</span><span class="flow-badge fb-warmup">Warm Up</span><span class="flow-time">On arrival</span></div><div class="flow-row"><span class="flow-name">Corner Goals SSG</span><span class="flow-badge fb-game">Game</span><span class="flow-time">Live</span></div><div class="flow-row"><span class="flow-name">Fitness Block: Ball Work, Cardio, Plyo</span><span class="flow-badge fb-block">Block Training</span><span class="flow-time">Monday load</span></div><div class="flow-row"><span class="flow-name">Square of Four, Four Exits</span><span class="flow-badge fb-block">Block Training</span><span class="flow-time">3 sets</span></div><div class="flow-row"><span class="flow-name">Moving Rondo, Two Boxes</span><span class="flow-badge fb-game">Game</span><span class="flow-time">Continuous</span></div><div class="flow-row"><span class="flow-name">Free Scrimmage</span><span class="flow-badge fb-game">Game</span><span class="flow-time">2 x 8 min</span></div><div class="flow-row"><span class="flow-name">Closing Huddle</span><span class="flow-badge fb-reflect">Reflection</span><span class="flow-time">Short</span></div></div>
+<div class="equip-bar"><div class="section-heading" style="margin-bottom:8px;">Equipment</div><div class="equip-inner"><div class="equip-item">Balls, 1 per player</div><div class="equip-item">Cones</div><div class="equip-item">Pugg goals x 2</div><div class="equip-item">Pinnies x 2 colors</div><div class="equip-item">Water</div></div></div>
+<div class="act-wrap"><div class="act-header"><div class="act-num">0</div><div class="act-head-content"><div class="act-type">Arrival</div><div class="act-name">Activation Course + The Foundation</div><div class="act-sub">Self-directed on arrival, no coaching needed</div></div></div><div class="act-body"><div class="act-specs"><div class="spec-cell"><div class="spec-label">Format</div><div class="spec-val">Self-directed</div></div><div class="spec-cell"><div class="spec-label">Then</div><div class="spec-val">The Foundation</div></div></div></div></div>
+<div class="act-wrap"><div class="act-header"><div class="act-num">1</div><div class="act-head-content"><div class="act-type">Activation SSG · Activity 1 of 5</div><div class="act-name">Corner Goals SSG</div><div class="act-sub">20x20 · Two pugg goals in opposite corners · Both teams score in either goal</div></div></div><div class="act-body"><div class="act-specs"><div class="spec-cell"><div class="spec-label">Field</div><div class="spec-val">20x20</div></div><div class="spec-cell"><div class="spec-label">Goals</div><div class="spec-val">2 pugg goals, opposite corners</div></div><div class="spec-cell"><div class="spec-label">Scoring</div><div class="spec-val">Both teams, either goal</div></div><div class="spec-cell"><div class="spec-label">Restart</div><div class="spec-val">Possession resets at mid corner</div></div></div><div class="act-obj"><strong>Objective</strong>Every reception requires a scan and a directional first touch to exit pressure. The field teaches the half turn before we name it.</div><div class="notes-box"><div class="nb-label">Coach Note</div><p>Corner goals and open scoring create omnidirectional pressure. There is no safe end to retreat to and no predictable direction pressure comes from. Players who receive square or flat-footed have nowhere to go. Do not name the half turn here. Let the problem show up first.</p></div><div class="cp-block"><div class="cp-eyebrow">Coaching Points</div><ul class="cp-list"><li>Scan before the ball arrives. Where is pressure coming from?</li><li>Receive on the half turn, not square</li><li>First touch takes you out of pressure</li></ul></div></div></div>
+<div class="act-wrap"><div class="act-header"><div class="act-num">2</div><div class="act-head-content"><div class="act-type">Fitness Block · Activity 2 of 5</div><div class="act-name">Ball Work, Cardio, Plyo</div><div class="act-sub">Monday load</div></div></div><div class="act-body"><div class="act-specs"><div class="spec-cell"><div class="spec-label">Content</div><div class="spec-val">Ball work, cardio, plyo</div></div><div class="spec-cell"><div class="spec-label">Load</div><div class="spec-val">Monday</div></div></div></div></div>
+<div class="act-wrap"><div class="act-header"><div class="act-num">3</div><div class="act-head-content"><div class="act-type">Technical Block · Activity 3 of 5</div><div class="act-name">Square of Four, Four Exits</div><div class="act-sub">Square of four cones · Two lanes, high reps · No goal, the rep is the point</div></div></div><div class="act-body"><div class="act-specs"><div class="spec-cell"><div class="spec-label">Setup</div><div class="spec-val">Square of four cones</div></div><div class="spec-cell"><div class="spec-label">Lanes</div><div class="spec-val">Two</div></div><div class="spec-cell"><div class="spec-label">Exits</div><div class="spec-val">Left, right, turn and drive, play back to feeder</div></div><div class="spec-cell"><div class="spec-label">Goal</div><div class="spec-val">None</div></div></div><div class="act-obj"><strong>Objective</strong>Receive, scan, and use the first touch to take one of four exits.</div><div class="phases-wrap"><div class="phases-eyebrow">Sets</div><div class="phase-row"><span class="pbadge p1">Set 1 · Called</span><span class="phase-text">Coach calls the exit.</span></div><div class="phase-row"><span class="pbadge p2">Set 2 · Chosen</span><span class="phase-text">Receiver scans and chooses the exit.</span></div><div class="phase-row"><span class="pbadge p3">Set 3 · Read</span><span class="phase-text">A defender cuts off one exit. Receiver reads it and takes the open one.</span></div></div><div class="cp-block"><div class="cp-eyebrow">Coaching Points</div><ul class="cp-list"><li>Scan before the ball arrives, not after</li><li>Body shape open to the exits before you receive</li><li>High reps. Keep the lanes moving.</li></ul></div></div></div>
+<div class="act-wrap"><div class="act-header"><div class="act-num">4</div><div class="act-head-content"><div class="act-type">Conditioned Game · Activity 4 of 5</div><div class="act-name">Moving Rondo, Two Boxes</div><div class="act-sub">Shift as a unit every 10 passes · Continuous pressure</div></div></div><div class="act-body"><div class="act-specs"><div class="spec-cell"><div class="spec-label">Setup</div><div class="spec-val">Two boxes</div></div><div class="spec-cell"><div class="spec-label">Shift</div><div class="spec-val">Whole unit moves every 10 passes</div></div><div class="spec-cell"><div class="spec-label">Pressure</div><div class="spec-val">Continuous</div></div></div><div class="cp-block"><div class="cp-eyebrow">Coaching Points</div><ul class="cp-list"><li>Shift together after pass 10. Nobody gets left behind.</li><li>Pressure never stops, so the scan never stops</li></ul></div></div></div>
+<div class="act-wrap"><div class="act-header"><div class="act-num">5</div><div class="act-head-content"><div class="act-type">Free Play · Activity 5 of 5</div><div class="act-name">Free Scrimmage</div><div class="act-sub">2 sets · 8 min on, 2 min off · Rotate sides</div></div></div><div class="act-body"><div class="act-specs"><div class="spec-cell"><div class="spec-label">Sets</div><div class="spec-val">2</div></div><div class="spec-cell"><div class="spec-label">Work</div><div class="spec-val">8 min on</div></div><div class="spec-cell"><div class="spec-label">Rest</div><div class="spec-val">2 min off</div></div><div class="spec-cell"><div class="spec-label">Sides</div><div class="spec-val">Rotate</div></div></div><div class="cp-block"><div class="cp-eyebrow">Coaching Points</div><ul class="cp-list"><li>Are players receiving on the half turn without being told?</li><li>Name it when it shows up: "that was a half turn, did you feel it?"</li></ul></div></div></div>
+<div class="vocab-band"><div class="vocab-eyebrow">Vocabulary</div><div class="vocab-grid"><div class="vocab-card"><div class="vocab-term">Half Turn</div><div class="vocab-def">Receiving with the body open to the field, not square to the passer, so the first touch can go forward or away from pressure.</div><div class="vocab-when">When: introduce it the first time it appears in the SSG or the square of four</div></div></div></div>
+<div class="huddle"><div class="huddle-head"><div class="huddle-eyebrow">Closing Huddle</div><div class="huddle-title">Receiving Under Pressure</div><div class="huddle-meta">Short huddle · Week 4, Session 1</div></div><div class="hq"><div class="hq-num">Question 1</div><div class="hq-q">What did you do before the ball arrived that gave you a way out?</div><div class="hq-listen"><strong>Listen for</strong>Players who describe a scan or body shape before the pass are building the habit. Players who describe the touch itself are still reacting.</div></div><div class="hq"><div class="hq-num">Question 2</div><div class="hq-q">Is there anyone you want to recognize today?</div><div class="hq-listen"><strong>Listen for</strong>Let them run it. Build the habit that this question ends every session.</div></div></div>
+
+<div class="footer"><div class="footer-l">Coach Craft · Week 4, Session 1 · Receiving Under Pressure</div><div class="footer-r">Coach Justin Whitaker &nbsp;·&nbsp; Fall 2026</div><div class="footer-confidential">Internal coaching document. For coaching staff use only. Not for distribution to players or parents.</div></div>
+</div></body></html>

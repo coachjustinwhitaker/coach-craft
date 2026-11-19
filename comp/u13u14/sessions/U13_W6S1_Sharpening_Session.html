@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharpening Session — Coach Craft U13 W6S1</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#384959;--navy-dark:#384959;--gold:#6A89A7;--gold-warm:#88BDF2;--gray-light:#F5F6FA;--gray-mid:#888;--gray-dark:#333;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Inter",Arial,sans-serif;background:var(--gray-light);color:var(--gray-dark);line-height:1.6;}
+  .wrap{max-width:900px;margin:0 auto;}
+  .header{background:var(--navy);border-bottom:4px solid var(--gold);}
+  .header-inner{display:flex;align-items:stretch;}
+  .header-logo{background:var(--navy-dark);padding:14px 20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .header-content{padding:16px clamp(14px,3vw,28px) 14px;flex:1;min-width:0;}
+  .club-label{font-family:"Inter",Arial,sans-serif;font-size:clamp(8px,1.2vw,9.5px);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+  .session-title{font-family:"Inter",Arial,sans-serif;font-size:clamp(17px,3.5vw,24px);font-weight:800;color:white;line-height:1.15;margin-bottom:4px;}
+  .header-dateline{font-size:clamp(10px,1.5vw,12px);color:rgba(255,255,255,0.5);margin-bottom:8px;}
+  .header-chips{display:flex;flex-wrap:wrap;gap:5px;}
+  .hchip{font-family:"Inter",Arial,sans-serif;font-size:clamp(8.5px,1.3vw,10px);font-weight:700;padding:3px 9px;border-radius:3px;background:rgba(106,137,167,0.18);border:1px solid rgba(106,137,167,0.38);color:var(--gold);}
+  .philosophy{background:var(--navy-dark);border-bottom:3px solid var(--gold);padding:clamp(14px,2.5vw,18px) clamp(14px,3vw,28px);}
+  .eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+  .philosophy p{font-size:clamp(12px,1.6vw,13.5px);color:rgba(255,255,255,0.88);line-height:1.65;}
+  .obj-section{background:white;padding:clamp(14px,2.5vw,20px) clamp(14px,3vw,28px);border-bottom:1px solid #e2e6ef;}
+  .section-heading{font-family:"Inter",Arial,sans-serif;font-size:clamp(13px,2vw,16px);font-weight:800;color:var(--navy);margin-bottom:10px;}
+  .obj-list{list-style:none;}
+  .obj-list li{padding:5px 0 5px 18px;position:relative;font-size:clamp(11.5px,1.5vw,13px);border-bottom:1px solid #f0f2f7;line-height:1.5;}
+  .obj-list li:last-child{border-bottom:none;}
+  .obj-list li::before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  .meta-bar{background:var(--navy);padding:clamp(12px,2vw,16px) clamp(14px,3vw,28px);border-bottom:2px solid rgba(106,137,167,0.3);}
+  .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:rgba(255,255,255,0.12);border-radius:4px;overflow:hidden;margin-bottom:14px;}
+  .meta-cell{background:var(--navy);padding:10px 12px;}
+  .meta-cell-label{font-family:"Inter",Arial,sans-serif;font-size:8px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px;}
+  .meta-cell-val{font-size:clamp(11px,1.5vw,13px);color:white;font-weight:600;}
+  .flow-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .flow-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+  .flow-row:last-child{border-bottom:none;}
+  .flow-name{font-size:clamp(11px,1.5vw,12.5px);color:white;font-weight:600;flex:1;line-height:1.35;}
+  .flow-time{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;color:var(--gold-warm);min-width:32px;text-align:right;white-space:nowrap;}
+  .flow-badge{font-family:"Inter",Arial,sans-serif;font-size:8.5px;font-weight:700;padding:2px 8px;border-radius:3px;white-space:nowrap;}
+  .fb-warmup{background:var(--gold);color:white;}
+  .fb-block{background:var(--navy-dark);color:var(--gold);border:1px solid var(--gold);}
+  .fb-game{background:#1a6b3a;color:white;}
+  .fb-reflect{background:#555;color:white;}
+  .fb-station{background:#7c3aed;color:white;}
+  .equip-bar{background:white;border-bottom:1px solid #e2e6ef;padding:clamp(10px,2vw,14px) clamp(14px,3vw,28px);}
+  .equip-inner{display:flex;flex-wrap:wrap;gap:8px 20px;}
+  .equip-item{font-size:clamp(11px,1.5vw,12.5px);color:var(--gray-dark);}
+  .act-wrap{background:white;border-bottom:2px solid #e2e6ef;}
+  .act-header{background:var(--navy);padding:clamp(10px,2vw,14px) clamp(14px,3vw,28px);display:flex;align-items:flex-start;gap:14px;}
+  .act-num{font-family:"Inter",Arial,sans-serif;font-size:clamp(22px,4vw,32px);font-weight:800;color:var(--gold);line-height:1;min-width:36px;}
+  .act-head-content{flex:1;}
+  .act-type{font-family:"Inter",Arial,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(106,137,167,0.7);margin-bottom:3px;}
+  .act-name{font-family:"Inter",Arial,sans-serif;font-size:clamp(14px,2.5vw,18px);font-weight:800;color:white;line-height:1.2;margin-bottom:4px;}
+  .act-sub{font-size:clamp(10px,1.4vw,12px);color:rgba(255,255,255,0.55);}
+  .act-body{padding:clamp(14px,2.5vw,20px) clamp(14px,3vw,28px);}
+  .act-specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:1px;background:#e8eaf0;border-radius:4px;overflow:hidden;margin-bottom:16px;}
+  .spec-cell{background:#f8f9fc;padding:8px 12px;}
+  .spec-label{font-family:"Inter",Arial,sans-serif;font-size:8px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:2px;}
+  .spec-val{font-size:clamp(11px,1.5vw,13px);color:var(--gray-dark);font-weight:600;}
+  .act-obj{background:#f0f4ff;border-left:3px solid var(--navy);padding:10px 14px;margin-bottom:14px;font-size:clamp(11.5px,1.5vw,13px);line-height:1.6;}
+  .act-obj strong{color:var(--navy);font-weight:700;display:block;margin-bottom:3px;font-family:"Inter",Arial,sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;}
+  .phases-wrap{margin-bottom:14px;}
+  .phases-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:6px;}
+  .phase-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #f0f2f7;}
+  .phase-row:last-child{border-bottom:none;}
+  .pbadge{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;padding:3px 10px;border-radius:3px;white-space:nowrap;flex-shrink:0;}
+  .p1{background:var(--navy);color:var(--gold);}
+  .p2{background:var(--gold);color:white;}
+  .p3{background:#1a6b3a;color:white;}
+  .p4{background:#7c3aed;color:white;}
+  .p5{background:#c00000;color:white;}
+  .phase-text{font-size:clamp(11px,1.5vw,12.5px);color:var(--gray-dark);line-height:1.5;}
+  .notes-box{background:#F6F8FA;border:1px solid rgba(106,137,167,0.35);border-radius:4px;padding:10px 14px;margin-bottom:14px;}
+  .nb-label{font-family:"Inter",Arial,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .notes-box p{font-size:clamp(11px,1.5vw,12.5px);color:var(--gray-dark);line-height:1.6;}
+  .cp-block{margin-top:4px;}
+  .cp-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:6px;}
+  .cp-list{list-style:none;}
+  .cp-list li{padding:5px 0 5px 16px;position:relative;font-size:clamp(11px,1.5vw,12.5px);border-bottom:1px solid #f0f2f7;line-height:1.5;}
+  .cp-list li:last-child{border-bottom:none;}
+  .cp-list li::before{content:"→";position:absolute;left:0;top:5px;color:var(--gold);font-size:11px;font-weight:700;}
+  .station-band{background:#7c3aed;padding:8px clamp(14px,3vw,28px);margin-bottom:0;}
+  .station-band p{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:white;letter-spacing:1px;text-transform:uppercase;}
+  .vocab-band{background:var(--navy-dark);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:clamp(12px,2vw,16px) clamp(14px,3vw,28px);}
+  .vocab-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .vocab-grid{display:flex;flex-wrap:wrap;gap:10px;}
+  .vocab-card{background:rgba(255,255,255,0.07);border:1px solid rgba(106,137,167,0.3);border-radius:4px;padding:10px 14px;min-width:180px;flex:1;}
+  .vocab-term{font-family:"Inter",Arial,sans-serif;font-weight:800;color:var(--gold);font-size:clamp(13px,2vw,15px);margin-bottom:3px;}
+  .vocab-def{font-size:clamp(11px,1.5vw,12px);color:rgba(255,255,255,0.8);line-height:1.5;}
+  .vocab-when{font-size:clamp(10px,1.3vw,11px);color:rgba(106,137,167,0.7);margin-top:4px;font-style:italic;}
+  .huddle{background:var(--navy);padding:clamp(14px,2.5vw,20px) clamp(14px,3vw,28px);}
+  .huddle-head{margin-bottom:16px;border-bottom:1px solid rgba(106,137,167,0.25);padding-bottom:12px;}
+  .huddle-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .huddle-title{font-family:"Inter",Arial,sans-serif;font-size:clamp(16px,3vw,22px);font-weight:800;color:white;margin-bottom:3px;}
+  .huddle-meta{font-size:clamp(10px,1.4vw,12px);color:rgba(255,255,255,0.45);}
+  .hq{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.07);}
+  .hq:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .hq-num{font-family:"Inter",Arial,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+  .hq-q{font-size:clamp(12px,1.7vw,14px);color:white;font-weight:600;margin-bottom:5px;line-height:1.4;}
+  .hq-listen{font-size:clamp(11px,1.5vw,12.5px);color:rgba(255,255,255,0.65);line-height:1.55;}
+  .hq-listen strong{color:var(--gold-warm);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px;}
+  .footer{background:var(--navy-dark);border-top:2px solid var(--gold);padding:10px clamp(14px,3vw,28px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+  .footer-l{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1px;}
+  .footer-r{font-size:10px;color:rgba(255,255,255,0.4);}
+  .footer-confidential{font-size:9px;color:rgba(255,255,255,0.3);width:100%;text-align:center;padding-top:4px;border-top:1px solid rgba(255,255,255,0.08);margin-top:4px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-logo"><img src="data:image/png;base64,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" alt="Coach Craft" style="height:60px;width:auto;display:block;"></div>
+    <div class="header-content">
+      <div class="club-label">Coach Craft &nbsp;·&nbsp; Sessions &nbsp;·&nbsp; U13 &nbsp;·&nbsp; Combined</div>
+      <div class="session-title">Sharpening Session</div>
+      <div class="header-dateline">Week 6 &nbsp;·&nbsp; Session 1 &nbsp;·&nbsp; Monday &nbsp;·&nbsp; Gold Trail &nbsp;·&nbsp; Tournament Saturday</div>
+      <div class="header-chips">
+        <span class="hchip">90 min</span>
+        <span class="hchip">Combined Teams</span>
+        <span class="hchip">13–15 Players</span>
+        <span class="hchip">Four Full Size Goals</span>
+        <span class="hchip">Tournament Week</span>
+        <span class="hchip">Split Stations if Staffed</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="obj-section">
+  <div class="section-heading">Session Objectives</div>
+  <ul class="obj-list">
+    <li>Players sharpen individual technical confidence heading into the tournament</li>
+    <li>Players develop the shielding habit: body between ball and defender, low center of gravity</li>
+    <li>Players compete hard in 1v1 Jukebox situations at high tempo</li>
+    <li>Players build finishing confidence through a three-shot progressive circuit</li>
+    <li>Players recognize the transition moment and go immediately</li>
+  </ul>
+</div>
+
+<div class="meta-bar">
+  <div class="meta-grid">
+    <div class="meta-cell"><div class="meta-cell-label">Week</div><div class="meta-cell-val">6 &nbsp;·&nbsp; Session 1</div></div>
+    <div class="meta-cell"><div class="meta-cell-label">Field</div><div class="meta-cell-val">Gold Trail &nbsp;·&nbsp; Near Full Size</div></div>
+    <div class="meta-cell"><div class="meta-cell-label">Weekly Theme</div><div class="meta-cell-val">Combination Play</div></div>
+    <div class="meta-cell"><div class="meta-cell-label">Session Time</div><div class="meta-cell-val">90 min</div></div>
+  </div>
+  <div class="flow-eyebrow">Session Flow</div>
+  <div class="flow-row"><span class="flow-name">Activation Course + Foundation</span><span class="flow-badge fb-block">Self-Directed</span><span class="flow-time">On arrival</span></div>
+  <div class="flow-row"><span class="flow-name">Rondo &nbsp;·&nbsp; 4v1 or 5v2 &nbsp;·&nbsp; Two Courts</span><span class="flow-badge fb-warmup">Warm Up</span><span class="flow-time">10'</span></div>
+  <div class="flow-row"><span class="flow-name">Shielding &nbsp;·&nbsp; 2v1 with Coach</span><span class="flow-badge fb-block">Technical</span><span class="flow-time">8'</span></div>
+  <div class="flow-row"><span class="flow-name">Jukebox + Finishing Circuit &nbsp;·&nbsp; Two Stations if Staffed</span><span class="flow-badge fb-station">Competitive</span><span class="flow-time">30'</span></div>
+  <div class="flow-row"><span class="flow-name">Transition Game &nbsp;·&nbsp; Half Field</span><span class="flow-badge fb-game">Game</span><span class="flow-time">20'</span></div>
+  <div class="flow-row"><span class="flow-name">Closing Huddle + Stretch</span><span class="flow-badge fb-reflect">Reflection</span><span class="flow-time">10'</span></div>
+</div>
+
+<div class="equip-bar">
+  <div class="section-heading" style="margin-bottom:8px;">Equipment</div>
+  <div class="equip-inner">
+    <div class="equip-item">⚽ Balls &nbsp;·&nbsp; 1 per player + extras at goals</div>
+    <div class="equip-item">🥅 Full size goals &times; 4</div>
+    <div class="equip-item">🟠 Cones &nbsp;·&nbsp; Jukebox gates + shielding area</div>
+    <div class="equip-item">🦺 Pinnies &times; 2 colors</div>
+    <div class="equip-item">🔊 Speaker + playlist</div>
+    <div class="equip-item">💧 Water</div>
+  </div>
+</div>
+
+<!-- ACTIVITY 0 -->
+<div class="act-wrap">
+  <div class="act-header">
+    <div class="act-num">0</div>
+    <div class="act-head-content">
+      <div class="act-type">Self-Directed &nbsp;·&nbsp; Every Session</div>
+      <div class="act-name">Activation Course + Foundation</div>
+      <div class="act-sub">Self-directed on arrival &nbsp;·&nbsp; Activation Course then Foundation &nbsp;·&nbsp; SSG live at -10</div>
+    </div>
+  </div>
+  <div class="act-body">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="https://coachjustinwhitaker.github.io/coach-craft/comp/u13u14/sessions/Arrival_Activation.html" target="_blank" style="font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;color:var(--navy);background:#f0f4ff;border:1px solid #c7d2fe;border-radius:4px;padding:6px 12px;text-decoration:none;">Arrival Activation Course &rarr;</a>
+      <a href="https://coachjustinwhitaker.github.io/coach-craft/comp/u13u14/sessions/The_Foundation.html" target="_blank" style="font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;color:var(--navy);background:#f0f4ff;border:1px solid #c7d2fe;border-radius:4px;padding:6px 12px;text-decoration:none;">The Foundation &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ACTIVITY 1 -->
+<div class="act-wrap">
+  <div class="act-header">
+    <div class="act-num">1</div>
+    <div class="act-head-content">
+      <div class="act-type">Warm Up &nbsp;·&nbsp; Activity 1 of 5</div>
+      <div class="act-name">Rondo</div>
+      <div class="act-sub">4v1 or 5v2 &nbsp;·&nbsp; Two Simultaneous Courts &nbsp;·&nbsp; 10 minutes</div>
+    </div>
+  </div>
+  <div class="act-body">
+    <div class="act-specs">
+      <div class="spec-cell"><div class="spec-label">Format</div><div class="spec-val">4v1 or 5v2</div></div>
+      <div class="spec-cell"><div class="spec-label">Courts</div><div class="spec-val">2 simultaneous</div></div>
+      <div class="spec-cell"><div class="spec-label">Duration</div><div class="spec-val">10 min</div></div>
+      <div class="spec-cell"><div class="spec-label">Rotate</div><div class="spec-val">Defender out after 3 wins</div></div>
+    </div>
+    <div class="act-obj"><strong>Objective</strong>Warm touch and movement without burning legs. Two courts keeps idle time short with 13-15 players. The rondo primes quick passing and scanning before the competitive block starts.</div>
+    <div class="cp-block">
+      <div class="cp-eyebrow">Coaching Points</div>
+      <ul class="cp-list">
+        <li>One or two touch maximum, push the tempo</li>
+        <li>Move after you pass, don't watch</li>
+        <li>Scan before the ball arrives</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ACTIVITY 2 -->
+<div class="act-wrap">
+  <div class="act-header">
+    <div class="act-num">2</div>
+    <div class="act-head-content">
+      <div class="act-type">Technical &nbsp;·&nbsp; Activity 2 of 5</div>
+      <div class="act-name">Shielding</div>
+      <div class="act-sub">2v1 with Coach &nbsp;·&nbsp; Introduce and Rep &nbsp;·&nbsp; 6–8 minutes</div>
+    </div>
+  </div>
+  <div class="act-body">
+    <div class="act-specs">
+      <div class="spec-cell"><div class="spec-label">Format</div><div class="spec-val">Partners</div></div>
+      <div class="spec-cell"><div class="spec-label">Circle</div><div class="spec-val">~2 ft diameter</div></div>
+      <div class="spec-cell"><div class="spec-label">Reps</div><div class="spec-val">5 rounds, switch roles, 2 sets</div></div>
+      <div class="spec-cell"><div class="spec-label">Duration</div><div class="spec-val">6–8 min</div></div>
+      <div class="spec-cell"><div class="spec-label">Vocab</div><div class="spec-val">Shield</div></div>
+    </div>
+    <div class="act-obj"><strong>Objective</strong>Introduce shielding before Jukebox so players have the tool before they need it under competitive pressure. Partner passes to partner then immediately becomes the presser. Receiving player collects and places ball in the circle, then shields for as long as possible. Longest shield wins the round. 5 rounds then switch roles. Two sets, 10 shielding reps each player total.</div>
+    <div class="phases-wrap">
+      <div class="phases-eyebrow">Structure</div>
+      <div class="phase-row"><span class="pbadge p1">Demo</span><span class="phase-text">Show body position first: between the ball and the defender, low center of gravity, knees bent, legal arm use. One slow rep then go live. Keep the demo short, players learn shielding by feeling pressure not by listening.</span></div>
+      <div class="phase-row"><span class="pbadge p2">Set 1</span><span class="phase-text">Player A passes to Player B then immediately presses. Player B receives, places ball in circle, shields. Hold as long as possible. Longest shield wins the round. 5 rounds, then switch roles. Player B becomes the passer and presser.</span></div>
+      <div class="phase-row"><span class="pbadge p3">Set 2</span><span class="phase-text">Same format. Second set of 5 rounds each role. By the end every player has 10 shielding reps. Coach calls out good body position as it happens.</span></div>
+    </div>
+    
+</div>
+
+<!-- ACTIVITY 3 -->
+<div class="station-band"><p>⭐ &nbsp; If extra coach available: run Jukebox and Finishing Circuit as simultaneous stations &nbsp;·&nbsp; Rotate groups halfway through</p></div>
+<div class="act-wrap">
+  <div class="act-header">
+    <div class="act-num">3</div>
+    <div class="act-head-content">
+      <div class="act-type">Competitive &nbsp;·&nbsp; Activity 3 of 5</div>
+      <div class="act-name">Jukebox</div>
+      <div class="act-sub">1v1 &nbsp;·&nbsp; Music Playing &nbsp;·&nbsp; Two Courts &nbsp;·&nbsp; 12–15 minutes</div>
+    </div>
+  </div>
+  <div class="act-body">
+    <div class="act-specs">
+      <div class="spec-cell"><div class="spec-label">Space</div><div class="spec-val">6x10 yards per court</div></div>
+      <div class="spec-cell"><div class="spec-label">Gates</div><div class="spec-val">One each end</div></div>
+      <div class="spec-cell"><div class="spec-label">Win</div><div class="spec-val">First to 3 points</div></div>
+      <div class="spec-cell"><div class="spec-label">Music</div><div class="spec-val">Playing entire time</div></div>
+      <div class="spec-cell"><div class="spec-label">Courts</div><div class="spec-val">2 simultaneous</div></div>
+      <div class="spec-cell"><div class="spec-label">Duration</div><div class="spec-val">12–15 min</div></div>
+    </div>
+    <div class="act-obj"><strong>Objective</strong>High tempo 1v1 competition with music setting the pace. The small space and three-point scoring creates constant action with no time to settle or overthink. The juke is the skill emphasis: body movement, pace change, or feint to commit the defender and create space.</div>
+    <div class="phases-wrap">
+      <div class="phases-eyebrow">Scoring</div>
+      <div class="phase-row"><span class="pbadge p1">1 Point</span><span class="phase-text">Dribble through the opponent's gate</span></div>
+      <div class="phase-row"><span class="pbadge p2">1 Point</span><span class="phase-text">Juke the opponent: body movement, pace change, or feint that creates clear separation</span></div>
+      <div class="phase-row"><span class="pbadge p3">1 Point</span><span class="phase-text">Nutmeg the opponent</span></div>
+    </div>
+    
+</div>
+
+<!-- ACTIVITY 4 -->
+<div class="act-wrap">
+  <div class="act-header">
+    <div class="act-num">4</div>
+    <div class="act-head-content">
+      <div class="act-type">Technical &nbsp;·&nbsp; Activity 4 of 5</div>
+      <div class="act-name">Finishing Circuit</div>
+      <div class="act-sub">Three-Shot Sequence &nbsp;·&nbsp; Two Lines &nbsp;·&nbsp; Miss All Three and Run &nbsp;·&nbsp; 12–15 minutes</div>
+    </div>
+  </div>
+  <div class="act-body">
+    <div class="act-specs">
+      <div class="spec-cell"><div class="spec-label">Lines</div><div class="spec-val">2 simultaneous</div></div>
+      <div class="spec-cell"><div class="spec-label">Shots/Rep</div><div class="spec-val">3 in sequence</div></div>
+      <div class="spec-cell"><div class="spec-label">Consequence</div><div class="spec-val">Miss all three: run to halfway</div></div>
+      <div class="spec-cell"><div class="spec-label">Passer</div><div class="spec-val">Next player in line</div></div>
+      <div class="spec-cell"><div class="spec-label">Duration</div><div class="spec-val">12–15 min</div></div>
+    </div>
+    <div class="act-obj"><strong>Objective</strong>Three finishing reps per turn in a continuous sequence. Player moves between shots rather than standing and waiting. The next player in line plays the pass for Shot 3 then immediately starts their own rep. Everyone is active, nobody is just watching.</div>
+    <div class="phases-wrap">
+      <div class="phases-eyebrow">One Rep &nbsp;·&nbsp; Three Shots in Sequence</div>
+      <div class="phase-row"><span class="pbadge p1">Shot 1 &middot; Drive and Finish</span><span class="phase-text">Player starts on the left side of the box, drives at pace toward goal and shoots. Power or placement their choice. Get the ball on target.</span></div>
+      <div class="phase-row"><span class="pbadge p2">Shot 2 &middot; Through Ball</span><span class="phase-text">Player comes back through the middle, runs around a post, receives a through ball played into the box by the coach. Finish first or second touch.</span></div>
+      <div class="phase-row"><span class="pbadge p3">Shot 3 &middot; Cutback from Teammate</span><span class="phase-text">Player cuts around the far post and receives a pass from the next player in line stationed wide or at the top of the box. Finish from the cutback. That teammate then starts their own rep.</span></div>
+    </div>
+    
+</div>
+
+<!-- ACTIVITY 5 -->
+<div class="act-wrap">
+  <div class="act-header">
+    <div class="act-num">5</div>
+    <div class="act-head-content">
+      <div class="act-type">Transition Game &nbsp;·&nbsp; Activity 5 of 5</div>
+      <div class="act-name">Transition Game</div>
+      <div class="act-sub">Half Field &nbsp;·&nbsp; Full Size Goals &nbsp;·&nbsp; 1v1 &rarr; 2v1 &rarr; 3v2 &rarr; Reset &nbsp;·&nbsp; 20 minutes</div>
+    </div>
+  </div>
+  <div class="act-body">
+    <div class="act-specs">
+      <div class="spec-cell"><div class="spec-label">Field</div><div class="spec-val">Half field</div></div>
+      <div class="spec-cell"><div class="spec-label">Goals</div><div class="spec-val">Full size each end</div></div>
+      <div class="spec-cell"><div class="spec-label">Keepers</div><div class="spec-val">Stay in goal</div></div>
+      <div class="spec-cell"><div class="spec-label">Offside</div><div class="spec-val">Egregious only</div></div>
+      <div class="spec-cell"><div class="spec-label">Duration</div><div class="spec-val">20 min</div></div>
+    </div>
+    <div class="act-obj"><strong>Objective</strong>Train transition recognition: the moment possession changes, go. Each wave builds numerically so players get reps at 1v1, 2v1, and 3v2 decision-making in quick succession. Walk through one full cycle slowly before going live.</div>
+    <div class="phases-wrap">
+      <div class="phases-eyebrow">Wave Structure &nbsp;·&nbsp; Repeating Cycle</div>
+      <div class="phase-row"><span class="pbadge p1">Wave 1 &middot; 1v1</span><span class="phase-text">Team A sends one player forward with the ball. Team B sends one defender. 1v1 to the Team B goal. After the shot or turnover, immediately Wave 2.</span></div>
+      <div class="phase-row"><span class="pbadge p2">Wave 2 &middot; 2v1</span><span class="phase-text">Team B sends one player with the ball plus one additional player. Team A has one defender remaining. 2v1 to the Team A goal. After the shot or turnover, immediately Wave 3.</span></div>
+      <div class="phase-row"><span class="pbadge p3">Wave 3 &middot; 3v2</span><span class="phase-text">Team A sends two more players, one with the ball. 3v2 back to the Team B goal. After the shot or turnover, quick rest and reset.</span></div>
+      <div class="phase-row"><span class="pbadge p4">Reset</span><span class="phase-text">Quick rest. Team B now starts Wave 1. Cycle repeats with teams reversed.</span></div>
+    </div>
+    <div class="cp-block">
+      <div class="cp-eyebrow">Coaching Points</div>
+      <ul class="cp-list">
+        <li>Transition recognition: the moment possession changes, go. No pause.</li>
+        <li>1v1: take the defender on, no help is coming</li>
+        <li>2v1: get into a useful position early, make the decision easy for the ball carrier</li>
+        <li>3v2: be patient, the numbers are in your favor, don't force it</li>
+        <li>Defending: delay, stay on your feet, force wide</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="vocab-band">
+  <div class="vocab-eyebrow">Vocabulary This Session</div>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Shield</div>
+      <div class="vocab-def">Body between the ball and the defender. Low center of gravity, knees bent, legal arm use. Actively protecting possession rather than just turning your back.</div>
+      <div class="vocab-when">When: receiving with pressure from behind, holding possession when no forward option is available</div>
+    </div>
+  </div>
+</div>
+
+<div class="huddle">
+  <div class="huddle-head">
+    <div class="huddle-eyebrow">Closing Huddle + Stretch</div>
+    <div class="huddle-title">Sharpening Session</div>
+    <div class="huddle-meta">10 minutes &nbsp;·&nbsp; Questions concurrent with stretch &nbsp;·&nbsp; Week 6, Session 1</div>
+  </div>
+  <div class="hq">
+    <div class="hq-num">Question 1</div>
+    <div class="hq-q">What is one thing you want to bring into Saturday?</div>
+    <div class="hq-listen"><strong>Listen for</strong>Let them set their own intention. Don't correct or redirect. A player who names something specific from today's session, a juke that worked, a shield that held, a transition they read early, is connecting training to competition on their own. That's the goal.</div>
+  </div>
+  <div class="hq">
+    <div class="hq-num">Question 2</div>
+    <div class="hq-q">Is there anyone you want to recognize today?</div>
+    <div class="hq-listen"><strong>Listen for</strong>Let them run it. Build the habit that this question ends every session.</div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-l">Coach Craft &nbsp;·&nbsp; Week 6, Session 1 &nbsp;·&nbsp; Sharpening Session</div>
+  <div class="footer-r">Coach Justin Whitaker &nbsp;·&nbsp; Fall 2026</div>
+  <div class="footer-confidential">Internal coaching document. For coaching staff use only. Not for distribution to players or parents.</div>
+</div>
+
+</div>
+</body>
+</html>

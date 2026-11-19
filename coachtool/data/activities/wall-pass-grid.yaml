@@ -1,0 +1,48 @@
+id: wall-pass-grid
+order: 51
+name: Wall Pass Grid
+block: B2
+skills:
+- Passing
+- Controlling
+- Combination Play
+ages:
+- u12
+- u14
+tracks:
+- rec
+- comp
+levels:
+- intro
+players:
+  min: 10
+  max: 12
+space: quarter
+minutes: 20
+pairs_with:
+- two-pugg-ssg
+- 1v1-two-active-wide-outlets-gk
+equipment: Balls · Cones · 1 mannequin
+setup:
+- Two lines run at the same time, with a mannequin in the center.
+- 5 reps per set, 3 sets. Wall players swap between sets.
+- Drive from the line toward the mannequin, reading the timing of the player in the opposite line. Exit
+  to the opposite line after each rep.
+- Play a firm pass to the wall player's feet, with your body already opening toward the return.
+- Take a first touch that moves forward into space. Drive through and exit.
+scoring: None
+coach:
+- cue: Open your body before you pass.
+  ask: Is your body opening before you pass?
+- cue: Drive through, do not watch.
+  ask: What did you see from the other driver before you entered the grid?
+- cue: First touch moves you forward.
+  ask: Does your first touch move you forward?
+- cue: 'Wall players: call for the ball, show a target and set an angle that makes the return easy to
+    play forward.'
+  ask: Where did you stand to make the return easy?
+coach_note: 'Wall players are practicing a skill too: setting their angle, giving a clear target, and
+  timing the return.'
+type: pattern
+objective: 'Install wall pass mechanics before adding defenders: the pass to the wall, the return and
+  first touch, and the movement after.'

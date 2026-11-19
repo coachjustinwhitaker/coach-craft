@@ -1,0 +1,50 @@
+id: 4v4-dont-dive-in
+order: 112
+name: 4v4 Do Not Dive In
+block: B3
+skills:
+- Delaying
+- Pressing
+- Decision-Making
+ages:
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 4v4. Extra players wait on the sideline and rotate in after each goal.
+- Show the attacker, the first defender and the show-to-one-side once, then let them play.
+rules:
+- 'The challenge: slow the attacker down. Do not dive in.'
+- If a defender dives in and the attacker beats them with a dribble, the attacking team gets a bonus point.
+- Defenders can win the ball when the attacker makes a mistake, a heavy touch or a bad pass.
+- Kick in from the sideline to restart.
+scoring: A goal is 1 point. A beaten dive-in is 1 point for the attackers. First team to 5.
+coach:
+- cue: Get close, then stop. Stay on your feet.
+  ask: What did you do when the attacker came at you?
+- cue: Show the attacker to one side.
+  ask: Which way did you want them to go, and why?
+- cue: Wait for the heavy touch.
+  ask: What did you see that told you to step in?
+type: opening-play
+objective: Slow the attacker down instead of diving in. If you dive in and get beaten, the attacker earns a point
+  for the team.
+progression:
+- title: Easier
+  text: Only count the dive-in point when the attacker beats the defender and is facing goal.
+- title: Harder
+  text: Defenders get a bonus when they force the attacker out wide.

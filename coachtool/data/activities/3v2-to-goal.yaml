@@ -1,0 +1,33 @@
+id: 3v2-to-goal
+order: 9
+name: 3v2 to Goal
+block: B2
+type: small-sided
+objective: Three attackers against two defenders. Players find out how spacing and passing create the
+  extra attacker.
+skills:
+- Numerical Advantage
+- Combination Play
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 5
+  max: 15
+space: quarter
+minutes: 15
+setup: Rectangular grid, small goal at one end. Three attackers from one end meet two defenders. Attackers
+  work together to score. Defenders can score by dribbling over the end line. Remind attackers to spread
+  out. Rotate defenders so they don’t get discouraged.
+coach:
+- cue: 'Do not explain the combination in advance. Run the game and watch it emerge. If a player dribbles
+    at a defender to force commitment and then passes around them, freeze the moment briefly: “Did everyone
+    see that? What happened there?” That is the whole concept in one moment.'
+  ask: When did you decide to pass rather than keep dribbling? What did you see that told you to pass?
+pairs_with:
+- 2v2-to-endlines-attacking
+- flying-numbers
+equipment: 1 ball · 1 small goal · Disc cones · Pinnies

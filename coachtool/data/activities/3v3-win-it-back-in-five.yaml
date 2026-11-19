@@ -1,0 +1,48 @@
+id: 3v3-win-it-back-in-five
+order: 114
+name: 3v3 Win It Back in Five
+block: B4
+skills:
+- Pressing
+- Decision-Making
+- Communication
+ages:
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 3v3. Extra players wait on the sideline and rotate in after each goal.
+- Tell the team to start counting the moment the ball changes hands.
+rules:
+- 'The challenge: lose it and win it right back.'
+- When a team loses the ball, they get five seconds to win it back. The coach or a sideline player counts out loud.
+- Winning it back in five seconds earns a bonus point. After five, the game goes on with no bonus.
+- Kick in from the sideline to restart.
+scoring: A goal is 1 point. Winning it back in five seconds is 1 point. First team to 5.
+coach:
+- cue: Stop, then go. React the second you lose it.
+  ask: What was your first thought when you lost the ball?
+- cue: The closest player goes to the ball. Everyone else closes the passing options.
+  ask: Who went to the ball, and who cut off the pass?
+- cue: Winning it back is the start of the next attack.
+  ask: What did you do when you won it back?
+type: opening-play
+objective: React the moment you lose it. Win it back in five seconds and the team earns a point.
+progression:
+- title: Easier
+  text: Give the team seven seconds.
+- title: Harder
+  text: Three seconds, or no bonus unless the whole team moved.

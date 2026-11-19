@@ -1,0 +1,46 @@
+id: 5v5-first-time-finish
+order: 116
+name: 5v5 First-Time Finish
+block: B5
+skills:
+- Shooting
+- Decision-Making
+- Combination Play
+ages:
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 40 by 30 yards. Go smaller if it plays loose.
+- A large goal or cone goal at each end. Add a goalkeeper if you have one willing.
+- 5v5. Extra players wait on the sideline and rotate in after each goal.
+- Make the goals as big as you can, so players take shots.
+rules:
+- 'The challenge: a first-time shot at goal counts double.'
+- A first-time shot means the player does not take a touch before shooting.
+- Players can still take a touch and shoot. It only counts as 1.
+- Kick in from the sideline to restart.
+scoring: A goal is 1 point. A first-time goal is 2. First team to 6.
+coach:
+- cue: Get your body ready before the ball arrives.
+  ask: What did you do before the pass reached you?
+- cue: Move into the space where the cutback or the pass will arrive.
+  ask: Where did you run, and why there?
+- cue: Missed? Reset right away.
+  ask: What did you do right after the miss?
+type: opening-play
+objective: Take the chance when it comes. A goal from a first-time shot counts double.
+progression:
+- title: Easier
+  text: A touch and a shot with the same foot counts as a first-time shot.
+- title: Harder
+  text: Only count the bonus if the shot is on target.

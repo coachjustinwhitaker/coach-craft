@@ -1,0 +1,51 @@
+id: 3v3-protect-it-for-three
+order: 104
+name: 3v3 Protect It for Three
+block: B1
+skills:
+- Protecting
+- Controlling
+- Body Shape
+ages:
+- u8
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 3v3. Extra players wait on the sideline and rotate in after each goal.
+- Choose one waiting player to count out loud when a team wins the ball.
+rules:
+- 'The challenge: when you win the ball, keep it.'
+- When a team wins the ball, the coach or a sideline player counts out loud. Keep it for three seconds and the team
+  gets a bonus point.
+- You can protect by shielding it yourself or passing it to a teammate who is free.
+- Kick in from the sideline to restart.
+scoring: A goal is 1 point. Keeping the ball for three seconds after winning it is 1 point. First team to 5.
+coach:
+- cue: Get your body between the ball and the defender.
+  ask: Which side was the defender on, and where did you put your body?
+- cue: Keep the ball on the foot farthest from the defender.
+  ask: Which foot did you use, and why?
+- cue: Look for a free teammate.
+  ask: Who was free when you had the ball?
+type: opening-play
+objective: Win the ball and keep it. Put your body between the ball and the defender and protect it for three seconds.
+progression:
+- title: Easier
+  text: Count to two instead of three.
+- title: Harder
+  text: Count to five, or the defender is allowed to challenge from the first touch.

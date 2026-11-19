@@ -1,0 +1,40 @@
+id: throw-in-chest-control-shuttle
+order: 71
+name: Throw-In Chest Control Shuttle
+block: B4
+skills:
+- Controlling
+- Passing
+- Restarts
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 4
+  max: 16
+space: quarter
+minutes: 6
+pairs_with: []
+equipment: Balls · Cones
+setup:
+- Two facing lines per grid, 3 or more grids. A thrower and a target.
+- Continuous shuttle across the grid.
+rules:
+- The thrower throws to the target's chest. The target chests it down in one touch and passes back.
+- The thrower dribbles the full width to the opposite line and passes to the first player there.
+- That player throws the ball back in to the thrower, who chests it down, passes back and joins the back
+  of the line.
+- Both feet down, equal release on the throw.
+coach_note: A technical install, not a fitness rep. Slow the group down if technique breaks under speed.
+coach:
+- cue: Both feet down, equal release on the throw. No cheating the technique.
+  ask: Where were your feet at release?
+- cue: Chest control absorbs the ball. It does not fight it.
+  ask: What did your chest do on contact?
+- cue: Every touch has a purpose. No standing over the ball.
+  ask: What was your next action before the ball arrived?
+type: set-piece
+objective: Control a short throw-in with the chest in one touch, play it back and keep the shuttle going.

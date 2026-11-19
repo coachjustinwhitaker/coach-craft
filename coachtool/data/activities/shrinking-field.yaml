@@ -1,0 +1,32 @@
+id: shrinking-field
+order: 2
+name: Shrinking Field
+block: B1
+type: small-sided
+objective: The field narrows every minute. Decisions have to come faster as the space disappears.
+skills:
+- Controlling
+- Body Shape
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 15
+setup: Rectangular grid with goals at each end. 3v3 or 4v4. Every minute, move each touchline in by 3
+  steps. The field narrows progressively. Players must make decisions faster as space disappears. Team
+  with most goals after 3 minutes wins the round. Play 2–3 rounds.
+coach:
+- cue: 'Players whose first touch opens their body, hips at 45 to 90 degrees toward goal, have more time
+    in tight spaces. Players who receive square-on get pressed immediately. On the second visit, frame
+    it as a defending focus: which team stays compact and presses together as the field shrinks?'
+  ask: As the field got smaller, what changed about when you decided to pass?
+pairs_with:
+- flying-numbers
+- rondo
+equipment: 1 ball · 2 goals · Disc cones

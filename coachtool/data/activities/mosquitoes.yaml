@@ -1,0 +1,35 @@
+id: mosquitoes
+order: 43
+name: Mosquitoes
+block: D
+type: ball-mastery
+objective: Mosquitoes dribble and try to hit campers below the knee with the ball. Close dribbling and
+  looking around.
+skills:
+- Dribbling
+- Shooting
+- Scanning
+ages:
+- u6
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 10
+setup: 'Small grid about 15 by 15 yards. Divide players into two groups: mosquitoes (each with a ball)
+  and campers (no ball). Mosquitoes dribble their ball and try to hit campers below the knee. When a mosquito
+  lands a hit, that player switches roles. Play until you call time. Keep the grid small so players have
+  to dribble close before striking rather than shooting from distance.'
+coach:
+- cue: The game is controlled chaos and that is the point. It combines dribbling, shooting and spatial
+    awareness in a genuinely silly format that 6-year-olds love. Watch for players who dribble close before
+    shooting rather than kicking from far away. If balls are consistently going high, narrow the space
+    further or switch to a different game.
+  ask: How did you sneak up on your camper without them getting away?
+pairs_with:
+- octopus
+equipment: 1 ball per mosquito · Disc cones for grid

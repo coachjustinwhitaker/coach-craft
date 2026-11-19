@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U13/U14 Player Development | Coach Craft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:      #384959;
+    --navy-dark: #384959;
+    --navy-deep: #2A3744;
+    --gold:      #6A89A7;
+    --gold-warm: #88BDF2;
+    --gray-body: #333333;
+    --gray-mid:  #666666;
+    --gray-light:#F5F6FA;
+    --white:     #ffffff;
+    --radius:    8px;
+    --shadow:    0 2px 12px rgba(56,73,89,.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Inter", sans-serif; font-size: clamp(14px, 1.8vw, 16px); color: var(--gray-body); background: var(--gray-light); line-height: 1.6; }
+
+  .site-header { background: var(--navy); border-bottom: 4px solid var(--gold); padding: clamp(1rem,3vw,1.5rem) clamp(1.25rem,5vw,3rem); }
+  .site-header-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 1.25rem; }
+  .site-header img { width: clamp(52px,9vw,72px); display: block; flex-shrink: 0; }
+  .site-header-text h1 { font-family: "Inter", sans-serif; font-weight: 800; font-size: clamp(1.1rem,3vw,1.6rem); color: var(--white); line-height: 1.15; margin-bottom: .2rem; }
+  .site-header-text p { font-family: "Inter", sans-serif; font-size: clamp(.65rem,1.4vw,.75rem); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-warm); opacity: .8; }
+
+  .pull-quote { background: var(--navy-dark); border-left: 4px solid var(--gold); padding: clamp(1rem,2.5vw,1.4rem) clamp(1.25rem,5vw,3rem); }
+  .pull-quote-inner { max-width: 900px; margin: 0 auto; }
+  .pull-quote blockquote { font-style: italic; font-size: clamp(.9rem,2vw,1.05rem); color: var(--gold-warm); line-height: 1.6; margin-bottom: .35rem; }
+  .pull-quote cite { font-family: "Inter", sans-serif; font-size: .67rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.35); font-style: normal; }
+
+  .main { max-width: 900px; margin: 0 auto; padding: clamp(1.5rem,4vw,2.5rem) clamp(1.25rem,3vw,2rem); }
+
+  .about { background: var(--white); border-radius: var(--radius); padding: clamp(1.25rem,3vw,1.75rem); margin-bottom: 2rem; box-shadow: var(--shadow); border-top: 3px solid var(--navy); }
+  .about p { font-size: clamp(.88rem,1.7vw,.97rem); margin-bottom: .75rem; max-width: 680px; }
+  .about p:last-child { margin-bottom: 0; }
+  .about strong { color: var(--navy); }
+
+  .nav-heading { font-family: "Inter", sans-serif; font-size: clamp(.75rem,1.5vw,.82rem); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 1rem; padding-bottom: .4rem; border-bottom: 2px solid var(--gold); }
+
+  .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .nav-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); text-decoration: none; color: var(--gray-body); display: flex; flex-direction: column; overflow: hidden; transition: transform .2s, box-shadow .2s; border: 1.5px solid transparent; }
+  .nav-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56,73,89,.14); border-color: var(--gold); }
+  .nav-card-band { height: 5px; }
+  .band-edu     { background: var(--navy); }
+  .band-method  { background: var(--gold); }
+  .band-season  { background: var(--navy-dark); }
+  .band-session { background: #2e7d32; }
+  .band-team    { background: #7d3c1c; }
+  .nav-card-body { padding: 1rem 1.2rem 1.2rem; flex: 1; display: flex; flex-direction: column; }
+  .nav-card-icon { font-size: 1.3rem; margin-bottom: .45rem; line-height: 1; }
+  .nav-card h3 { font-family: "Inter", sans-serif; font-size: clamp(.82rem,1.7vw,.92rem); font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+  .nav-card p { font-size: clamp(.76rem,1.4vw,.83rem); color: var(--gray-mid); line-height: 1.5; flex: 1; margin-bottom: .8rem; }
+  .nav-card-link { font-family: "Inter", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-top: auto; }
+  .status-tag { display: inline-block; font-family: "Inter", sans-serif; font-size: .6rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); background: rgba(106,137,167,.12); border: 1px solid rgba(106,137,167,.35); padding: .12rem .5rem; border-radius: 20px; margin-bottom: .5rem; align-self: flex-start; }
+
+
+  .page-footer { background: var(--navy-deep); color: var(--gold-warm); padding: 1rem clamp(1.25rem,5vw,3rem); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem; font-family: "Inter", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-top: 3px solid var(--gold); margin-top: 1rem; }
+  .footer-left { color: rgba(255,255,255,.55); }
+  .footer-right { opacity: .4; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <img src="data:image/png;base64,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" alt="Coach Craft">
+    <div class="site-header-text">
+      <h1>U13&ndash;U14 Player Development</h1>
+      <p>Coach Craft</p>
+    </div>
+  </div>
+</header>
+
+<div class="pull-quote">
+  <div class="pull-quote-inner">
+    <blockquote>&ldquo;We&rsquo;re not coaching to just create better athletes. We&rsquo;re coaching to develop better humans.&rdquo;</blockquote>
+    <cite>The foundation of how we work</cite>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="about">
+    <p>This site is Strikers White&rsquo;s coaching resource. It is a framework for thinking about this team&rsquo;s development across a full season.</p>
+    <p>The block methodology organizes every session around a game problem. The season plan sequences those problems deliberately so players build habits instead of chasing last week&rsquo;s result.</p>
+  </div>
+
+  <div class="nav-heading">Coach Education</div>
+  <div class="nav-grid">
+    <a href="orientation.html" class="nav-card">
+      <div class="nav-card-band band-edu"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">&#x1F9ED;</div>
+        <h3>How to Use This Site</h3>
+        <p>What Introduction, Development, and Application mean. How to read the framework and meet players where they are.</p>
+        <span class="nav-card-link">Read &rarr;</span>
+      </div>
+    </a>
+    <a href="periodization.html" class="nav-card">
+      <div class="nav-card-band band-edu"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">&#x1F4C5;</div>
+        <h3>Why We Periodize</h3>
+        <p>Why chasing brushfires after every game produces worse players. How a planned season builds something that lasts.</p>
+        <span class="nav-card-link">Read &rarr;</span>
+      </div>
+    </a>
+    <a href="the-player.html" class="nav-card">
+      <div class="nav-card-band band-edu"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">&#x1F464;</div>
+        <h3>Who Is in Front of Us</h3>
+        <p>U13-U14 development characteristics. Social, emotional, cognitive, and physical &mdash; what this age group needs from a coach.</p>
+        <span class="nav-card-link">Read &rarr;</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="nav-heading">Methodology</div>
+  <div class="nav-grid">
+    <a href="methodology.html" class="nav-card">
+      <div class="nav-card-band band-method"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">&#x1F4CB;</div>
+        <h3>Methodology Overview</h3>
+        <p>The full block framework at a glance. How the five blocks connect and how they sequence across a season.</p>
+        <span class="nav-card-link">Read &rarr;</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="nav-heading">The Blocks</div>
+  <div class="nav-grid">
+    <a href="B1_Me_and_the_Ball.html" class="nav-card">
+      <div class="nav-card-band band-method"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">B1</div>
+        <h3>Me &amp; the Ball</h3>
+        <p>Perception, first touch, protecting, driving, dribbling, passing, and decision-making under U13 game pressure. Position-blind at every level.</p>
+        <span class="nav-card-link">Read &rarr;</span>
+      </div>
+    </a>
+    <a href="B2_Me_and_My_Teammates.html" class="nav-card">
+      <div class="nav-card-band band-method"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">B2</div>
+        <h3>Me &amp; My Teammates</h3>
+        <p>Combination play, supporting angles, overloads, CB penetration, and midfield interchange.</p>
+        <span class="nav-card-link">Read &rarr;</span>
+      </div>
+    </a>
+    <a href="B3_Team_Defending.html" class="nav-card">
+      <div class="nav-card-band band-method"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">B3</div>
+        <h3>Me &amp; My Team Defending</h3>
+        <p>Pressure-cover-balance, compact high line, coordinated pressing. Defending is not just for defenders.</p>
+        <span class="nav-card-link">Read &rarr;</span>
+      </div>
+    </a>
+    <a href="B4_Me_and_the_Game.html" class="nav-card">
+      <div class="nav-card-band band-method"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">B4</div>
+        <h3>Me &amp; the Game</h3>
+        <p>Transition speed, recognizing the moment, press vs. recover, play forward vs. secure.</p>
+        <span class="nav-card-link">Read &rarr;</span>
+      </div>
+    </a>
+    <a href="B5_Me_and_the_Moment.html" class="nav-card">
+      <div class="nav-card-band band-method"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">B5</div>
+        <h3>Me &amp; the Moment</h3>
+        <p>Finishing, final actions, composure and game management, all built through repetition, not lectures.</p>
+        <span class="nav-card-link">Read &rarr;</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="nav-heading">Team Identity</div>
+  <div class="nav-grid">
+    <a href="game-model.html" class="nav-card">
+      <div class="nav-card-band band-team"></div>
+      <div class="nav-card-body">
+        <span class="status-tag">In Progress</span>
+        <div class="nav-card-icon">&#x1F9E9;</div>
+        <h3>Game Model</h3>
+        <p>Formation, position roles, and tactical principles for Strikers White. Being finalized based on preseason training.</p>
+        <span class="nav-card-link">View &rarr;</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="nav-heading">Season &amp; Sessions</div>
+  <div class="nav-grid">
+    <a href="season-plan.html" class="nav-card">
+      <div class="nav-card-band band-season"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">&#x1F5D3;</div>
+        <h3>Season Plan</h3>
+        <p>The 18-week plan for U13-U14. Weekly themes, block sequencing, and phase objectives.</p>
+        <span class="nav-card-link">View Plan &rarr;</span>
+      </div>
+    </a>
+    <a href="sessions/" class="nav-card">
+      <div class="nav-card-band band-session"></div>
+      <div class="nav-card-body">
+        <div class="nav-card-icon">&#x1F4C1;</div>
+        <h3>Session Archive</h3>
+        <p>Individual training session plans by team and week. Field-ready HTML for sideline reference.</p>
+        <span class="nav-card-link">Browse &rarr;</span>
+      </div>
+    </a>
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="footer-left">Coach Justin Whitaker &nbsp;&middot;&nbsp; Coach Craft</div>
+  <div class="footer-right">coachjustinwhitaker.github.io/coach-craft</div>
+</footer>
+
+</body>
+</html>

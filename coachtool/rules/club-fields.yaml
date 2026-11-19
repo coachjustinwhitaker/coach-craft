@@ -1,0 +1,89 @@
+# Everything a club supplies. One source for the checker, the blank template and the README.
+# required: the build stops without it. recommended: the build warns and the feature is hidden or generic.
+fields:
+- key: id
+  section: Identity
+  required: true
+  what: Folder name of this club under theme/
+  example: coach-craft
+- key: short_name
+  section: Identity
+  required: true
+  what: Short name shown in the app header
+  example: Coach Craft
+- key: club_label
+  section: Identity
+  required: true
+  what: Full club line shown on the printed companion pages
+  example: Coach Craft &nbsp;|&nbsp; Player Development
+- key: logo_file
+  section: Identity
+  required: true
+  what: Logo image in this folder for the companion pages (PNG)
+  example: logo.png
+- key: logo_small_file
+  section: Identity
+  required: true
+  what: Small logo in this folder for the app header (PNG)
+  example: logo-small.png
+- key: navy
+  section: Colors
+  required: true
+  what: Main color as a hex code
+  example: '#384959'
+- key: navy_dark
+  section: Colors
+  required: true
+  what: Darker version of the main color (header bar)
+  example: '#2A3744'
+- key: gold
+  section: Colors
+  required: true
+  what: Accent color
+  example: '#6A89A7'
+- key: help_email
+  section: Contact
+  required: false
+  what: Address the Ask for help button emails. Blank hides the button. Use a role address, not a personal one
+  example: technicaldirector@yourclub.org
+- key: suggest_form_url
+  section: Contact
+  required: false
+  what: Link to your Suggest an activity form. Blank hides the button
+  example: https://forms.gle/xxxx
+- key: support_line
+  section: Contact
+  required: false
+  what: One line telling coaches who to ask. Used when an age has no contact text of its own
+  example: Your Age Group Coordinator and the club Technical Director are there for exactly this.
+- key: pathway_line_1
+  section: Pathway
+  required: false
+  what: First line about your competitive pathway (companion pages)
+  example: Our competitive program exists to open more doors for players who are ready
+- key: pathway_line_2
+  section: Pathway
+  required: false
+  what: Second line, who to talk to
+  example: Talk to your club director about what that pathway looks like
+- key: credit_html
+  section: Credit
+  required: false
+  what: Credit paragraph for the companion pages (simple HTML allowed)
+  example: This guide was developed by ...
+overlay:
+  folder: overlay/<age>.yaml
+  what: Optional, one per age. Only what differs by age.
+  keys:
+  - key: format
+    what: Your game format at this age, shown under the heading
+    example: 5v5
+  - key: rules
+    what: Local rules. Each has label, text, source and optional tracks. Same label as a core rule replaces it
+    example: 'label: Substitutions'
+  - key: pathway
+    what: List of lines about the competitive pathway for this age
+    example: a list of short lines
+  - key: contact
+    what: Contact text for this age. Overrides support_line
+    example: Questions? Ask your coordinator.

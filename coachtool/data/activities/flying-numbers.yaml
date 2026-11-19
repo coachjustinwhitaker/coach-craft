@@ -1,0 +1,56 @@
+id: flying-numbers
+order: 1
+name: Flying Numbers
+block: B1
+type: small-sided
+objective: Call a number and each side sends that many in to play. Even or uneven numbers keep the game
+  fast and adaptable.
+skills:
+- Decision-Making
+ages:
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: half
+minutes: 15
+setup: Mark space with cones, small goals on both sides. Two teams along the touchline either side of
+  you. Call a number combo (1v1, 2v1, 2v2, 3v2) and each side sends in that number to scrimmage. New players
+  rotate in after every goal or ball out. Call different numbers from each side to create imbalanced situations.
+coach:
+- cue: The most adaptable game in the toolkit. If one player is dominating, play them 1v2. If a quieter
+    player needs more touches, play the ball directly to them. You control the challenge level in real
+    time. Works perfectly as an anchor activity because it never feels the same twice.
+  ask: When you had more players than the other team, what did you do with that extra person?
+pairs_with:
+- shrinking-field
+- rondo
+- 1v1-to-endlines-goals
+equipment: 1 ball · 2 goals · Disc cones · Pinnies
+for_age:
+  u12:
+    setup: 'Mark space with cones, goals on both sides. Two teams along the touchline either side of you.
+      Call a number combo and each side sends in that number to scrimmage. New players rotate in after
+      every goal or ball out. Frame the transition explicitly: outgoing players sprint off, incoming players
+      sprint on. No walking at any point.'
+    coach:
+    - cue: The most adaptable game in the toolkit and the best anchor activity at U12. Works as pure anchor
+        (high energy, familiar) or as a transition focus when you emphasize the urgency of sprinting in
+        and out. If one player is dominating, play them 1v2.
+      ask: When you had more players than the other team, what did you do with that extra person?
+  u14:
+    setup: Mark a space with cones, goals on both sides. Two teams along the touchline either side of
+      you. Call a number combination and each side sends in that many players to scrimmage. New players
+      rotate in after every goal or ball out. Outgoing players sprint off, incoming players sprint on.
+      No walking at any point.
+    coach:
+    - cue: Your anchor activity every week. Players know it from U12, so it needs almost no explanation
+        and it settles the group fast. At U14, call uneven numbers (3v2, 4v3) and watch what the extra
+        player does. If one player is dominating, play them 1v2.
+      ask: When your team had the extra player, what did you do with that advantage?

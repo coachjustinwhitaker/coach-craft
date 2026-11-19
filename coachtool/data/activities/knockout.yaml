@@ -1,0 +1,36 @@
+id: knockout
+order: 21
+name: Knockout
+block: B1
+type: ball-mastery
+objective: Keep your own ball in while knocking others out. Shield with your body and track the ball and
+  the other players.
+skills:
+- Protecting
+- Dribbling
+ages:
+- u8
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 16
+space: quarter
+minutes: 20
+setup: 'Grid about 20 by 20 yards. Every player has a ball and dribbles freely. Players try to knock other
+  players'' balls out of the grid while keeping their own in. Ball knocked out: five toe taps outside
+  the grid, then back in (non-elimination). Remind players to keep their ball close when an opponent approaches.'
+coach:
+- cue: Players who shield the ball with their body rather than just running away. Players who look up
+    to track both the ball and the incoming threat.
+  ask: When someone came to knock your ball out, what did you do to protect it?
+pairs_with:
+- duck-tails
+- 101-dalmatians
+equipment: 1 ball per player · Disc cones for grid
+progression:
+- title: Elimination round
+  text: Switch to elimination for a final competitive round. A ball knocked out means you are out. The
+    last player with their ball in the grid wins.

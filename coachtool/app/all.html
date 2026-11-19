@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>All activities</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:15px/1.45 -apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#1c2330;background:#f4f6fa}
+main{max-width:980px;margin:0 auto;padding:16px}h1{font-size:22px;margin:6px 0 2px}.sub{color:#6b7280;margin:0 0 12px}
+.bar{position:sticky;top:0;background:#f4f6fa;padding:8px 0 10px;z-index:5;border-bottom:1px solid #dfe5ee}
+input[type=search]{width:100%;padding:10px 12px;font:inherit;border:1px solid #c5cfe0;border-radius:10px;background:#fff}
+.f{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.f select{padding:7px 8px;font:inherit;font-size:14px;border:1px solid #c5cfe0;border-radius:8px;background:#fff}
+.f button{font:inherit;font-size:14px;padding:7px 12px;border:1px solid #c5cfe0;border-radius:8px;background:#fff;color:#384959;cursor:pointer}.cnt{color:#6b7280;margin:8px 0 0;font-size:13px}
+details{background:#fff;border:1px solid #e1e6ef;border-radius:12px;margin:8px 0}summary{list-style:none;cursor:pointer;padding:12px 14px}summary::-webkit-details-marker{display:none}
+.nm{font-weight:700;font-size:16px;color:#384959}.meta{color:#6b7280;font-size:13px;margin-top:2px}.desc{margin:4px 0 0}
+.tg{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:#eaf0f9;color:#384959;margin:6px 4px 0 0}
+.det{padding:0 14px 14px;border-top:1px solid #eef1f6}.det h4{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#6b7280;margin:14px 0 4px}.det ul{margin:0;padding-left:20px}.det p{margin:0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}@media(max-width:720px){.cols{grid-template-columns:1fr}}
+.obj{background:#F2F7FC;border-left:4px solid #6A89A7;padding:8px 12px;margin:12px 0 0;border-radius:0 8px 8px 0}
+.fig{margin:12px 0;border:1px solid #e1e6ef;border-radius:10px;overflow:hidden;background:#fff;max-width:520px}.fig figcaption{font-size:12px;color:#6b7280;padding:6px 10px;background:#fafbfd;border-bottom:1px solid #e1e6ef}.dg{display:block;width:100%;height:auto;cursor:zoom-in}
+.dg.big{position:fixed;inset:0;z-index:50;width:100vw;height:100vh;object-fit:contain;background:rgba(10,20,40,.92);padding:12px;cursor:zoom-out}
+.car .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.car figure{flex:0 0 100%;scroll-snap-align:center;margin:0}.car .n{padding:6px 10px;font-size:12px;font-weight:700;color:#384959;background:#fafbfd;border-bottom:1px solid #e1e6ef}
+a.vid{display:inline-block;margin-top:8px;color:#384959;font-weight:600}.ids{color:#6b7280;font-size:12px;margin-top:12px}
+</style></head><body><main>
+<h1>All activities</h1><p class="sub">Internal view. Every activity, every age and track. Not linked from the coach app.</p>
+<div class="bar"><input type="search" id="q" placeholder="Search names, objectives, setup, coaching points"><div class="f" id="f"></div><div class="cnt" id="cnt"></div></div>
+<div id="list"></div></main>
+<script>
+const D = /*DATA*/;
+const TYPE = Object.fromEntries(D.types.map(t => [t.id, t.label || t.name || t.id]));
+const BN = b => (D.blocks[b] && D.blocks[b].name) || b;
+const SK = [...new Set([...(D.tags.actions || []), ...(D.tags.concepts || [])])].sort();
+const LV = {intro: 'Introduction', dev: 'Development', app: 'Application'};
+const ST = {q: '', type: '', block: '', age: '', track: '', level: '', skill: '', diag: false, vid: false};
+const arr = v => Array.isArray(v) ? v : (v ? [v] : []);
+const bul = v => { const a = arr(v); return a.length === 1 ? `<p>${a[0]}</p>` : `<ul>${a.map(x => `<li>${x}</li>`).join('')}</ul>`; };
+const sec = (t, v) => v && arr(v).length ? `<h4>${t}</h4>${bul(v)}` : '';
+function figs(a){
+  const f = a.figs || []; if(!f.length) return '';
+  if(f.length === 1) return `<figure class="fig">${f[0].caption ? `<figcaption>${f[0].caption}</figcaption>` : ''}<img class="dg" src="${f[0].src}" alt="${a.name}"></figure>`;
+  return `<div class="fig car"><div class="track">${f.map((x, n) => `<figure><div class="n">${n + 1} of ${f.length}</div>${x.caption ? `<figcaption>${x.caption}</figcaption>` : ''}<img class="dg" src="${x.src}" alt="${a.name} ${n + 1}"></figure>`).join('')}</div></div>`;
+}
+const hay = a => [a.name, a.objective, ...arr(a.setup), ...arr(a.rules), ...arr(a.scoring), ...arr(a.coach_note), ...(a.coach || []).flatMap(c => [c.cue, c.ask]), ...(a.progression || []).flatMap(p => [p.title, p.text]), a.equipment, a.source, (a.skills || []).join(' ')].join(' ').toLowerCase();
+D.activities.forEach(a => a._h = hay(a));
+function ok(a){
+  if(ST.q && !ST.q.toLowerCase().split(/\s+/).every(w => a._h.includes(w))) return false;
+  if(ST.type && a.type !== ST.type) return false; if(ST.block && a.block !== ST.block) return false;
+  if(ST.age && !a.ages.includes(ST.age)) return false; if(ST.track && !a.tracks.includes(ST.track)) return false;
+  if(ST.level && !(a.levels || []).includes(ST.level)) return false; if(ST.skill && !(a.skills || []).includes(ST.skill)) return false;
+  if(ST.diag && !(a.figs || []).length) return false; if(ST.vid && !a.video) return false; return true;
+}
+function detail(a){
+  const pl = a.players ? (a.players.min === a.players.max ? a.players.min : a.players.min + ' to ' + a.players.max) + ' players' : '';
+  const ov = Object.keys(a.for_age || {});
+  return `<div class="det">${figs(a)}<div class="meta" style="margin-top:8px">${[pl, a.space, a.minutes ? a.minutes + ' min' : ''].filter(Boolean).join(' · ')}</div>
+  <div class="cols"><div>${sec('Setup', a.setup)}${sec('Rules', a.rules)}${sec('Scoring', a.scoring)}${a.progression ? `<h4>Progressions</h4><ol style="margin:0;padding-left:20px">${a.progression.map(p => `<li><b>${p.title}</b>${p.minutes ? ' (' + p.minutes + ' min)' : ''}: ${p.text}</li>`).join('')}</ol>` : ''}</div>
+  <div>${a.coach ? `<h4>Coach it</h4><ul>${a.coach.map(c => `<li>${c.cue}<br><i>Ask: ${c.ask}</i></li>`).join('')}</ul>` : ''}${sec('Coach note', a.coach_note)}${sec('Equipment', a.equipment)}</div></div>
+  ${a.video ? `<a class="vid" href="${a.video}" target="_blank" rel="noopener">Watch an example</a>` : ''}
+  <div class="ids">id ${a.id} · levels ${(a.levels || []).join(', ') || 'none'} · skills ${(a.skills || []).join(', ')}${a.pairs_with ? ' · pairs with ' + arr(a.pairs_with).join(', ') : ''}${ov.length ? ' · age overrides: ' + ov.join(', ') : ''}${a.source ? ' · source: ' + a.source : ''}</div></div>`;
+}
+function draw(){
+  const L = D.activities.filter(ok); $('#cnt').textContent = `${L.length} of ${D.activities.length} activities`;
+  $('#list').innerHTML = L.map(a => `<details><summary><div class="nm">${a.name}</div><div class="meta">${TYPE[a.type] || a.type} · ${BN(a.block)} · ${a.ages.join(', ')} · ${a.tracks.join(' + ')}${a.players ? ' · ' + (a.players.min === a.players.max ? a.players.min : a.players.min + ' to ' + a.players.max) + ' players' : ''}</div>${a.objective ? `<p class="desc">${a.objective}</p>` : ''}${(a.figs || []).length ? `<span class="tg">${a.figs.length > 1 ? a.figs.length + ' diagrams' : 'Diagram'}</span>` : ''}${a.video ? '<span class="tg">Video</span>' : ''}</summary>${detail(a)}</details>`).join('') || '<p class="sub">Nothing matches.</p>';
+}
+const $ = s => document.querySelector(s);
+const sel = (k, label, opts) => `<select data-k="${k}"><option value="">${label}</option>${opts.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select>`;
+const used = k => [...new Set(D.activities.flatMap(a => arr(a[k])))];
+$('#f').innerHTML = sel('type', 'Any type', D.types.map(t => [t.id, TYPE[t.id]])) + sel('block', 'Any block', Object.keys(D.blocks).sort().map(b => [b, BN(b)])) + sel('age', 'Any age', used('ages').sort((x, y) => parseInt(x.slice(1)) - parseInt(y.slice(1))).map(x => [x, x.toUpperCase()])) + sel('track', 'Rec and comp', [['rec', 'Rec'], ['comp', 'Comp']]) + sel('level', 'Any level', Object.entries(LV)) + sel('skill', 'Any skill', SK.map(s => [s, s])) + `<button data-t="diag">Has diagram</button><button data-t="vid">Has video</button><button id="open">Open all</button><button id="rs">Reset</button>`;
+$('#q').oninput = e => { ST.q = e.target.value.trim(); draw(); };
+$('#f').onchange = e => { if(e.target.dataset.k){ ST[e.target.dataset.k] = e.target.value; draw(); } };
+$('#f').onclick = e => { const b = e.target.closest('button'); if(!b) return;
+  if(b.dataset.t){ ST[b.dataset.t] = !ST[b.dataset.t]; b.style.background = ST[b.dataset.t] ? '#384959' : '#fff'; b.style.color = ST[b.dataset.t] ? '#fff' : '#384959'; draw(); }
+  if(b.id === 'open'){ const ds = [...document.querySelectorAll('#list details')], all = ds.every(d => d.open); ds.forEach(d => d.open = !all); b.textContent = all ? 'Open all' : 'Close all'; }
+  if(b.id === 'rs'){ Object.assign(ST, {q: '', type: '', block: '', age: '', track: '', level: '', skill: '', diag: false, vid: false}); $('#q').value = ''; document.querySelectorAll('#f select').forEach(s => s.value = ''); document.querySelectorAll('#f button[data-t]').forEach(x => { x.style.background = '#fff'; x.style.color = '#384959'; }); draw(); } };
+document.addEventListener('click', e => { const im = e.target.closest('.dg'); if(im) im.classList.toggle('big'); });
+draw();
+</script></body></html>

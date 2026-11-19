@@ -1,0 +1,46 @@
+id: finishing-circuit
+order: 57
+name: Finishing Circuit
+block: B4
+skills:
+- Shooting
+- Controlling
+- Body Shape
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 6
+  max: 12
+space: half
+minutes: 15
+pairs_with: []
+equipment: Balls · 3 mannequins · Full-size goal and keeper
+setup:
+- Three servers (1, 4, 5) feed three finishers (2, 3, 6) inside the box. Each finisher has a mannequin
+  between them and goal. Keeper in goal.
+- 1 serves straight in to 2. 5 serves diagonally across to 3. 4 serves diagonally across to 6.
+- All three stations run at once and the ball keeps moving. Rotate servers and finishers so everyone gets
+  every angle.
+rules:
+- '3 and 6: start tight on the mannequin, check away to sell the separation, then check back into the
+  space that opens, receive and finish.'
+- '2: the mannequin is at your back when the ball arrives. Receive, turn away from it, then shoot.'
+- The next rep starts the moment this one ends.
+coach:
+- cue: '3 and 6: tight to start, check away to create the separation, then check back to receive.'
+  ask: When did you decide to check back?
+- cue: '2: the first touch has to turn you away from the mannequin, not just control it.'
+  ask: Which way did your first touch send you?
+- cue: Different angle, different finish. Do not default to the same shot.
+  ask: What did the angle ask for?
+- cue: 'Keeper: full volume, work every angle live.'
+  ask: Which angle gave you the most trouble?
+diagram: finishing-circuit.jpg
+type: pattern
+objective: Get high-volume finishing reps from three angles, each with a mannequin to negotiate before
+  the shot.
+diagram_caption: Three servers feed three finishers in the box, each with a mannequin in front of goal.

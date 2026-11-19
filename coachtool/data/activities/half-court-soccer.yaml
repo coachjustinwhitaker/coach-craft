@@ -1,0 +1,34 @@
+id: half-court-soccer
+order: 31
+name: Half Court Soccer
+block: B3
+type: small-sided
+objective: Both teams attack the same goal. After winning it, clear it over the check line first. Defenders
+  get compact.
+skills:
+- Compact Shape
+- Marking
+ages:
+- u12
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 14
+space: half
+minutes: 15
+setup: Rectangular grid, wider than it is long. A check line at one end, the goal at the other. Both teams
+  attack the same goal, like half-court basketball. If a team steals the ball, they must clear it by dribbling
+  over the check line before they can attempt to score. Play 3v3 plus an optional rotating goalkeeper.
+coach:
+- cue: The check line creates a natural defending moment. Defenders must get compact between the ball
+    and the goal. When the attack clears the line and comes back, defenders must re-organize quickly.
+    Watch for players who position between opponent and goal rather than just chasing the ball.
+  ask: When the other team was dribbling toward goal, where were you standing? Between the ball and the
+    goal, or somewhere else?
+pairs_with:
+- 2v2v2-keep-away
+- flying-numbers
+equipment: 1 ball · 1 goal · Disc cones including check line · Pinnies

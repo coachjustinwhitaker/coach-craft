@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B3: Me &amp; My Team Defending — Coach Craft U13/U14 Methodology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:       #384959;
+    --navy-dark:  #384959;
+    --navy-deep:  #2A3744;
+    --gold:       #6A89A7;
+    --gold-warm:  #88BDF2;
+    --gray-body:  #333333;
+    --gray-mid:   #666666;
+    --gray-light: #F5F6FA;
+    --white:      #ffffff;
+    --intro-hue:  #4F6D8A;
+    --dev-hue:    #2F4050;
+    --app-hue:    #2A3744;
+    --radius: 6px;
+    --shadow: 0 2px 8px rgba(56,73,89,.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Inter", sans-serif; font-size: clamp(14px, 1.8vw, 16px); color: var(--gray-body); background: var(--gray-light); line-height: 1.6; }
+
+  .site-nav { background: var(--navy-deep); padding: .6rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+  .site-nav a { color: var(--gold-warm); text-decoration: none; font-family: "Inter", sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .7; transition: opacity .2s; }
+  .site-nav a:hover { opacity: 1; }
+  .site-nav a.active { color: var(--white); opacity: 1; }
+  .nav-sep { color: var(--gold); opacity: .4; font-size: .7rem; }
+
+  .site-header { background: var(--navy); border-bottom: 4px solid var(--gold); padding: clamp(1rem,3vw,1.5rem) clamp(1.25rem,5vw,3rem); }
+  .site-header-inner { max-width: 1040px; margin: 0 auto; display: flex; align-items: center; gap: 1.25rem; }
+  .site-header img { width: clamp(52px,9vw,72px); display: block; flex-shrink: 0; }
+  .site-header-text { flex: 1; }
+  .block-label { font-family: "Inter", sans-serif; font-size: clamp(.62rem,1.3vw,.72rem); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .25rem; }
+  .site-header-text h1 { font-family: "Inter", sans-serif; font-weight: 800; font-size: clamp(1.2rem,3.5vw,1.9rem); color: var(--white); line-height: 1.1; margin-bottom: .3rem; }
+  .tagline { font-size: clamp(.82rem,1.6vw,.95rem); color: var(--gold-warm); font-style: italic; margin-bottom: .5rem; }
+  .header-chips { display: flex; flex-wrap: wrap; gap: .35rem; }
+  .chip { background: rgba(255,255,255,.1); border: 1px solid rgba(106,137,167,.3); color: var(--gold-warm); font-family: "Inter", sans-serif; font-size: .63rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .55rem; border-radius: 20px; }
+
+  .content { max-width: 1040px; margin: 0 auto; padding: clamp(1rem,3vw,2rem) clamp(1rem,3vw,2rem); }
+
+  .block-nav { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: .65rem .9rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+  .block-nav-label { font-family: "Inter", sans-serif; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-mid); margin-right: .25rem; }
+  .block-nav a { text-decoration: none; font-family: "Inter", sans-serif; font-size: .72rem; font-weight: 700; color: var(--navy); background: var(--gray-light); padding: .35rem .75rem; border-radius: 20px; transition: all .2s; }
+  .block-nav a:hover { background: var(--gold); color: var(--white); }
+  .block-nav a.current { background: var(--navy); color: var(--white); }
+
+  .block-intro { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(1.25rem,3vw,1.75rem); margin-bottom: 1.25rem; border-left: 4px solid var(--gold); }
+  .block-intro p { font-size: clamp(.88rem,1.7vw,.96rem); line-height: 1.8; margin-bottom: .85rem; max-width: 760px; }
+  .block-intro p:last-child { margin-bottom: 0; }
+
+  .meta-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.75rem; }
+  @media (max-width: 700px) { .meta-strip { grid-template-columns: 1fr; } }
+  .meta-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.1rem 1.25rem; }
+  .meta-card h3 { font-family: "Inter", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: .4rem; margin-bottom: .6rem; }
+  .meta-card ul { list-style: none; }
+  .meta-card li { font-size: .82rem; color: var(--gray-mid); padding: .2rem 0; padding-left: 1rem; position: relative; }
+  .meta-card li::before { content: "→"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+  .groups-banner { background: var(--navy-deep); border-radius: var(--radius); padding: 1.1rem 1.35rem; margin-bottom: 1.75rem; }
+  .groups-banner h3 { font-family: "Inter", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: .65rem; }
+  .groups-list { display: grid; grid-template-columns: repeat(2,1fr); gap: .55rem; }
+  @media (max-width: 700px) { .groups-list { grid-template-columns: 1fr; } }
+  .group-pill { background: rgba(255,255,255,.06); border: 1px solid rgba(106,137,167,.25); border-radius: 5px; padding: .55rem .75rem; }
+  .group-pill .gp-tag { font-family: "Inter", sans-serif; font-size: .65rem; font-weight: 700; letter-spacing: .04em; color: var(--gold-warm); display: block; margin-bottom: .15rem; }
+  .group-pill .gp-desc { font-size: .76rem; color: rgba(255,255,255,.65); }
+
+  .section-heading { font-family: "Inter", sans-serif; font-size: clamp(.95rem,2vw,1.1rem); font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--navy); margin: 2rem 0 1.1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--navy); }
+
+  .skill-area { margin-bottom: 1.75rem; }
+  .skill-area-title { font-family: "Inter", sans-serif; font-size: clamp(.92rem,1.9vw,1.02rem); font-weight: 700; color: var(--navy-dark); background: var(--white); box-shadow: var(--shadow); padding: .65rem 1.1rem; border-radius: var(--radius) var(--radius) 0 0; border-left: 4px solid var(--navy); }
+
+  .level-stack { background: var(--white); border-radius: 0 0 var(--radius) var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+
+  .level-row { border-top: 1px solid #e3e6ee; padding: 1rem 1.1rem; }
+  .level-row:first-child { border-top: none; }
+  .level-row-head { font-family: "Inter", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; display: flex; align-items: center; gap: .4rem; margin-bottom: .65rem; }
+  .level-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .level-row.intro .level-row-head { color: var(--intro-hue); }
+  .level-row.intro .level-dot { background: var(--intro-hue); }
+  .level-row.dev .level-row-head { color: var(--dev-hue); }
+  .level-row.dev .level-dot { background: var(--dev-hue); }
+  .level-row.app .level-row-head { color: var(--app-hue); }
+  .level-row.app .level-dot { background: var(--app-hue); }
+
+  .level-row ul { list-style: none; }
+  .level-row > ul > li { font-size: .82rem; color: var(--gray-body); line-height: 1.55; padding: .28rem 0; padding-left: .95rem; position: relative; }
+  .level-row > ul > li::before { content: "•"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+  .app-groups { display: grid; grid-template-columns: repeat(2,1fr); gap: .85rem; }
+  @media (max-width: 760px) { .app-groups { grid-template-columns: 1fr; } }
+  .app-group { background: var(--gray-light); border-radius: 5px; padding: .75rem .9rem; border-left: 3px solid var(--gold); }
+  .app-group-tag { font-family: "Inter", sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .03em; color: var(--navy); display: block; margin-bottom: .4rem; }
+  .app-group p { font-size: .79rem; color: var(--gray-body); line-height: 1.55; }
+
+  .page-footer { background: var(--navy-deep); color: var(--gold-warm); padding: 1rem clamp(1.25rem,5vw,3rem); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem; font-family: "Inter", sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-top: 3px solid var(--gold); margin-top: 1rem; }
+  .footer-left { color: rgba(255,255,255,.55); }
+  .footer-right { opacity: .4; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html">U13-U14</a>
+  <span class="nav-sep">&rsaquo;</span>
+  <a href="methodology.html">Methodology</a>
+  <span class="nav-sep">&rsaquo;</span>
+  <a href="#" class="active">B3: Me &amp; My Team Defending</a>
+</nav>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <img src="data:image/png;base64,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" alt="Coach Craft">
+    <div class="site-header-text">
+      <div class="block-label">Training Block 3</div>
+      <h1>Me &amp; My Team Defending</h1>
+      <div class="tagline">Compact. Coordinated. Aggressive. Defending is not just for defenders.</div>
+      <div class="header-chips">
+        <span class="chip">Pressure-Cover-Balance</span>
+        <span class="chip">High Line</span>
+        <span class="chip">Compactness</span>
+        <span class="chip">Defending Primary</span>
+        <span class="chip">Intro/Dev Universal — App by Function</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <nav class="block-nav">
+    <span class="block-nav-label">Blocks:</span>
+    <a href="B1_Me_and_the_Ball.html">B1 &middot; Me &amp; the Ball</a>
+    <a href="B2_Me_and_My_Teammates.html">B2 &middot; Teammates</a>
+    <a href="B3_Team_Defending.html" class="current">B3 &middot; Defending</a>
+    <a href="B4_Me_and_the_Game.html">B4 &middot; The Game</a>
+    <a href="B5_Me_and_the_Moment.html">B5 &middot; The Moment</a>
+  </nav>
+
+  <div class="block-intro">
+    <p>Defending is not just for defenders. Strikers set the tone for the entire pressing structure, they're often the first line and the players who trigger the whole team's coordinated press. B3 is where every player learns that winning the ball back is a collective action: the nearest player pressures, teammates cover behind, and the team stays connected and compact to protect dangerous space.</p>
+    <p>At U13, the standard is no longer just reacting to losing the ball. Teams are expected to defend proactively, a compact, high defensive block that regains possession as high up the field as possible.</p>
+    <p><strong>Primary game problem:</strong> Players create and maintain a compact, high defensive block, applying coordinated pressure-cover-balance to prevent forward play and regain the ball as high as possible.</p>
+  </div>
+
+  <div class="meta-strip">
+    <div class="meta-card">
+      <h3>Core Focus</h3>
+      <ul>
+        <li>Coordinated pressure-cover-balance</li>
+        <li>Compact shape, vertically and horizontally</li>
+        <li>High defensive line and line management</li>
+        <li>Immediate reaction after losing the ball</li>
+      </ul>
+    </div>
+    <div class="meta-card">
+      <h3>Game Moments</h3>
+      <ul>
+        <li>Defending &mdash; primary</li>
+        <li>Att &rarr; Def transition &mdash; critical</li>
+      </ul>
+    </div>
+    <div class="meta-card">
+      <h3>US Soccer U13 Anchor</h3>
+      <ul>
+        <li>Create defending shape: compact, high front line, high defensive line</li>
+        <li>Build pressure on the ball as a collective unit</li>
+        <li>Prevent the switch, deny the finish</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="groups-banner">
+    <h3>Application Groups: Who Defends Together</h3>
+    <div class="groups-list">
+      <div class="group-pill">
+        <span class="gp-tag">Strikers + Attacking Mids</span>
+        <span class="gp-desc">First line of the press, triggering the pressing structure, cutting central lanes</span>
+      </div>
+      <div class="group-pill">
+        <span class="gp-tag">Wingers + Fullbacks/Wing Backs</span>
+        <span class="gp-desc">Wide press, showing opponents inside, denying the switch of play</span>
+      </div>
+      <div class="group-pill">
+        <span class="gp-tag">Attacking Mids + Defensive Mid</span>
+        <span class="gp-desc">Screening the central lane, covering space vacated by the press</span>
+      </div>
+      <div class="group-pill">
+        <span class="gp-tag">Center Backs + Defensive Mid</span>
+        <span class="gp-desc">Last line, line management, covering behind a stepping teammate</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-heading">Skill Areas by Level</div>
+
+  <!-- PERCEPTION & PREPARATION -->
+  <div class="skill-area">
+    <div class="skill-area-title">Perception &amp; Preparation</div>
+    <div class="level-stack">
+      <div class="level-row intro">
+        <div class="level-row-head"><span class="level-dot"></span>Introduction &mdash; Universal</div>
+        <ul>
+          <li>React to losing the ball with immediate urgency</li>
+          <li>Identify the ball carrier as the first priority</li>
+          <li>Recognize nearby teammates as defensive support</li>
+        </ul>
+      </div>
+      <div class="level-row dev">
+        <div class="level-row-head"><span class="level-dot"></span>Development &mdash; Universal</div>
+        <ul>
+          <li>Scan to recognize pressing triggers before the ball arrives at the target</li>
+          <li>Identify dangerous spaces: central channels, shooting lanes, space in behind</li>
+          <li>Recognize the moment pressure has been broken and shape must adjust</li>
+        </ul>
+      </div>
+      <div class="level-row app">
+        <div class="level-row-head"><span class="level-dot"></span>Application &mdash; By Function</div>
+        <div class="app-groups">
+          <div class="app-group">
+            <span class="app-group-tag">Strikers + Attacking Mids</span>
+            <p>Recognize the pressing trigger, a heavy touch, a backward pass, a pass into a closed body shape, and initiate the press instantly.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Wingers + Fullbacks/Wing Backs</span>
+            <p>Scan to see both the ball and the switch option before showing the opponent inside.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Attacking Mids + Defensive Mid</span>
+            <p>Recognize when the press has been beaten centrally and the passing lane must be screened immediately.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Center Backs + Defensive Mid</span>
+            <p>Read the line height relative to the ball and recognize when to step and when to hold.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COVERING -->
+  <div class="skill-area">
+    <div class="skill-area-title">Covering</div>
+    <div class="level-stack">
+      <div class="level-row intro">
+        <div class="level-row-head"><span class="level-dot"></span>Introduction &mdash; Universal</div>
+        <ul>
+          <li>Recognize the importance of helping a teammate who is pressing</li>
+          <li>Begin to understand basic cover position behind the ball</li>
+          <li>Stay connected to the nearest teammate rather than isolated</li>
+        </ul>
+      </div>
+      <div class="level-row dev">
+        <div class="level-row-head"><span class="level-dot"></span>Development &mdash; Universal</div>
+        <ul>
+          <li>Provide cover at the correct distance and angle for the specific press in front</li>
+          <li>Recognize when to slide across to cover a teammate who has stepped</li>
+          <li>Communicate cover position so the pressing teammate can commit fully</li>
+        </ul>
+      </div>
+      <div class="level-row app">
+        <div class="level-row-head"><span class="level-dot"></span>Application &mdash; By Function</div>
+        <div class="app-groups">
+          <div class="app-group">
+            <span class="app-group-tag">Strikers + Attacking Mids</span>
+            <p>The second Striker or AM covers the passing lane the first press has shown the opponent away from, closing the release before it happens.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Wingers + Fullbacks/Wing Backs</span>
+            <p>The Fullback/Wing Back covers in behind the Winger's press, ready for the ball played in behind or square.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Attacking Mids + Defensive Mid</span>
+            <p>The Defensive Mid covers centrally while the AM presses, staying connected enough to prevent the central lane opening.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Center Backs + Defensive Mid</span>
+            <p>The covering CB reads the stepping CB's press and adjusts the line so no gap opens in behind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHAPE & LINE MANAGEMENT -->
+  <div class="skill-area">
+    <div class="skill-area-title">Shape &amp; Line Management</div>
+    <div class="level-stack">
+      <div class="level-row intro">
+        <div class="level-row-head"><span class="level-dot"></span>Introduction &mdash; Universal</div>
+        <ul>
+          <li>Understand that the team defends as a connected group, not individuals</li>
+          <li>Begin to recognize when the team is too spread out</li>
+          <li>Recover into a basic defensive shape after losing the ball</li>
+        </ul>
+      </div>
+      <div class="level-row dev">
+        <div class="level-row-head"><span class="level-dot"></span>Development &mdash; Universal</div>
+        <ul>
+          <li>Maintain compactness vertically and horizontally as a unit</li>
+          <li>Shift as a group toward the ball rather than defending in isolation</li>
+          <li>Recognize when the team shape has been broken and needs to reset</li>
+        </ul>
+      </div>
+      <div class="level-row app">
+        <div class="level-row-head"><span class="level-dot"></span>Application &mdash; By Function</div>
+        <div class="app-groups">
+          <div class="app-group">
+            <span class="app-group-tag">Strikers + Attacking Mids</span>
+            <p>Set the height of the press and manage the distance to the midfield line so the block doesn't get split.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Wingers + Fullbacks/Wing Backs</span>
+            <p>Maintain width discipline so the team stays compact centrally without conceding the flank entirely.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Attacking Mids + Defensive Mid</span>
+            <p>Manage the distance between the midfield and defensive lines, the space most likely to be exploited by combination play.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Center Backs + Defensive Mid</span>
+            <p>Control the height of the back line, manage the offside trigger, and stay connected to the Defensive Mid above.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEFENSIVE DECISION-MAKING -->
+  <div class="skill-area">
+    <div class="skill-area-title">Defensive Decision-Making</div>
+    <div class="level-stack">
+      <div class="level-row intro">
+        <div class="level-row-head"><span class="level-dot"></span>Introduction &mdash; Universal</div>
+        <ul>
+          <li>Understand the basic choice between pressing and delaying</li>
+          <li>Begin to recover goal-side when beaten</li>
+          <li>Recognize the importance of helping teammates defend rather than defending alone</li>
+        </ul>
+      </div>
+      <div class="level-row dev">
+        <div class="level-row-head"><span class="level-dot"></span>Development &mdash; Universal</div>
+        <ul>
+          <li>Decide when to step, delay, or recover based on the picture in front</li>
+          <li>Shift as a unit toward the ball rather than making an individual decision</li>
+          <li>Deny penetration and force play into less dangerous areas</li>
+        </ul>
+      </div>
+      <div class="level-row app">
+        <div class="level-row-head"><span class="level-dot"></span>Application &mdash; By Function</div>
+        <div class="app-groups">
+          <div class="app-group">
+            <span class="app-group-tag">Strikers + Attacking Mids</span>
+            <p>Decide whether to press the ball or screen the pass based on whether the press can arrive before the ball is released.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Wingers + Fullbacks/Wing Backs</span>
+            <p>Decide whether to show inside or outside based on team shape and where cover is positioned.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Attacking Mids + Defensive Mid</span>
+            <p>Decide whether to jump the passing lane or hold position based on the risk of being played through.</p>
+          </div>
+          <div class="app-group">
+            <span class="app-group-tag">Center Backs + Defensive Mid</span>
+            <p>Decide whether to step and engage or hold the line, understanding that stepping wrong breaks the entire defensive structure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="footer-left">Coach Justin Whitaker &nbsp;&middot;&nbsp; Coach Craft</div>
+  <div class="footer-right">coachjustinwhitaker.github.io/coach-craft</div>
+</footer>
+
+</body>
+</html>

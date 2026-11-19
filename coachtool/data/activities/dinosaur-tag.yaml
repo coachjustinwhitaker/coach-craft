@@ -1,0 +1,47 @@
+id: dinosaur-tag
+order: 22
+name: Dinosaur Tag
+block: B1
+type: ball-mastery
+objective: Pairs dribble around a cone triangle, one chasing and one escaping. Quick changes of direction
+  with the ball close.
+skills:
+- Dribbling
+- Controlling
+ages:
+- u6
+- u8
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 2
+  max: 16
+space: quarter
+minutes: 20
+setup: No outer boundary needed. Each pair sets up a triangle of three cones, with sides about 5 yards
+  long. One player is the dinosaur, one is the park ranger. Both dribble around their triangle. The dinosaur
+  tries to tag the park ranger. The park ranger can go any direction around the triangle but cannot leave
+  the ball. Switch roles after every tag or after one minute. Hissing by the dinosaur is strongly encouraged.
+coach:
+- cue: Players learning to change direction quickly while keeping the ball close. Some players will struggle
+    with the turns, and that is fine. Encourage small touches with both inside and outside of the foot.
+    The competition drives the skill.
+  ask: What did you do with the ball when you needed to change direction quickly?
+pairs_with:
+- duck-tails
+- shadow-dribbling
+equipment: 1 ball per pair · 3 cones per pair to form a triangle
+for_age:
+  u6:
+    setup: Each pair sets up a triangle of three cones with sides about 5 yards long. One player is the
+      dinosaur, one is the park ranger. Both dribble around their triangle. The dinosaur tries to tag
+      the park ranger. The park ranger can go any direction around the triangle but cannot leave the ball
+      behind. Switch roles after every tag or after one minute. Hissing by the dinosaur is strongly encouraged.
+    coach:
+    - cue: Some players will struggle to turn the ball around the triangle corners. That is fine. The
+        skill develops with time on the ball. Focus on the competition and the fun, not the technique.
+        The pairs format means everyone is active simultaneously and no one is waiting. Watch for players
+        using both feet.
+      ask: What did you do when the dinosaur was catching up to you?

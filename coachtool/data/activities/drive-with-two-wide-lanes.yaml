@@ -1,0 +1,47 @@
+id: drive-with-two-wide-lanes
+order: 68
+name: Drive With Two Wide Lanes
+block: B1
+skills:
+- Driving
+- Scanning
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- app
+players:
+  min: 10
+  max: 10
+space: half
+minutes: 18
+pairs_with: []
+equipment: Balls · Cones · 2 goals · Pinnies in 2 colors plus a neutral color
+setup:
+- 'The biggest grid: a 4v4 central game with two goals and two wide lane channels. Lane length equals
+  game length.'
+- One neutral player in each lane, in a neutral pinnie. They play for whoever passes them the ball and
+  are unopposed only inside the lane.
+- Lane players rotate with the central game every 2 minutes.
+rules:
+- In the lane the player must drive and play the ball back in on the move.
+- A stop or a set-up cross is a foul and the ball goes to the other team.
+- As soon as the ball is back in the game, defenders can win it.
+scoring:
+- 'Goal: 1 point.'
+- 'Goal off a lane service: 2 points.'
+coach:
+- cue: Head up while you drive.
+  ask: What did you see while you were driving?
+- cue: Decide where it goes.
+  ask: Where did you play it, and why?
+- cue: Drive and deliver in one movement. No stopping to set up the cross.
+  ask: What stopped you, or what kept you moving?
+diagram: drive-with-two-wide-lanes.jpg
+type: small-sided
+objective: Drive the ball at speed with the head up and decide where it goes. Nobody stops and nobody
+  sets up a cross.
+diagram_caption: A central 4v4 game between two goals, with a lane on each side. A neutral player in each
+  lane drives the ball and plays it back in.

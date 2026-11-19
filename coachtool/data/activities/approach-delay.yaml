@@ -1,0 +1,34 @@
+id: approach-delay
+order: 13
+name: Approach & Delay
+block: B3
+type: small-sided
+objective: 1v1 defending. Close the ball down fast, then slow down as you arrive so the attacker cannot
+  get by.
+skills:
+- Pressing
+- Delaying
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 2
+  max: 12
+space: quarter
+minutes: 15
+setup: 'Rectangular grid about 10 by 15 yards. An attacker with the ball starts at one end line, a defender
+  starts 5 yards away. The attacker scores by dribbling over the far end line. The defender wins by taking
+  the ball or knocking it out. Rotate after every turn. Teach one picture: run at the ball quickly, then
+  slow down as you arrive, with the body turned a little to the side.'
+coach:
+- cue: 'Fast approach, slow arrival. A defender who lunges and gets dribbled past has learned something
+    too. Name the player who slows down and stays on their feet, even if the attacker gets by. Delaying
+    is a win at this age. Progress: add a second defender who starts behind the first and calls “cover.”'
+  ask: When you got close to the dribbler, what did you do with your feet and your speed?
+pairs_with:
+- flying-numbers
+- shrinking-field
+equipment: 1 ball per group · Disc cones for the grid · Pinnies

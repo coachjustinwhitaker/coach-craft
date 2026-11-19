@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U10 Coach Companion — {{brand.short_name}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#384959;--navy-dark:#2A3744;--gold:#6A89A7;--gold-warm:#88BDF2;--white:#FFFFFF;--gray-light:#F5F6FA;--gray-mid:#888888;--gray-dark:#333333;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Inter",Arial,sans-serif;background:var(--gray-light);color:var(--gray-dark);font-size:13px;line-height:1.6;}
+  .header{background:var(--navy);color:white;border-bottom:4px solid var(--gold);display:flex;align-items:stretch;}
+  .header-logo{background:var(--navy-dark);padding:16px 20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .header-logo img{height:90px;width:auto;}
+  .header-content{padding:22px 28px 18px;flex:1;}
+  .club-label{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+  .header h1{font-family:"Inter",Arial,sans-serif;font-size:22px;font-weight:800;color:white;line-height:1.2;}
+  .header h1 .blocks{font-size:13px;font-weight:600;color:var(--gold);display:block;margin-top:5px;}
+  .header-meta{font-size:12px;color:rgba(255,255,255,0.6);margin-top:6px;}
+  .header-duration{background:rgba(106,137,167,0.2);border:1px solid rgba(106,137,167,0.5);border-radius:5px;padding:8px 14px;margin-top:10px;display:inline-block;}
+  .header-duration strong{font-family:"Inter",Arial,sans-serif;font-size:11px;color:var(--gold);}
+  .header-duration span{font-size:12px;color:rgba(255,255,255,0.75);margin-left:6px;}
+  .philosophy{background:var(--navy-dark);border-bottom:3px solid var(--gold);padding:18px 32px 20px;}
+  .philosophy p{font-size:13.5px;color:rgba(255,255,255,0.9);line-height:1.65;max-width:860px;}
+  .philosophy p em{color:var(--gold-warm);font-style:normal;font-weight:600;}
+  .section{background:white;padding:22px 32px 24px;border-bottom:1px solid #e2e6ef;}
+  .section.tinted{background:var(--gray-light);}
+  .section.navy{background:var(--navy);}
+  .section.gold-tint{background:#F2F7FC;border-bottom:2px solid var(--gold-warm);}
+  .eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .eyebrow.navy{color:var(--navy);}
+  .section-heading{font-family:"Inter",Arial,sans-serif;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+  .section-heading.white{color:white;}
+  .four-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px;}
+  .six-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:12px;}
+  .info-card{background:var(--gray-light);border-top:3px solid var(--navy);border-radius:0 0 5px 5px;padding:13px 14px;}
+  .info-card h4{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;}
+  .info-card p{font-size:12px;color:var(--gray-dark);line-height:1.55;}
+  .success-item{border-left:3px solid var(--gold);padding:8px 12px;background:rgba(255,255,255,0.07);}
+  .success-item strong{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:white;display:block;margin-bottom:3px;text-transform:uppercase;}
+  .success-item p{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.5;}
+  .pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+  .pill{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;padding:5px 13px;border-radius:20px;}
+  .pill.tech{background:var(--navy);color:white;}
+  .pill.perc{background:var(--gold);color:white;}
+  .pills-note{font-size:12px;color:var(--gray-mid);margin-top:10px;line-height:1.5;}
+  .arrive-box{background:#F2F7FC;border-left:4px solid var(--gold);padding:14px 16px;border-radius:0 5px 5px 0;font-size:12.5px;line-height:1.6;margin-top:14px;}
+  .sideline-box{background:var(--navy-dark);border-left:4px solid var(--gold);border-radius:0 5px 5px 0;padding:14px 16px;margin-top:16px;}
+  .sideline-box p{font-size:12.5px;color:rgba(255,255,255,0.85);line-height:1.6;}
+  .sideline-box .script{font-style:italic;color:var(--gold-warm);font-weight:600;margin-top:6px;display:block;font-size:13px;}
+  .equip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:14px;}
+  .equip-item{background:white;border-radius:5px;padding:11px 12px;border-left:3px solid var(--gold);}
+  .equip-item strong{font-family:"Inter",Arial,sans-serif;font-size:11.5px;font-weight:700;color:var(--navy);display:block;margin-bottom:3px;}
+  .equip-item span{font-size:11px;color:var(--gray-mid);line-height:1.4;}
+  .structure-strip{background:var(--navy-dark);padding:13px 32px;display:flex;align-items:center;flex-wrap:wrap;gap:5px;}
+  .s-block{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:6px 16px;border-radius:4px;}
+  .s-play{background:var(--gold);color:white;}
+  .s-practice{background:white;color:var(--navy);}
+  .s-time{font-size:11px;color:rgba(255,255,255,0.5);margin:0 5px;}
+  .s-arrow{color:var(--gold);font-size:16px;margin:0 4px;}
+  .pairing-note{font-size:11px;color:rgba(255,255,255,0.5);margin-left:auto;font-style:italic;}
+  .rotation-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:12px;}
+  .rotation-table thead tr{background:var(--navy);}
+  .rotation-table thead th{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.75);padding:9px 12px;text-align:left;}
+  .rotation-table tbody tr.week-a{background:white;border-bottom:none;}
+  .rotation-table tbody tr.week-b{background:#F8F9FC;border-bottom:2px solid #e0e5f0;}
+  .rotation-table tbody tr:last-child{background:#F2F7FC;}
+  .rotation-table tbody td{padding:8px 12px;vertical-align:top;}
+  .rotation-table .week-num{font-family:"Inter",Arial,sans-serif;font-weight:700;color:var(--navy);font-size:12px;}
+  .rotation-table .prac-label{vertical-align:top;font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:2px 7px;border-radius:3px;display:inline-block;margin-bottom:3px;}
+  .prac-a{background:var(--navy);color:white;}
+  .prac-b{background:rgba(56,73,89,0.15);color:var(--navy);}
+  .rotation-table .pair-tag{font-size:10px;color:var(--gray-mid);font-style:italic;margin-top:3px;display:block;}
+  .play-section{background:white;padding:22px 32px 24px;border-bottom:4px solid var(--gold);}
+  .phase-header{display:flex;align-items:center;gap:13px;margin-bottom:16px;}
+  .phase-pill{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 11px;border-radius:3px;}
+  .phase-pill.play{background:var(--gold);color:white;}
+  .phase-pill.practice{background:var(--navy);color:white;}
+  .phase-title{font-family:"Inter",Arial,sans-serif;font-size:18px;font-weight:800;color:var(--navy);}
+  .phase-sub{font-size:12px;color:var(--gray-mid);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr;}}
+  .info-box{border-radius:4px;padding:13px 15px;font-size:12.5px;line-height:1.6;}
+  .info-box.navy-left{background:var(--gray-light);border-left:3px solid var(--navy);}
+  .info-box.gold-left{background:#F2F7FC;border-left:3px solid var(--gold);}
+  .info-box h4{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;color:var(--navy);}
+  .info-box.gold-left h4{color:#2A3744;}
+  .question-box{background:var(--gray-light);border-left:4px solid var(--gold);padding:12px 15px;margin-top:14px;border-radius:0 4px 4px 0;}
+  .q-label{font-family:"Inter",Arial,sans-serif;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);display:block;margin-bottom:5px;}
+  .q-text{font-size:13px;font-style:italic;color:var(--navy);font-weight:600;}
+  .e-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:13px;}
+  .e-tag{font-size:11px;color:#2A3744;background:#F2F7FC;border:1px solid var(--gold-warm);border-radius:10px;padding:3px 9px;font-weight:600;}
+  .practice-section{background:var(--gray-light);padding:22px 32px 28px;border-bottom:4px solid var(--navy);}
+  .practice-intro{font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-top:6px;margin-bottom:20px;max-width:740px;}
+  .pairing-rule{background:var(--navy-dark);border-left:4px solid var(--gold);padding:12px 16px;border-radius:0 4px 4px 0;margin-bottom:22px;font-size:12px;color:rgba(255,255,255,0.85);line-height:1.6;}
+  .pairing-rule strong{color:var(--gold);font-family:"Inter",Arial,sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;}
+  .skill-group-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;margin-top:22px;margin-bottom:14px;border-radius:4px;background:var(--navy-dark);}
+  .skill-group-bar.defending{background:#2A3744;}
+  .skill-group-bar.game{background:#2D1B69;}
+  .skill-group-bar.integration{background:#444;}
+  .skill-group-bar:first-of-type{margin-top:0;}
+  .skill-group-label{font-size:11px;color:rgba(255,255,255,0.85);font-style:italic;}
+  .activity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:13px;}
+  .act-card{background:white;border-radius:6px;overflow:hidden;box-shadow:0 1px 5px rgba(56,73,89,0.08);}
+  .act-header{background:var(--navy);padding:10px 15px;}
+  .act-num{font-family:"Inter",Arial,sans-serif;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+  .act-name{font-family:"Inter",Arial,sans-serif;font-size:14px;font-weight:800;color:white;}
+  .act-focus{font-size:10px;color:var(--gold-warm);margin-top:2px;}
+  .act-body{padding:13px 15px 15px;}
+  .a-label{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray-mid);margin-bottom:4px;margin-top:12px;}
+  .a-label:first-of-type{margin-top:0;}
+  .a-text{font-size:12.5px;color:var(--gray-dark);line-height:1.55;}
+  .a-question{background:var(--gray-light);border-left:3px solid var(--gold);padding:8px 11px;margin-top:11px;border-radius:0 3px 3px 0;font-size:12px;font-style:italic;color:var(--navy);font-weight:600;line-height:1.45;}
+  .pairs-tag{font-size:10px;font-style:italic;color:var(--gold);font-family:"Inter",Arial,sans-serif;font-weight:700;margin-top:8px;display:block;}
+  .cues-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:14px;}
+  .cue-card{background:var(--gray-light);border-top:3px solid var(--gold);border-radius:0 0 5px 5px;padding:11px 13px;}
+  .cue-card strong{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:var(--navy);display:block;text-transform:uppercase;margin-bottom:4px;}
+  .cue-card p{font-size:12px;color:var(--gray-dark);line-height:1.5;font-style:italic;}
+  .block-band{background:var(--navy);padding:18px 32px 22px;border-bottom:2px solid rgba(106,137,167,0.3);}
+  .block-band-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:rgba(255,255,255,0.15);margin-top:14px;border-radius:4px;overflow:hidden;}
+  .block-cell{background:var(--navy);padding:14px 16px;}
+  .block-cell-name{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px;}
+  .block-cell-status{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;color:var(--gold-warm);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;}
+  .block-cell-desc{font-size:11.5px;color:rgba(255,255,255,0.7);line-height:1.5;}
+  .profile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px;}
+  .profile-card{border-radius:5px;padding:14px 16px;}
+  .profile-card.primary{background:var(--navy);}
+  .profile-card.secondary{background:var(--gray-light);border:1px solid #d4d9e5;}
+  .profile-card.comp{background:#F2F7FC;border-left:4px solid var(--gold);border-radius:0 5px 5px 0;}
+  .profile-card h4{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px;}
+  .profile-card.primary h4{color:var(--gold);}
+  .profile-card.secondary h4{color:var(--navy);}
+  .profile-card.comp h4{color:#2A3744;}
+  .profile-item{font-size:12.5px;line-height:1.5;padding:4px 0 4px 14px;position:relative;}
+  .profile-card.primary .profile-item{color:rgba(255,255,255,0.85);}
+  .profile-card.secondary .profile-item{color:var(--gray-dark);}
+  .profile-card.comp .profile-item{color:#555;}
+  .profile-item::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .profile-card.secondary .profile-item::before{background:var(--navy);}
+  .credit-section{background:white;padding:16px 32px;border-top:1px solid #e2e6ef;}
+  .credit-text{font-size:12px;color:var(--gray-mid);line-height:1.6;}
+  .credit-text a{color:var(--navy);font-weight:600;}
+  .footer{background:var(--navy-dark);padding:13px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:3px solid var(--gold);}
+  .footer-left{font-family:"Inter",Arial,sans-serif;font-size:11px;font-weight:700;color:var(--gold);}
+  .footer-right{font-size:11px;color:rgba(255,255,255,0.4);}
+  .gk-note{background:#F2F7FC;border-left:4px solid var(--gold);padding:12px 16px;margin-top:14px;border-radius:0 4px 4px 0;font-size:12.5px;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-logo"><img src="{{brand.logo_src}}" alt="{{brand.short_name}}"></div>
+  <div class="header-content">
+    <div class="club-label">{{brand.club_label}}</div>
+    <h1>U10 Coach Companion
+      <span class="blocks">Me &amp; the Ball &nbsp;&middot;&nbsp; Me &amp; My Teammates &nbsp;&middot;&nbsp; Me &amp; My Team Defending</span>
+    </h1>
+    <div class="header-meta">Foundation Phase II &nbsp;&middot;&nbsp; 7v7 Format &nbsp;&middot;&nbsp; 2 Practices Per Week &nbsp;&middot;&nbsp; Recreational</div>
+    <div class="header-duration">
+      <strong>Session Length:</strong><span>70&ndash;75 minutes total &nbsp;&middot;&nbsp; Arrive 15 minutes early</span>
+    </div>
+  </div>
+</div>
+
+<div class="philosophy">
+  <p>The game gets bigger this year. The field is wider, there are more players, and the problems are more complex. <em>The good news is your players are ready for it.</em> They are starting to discover what every great player knows: figuring it out with a teammate is more satisfying than figuring it out alone.</p>
+</div>
+
+<div class="section tinted">
+  <div class="eyebrow navy">US Soccer Alignment</div>
+  <div class="section-heading">Foundation Phase II &nbsp;&middot;&nbsp; 7v7 Format</div>
+  <p style="font-size:12.5px;margin-top:8px;max-width:780px;">Every activity in this guide reflects what US Soccer recommends for this age group. The 7v7 format gives players enough space and enough teammates to start experiencing those moments in a real game.</p>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Who Is In Front of You</div>
+  <div class="section-heading">Understanding Your U10 Players</div>
+  <div class="four-grid">
+    <div class="info-card"><h4>How They Have Grown</h4><p>They have more sustained attention and can begin to understand that their actions affect teammates. They are ready to solve problems together, not just individually.</p></div>
+    <div class="info-card"><h4>What Motivates Them</h4><p>Scoring, competing, and belonging. The social side of the game intensifies at this age. They care about their teammates. Celebrate assists as loudly as goals.</p></div>
+    <div class="info-card"><h4>The Big Shift</h4><p>Passing is no longer just an option. It is becoming a tool. Players are beginning to understand that combining with a teammate can beat a defender. That insight is what this year is built around.</p></div>
+    <div class="info-card"><h4>What They Are Ready For</h4><p>2v1 situations, moving after passing, body shape to receive, and basic combination play. Set plays and formations come later. Right now, the game itself is the best teacher.</p></div>
+  </div>
+</div>
+
+<div class="section navy">
+  <div class="eyebrow white">What a Great U10 Session Looks Like</div>
+  <div class="six-grid">
+    <div class="success-item"><strong>Players move after passing</strong><p>The give-and-go instinct is forming. Any session where players pass and then stand still is a session where that habit is not developing.</p></div>
+    <div class="success-item"><strong>Body shape opens to the field</strong><p>Players receiving with their hips at 45&ndash;90 degrees toward goal. Name it when you see it. This is a skill that takes years to become automatic.</p></div>
+    <div class="success-item"><strong>2v1 situations recognized</strong><p>Players starting to sense when they have a teammate free. They don&rsquo;t always use it yet. The recognition is the first step.</p></div>
+    <div class="success-item"><strong>Players talking to each other</strong><p>Even one player calling for the ball is a win. Communication is a skill and it starts with the simplest signal.</p></div>
+    <div class="success-item"><strong>High energy across both practices</strong><p>Two practices a week means twice the opportunity to build habits. Keep both sessions varied and active. The second practice builds on the first.</p></div>
+    <div class="success-item"><strong>Coach with intention</strong><p>Pick one thing to look for before the session starts. Watch for it. When it happens, ask one good question. That is more effective than a dozen instructions from the sideline.</p></div>
+  </div>
+</div>
+
+<div class="section tinted">
+  <div class="eyebrow navy">Teaching Points for This Age Group</div>
+  <div class="section-heading">What You Are Developing</div>
+  <div class="pills">
+    {{PILLS}}
+  </div>
+  <p class="pills-note">{{PILLS_NOTE}}</p>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Before You Arrive</div>
+  <div class="section-heading">What Prepared Looks Like</div>
+  <div class="arrive-box">The best sessions start before the first player arrives. Mark the fields, set up the goals, and know your two activities before anyone shows up. Practice A introduces the concept for the week. Practice B deepens it. Know which one you are running before you get there.</div>
+  <div class="sideline-box">
+    <div class="eyebrow">The Parents on the Sideline</div>
+    <p>Before the session starts, take 30 seconds to walk over and say something like:</p>
+    <span class="script">&ldquo;Today we are working on passing and moving: making a pass and then finding space to get it back. The most helpful thing you can do is cheer when they pass to a teammate, especially if they then keep running.&rdquo;</span>
+    <p style="margin-top:8px;">Most parents want to know what is happening and how to help. Give them a role and they will take it.</p>
+  </div>
+</div>
+
+<div class="section gold-tint">
+  <div class="eyebrow">Equipment Required</div>
+  <div class="section-heading">What the Club Needs to Provide</div>
+  <div class="equip-grid">
+    <div class="equip-item"><strong>Balls &mdash; 1 per player (Size 4)</strong><span>Still the most critical resource. 12 players means 12 balls.</span></div>
+    <div class="equip-item"><strong>Disc Cones &mdash; 50+ per team</strong><span>More than U8 because the 7v7 field and practice grids are larger.</span></div>
+    <div class="equip-item"><strong>Small Goals &mdash; 4 per team minimum</strong><span>Larger than U8 goals where possible. Cone goals work as fallback.</span></div>
+    <div class="equip-item"><strong>Pinnies &mdash; Full squad, 2 colors</strong><span>With 7v7 games, clear team identity matters more.</span></div>
+    <div class="equip-item"><strong>Tall Cones &mdash; 10+ per team</strong><span>For gates, triangles, and goal markers.</span></div>
+    <div class="equip-item"><strong>Timer</strong><span>Timed rounds matter more at U10. Competition drives intensity.</span></div>
+  </div>
+</div>
+
+<div class="structure-strip">
+  <span class="s-block s-play">Opening Play</span><span class="s-time">12 min</span>
+  <span class="s-arrow">&#8594;</span>
+  <span class="s-block s-practice">Activity A</span><span class="s-time">15 min</span>
+  <span class="s-arrow">&#8594;</span>
+  <span class="s-block s-practice">Activity B</span><span class="s-time">15 min</span>
+  <span class="s-arrow">&#8594;</span>
+  <span class="s-block s-play">Closing Play</span><span class="s-time">22 min</span>
+  <span class="pairing-note">A = anchor activity (familiar or physical) &nbsp;&middot;&nbsp; B = focus activity (introduces or deepens the concept)</span>
+</div>
+
+
+
+<div class="play-section">
+  <div class="phase-header">
+    <span class="phase-pill play">Opening Play</span>
+    <div><div class="phase-title">4v4 or 5v5 &mdash; Free Small-Sided Game</div>
+    <div class="phase-sub">Same setup every session, all season. Players should know this game before they arrive.</div></div>
+  </div>
+  <div class="two-col">
+    <div class="info-box navy-left"><h4>The Setup</h4>Run one or two small fields simultaneously: 3v3 or 4v4. Small fields mean more touches and nowhere to hide. Mini goals or cone goals at each end. No goalkeeper, no offside. Ball out: kick-in or dribble-in from the sideline. Quick restarts after every goal. Same format every session so players arrive already knowing the game.</div>
+    <div class="info-box gold-left"><h4>Your Job</h4>Come in with your Activity A already chosen based on what you want to work on this week. The opening game confirms your read and shows you how ready the group is. On Practice B days, watch specifically for whether anything from Practice A earlier in the week shows up without being asked for.</div>
+  </div>
+  <div class="question-box">
+    <span class="q-label">One Question &mdash; Ask it after the opening game</span>
+    <span class="q-text">&ldquo;When you received the ball, where was your first touch? Did it help you go forward or did it take you sideways?&rdquo;</span>
+  </div>
+  <div class="e-tags"><span class="e-tag">&#9917; 1 ball per team</span><span class="e-tag">&#127944; 2 small goals</span><span class="e-tag">&#128992; Disc cones</span><span class="e-tag">&#128993; Pinnies &mdash; 2 colors</span></div>
+</div>
+
+<div class="practice-section">
+  <div class="phase-header">
+    <span class="phase-pill practice">Practice</span>
+    <div><div class="phase-title">Activity Toolkit &mdash; Pick Two Per Session</div></div>
+  </div>
+  <p class="practice-intro">Run Activity A for 15 minutes, then give players a brief water break or transition before Activity B. That reset gives them a chance to catch their breath and gives you a moment to set up the next game. Activity A is the anchor: familiar, physical, high-repetition. Activity B is where the concept for the week lives.</p>
+  <div class="pairing-rule">
+    <strong>The Pairing Rule</strong>
+    Try to avoid pairing two new activities in the same session. Changing grids gives players a mental break, so mixing up the physical setup between Activity A and B helps too. The best pairs: one that gets hearts pumping, one that requires them to think.
+  </div>
+
+{{ACTIVITIES}}</div>
+
+<div class="section">
+  <div class="eyebrow navy">Season Plan</div>
+  <div class="section-heading">Sample Rotation &nbsp;&middot;&nbsp; Two Practices Per Week</div>
+  <p style="font-size:12.5px;margin-top:6px;margin-bottom:14px;max-width:780px;">Each week has two sessions. Activity A anchors the session with something physical and largely familiar. Activity B introduces or deepens the concept for that week. The first two weeks focus on &ldquo;Me &amp; the Ball&rdquo; under pressure in the new 7v7 environment. Weeks three through five shift the focus to &ldquo;Me &amp; My Teammates.&rdquo; Weeks six and seven add &ldquo;Me &amp; My Team Defending.&rdquo; Week eight is yours.</p>
+  <table class="rotation-table">
+    <thead><tr>
+      <th style="width:6%">Week</th>
+      <th style="width:18%">Focus</th>
+      <th style="width:35%">Activity A &mdash; Anchor</th>
+      <th>Activity B &mdash; Concept Focus</th>
+    </tr></thead>
+    <tbody>{{ROTATION}}</tbody>
+  </table>
+</div>
+
+<div class="play-section" style="border-color:var(--navy);">
+  <div class="phase-header">
+    <span class="phase-pill practice" style="background:var(--navy-dark);">Closing Play</span>
+    <div><div class="phase-title">5v5 or 7v7 — Back to the Game</div>
+    <div class="phase-sub">Bigger than the opening game. Game-realistic. 22 minutes. No stoppages.</div></div>
+  </div>
+  <div class="two-col">
+    <div class="info-box navy-left"><h4>The Setup</h4>5v5 or full 7v7 if numbers allow. Proper goals or large cone goals. No offside to start. As players grow through the season and games start to look more organized, you can introduce offside in simple terms. For now, let them play freely and focus on putting their new skills to work. Quick restarts after every goal.</div>
+    <div class="info-box navy-left"><h4>What to Notice</h4>Did anything from Activity A or B show up? A player who opened their body to receive. A pass-and-move that created a goal. A 2v1 recognized and used. You do not need to name it. Noticing it is evidence the session worked. On Practice B days, check whether anything carried over from Practice A earlier in the week?</div>
+  </div>
+  <div class="question-box" style="border-color:var(--navy);">
+    <span class="q-label" style="color:var(--navy);">Closing Question</span>
+    <span class="q-text">&ldquo;What is one moment today where a pass to a teammate made something happen that you couldn&rsquo;t have done alone?&rdquo;</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="eyebrow navy">Coaching Cues</div>
+  <div class="section-heading">What to Watch For and How to Respond</div>
+  <div class="cues-grid">
+    <div class="cue-card"><strong>Player moves after passing</strong><p>&ldquo;Yes, that is exactly it. Now your teammate has an option they didn&rsquo;t have before you moved.&rdquo;</p></div>
+    <div class="cue-card"><strong>Player opens hips when receiving</strong><p>&ldquo;Did you see that? They already knew where they were going before the ball arrived. That is body shape.&rdquo;</p></div>
+    <div class="cue-card"><strong>Player finds teammate in 2v1</strong><p>Celebrate it clearly: &ldquo;That is combination play. Two players just solved a problem that one couldn&rsquo;t.&rdquo;</p></div>
+    <div class="cue-card"><strong>Players bunching around the ball</strong><p>Ask: &ldquo;Where is the space on this field right now? Who could go find it?&rdquo;</p></div>
+    <div class="cue-card"><strong>Activity A finishes flat</strong><p>That is the cue to shorten Activity B or swap it for something more physical. Two activities only works if the first one actually runs well.</p></div>
+    <div class="cue-card"><strong>Concept from Practice A shows up in Practice B</strong><p>Name it explicitly: &ldquo;You did that earlier this week. Your body remembered.&rdquo; That connection is exactly what two practices per week is for.</p></div>
+  </div>
+</div>
+
+<div class="section tinted">
+  <div class="eyebrow navy">Player Development</div>
+  <div class="section-heading">Where Your Players Will Be</div>
+  <p style="font-size:12.5px; color:var(--gray-dark); margin-top:6px; margin-bottom:14px; max-width:780px;">These are the skills we hope to see developing by the end of the season. All players develop at different rates and not every player will show all of these. That is completely normal.</p>
+  <div class="profile-grid">
+    <div class="profile-card primary">
+      <h4>Moving on to {{NEXT_AGE}}</h4>
+{{GOALS}}    </div>
+    <div class="profile-card comp">
+      <h4>A Player Ready for More</h4>
+      <div class="profile-item">Some players will show real passion and ability this season</div>
+      <div class="profile-item">{{brand.pathway_line_1}}</div>
+      <div class="profile-item">{{brand.pathway_line_2}}</div>
+    </div>
+  </div>
+</div>
+
+<div class="section gold-tint">
+  <div class="eyebrow">Questions?</div>
+  <div class="section-heading">You Are Not Out There on Your Own</div>
+  <p style="font-size:12.5px; color:var(--gray-dark); margin-top:8px; max-width:780px;">Got a question about an activity? Not sure what to focus on for a particular group? Want to talk through what you are seeing at training? {{brand.support_line}} Reach out any time.</p>
+</div>
+
+<div class="credit-section">
+  <div class="eyebrow navy">Acknowledgements</div>
+  <div class="section-heading" style="font-size:15px;margin-bottom:12px;">About This Guide</div>
+  <p class="credit-text" style="margin-bottom:10px;">{{brand.credit_html}}</p>
+  <p class="credit-text">Several activities in this guide are adapted from the YouGotMojo youth soccer coaching library. Find their full video library at <a href="https://www.youtube.com/@YouGotMojo" target="_blank">youtube.com/@YouGotMojo</a>.</p>
+</div>
+
+<div class="footer">
+  <div class="footer-left">{{brand.short_name}} &nbsp;&middot;&nbsp; U10 Coach Companion &nbsp;&middot;&nbsp; Me &amp; the Ball + Me &amp; My Teammates + Me &amp; My Team Defending</div>
+  <div class="footer-right">Next: U12 &nbsp;&middot;&nbsp; + Me &amp; the Game &nbsp;&middot;&nbsp; 9v9</div>
+</div>
+
+</body></html>

@@ -1,0 +1,36 @@
+age: u14
+goals:
+- id: keeps-ball-full-field
+  text: Keeps the ball under pressure on the full field
+  blocks:
+  - B1
+- id: defends-as-eleven
+  text: Defends as part of an eleven-player team
+  blocks:
+  - B3
+- id: first-second
+  text: Reacts in the first second after the ball changes hands
+  blocks:
+  - B4
+- id: shoots-with-composure
+  text: Takes shots with composure and makes good final-third decisions
+  blocks:
+  - B5
+- id: times-runs
+  text: Times runs to arrive when the ball does
+  blocks:
+  - B2
+  - B5
+- id: communicates
+  text: Communicates with and coaches teammates on the field
+  blocks:
+  - B2
+  - B3
+- id: wants-to-play
+  text: Shows up wanting to play again
+  blocks:
+  - B1
+  - B2
+  - B3
+  - B4
+  - B5

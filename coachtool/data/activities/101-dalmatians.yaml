@@ -1,0 +1,49 @@
+id: 101-dalmatians
+order: 18
+name: 101 Dalmatians
+block: B1
+type: ball-mastery
+objective: Everyone dribbles through cone triangles to score. Close touches and heads up, all together
+  toward a team goal of 101.
+skills:
+- Dribbling
+- Scanning
+ages:
+- u6
+- u8
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 16
+space: quarter
+minutes: 20
+setup: Grid about 25 by 20 yards with small cone triangles scattered throughout, about one triangle per
+  player. Every player has a ball. Players score by dribbling through a triangle with the ball within
+  arm's reach of their body. Players count their own score out loud and shout it each time they hit a
+  triangle. The group goal is 101 combined. Your job is to roam the grid and knock balls away, going after
+  your stronger players first.
+coach:
+- cue: Players using small touches to keep the ball close when you approach. Heads up to spot both the
+    triangles and you coming. The counting keeps players invested in the team total.
+  ask: How did you keep the ball safe when I came near you?
+pairs_with:
+- red-light-green-light
+- knockout
+equipment: 1 ball per player · Disc cones for outer grid and inner triangles
+for_age:
+  u6:
+    setup: Grid about 25 by 20 yards with cone triangles scattered throughout, one per player. Every player
+      has a ball. Players score by dribbling through a triangle with the ball within arm's reach of their
+      body. Players count their own score out loud and shout it each time they score. Set a group target
+      before the game starts and count up together. Try 20 to start. If they get there quickly, raise
+      it next round. Your job is to roam the grid and knock balls away. Go after your strongest players
+      first.
+    coach:
+    - cue: Count up loudly with the group as the number climbs. The shared team goal creates genuine collective
+        excitement when they hit the target. Raise the number each round to keep it challenging. Encourage
+        small touches and heads up. Do not worry about perfect technique. Just getting the ball to the
+        triangles is a win at this age.
+      ask: How many did we get? Should we try for more next round?

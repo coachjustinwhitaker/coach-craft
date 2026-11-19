@@ -1,0 +1,152 @@
+id: u14-rec
+age: u14
+track: rec
+sessions_per_week: 2
+weeks:
+- week: 1
+  focus: Ball skills and combination play on the bigger field
+  opening:
+    activity: 3v3-everybody-plays
+    note: Everyone touches it before a goal
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: Anchor. Familiar, settles the group into the new format
+    b:
+      activity: barcelona
+      note: Pass counting. Patience before scoring
+  - a:
+      activity: flying-numbers
+      note: 'Call uneven numbers: 3v2, 4v3'
+    b:
+      activity: barcelona
+      note: Revisit. Can they beat last session's pass count?
+  block: B2
+  level: intro
+- week: 2
+  focus: Team defending with more players and more space
+  opening:
+    activity: 4v4-two-in-the-final-third
+    note: Defend with numbers up
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: Anchor
+    b:
+      activity: shrinking-field-defending
+      note: Compact shape as space disappears
+  - a:
+      activity: shrinking-field-defending
+      note: Revisit. Did defending get easier or harder? Why?
+    b:
+      activity: barcelona
+      note: Can the team that just defended now keep the ball against pressure?
+  block: B3
+  level: intro
+- week: 3
+  focus: Both transition moments revisited
+  opening:
+    activity: 4v4-win-it-and-go
+    note: Attack the moment you win it
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: Sprint on, sprint off. No walking
+    b:
+      activity: crisscross
+      note: Find a target the instant the ball is won
+  - a:
+      activity: crisscross
+      note: Revisit. How fast after winning the ball do they find a target?
+    b:
+      activity: shrinking-field-defending
+      note: Win it, then what? Defend, win, go
+  block: B4
+  level: intro
+- week: 4
+  focus: 'Finishing introduced: the decisive action in front of goal'
+  opening:
+    activity: 5v5-first-time-finish
+    note: Take the chance when it comes
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: Anchor. Add a bonus for the first shot after a turnover
+    b:
+      activity: duels-to-goal
+      note: 1v1 to a full-size goal. First decision, first touch, shoot
+  - a:
+      activity: duels-to-goal
+      note: Revisit. Reward the early shot and the composed finish
+    b:
+      activity: waves
+      note: 3v2 in waves. When to pass, when to shoot
+  block: B5
+  level: intro
+- week: 5
+  focus: 'Finishing deepens: numbers-up decisions and arriving in the box'
+  opening:
+    activity: 5v4-with-a-floater
+    note: Use the extra player
+  sessions:
+  - a:
+      activity: duels-to-goal
+      note: Warm up the finishing with quick duels
+    b:
+      activity: waves
+      note: Revisit. Celebrate the final pass
+  - a:
+      activity: waves
+      note: Revisit with a second defender recovering late
+    b:
+      activity: wide-service-finishing
+      note: Serve low and hard. Attack near and far post
+  block: B5
+  level: intro
+- week: 6
+  focus: 'Finishing in context: after transition and combination play'
+  opening:
+    activity: 5v5-first-time-finish
+    note: 'Revisit: finish in the flow of the game'
+  sessions:
+  - a:
+      activity: flying-numbers
+      note: Anchor. Finish at speed after sprints
+    b:
+      activity: wide-service-finishing
+      note: Revisit. Add a defender in the box
+  - a:
+      activity: wide-service-finishing
+      note: Revisit. Better timing than last session?
+    b:
+      activity: crisscross
+      note: Win the ball, find a target, finish
+  block: B5
+  level: intro
+- week: 7
+  focus: 'Integration: all five blocks in play together'
+  sessions:
+  - a:
+      activity: hotbox
+      note: All five blocks in one game. Observe, do not over-coach
+    b:
+      activity: waves
+      note: Final consolidation of finishing under numbers
+  - a:
+      activity: crisscross
+      note: Transition urgency
+    b:
+      activity: hotbox
+      note: Revisit. What is different from earlier today?
+  block: B5
+  level: intro
+  also_blocks:
+  - B1
+  - B2
+  - B3
+  - B4
+- week: 8
+  focus: Coach's choice both days
+  coach_choice: true
+  note: What does your group love most? What do they still need most? Run your two best sessions of the
+    season. Both are correct answers.

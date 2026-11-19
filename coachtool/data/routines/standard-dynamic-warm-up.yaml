@@ -1,0 +1,42 @@
+id: standard-dynamic-warm-up
+name: Standard Dynamic Warm-Up
+kind: dynamic-warm-up
+objective: Prepare the body for the session with a self-run sequence the players already know.
+ages:
+- u14
+tracks:
+- comp
+dosage: 10 reps of each move, no ball. Self-run by the whole squad, about 8 minutes.
+equipment: Cones to mark the working area. No ball.
+steps:
+- name: Light Jog
+  how: Easy jog across the working area and back.
+  cue: Easy pace, stay relaxed.
+- name: Arm Circles
+  how: Circle both arms, small to large, forward then backward.
+  cue: Full range, loose shoulders.
+- name: Arms Alternating
+  how: Swing the arms across the body in alternating directions.
+  cue: Loose and rhythmic.
+- name: Body Twists
+  how: Stand tall and rotate the upper body side to side.
+  cue: Hips stay square, shoulders turn.
+- name: Knees Up
+  how: Drive the knees up toward the waist while moving forward.
+  cue: Knees to the waist, quick feet.
+- name: Heel Touches
+  how: Move forward kicking the heels up toward the backside.
+  cue: Heels to the backside, stay tall.
+- name: Open the Gates
+  how: Lift one knee and rotate it out to the side, like opening a gate, while moving forward. Alternate legs.
+  cue: Knee up and out, hips open.
+- name: Close the Gates
+  how: Lift one knee out to the side and rotate it back in across the body, like closing a gate. Alternate
+    legs.
+  cue: Knee out and across, hips close.
+- name: Kick Out Sideways
+  how: Step and kick one leg out to the side, alternating legs.
+  cue: Stay balanced, controlled kick.
+- name: Kick Out Diagonally
+  how: Step and kick one leg out diagonally across the body, alternating legs.
+  cue: Stay balanced, controlled kick.

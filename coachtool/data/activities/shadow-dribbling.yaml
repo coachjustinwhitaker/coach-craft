@@ -1,0 +1,33 @@
+id: shadow-dribbling
+order: 24
+name: Shadow Dribbling
+block: B1
+type: ball-mastery
+objective: Pairs, one leads and one shadows every move, both with a ball. Heads up to follow, then switch
+  roles.
+skills:
+- Scanning
+- Dribbling
+ages:
+- u8
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 2
+  max: 16
+space: quarter
+minutes: 20
+setup: 'Grid about 25 by 20 yards. Players in pairs, each with their own ball. One player is the leader
+  who dribbles however they want: fast, slow, turning, zigzagging. Their partner is the shadow, following
+  close behind and mimicking every move. Switch roles every minute. If a leader tries something fancy,
+  encourage the shadow to try it too even if it is not an exact copy.'
+coach:
+- cue: The shadow must have their head up to follow the leader. Players who look at their own ball fall
+    behind. The game builds the reflex to look up naturally, without you ever asking for it.
+  ask: How did you stay close to your leader? What did you have to keep your eyes on?
+pairs_with:
+- gates-dribbling
+- dinosaur-tag
+equipment: 1 ball per player · Disc cones for grid

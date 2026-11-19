@@ -1,0 +1,47 @@
+id: straight-finishing
+order: 58
+name: Straight Finishing
+block: B5
+skills:
+- Shooting
+- Body Shape
+- Controlling
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 4
+  max: 8
+space: half
+minutes: 7
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper
+setup:
+- 'A full-size goal with a keeper and a coach. A central shooter and three servers: left, behind and right.'
+- 'Rotation: left server, behind server, right server, shooter, then the back of the line on the left.
+  Everyone takes the full three-shot turn after serving all three spots.'
+rules:
+- 'Shot 1: receive from the left server, set, shoot.'
+- 'Shot 2: turn to receive the ball played in from behind, touch, shoot.'
+- 'Shot 3: receive from the right server, set, shoot.'
+- After shooting, collect any stray balls.
+coach_note: 'This is where the technical frame is taught directly, not assumed: hips back, shoulders forward,
+  hips punch through, legs cross after the strike.'
+coach:
+- cue: Hips back and shoulders forward going into the strike. Plant foot alongside the ball, toe at the
+    target.
+  ask: What did your plant foot do?
+- cue: Strike through the equator of the ball. Punch through with the hips, not just the foot.
+  ask: Where did the power come from?
+- cue: Pick your spot before you look down, then head down and eyes on the ball through contact.
+  ask: Where did you decide to put it, and when?
+- cue: On the ball from behind, turn before the ball arrives.
+  ask: Did the turn happen before the ball arrived or after?
+diagram: straight-finishing.jpg
+type: pattern
+objective: Take three shots a turn from three service angles, with the strike technique taught directly.
+diagram_caption: A central shooter with servers on the left, behind and right. A keeper is in goal and
+  the coach has the balls.

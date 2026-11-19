@@ -1,0 +1,89 @@
+id: u8-rec
+age: u8
+track: rec
+sessions_per_week: 1
+weeks:
+- week: 1
+  focus: Driving the ball
+  opening:
+    activity: 4v4-open-space-drive
+    note: 'Open grass ahead: drive into it'
+  sessions:
+  - a:
+      activity: red-light-green-light
+      note: Players keeping the ball close at yellow; heads up at green
+  block: B1
+  level: intro
+- week: 2
+  focus: Dribbling under pressure
+  opening:
+    activity: 3v3-beat-your-player-bonus
+    note: Take on a defender, then score
+  sessions:
+  - a:
+      activity: 101-dalmatians
+      note: Players using small touches when you get close; players counting out loud
+  block: B1
+  level: intro
+- week: 3
+  focus: 'Scanning: looking up'
+  opening:
+    activity: 3v3-four-goals
+    note: Look up to find the open goal
+  sessions:
+  - a:
+      activity: gates-dribbling
+      note: Players who find more gates because their heads are up
+  block: B1
+  level: intro
+- week: 4
+  focus: Scanning in pairs
+  opening:
+    activity: 3v3-four-goals
+    note: 'Revisit: scan before the ball arrives'
+  sessions:
+  - a:
+      activity: shadow-dribbling
+      note: Shadows who stay close because they are watching the leader, not their own ball
+  block: B1
+  level: intro
+- week: 5
+  focus: Direction changes and protecting
+  opening:
+    activity: 3v3-protect-it-for-three
+    note: Win it and keep it for three seconds
+  sessions:
+  - a:
+      activity: dinosaur-tag
+      note: Players using both feet to turn. The competitive rounds in Duck Tails can also run here
+  block: B1
+  level: intro
+- week: 6
+  focus: Competing for the ball
+  opening:
+    activity: 3v3-protect-it-for-three
+    note: 'Revisit: now the defenders can challenge sooner'
+  sessions:
+  - a:
+      activity: knockout
+      note: Players shielding with their body; players keeping heads up to track threats
+  block: B1
+  level: intro
+- week: 7
+  focus: Shooting and attacking
+  opening:
+    activity: 3v3-beat-your-player-bonus
+    note: Take chances to score
+  sessions:
+  - a:
+      activity: shooting-gallery
+      note: Players looking up before shooting. Swap in 2v1 to Goal to look for any moment of combination
+        play
+  block: B1
+  level: intro
+  also_blocks:
+  - B2
+- week: 8
+  focus: Coach's choice
+  coach_choice: true
+  note: Use what your group loves most or needs most. Both are correct answers.

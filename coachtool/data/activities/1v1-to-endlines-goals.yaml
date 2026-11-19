@@ -1,0 +1,49 @@
+id: 1v1-to-endlines-goals
+order: 3
+name: 1v1 to Endlines & Goals
+block: B1
+type: small-sided
+objective: 1v1 duels where the attacker tries to dribble past the defender. At U10, decide between dribbling
+  and shooting.
+skills:
+- Dribbling
+- Pressing
+- Controlling
+ages:
+- u8
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 2
+  max: 14
+space: quarter
+minutes: 15
+setup: '1v1 to Endlines: small rectangle, score by dribbling ball over opponent’s end line within arm’s
+  distance. Pairs run simultaneously. Fast rotations. Keep multiple pairs active at once.'
+coach:
+- cue: 'At U10 the focus shifts: not just beating the defender, but the decision: dribble or shoot? When
+    is each the right answer? Players who look up to check for the goal before driving are already thinking
+    ahead. Works well as an anchor because every player is active simultaneously.'
+  ask: When you got past your opponent, what made you decide to shoot rather than keep dribbling?
+pairs_with:
+- gates-passing
+- 2v2-to-endlines-attacking
+equipment: 1 ball per pair · 4 cones per game · Pinnies · Small goals optional
+for_age:
+  u8:
+    setup: 'Pairs working in rectangles about 10 by 15 yards. 1v1 to Endlines: players score by dribbling
+      the ball over their opponent''s end line with the ball within arm''s reach of their body. No shooting,
+      so more touches and more decisions. Progress to 1v1 to Cone Goals: add a cone goal at each end and
+      players score by kicking through below knee height. Run all pairs simultaneously. Fast rotations
+      keep everyone active.'
+    coach:
+    - cue: Players trying to dribble past the defender rather than just kicking and chasing. Reward the
+        attempt regardless of outcome. If players are unevenly matched, play the ball directly to the
+        less skilled player to level the challenge.
+      ask: When you had the ball, did you try to go past your opponent or around them? What worked?
+progression:
+- title: Small goals
+  text: Add cone goals at each end. Score below knee height.

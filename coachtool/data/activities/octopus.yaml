@@ -1,0 +1,35 @@
+id: octopus
+order: 39
+name: Octopus
+block: D
+type: ball-mastery
+objective: Dribble across the ocean without being tagged by the octopus. Small touches to dodge, bigger
+  touches to escape.
+skills:
+- Dribbling
+- Driving
+ages:
+- u6
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 4
+  max: 14
+space: quarter
+minutes: 10
+setup: 'Mark a square grid and call it the ocean. Every player has a ball and dribbles freely anywhere
+  in the grid. You are the octopus, roaming the grid trying to tag players. If tagged, it is 10 toe taps
+  to get back in. Hold two pool noodles as tentacles if you have them. They make no practical difference
+  and players will absolutely love it. Unlike Sharks and Minnows, there is no crossing from side to side:
+  players move freely in all directions and must dodge you wherever they go.'
+coach:
+- cue: Look for players using small touches to dodge around you and bigger touches to escape when they
+    have space. Slow down for players who need more success, speed up for players who need more challenge.
+    The free-roaming format means every player is always active, which keeps energy high.
+  ask: When I came toward you, how did you decide which way to go?
+pairs_with:
+- sharks-and-minnows
+equipment: 1 ball per player · Disc cones for grid · 2 pool noodles as tentacles (optional but highly
+  recommended)

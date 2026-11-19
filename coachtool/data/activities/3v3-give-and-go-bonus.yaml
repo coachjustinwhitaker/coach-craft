@@ -1,0 +1,51 @@
+id: 3v3-give-and-go-bonus
+order: 108
+name: 3v3 Give and Go Bonus
+block: B2
+skills:
+- Combination Play
+- Passing
+- Supporting
+ages:
+- u8
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 3v3. Extra players wait on the sideline and rotate in after each goal.
+- Show the give and go once with two players before you start, then let them play.
+rules:
+- 'The challenge: pass it, run past the defender, get it back.'
+- A goal scored right after a give and go counts double. A give and go is a pass to a teammate and a return pass
+  to the first player after they run into new space.
+- Anyone can call the bonus. If it is not clear, the coach decides.
+- Kick in from the sideline to restart.
+scoring: A goal is 1 point. A goal after a give and go is 2. First team to 5.
+coach:
+- cue: Pass, then run past the defender.
+  ask: Where did you run after you passed it?
+- cue: Return the ball into space ahead of your teammate.
+  ask: Where did you want the ball to go?
+- cue: Pass, then go. Do not stand still.
+  ask: How did you get free to receive the ball back?
+type: opening-play
+objective: Pass and run into space to get it back. A goal after a give and go is worth double.
+progression:
+- title: Easier
+  text: Any two passes between the same two players count as a give and go.
+- title: Harder
+  text: The return pass has to be a first-time pass.

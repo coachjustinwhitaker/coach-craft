@@ -1,0 +1,41 @@
+age: u10
+rules:
+- label: Format
+  text: 7v7
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Ball
+  text: Size 4
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Field
+  text: 55 to 65 yards long, 35 to 45 yards wide
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Goals
+  text: Up to 6.5 feet high, 18.5 feet wide
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Game time
+  text: 2 halves of 25 minutes
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Goalkeeper
+  text: Goalkeeper
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Offside
+  text: Offside applies
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Heading
+  text: Not allowed in practice or games
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Build-out line
+  text: Used at 7v7. When the goalkeeper has the ball in hand or takes a goal kick, opponents stay behind
+    the line until the ball is in play. No offside between the halfway line and the build-out line. Your
+    league sets where the line goes.
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Substitutions
+  text: Unlimited, at any stoppage
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Rosters
+  text: Up to 12 players. A team needs at least 5 to start or continue.
+  source: US Soccer Player Development Initiatives, small-sided games chart
+- label: Head injuries
+  text: If a head injury is suspected, play stops for evaluation. The player may be substituted. Return
+    requires clearance from a health care professional or certified athletic trainer.
+  source: US Soccer Player Development Initiatives, small-sided games chart

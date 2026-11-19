@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U6 Coach Companion &mdash; Coach Craft</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #384959; --navy-dark: #2A3744;
+    --gold: #6A89A7; --gold-warm: #88BDF2;
+    --white: #FFFFFF; --gray-light: #F5F6FA;
+    --gray-mid: #888888; --gray-dark: #333333;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", Arial, sans-serif; background: var(--gray-light); color: var(--gray-dark); font-size: 13px; line-height: 1.6; }
+  .header { background: var(--navy); color: white; border-bottom: 4px solid var(--gold); display: flex; align-items: stretch; }
+  .header-logo { background: var(--navy-dark); padding: 16px 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .header-logo img { height: 90px; width: auto; }
+  .header-content { padding: 22px 28px 18px; flex: 1; }
+  .club-label { font-family: "Inter", Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+  .header h1 { font-family: "Inter", Arial, sans-serif; font-size: 24px; font-weight: 800; color: white; line-height: 1.15; }
+  .header h1 span { color: var(--gold); }
+  .header-meta { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+  .header-duration { background: rgba(106,137,167,0.2); border: 1px solid rgba(106,137,167,0.5); border-radius: 5px; padding: 8px 14px; margin-top: 10px; display: inline-block; }
+  .header-duration strong { font-family: "Inter", Arial, sans-serif; font-size: 11px; color: var(--gold); }
+  .header-duration span { font-size: 12px; color: rgba(255,255,255,0.75); margin-left: 6px; }
+  .philosophy { background: var(--navy-dark); border-bottom: 3px solid var(--gold); padding: 20px 32px 22px; }
+  .philosophy p { font-size: 13.5px; color: rgba(255,255,255,0.9); line-height: 1.8; max-width: 860px; }
+  .philosophy p em { color: var(--gold-warm); font-style: normal; font-weight: 600; }
+  .section { background: white; padding: 22px 32px 24px; border-bottom: 1px solid #e2e6ef; }
+  .section.tinted { background: var(--gray-light); }
+  .section.navy { background: var(--navy); }
+  .section.gold-tint { background: #F2F7FC; border-bottom: 2px solid var(--gold-warm); }
+  .eyebrow { font-family: "Inter", Arial, sans-serif; font-size: 9.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .eyebrow.navy { color: var(--navy); }
+  .section-heading { font-family: "Inter", Arial, sans-serif; font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .section-heading.white { color: white; }
+  .four-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 14px; }
+  .six-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 12px; }
+  .info-card { background: var(--gray-light); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 13px 14px; }
+  .info-card.gold-top { border-top-color: var(--gold); }
+  .info-card h4 { font-family: "Inter", Arial, sans-serif; font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+  .info-card p { font-size: 12px; color: var(--gray-dark); line-height: 1.55; }
+  .success-item { border-left: 3px solid var(--gold); padding: 8px 12px; background: rgba(255,255,255,0.07); }
+  .success-item strong { font-family: "Inter", Arial, sans-serif; font-size: 11px; font-weight: 700; color: white; display: block; margin-bottom: 3px; text-transform: uppercase; }
+  .success-item p { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .fun-banner { background: var(--gold); padding: 14px 32px; }
+  .fun-banner p { font-family: "Inter", Arial, sans-serif; font-size: 13px; font-weight: 700; color: white; text-align: center; letter-spacing: 0.3px; }
+  .structure-strip { background: var(--navy-dark); padding: 13px 32px; display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
+  .s-block { font-family: "Inter", Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 6px 16px; border-radius: 4px; }
+  .s-play { background: var(--gold); color: white; }
+  .s-practice { background: white; color: var(--navy); }
+  .s-time { font-size: 11px; color: rgba(255,255,255,0.5); margin: 0 5px; }
+  .s-arrow { color: var(--gold); font-size: 16px; margin: 0 4px; }
+  .rotation-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 12px; }
+  .rotation-table thead tr { background: var(--navy); }
+  .rotation-table thead th { font-family: "Inter", Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.75); padding: 9px 12px; text-align: left; }
+  .rotation-table tbody tr { border-bottom: 1px solid #e8edf4; }
+  .rotation-table tbody tr:hover { background: #f5f7fc; }
+  .rotation-table tbody td { padding: 9px 12px; vertical-align: top; }
+  .rotation-table tbody td:first-child { font-family: "Inter", Arial, sans-serif; font-weight: 700; color: var(--navy); font-size: 11px; }
+  .rotation-table tbody tr:last-child { background: #F2F7FC; }
+  .play-section { background: white; padding: 22px 32px 24px; border-bottom: 4px solid var(--gold); }
+  .phase-header { display: flex; align-items: center; gap: 13px; margin-bottom: 16px; }
+  .phase-pill { font-family: "Inter", Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 11px; border-radius: 3px; }
+  .phase-pill.play { background: var(--gold); color: white; }
+  .phase-pill.practice { background: var(--navy); color: white; }
+  .phase-title { font-family: "Inter", Arial, sans-serif; font-size: 18px; font-weight: 800; color: var(--navy); }
+  .phase-sub { font-size: 12px; color: var(--gray-mid); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+  .info-box { border-radius: 4px; padding: 13px 15px; font-size: 12.5px; line-height: 1.6; color: var(--gray-dark); }
+  .info-box.navy-left { background: var(--gray-light); border-left: 3px solid var(--navy); }
+  .info-box.gold-left { background: #F2F7FC; border-left: 3px solid var(--gold); }
+  .info-box h4 { font-family: "Inter", Arial, sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 7px; }
+  .info-box.navy-left h4 { color: var(--navy); }
+  .info-box.gold-left h4 { color: #2A3744; }
+  .question-box { background: var(--gray-light); border-left: 4px solid var(--gold); padding: 12px 15px; margin-top: 14px; border-radius: 0 4px 4px 0; }
+  .q-label { font-family: "Inter", Arial, sans-serif; font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); display: block; margin-bottom: 5px; }
+  .q-text { font-size: 13px; font-style: italic; color: var(--navy); font-weight: 600; }
+  .e-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 13px; }
+  .e-tag { font-size: 11px; color: #2A3744; background: #F2F7FC; border: 1px solid var(--gold-warm); border-radius: 10px; padding: 3px 9px; font-weight: 600; }
+  .practice-section { background: var(--gray-light); padding: 22px 32px 28px; border-bottom: 4px solid var(--navy); }
+  .practice-intro { font-size: 12.5px; color: var(--gray-dark); line-height: 1.6; margin-top: 6px; margin-bottom: 20px; max-width: 740px; }
+  .skill-group-bar { background: var(--navy-dark); padding: 9px 14px; margin-top: 22px; margin-bottom: 14px; border-radius: 4px; }
+  .skill-group-bar.animal { background: #2a6e3f; }
+  .skill-group-bar:first-of-type { margin-top: 0; }
+  .skill-group-label { font-size: 11px; color: rgba(255,255,255,0.85); font-style: italic; }
+  .activity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 13px; }
+  .act-card { background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 5px rgba(56,73,89,0.08); }
+  .act-header { background: var(--navy); padding: 10px 15px; }
+  .act-header.animal { background: #2a6e3f; }
+  .act-num { font-family: "Inter", Arial, sans-serif; font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+  .act-header.animal .act-num { color: #a8d5b5; }
+  .act-name { font-family: "Inter", Arial, sans-serif; font-size: 14px; font-weight: 800; color: white; }
+  .act-focus { font-size: 10px; color: var(--gold-warm); margin-top: 2px; }
+  .act-header.animal .act-focus { color: #c8ecd2; }
+  .act-body { padding: 13px 15px 15px; }
+  .a-label { font-family: "Inter", Arial, sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-mid); margin-bottom: 4px; margin-top: 12px; }
+  .a-label:first-of-type { margin-top: 0; }
+  .a-text { font-size: 12.5px; color: var(--gray-dark); line-height: 1.55; }
+  .a-question { background: var(--gray-light); border-left: 3px solid var(--gold); padding: 8px 11px; margin-top: 11px; border-radius: 0 3px 3px 0; font-size: 12px; font-style: italic; color: var(--navy); font-weight: 600; line-height: 1.45; }
+  .a-safety { background: #F2F7FC; border-left: 3px solid var(--gold); padding: 8px 11px; margin-top: 8px; border-radius: 0 3px 3px 0; font-size: 11.5px; color: #2A3744; line-height: 1.45; }
+  .a-safety strong { font-family: "Inter", Arial, sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 3px; }
+  .equip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-top: 14px; }
+  .equip-item { background: white; border-radius: 5px; padding: 11px 12px; border-left: 3px solid var(--gold); }
+  .equip-item strong { font-family: "Inter", Arial, sans-serif; font-size: 11.5px; font-weight: 700; color: var(--navy); display: block; margin-bottom: 3px; }
+  .equip-item span { font-size: 11px; color: var(--gray-mid); line-height: 1.4; }
+  .cues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-top: 14px; }
+  .cue-card { background: var(--gray-light); border-top: 3px solid var(--gold); border-radius: 0 0 5px 5px; padding: 11px 13px; }
+  .cue-card strong { font-family: "Inter", Arial, sans-serif; font-size: 11px; font-weight: 700; color: var(--navy); display: block; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cue-card p { font-size: 12px; color: var(--gray-dark); line-height: 1.5; font-style: italic; }
+  .profile-card { border-radius: 5px; padding: 14px 16px; background: var(--navy); }
+  .profile-card h4 { font-family: "Inter", Arial, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; color: var(--gold); }
+  .profile-item { font-size: 12.5px; line-height: 1.5; padding: 4px 0 4px 14px; position: relative; color: rgba(255,255,255,0.85); }
+  .profile-item::before { content: ""; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+  .credit-section { background: white; padding: 16px 32px; border-top: 1px solid #e2e6ef; }
+  .credit-text { font-size: 12px; color: var(--gray-mid); line-height: 1.6; }
+  .credit-text a { color: var(--navy); font-weight: 600; }
+  .footer { background: var(--navy-dark); padding: 13px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; border-top: 3px solid var(--gold); }
+  .footer-left { font-family: "Inter", Arial, sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); }
+  .footer-right { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .sideline-box { background: var(--navy-dark); border-left: 4px solid var(--gold); border-radius: 0 5px 5px 0; padding: 14px 16px; margin-top: 16px; }
+  .sideline-box .eyebrow { color: var(--gold); margin-bottom: 6px; }
+  .sideline-box p { font-size: 12.5px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+  .sideline-box .script { font-style: italic; color: var(--gold-warm); font-weight: 600; margin-top: 6px; display: block; }
+  .arrive-box { background: #F2F7FC; border-left: 4px solid var(--gold); padding: 14px 16px; border-radius: 0 5px 5px 0; font-size: 12.5px; color: var(--gray-dark); line-height: 1.6; margin-top: 14px; }
+  .movement-note { background: var(--navy); border-radius: 5px; padding: 16px 18px; margin-top: 14px; }
+  .movement-note p { font-size: 12.5px; color: rgba(255,255,255,0.85); line-height: 1.65; }
+  .movement-note p strong { color: var(--gold-warm); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-logo">
+    <img src="data:image/png;base64,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" alt="Coach Craft">
+  </div>
+  <div class="header-content">
+    <div class="club-label">Coach Craft &nbsp;|&nbsp; Player Development</div>
+    <h1>U6 Coach Companion<br><span>Where It All Begins</span></h1>
+    <div class="header-meta">Discovery Phase &nbsp;·&nbsp; Small-Sided Format &nbsp;·&nbsp; Recreational</div>
+    <div class="header-duration">
+      <strong>Session Length:</strong><span>45&ndash;50 minutes total &nbsp;·&nbsp; Arrive 15 minutes early</span>
+    </div>
+  </div>
+</div>
+
+<div class="fun-banner">
+  <p>The most important thing that happens on this field is fun. Everything else is secondary.</p>
+</div>
+
+<div class="philosophy">
+  <p>Some of these players have never touched a soccer ball. Some have never been on a team. Some are going to cry. Some are going to score a goal and then run to their parents instead of back to the game. <em>All of that is exactly right.</em> Your job this season is simple: make this the best hour of their week. Kids who leave the field smiling, sweaty, and already asking when the next session is. That is the whole thing. Everything else, every skill and every concept that follows for the next decade of their development, starts with that.</p>
+</div>
+
+<div class="section tinted">
+  <div class="eyebrow navy">US Soccer Alignment</div>
+  <div class="section-heading">Discovery Phase &nbsp;·&nbsp; 4v4 Format</div>
+  <p style="font-size:12.5px; color:var(--gray-dark); margin-top:8px; max-width:780px;">US Soccer calls this age group Discovery Phase: create a love of the game through joyful, active, game-based experiences. Every activity in this guide is designed with that in mind. You do not need tactical knowledge to deliver a great U6 session. You need energy, enthusiasm, and a willingness to hiss like a snake.</p>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Who Is In Front of You</div>
+  <div class="section-heading">Understanding Your U6 Players</div>
+  <div class="four-grid">
+    <div class="info-card gold-top">
+      <h4>They Are Just Starting</h4>
+      <p>For many of these players, this is their first experience on a team. Some have never kicked a ball. Start with zero assumptions about what they know. Everything is new and that is a gift. You get to be the person who introduces them to the game.</p>
+    </div>
+    <div class="info-card gold-top">
+      <h4>Fun Is the Curriculum</h4>
+      <p>At this age, fun is not a means to an end. It is the end. A player who loves being on the field at age 6 is a player who is still playing at 16. A player who has a bad experience now may never come back. That is the real stakes here.</p>
+    </div>
+    <div class="info-card gold-top">
+      <h4>Movement Matters More Than You Think</h4>
+      <p>The hopping, the turning, the chasing, the changing direction. These are not just games. They are building the coordination, balance, and agility that underpin every athletic skill your players will ever develop. The research on this is clear: varied movement play at this age has measurable benefits for athletic development years down the line. The animal games are doing real work, even when it looks like pure chaos.</p>
+    </div>
+    <div class="info-card gold-top">
+      <h4>Short Attention Spans Are Normal</h4>
+      <p>A six-year-old has about 6 to 8 minutes of focused attention before they need a reset. This is not misbehavior, it is neuroscience. Keep activities short. Switch often. If something is not working, just move on. You do not need to fix it.</p>
+    </div>
+  </div>
+  <div class="movement-note" style="margin-top:14px;">
+    <p><strong>A note on the animal games:</strong> These might look like pure silliness and they are, on purpose. But every single one is also developing something real. Hopping with two feet. Lateral cuts. Stopping and starting quickly. Moving in sync with another person. Tracking multiple things at once. These are the foundational movement skills that coaches at U10, U12, and beyond will be grateful their players already have. You do not need to tell the players any of that. Just run the game and let them be ridiculous.</p>
+  </div>
+</div>
+
+<div class="section navy">
+  <div class="eyebrow white">What a Great U6 Session Looks Like</div>
+  <div class="six-grid" style="margin-top:12px;">
+    <div class="success-item">
+      <strong>Constant movement</strong>
+      <p>Players are running, chasing, dribbling, hopping, or laughing for almost every minute of the session. If players are standing still waiting, the game needs to change.</p>
+    </div>
+    <div class="success-item">
+      <strong>Noise and joy</strong>
+      <p>The louder and more chaotic it sounds, the better. Squealing, giggling, shouting animal names. This is exactly what success sounds like at U6.</p>
+    </div>
+    <div class="success-item">
+      <strong>Every player has a ball</strong>
+      <p>During practice activities, every player should have their own ball at their feet as much as possible. Waiting in line or sharing kills engagement at this age.</p>
+    </div>
+    <div class="success-item">
+      <strong>Lots of goals</strong>
+      <p>Set up games where players score frequently. Nothing builds confidence and excitement faster than scoring a goal. Celebrate every single one.</p>
+    </div>
+    <div class="success-item">
+      <strong>The coach is playing too</strong>
+      <p>At U6, you are not standing on the sideline with a clipboard. You are the shark. You are Wreck-It Ralph. Get in there. Your energy sets the tone for the whole session.</p>
+    </div>
+    <div class="success-item">
+      <strong>It ends too soon</strong>
+      <p>If players are asking &ldquo;can we play more?&rdquo; when the session ends, you have done your job perfectly. End while they still want more, every single week.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section tinted">
+  <div class="eyebrow navy">Three Things &mdash; That Is All</div>
+  <div class="section-heading">The Whole Curriculum for U6</div>
+  <p style="font-size:12.5px; color:var(--gray-dark); margin-top:8px; margin-bottom:14px; max-width:760px;">There are no player action frameworks, no tactical concepts, and no positional requirements at this age. Just three things, said plainly, that you can come back to in any game at any moment.</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:6px;">
+    <div style="background:var(--navy); border-radius:5px; padding:18px 20px; text-align:center;">
+      <div style="font-family:'Inter',Arial,sans-serif; font-size:28px; font-weight:800; color:var(--gold); margin-bottom:8px;">1</div>
+      <div style="font-family:'Inter',Arial,sans-serif; font-size:13px; font-weight:700; color:white; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Move with the ball</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.7); line-height:1.5;">Keep it close. Use your feet. Take it with you.</div>
+    </div>
+    <div style="background:var(--navy); border-radius:5px; padding:18px 20px; text-align:center;">
+      <div style="font-family:'Inter',Arial,sans-serif; font-size:28px; font-weight:800; color:var(--gold); margin-bottom:8px;">2</div>
+      <div style="font-family:'Inter',Arial,sans-serif; font-size:13px; font-weight:700; color:white; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Heads up</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.7); line-height:1.5;">See what is around you. Find space. See your teammates.</div>
+    </div>
+    <div style="background:var(--gold); border-radius:5px; padding:18px 20px; text-align:center;">
+      <div style="font-family:'Inter',Arial,sans-serif; font-size:28px; font-weight:800; color:white; margin-bottom:8px;">3</div>
+      <div style="font-family:'Inter',Arial,sans-serif; font-size:13px; font-weight:700; color:white; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Have fun</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.85); line-height:1.5;">This is the most important one. It is also the one coaches forget most often.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Before You Arrive</div>
+  <div class="section-heading">What Prepared Looks Like</div>
+  <div class="arrive-box">
+    Preparation at U6 is simple. Know which two or three activities you are going to run. Have your cones laid out before the first player arrives. Put a ball at every player's starting spot. That is it. You do not need a session plan with timing breakdowns. You need to show up with energy and an idea of what game you are playing first. The rest follows.
+  </div>
+  <div class="sideline-box" style="margin-top:16px;">
+    <div class="eyebrow">The Parents on the Sideline</div>
+    <p>U6 parents are more anxious than any other age group, and more likely to intervene. Before the session, walk over and say something like:</p>
+    <span class="script">&ldquo;These sessions are going to look like organized chaos, and that is completely intentional. The games are silly on purpose. Every one of them is building coordination, confidence, and a love of the ball. The best thing you can do is cheer loudly and let them figure things out for themselves. If they run to you mid-game, just point them back to the field with a smile.&rdquo;</span>
+    <p style="margin-top:8px;">At this age, a crying player who came to the field is still a win. Stay warm, stay calm, and keep things moving. Most players warm up within a few sessions.</p>
+    <p style="margin-top:8px;">If you see a parent who is genuinely enthusiastic and engaged, that conversation is worth having. The club always has room for coaches who care.</p>
+  </div>
+</div>
+
+<div class="structure-strip">
+  <span class="s-block s-play">Opening Play</span>
+  <span class="s-time">8&ndash;10 min</span>
+  <span class="s-arrow">&#8594;</span>
+  <span class="s-block s-practice">Activity 1</span>
+  <span class="s-time">10 min</span>
+  <span class="s-arrow">&#8594;</span>
+  <span class="s-block s-practice">Activity 2</span>
+  <span class="s-time">10 min</span>
+  <span class="s-arrow">&#8594;</span>
+  <span class="s-block s-play">Closing Play</span>
+  <span class="s-time">10 min</span>
+</div>
+
+<div class="play-section">
+  <div class="phase-header">
+    <span class="phase-pill play">Opening Play</span>
+    <div>
+      <div class="phase-title">Small-Sided Game &mdash; Free Play</div>
+      <div class="phase-sub">Same setup every week. Let them run. Get out of the way.</div>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="info-box navy-left">
+      <h4>The Setup</h4>
+      Mini or pop-up goals at each end if you have them, cone goals otherwise. Pop-up goals give players the satisfaction of the ball going into a net, which matters at this age. Split however many players you have into two roughly equal teams. No goalkeeper, no offside, no rules beyond kick-in restarts. Keep the field small enough that every player is near the action most of the time. When in doubt, go smaller. A crowded small field means more touches and more goals. Mark the space, put the ball down, and step back. Restart quickly after every goal and celebrate each one.
+    </div>
+    <div class="info-box gold-left">
+      <h4>Your Job</h4>
+      Get in there a little. Encourage. High-five. React to goals like they are the greatest thing you have ever seen. At U6, your energy is contagious in both directions. If you are having fun, they are having fun. Do not coach. Do not correct. Just play.
+    </div>
+  </div>
+  <div class="e-tags">
+    <span class="e-tag">&#9917; 1 ball per team</span>
+    <span class="e-tag">&#127944; Mini or pop-up goals (cone goals as fallback)</span>
+    <span class="e-tag">&#128992; Disc cones for boundaries</span>
+    <span class="e-tag">&#128993; Pinnies &mdash; 2 colors</span>
+  </div>
+</div>
+
+<div class="practice-section">
+  <div class="phase-header">
+    <span class="phase-pill practice">Practice</span>
+    <div><div class="phase-title">Activity Toolkit &mdash; Pick Two Per Session</div></div>
+  </div>
+  <p class="practice-intro">Run each activity for about 8 to 10 minutes, then switch. You do not need to explain the games at length. A quick demo is worth ten minutes of instruction. If a game is not working or energy drops, just move on to the next one. That is not failure. That is good coaching at this age.</p>
+
+  <div class="skill-group-bar animal"><span class="skill-group-label">ANIMAL &amp; TAG GAMES &nbsp;&mdash;&nbsp; Movement, coordination, agility, and joy</span></div>
+  <div class="activity-grid" style="margin-top:14px;">
+
+    
+    <div class="act-card">
+      <div class="act-header animal">
+        <div class="act-num">Activity 01</div>
+        <div class="act-name">Sharks and Minnows</div>
+        <div class="act-focus">Dribbling · Changing Direction · Agility</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Mark a rectangle and call it the ocean. Every player is a minnow with their own ball. You are the shark. Minnows line up along one end and on your signal they all dribble to the other side without getting their ball knocked away by you. Any minnow whose ball is knocked out becomes a shark and joins you for the next crossing. Minnows who make it safely line up and go again. Play until everyone has become a shark, then start fresh with a new volunteer as the first shark.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">Encourage minnows to keep their heads up to find gaps, small touches to get around the sharks, and bigger touches to escape when they have space. The game is self-regulating as more sharks appear. Go after your more confident players first.</div>
+        <div class="a-question">&ldquo;How did you get past the shark? Did you go fast or did you go around?&rdquo;</div>
+        
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per player &nbsp;·&nbsp; Disc cones for rectangle</span></div>
+      </div>
+    </div>
+
+    
+    <div class="act-card">
+      <div class="act-header animal">
+        <div class="act-num">Activity 02</div>
+        <div class="act-name">Octopus</div>
+        <div class="act-focus">Dribbling · Small Touches · Speed</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Mark a square grid and call it the ocean. Every player has a ball and dribbles freely anywhere in the grid. You are the octopus, roaming the grid trying to tag players. If tagged, it is 10 toe taps to get back in. Hold two pool noodles as tentacles if you have them. They make no practical difference and players will absolutely love it. Unlike Sharks and Minnows, there is no crossing from side to side here: players move freely in all directions and must dodge you wherever they go.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">Look for players using small touches to dodge around you and bigger touches to escape when they have space. Slow down for players who need more success, speed up for players who need more challenge. The free-roaming format means every player is always active, which keeps energy high.</div>
+        <div class="a-question">&ldquo;When I came toward you, how did you decide which way to go?&rdquo;</div>
+        
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per player &nbsp;·&nbsp; Disc cones for grid &nbsp;·&nbsp; 2 pool noodles as tentacles (optional but highly recommended)</span></div>
+      </div>
+    </div>
+
+    
+    <div class="act-card">
+      <div class="act-header animal">
+        <div class="act-num">Activity 03</div>
+        <div class="act-name">Kangaroo Jacks</div>
+        <div class="act-focus">Dribbling · Agility · Coordination</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Rectangle about 20 by 15 yards. One or two volunteers are the Kangaroo Jacks. Everyone else has a ball. Kangaroo Jacks must hop everywhere they go. Players dribble from one side of the grid to the other without getting tagged by a hopping Kangaroo Jack. If tagged, that player becomes a Kangaroo too. After a minute or so, call time, catch your breath, and play again.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">The hopping is the whole point. Two-footed hopping is genuinely difficult for many 5 and 6 year olds and they will fall over and think it is hilarious. That is fine. Let them. The coordination work happening in this game is foundational to athletic development and they will never know they are training. They just think they are being kangaroos.</div>
+        <div class="a-question">&ldquo;When more kangaroos appeared, how did you find space to dribble?&rdquo;</div>
+        
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per player (except kangaroos) &nbsp;·&nbsp; Disc cones for rectangle</span></div>
+      </div>
+    </div>
+
+    
+    <div class="act-card">
+      <div class="act-header animal">
+        <div class="act-num">Activity 04</div>
+        <div class="act-name">Snake</div>
+        <div class="act-focus">Communication · Coordination · Teamwork</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Grid about 20 by 20 yards. One player is the head of the snake, the only player without a ball. Everyone else dribbles freely. The snake runs around trying to tag other players. When tagged, a player grabs the back of the snake's shirt and joins the snake. The snake grows with every tag. They must stay connected for a tag to count. The game ends when everyone has become part of the snake. Start again with a new volunteer as the head.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">The snake will fall apart constantly. That is the fun. Encourage the snake to communicate and call out who they are going after. Remind non-snakes to keep their heads up to find snake-free space. Watch for moments of genuine teamwork as the snake gets longer as the group instinctively learns to coordinate. Hissing is encouraged and should be modeled by the coach.</div>
+        <div class="a-question">&ldquo;When you were in the snake, how did you decide which direction to go?&rdquo;</div>
+        
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per player (except the snake head) &nbsp;·&nbsp; Disc cones for grid</span></div>
+      </div>
+    </div>
+
+    
+    <div class="act-card">
+      <div class="act-header animal">
+        <div class="act-num">Activity 05</div>
+        <div class="act-name">Bunny Trail</div>
+        <div class="act-focus">Dribbling · Coordination · Hopping</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Create a circle of cones spaced about 6 feet apart. Each player starts at a cone with their own ball. On your call, players either dribble to the next cone or hop while carrying their ball. Alternate between dribbling and hopping segments on your command. Tell players to imagine a force field the size of their arms and to keep the ball inside it while they dribble.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">The dribbling and hopping alternate creates a natural rhythm and the coordination challenge of switching between the two is the whole point. Some players will struggle with two-footed hopping. Demonstrate it and encourage the attempt. Do not run more than three hopping segments in a row or energy will drop.</div>
+        <div class="a-question">&ldquo;Which was harder, dribbling or hopping? Why?&rdquo;</div>
+        
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per player &nbsp;·&nbsp; 1 cone per player arranged in a circle</span></div>
+      </div>
+    </div>
+
+    
+    <div class="act-card">
+      <div class="act-header animal">
+        <div class="act-num">Activity 06</div>
+        <div class="act-name">Dinosaur Tag</div>
+        <div class="act-focus">Dribbling · Direction Changes · Pairs</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Each pair sets up a triangle of three cones with sides about 5 yards long. One player is the dinosaur, one is the park ranger. Both dribble around their triangle. The dinosaur tries to tag the park ranger. The park ranger can go any direction around the triangle but cannot leave the ball behind. Switch roles after every tag or after one minute. Hissing by the dinosaur is strongly encouraged.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">Some players will struggle to turn the ball around the triangle corners. That is fine. The skill develops with time on the ball. Focus on the competition and the fun, not the technique. The pairs format means everyone is active simultaneously and no one is waiting. Watch for players using both feet.</div>
+        <div class="a-question">&ldquo;What did you do when the dinosaur was catching up to you?&rdquo;</div>
+        
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per pair &nbsp;·&nbsp; 3 cones per pair</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="skill-group-bar "><span class="skill-group-label">BALL SKILLS &amp; SCORING &nbsp;&mdash;&nbsp; Time on the ball, shooting, and the joy of scoring</span></div>
+  <div class="activity-grid" style="margin-top:14px;">
+
+    
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 07</div>
+        <div class="act-name">101 Dalmatians</div>
+        <div class="act-focus">Dribbling · Ball Control · Scoring</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Grid about 25 by 20 yards with cone triangles scattered throughout, one per player. Every player has a ball. Players score by dribbling through a triangle with the ball within arm's reach of their body. Players count their own score out loud and shout it each time they score. Set a group target before the game starts and count up together. Try 20 to start. If they get there quickly, raise it next round. Your job is to roam the grid and knock balls away. Go after your strongest players first.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">Count up loudly with the group as the number climbs. The shared team goal creates genuine collective excitement when they hit the target. Raise the number each round to keep it challenging. Encourage small touches and heads up. Do not worry about perfect technique. Just getting the ball to the triangles is a win at this age.</div>
+        <div class="a-question">&ldquo;How many did we get? Should we try for more next round?&rdquo;</div>
+        
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per player &nbsp;·&nbsp; Disc cones for outer grid and inner triangles</span></div>
+      </div>
+    </div>
+
+    
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 08</div>
+        <div class="act-name">Red Light Green Light</div>
+        <div class="act-focus">Driving · Ball Control · Listening</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Grid about 25 by 20 yards. Every player has a ball. Green light: dribble fast. Yellow light: slow down with small touches. Red light: stop with one foot on the ball. Call lights at random. After a minute, ask players to suggest a new color and assign it a new action: orange means spin around, purple means jump. Add each new color a few times before introducing the next one.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">This game is simple, familiar, and brilliant at this age. Most players already know the concept from the road. The player-generated colors keep it fresh and give them ownership. Look for players keeping the ball within arm's reach at yellow and actually stopping on red rather than letting the ball roll away.</div>
+        <div class="a-question">&ldquo;What was the hardest color to remember? What action did you pick?&rdquo;</div>
+        
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per player &nbsp;·&nbsp; Disc cones for grid</span></div>
+      </div>
+    </div>
+
+    
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 09</div>
+        <div class="act-name">Wreck-It Ralph</div>
+        <div class="act-focus">Dribbling · Shooting · Decision-Making</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Grid about 20 by 20 yards with a cone goal in each corner, opening inward. Every player has a ball. Players dribble around the grid and score by dribbling their ball through any corner goal. You are Wreck-It Ralph, roaming the grid and trying to knock balls away. Ball knocked out: 10 toe taps to re-enter. Play short rounds of about a minute. Encourage players to beat their own score.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">Players who look up to find an open goal before driving toward it are already doing something sophisticated. Most will just head for the nearest goal, and that is completely fine at U6. Celebrate every goal loudly. The game introduces goal-scoring instinct without any coaching required.</div>
+        <div class="a-question">&ldquo;How many goals did you score? Which goal was easiest to get to?&rdquo;</div>
+        
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per player &nbsp;·&nbsp; Disc cones for grid and corner goals</span></div>
+      </div>
+    </div>
+
+    
+    <div class="act-card">
+      <div class="act-header">
+        <div class="act-num">Activity 10</div>
+        <div class="act-name">Mosquitoes</div>
+        <div class="act-focus">Dribbling · Shooting · Chaos</div>
+      </div>
+      <div class="act-body">
+        <div class="a-label">Setup</div>
+        <div class="a-text">Small grid about 15 by 15 yards. Divide players into two groups: mosquitoes (each with a ball) and campers (no ball). Mosquitoes dribble their ball and try to hit campers below the knee. When a mosquito lands a hit, that player switches roles. Play until you call time. Keep the grid small so players have to dribble close before striking rather than shooting from distance.</div>
+        <div class="a-label">What to Look For</div>
+        <div class="a-text">The game is controlled chaos and that is the point. It combines dribbling, shooting, and spatial awareness in a genuinely silly format that 6-year-olds absolutely love. Watch for players who actually dribble close before shooting rather than kicking from far away. Keep the space tight. This focuses the game and reduces wild shots.</div>
+        <div class="a-question">&ldquo;How did you sneak up on your camper without them getting away?&rdquo;</div>
+        <div class="a-safety"><strong>Coach Note</strong>Keep the grid small enough that players must dribble in close before shooting. A smaller space naturally keeps shots below knee height. If balls are consistently going high, narrow the space further or switch to a different game.</div>
+        <div class="e-tags" style="margin-top:10px;"><span class="e-tag">1 ball per mosquito &nbsp;·&nbsp; Disc cones for grid</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="play-section" style="border-color: var(--navy);">
+  <div class="phase-header">
+    <span class="phase-pill practice" style="background:var(--navy-dark);">Closing Play</span>
+    <div>
+      <div class="phase-title">Small-Sided Game &mdash; Back to Play</div>
+      <div class="phase-sub">Same as the opening. Let it run. End while they still want more.</div>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="info-box navy-left">
+      <h4>The Setup</h4>
+      Same small-sided game as the opening. Mini or pop-up goals if you have them, cone goals otherwise. No goalkeeper, no offside. Same teams or mix them up, either works. Let it run without interruption. Your job is to restart quickly after goals and keep the energy up.
+    </div>
+    <div class="info-box navy-left">
+      <h4>End the Session Well</h4>
+      Bring everyone in at the end. High-fives all around. One question, very simple, just to close the loop.
+    </div>
+  </div>
+  <div class="question-box" style="border-color:var(--navy);">
+    <span class="q-label" style="color:var(--navy);">Closing Question &mdash; Ask it at the end of every session</span>
+    <span class="q-text">&ldquo;What was your favorite part of today?&rdquo;</span>
+  </div>
+  <div class="e-tags">
+    <span class="e-tag">&#9917; 1 ball per team</span>
+    <span class="e-tag">&#127944; Mini or pop-up goals (cone goals as fallback)</span>
+    <span class="e-tag">&#128992; Disc cones for boundaries</span>
+    <span class="e-tag">&#128993; Pinnies &mdash; 2 colors</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="eyebrow navy">Coaching Cues</div>
+  <div class="section-heading">What to Say and When to Say It</div>
+  <p style="font-size:12.5px; color:var(--gray-dark); margin-top:6px; margin-bottom:14px; max-width:760px;">At U6, coaching cues are less about technique and more about keeping energy, confidence, and participation high. These are the moments you will encounter most often and what to do with them.</p>
+  <div class="cues-grid">
+    <div class="cue-card">
+      <strong>Player is standing still or disengaged</strong>
+      <p>Go to them. Get a ball at their feet. Get them moving. Do not ask what is wrong in front of the group. Just play alongside them for a minute.</p>
+    </div>
+    <div class="cue-card">
+      <strong>Player is upset or crying</strong>
+      <p>Kneel down, speak quietly, and give them a moment. Do not rush them back in. Most players come back on their own when they are ready. Keep the game going so they have something to come back to.</p>
+    </div>
+    <div class="cue-card">
+      <strong>Player runs to their parents mid-game</strong>
+      <p>Normal. Completely normal. Let the parent redirect them back. If it happens every session, have a quiet word with the parent about how to respond.</p>
+    </div>
+    <div class="cue-card">
+      <strong>Player scores a goal</strong>
+      <p>React like it is the greatest thing you have ever seen. Name the player. Make the celebration visible. At U6, that moment of recognition is more valuable than any coaching point.</p>
+    </div>
+    <div class="cue-card">
+      <strong>Game is getting too chaotic</strong>
+      <p>That is usually fine. If it genuinely breaks down, call a quick freeze, give one simple instruction, and restart. Do not stop the game for more than 30 seconds.</p>
+    </div>
+    <div class="cue-card">
+      <strong>Players are not listening to instructions</strong>
+      <p>Keep instructions to one sentence. Demonstrate rather than explain. If they are not listening, start the game and they will figure it out. Playing is more important than understanding the rules perfectly.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section gold-tint">
+  <div class="eyebrow">Session Setup</div>
+  <div class="section-heading">What You'll Need Each Session</div>
+  <div class="equip-grid">
+    <div class="equip-item">
+      <strong>Balls &mdash; 1 per player (Size 3)</strong>
+      <span>Every player needs their own ball during practice activities. This is the one non-negotiable.</span>
+    </div>
+    <div class="equip-item">
+      <strong>Disc Cones &mdash; 20 per team</strong>
+      <span>For the game field boundaries, triangles, and grids. More than enough for all activities in this guide.</span>
+    </div>
+    <div class="equip-item">
+      <strong>Tall Cones &mdash; 6 to 8 per team</strong>
+      <span>For cone goals and gates. Pairs of tall cones an arm's length apart make a goal. Multiple colors add a fun directional cue.</span>
+    </div>
+    <div class="equip-item">
+      <strong>Pinnies &mdash; Full squad, 2 colors</strong>
+      <span>For the small-sided game. Also useful as octopus tentacles and duck tails in animal games.</span>
+    </div>
+    <div class="equip-item">
+      <strong>Pool noodles (optional)</strong>
+      <span>Two pool noodles for the octopus tentacles are completely optional but will produce a reaction that makes the entire session worthwhile.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section tinted">
+  <div class="eyebrow navy">Player Development</div>
+  <div class="section-heading">Where Your Players Will Be</div>
+  <p style="font-size:12.5px; color:var(--gray-dark); margin-top:6px; margin-bottom:14px; max-width:780px;">These are not performance standards. They are signs that development is happening. Every player moves at their own pace and not every player will show all of these by the end of the season. That is completely normal.</p>
+  <div style="max-width:600px; margin:0 auto;">
+    <div class="profile-card">
+      <h4>A Player Who Had a Great U6 Season</h4>
+      <div class="profile-item">Runs toward the ball instead of away from it</div>
+      <div class="profile-item">Moves with the ball rather than kicking it away</div>
+      <div class="profile-item">Knows where the goal is and tries to shoot at it</div>
+      <div class="profile-item">Shows up to the next session excited to play again</div>
+      <div class="profile-item" style="color:var(--gold-warm); font-weight:600;">That last one is the most important.</div>
+    </div>
+  </div>
+</div>
+
+<div class="credit-section">
+  <div class="eyebrow navy">Acknowledgements</div>
+  <div class="section-heading" style="font-size:15px; margin-bottom:12px;">About This Guide</div>
+  <p class="credit-text" style="margin-bottom:10px;">This guide was developed by <strong style="color:var(--navy);">Justin Whitaker</strong>, as part of a club-wide player development framework. The framework is grounded in US Soccer's Player Development Framework and adapted for competitive youth player populations.</p>
+  <p class="credit-text">Several activities in this guide are adapted from the YouGotMojo youth soccer coaching library. Find their full video library at <a href="https://www.youtube.com/@YouGotMojo" target="_blank">youtube.com/@YouGotMojo</a>.</p>
+</div>
+
+<div class="footer">
+  <div class="footer-left">Coach Craft &nbsp;·&nbsp; U6 Coach Companion &nbsp;·&nbsp; Where It All Begins</div>
+  <div class="footer-right">Next: U8 &nbsp;·&nbsp; Me &amp; the Ball &nbsp;·&nbsp; Small-Sided</div>
+</div>
+
+</body>
+</html>

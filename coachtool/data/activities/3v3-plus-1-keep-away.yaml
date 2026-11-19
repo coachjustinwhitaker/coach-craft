@@ -1,0 +1,32 @@
+id: 3v3-plus-1-keep-away
+order: 29
+name: 3v3+1 Keep-Away
+block: B2
+type: rondo
+objective: 3v3 keep-away with a neutral player who always joins the team with the ball. Switch sides instantly
+  when it turns over.
+skills:
+- Possession
+- Body Shape
+ages:
+- u12
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 7
+  max: 14
+space: quarter
+minutes: 15
+setup: Square of cones for every 7 players. Two teams of 3 in different colors, one neutral player who
+  plays with whoever has the ball. Attackers rack up passes. When defenders win it, the neutral player
+  switches sides immediately. No delay. After a minute, switch roles.
+coach:
+- cue: The neutral player switching sides instantly is the whole point. That instant role switch seeds
+    transition awareness naturally inside a possession game. Also look for players opening their hips
+    to receive before the ball arrives. Works well as Activity B after Flying Numbers.
+  ask: When the ball turned over, how quickly did you read whose team you were joining or defending against?
+pairs_with:
+- flying-numbers
+equipment: 1 ball per grid · 4 cones per square · 3 colors of pinnies

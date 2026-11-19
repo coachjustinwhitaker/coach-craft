@@ -1,0 +1,45 @@
+id: shrinking-field-defending
+order: 32
+name: 'Shrinking Field: Defending Focus'
+block: B3
+type: small-sided
+objective: The field narrows every minute. Watch the defending team get compact as the space shrinks.
+skills:
+- Compact Shape
+- Pressing
+ages:
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 15
+setup: 'Rectangular grid with small goals at each end. 3v3 or 4v4. Every minute, move each touchline in
+  by 3 steps. Explicitly frame it as a defending focus before starting: "today we are watching the defending
+  team, not the attacking team." Play 2 to 3 rounds.'
+coach:
+- cue: 'As the field shrinks, the compact defending shape becomes more and more important. Watch for the
+    defending team getting tighter: closer together, higher up, forcing play to one side. Are they reacting
+    to the ball or anticipating where it is going? Any moment of anticipation is worth highlighting.'
+  ask: As the field got smaller, did defending get easier or harder? What does that tell you about defending
+    in tight spaces?
+pairs_with:
+- half-court-soccer
+- 2v2v2-keep-away
+equipment: 1 ball · 2 small goals · Disc cones
+for_age:
+  u14:
+    setup: 'Rectangular grid with small goals at each end. 4v4 or 5v5. Every minute, move each touchline
+      in by 3 steps. Tell them before you start: "today we are watching the defending team." Play 2 to
+      3 rounds.'
+    coach:
+    - cue: 'As the field shrinks, compact shape matters more and more. Watch for the defending team getting
+        tighter: closer together, higher up, forcing play to one side. Are they reacting to the ball or
+        anticipating where it is going? Anticipation is worth naming.'
+      ask: As the field got smaller, did defending get easier or harder? What does that tell you about
+        defending in tight spaces?

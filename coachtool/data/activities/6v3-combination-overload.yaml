@@ -1,0 +1,50 @@
+id: 6v3-combination-overload
+order: 62
+name: 6v3 Combination Overload
+block: B5
+skills:
+- Combination Play
+- Shooting
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 10
+  max: 10
+space: half
+minutes: 24
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper · 2 small goals · Pinnies in 3 colors
+setup:
+- 'Full-size goal with a keeper. Three groups: Orange (2 wide plus 1 central at the top of the box), Blue
+  (3 in the box) and Red (3 live defenders). Two small goals in the box corners for Red to clear into.'
+- The coach serves in continuously with no full reset after each sequence.
+rules:
+- Orange is limited to one touch. The central Orange can shoot first time.
+- Blue has no touch limit. They are the finishers.
+- Red defend for real.
+- 'Rotate every 3 minutes: Orange to Blue, Blue to Red, Red to Orange.'
+scoring:
+- 'Blue: 1 point for a goal.'
+- 'Red: 2 points for clearing into a small goal in a box corner, 1 point for any clearance past the line
+  into the middle third.'
+- Orange does not score.
+coach:
+- cue: 'Blue: time the run to the pass. Do not wait for it.'
+  ask: When did your run start?
+- cue: 'Orange: one touch means the decision is made before the ball arrives.'
+  ask: What did you decide before it got to you?
+- cue: 'Red: work as a unit, not chasing the ball individually.'
+  ask: Who was covering when you stepped?
+- cue: 'Whoever finishes: read the keeper before you strike.'
+  ask: What did the keeper show you?
+diagram: 6v3-combination-overload.jpg
+type: positional
+objective: Combine at one touch to unlock free finishers against live defenders. Read defender distance,
+  the keeper and second balls.
+diagram_caption: Orange combines at the top of the box, Blue finishes in the box and Red defends. Two
+  small goals sit in the box corners.

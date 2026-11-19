@@ -1,0 +1,43 @@
+id: 2-lines-vs-gk-combination-finish
+order: 56
+name: 2 Lines vs GK Combination Finish
+block: B4
+skills:
+- Passing
+- Shooting
+- Combination Play
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 5
+  max: 12
+space: quarter
+minutes: 17
+pairs_with: []
+equipment: Balls · Cones · Full-size goal and keeper
+setup:
+- A 20 by 15 yard grid at the corner of the box. Two servers, two target players and a keeper in goal,
+  placed as in the diagram.
+- Rotate the lines every couple of reps so everyone plays every role.
+rules:
+- 1. The server plays to the first target and gets it back (tight give-and-go).
+- 2. The server plays diagonally to the second target.
+- 3. The second target plays back to the first target.
+- 4. The first target plays across into the server's run for the shot.
+- Walk the pattern slowly first, then add the finish once it is clean.
+coach:
+- cue: First-time finish when the service allows it. No extra touch in the box.
+  ask: What did you see that told you to hit it first time?
+- cue: The weight of the third pass has to invite the run, not just reach it.
+  ask: Could the runner step onto that pass without checking?
+- cue: 'Keeper: work your angles. It is live shooting even though the pattern is set.'
+  ask: Where were you when the ball was struck?
+- cue: The quality of the combination decides the quality of the chance.
+  ask: What did the combination give you that a single shot would not?
+type: pattern
+objective: 'Finish off a combination, not in isolation: a give-and-go, then a third-man pass, then the
+  shot.'

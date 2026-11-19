@@ -1,0 +1,354 @@
+skills:
+- id: u10-b1-perception-preparation-intro
+  age: u10
+  block: B1
+  area: Perception & Preparation
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Look for the ball, teammates and the goal before receiving
+  - Open the body so the field is in view when the ball arrives
+  - Keep the head up while driving and dribbling
+- id: u10-b1-perception-preparation-dev-comp
+  age: u10
+  block: B1
+  area: Perception & Preparation
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Scan more than once before receiving under light pressure
+  - Receive on the half-turn when there is space
+  - Recognize when there is time to take a touch and when to play first time
+- id: u10-b1-controlling-intro
+  age: u10
+  block: B1
+  area: Controlling
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Receive passes from up to 20 yards with a soft first touch
+  - Move toward the ball when an opponent is close
+  - Take the first touch toward goal when the way is open
+- id: u10-b1-controlling-dev
+  age: u10
+  block: B1
+  area: Controlling
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Use the first touch to move the ball away from pressure
+  - Receive with the inside or outside of either foot as needed
+  - Control without looking down at the ball
+- id: u10-b1-protecting-intro
+  age: u10
+  block: B1
+  area: Protecting
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Shield the ball with the body between the ball and the opponent
+  - Keep the ball away from the opponent's feet
+  - Hold the ball until a teammate is open
+- id: u10-b1-protecting-dev
+  age: u10
+  block: B1
+  area: Protecting
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Shield under contact and keep control
+  - Decide when to hold the ball and when to release it
+  - Turn out of pressure with the ball protected
+- id: u10-b1-passing-intro
+  age: u10
+  block: B1
+  area: Passing
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Pass to a teammate's feet or into space from 5 to 20 yards
+  - Look at the teammate while passing
+  - Pass so the receiver can continue forward
+- id: u10-b1-passing-dev
+  age: u10
+  block: B1
+  area: Passing
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Match the weight of the pass to the teammate's movement
+  - Use different surfaces of the foot to play the pass
+  - Pass first time when the picture calls for it
+- id: u10-b1-shooting-intro
+  age: u10
+  block: B1
+  area: Shooting
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Shoot on goal from short and medium range
+  - Use the laces for power and the inside of the foot for placement
+  - Follow the ball after the shot
+- id: u10-b1-shooting-dev
+  age: u10
+  block: B1
+  area: Shooting
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Choose placement or power depending on the goalkeeper
+  - Shoot after a dribble, pass or cross
+  - Shoot with an opponent closing
+- id: u10-b2-supporting-intro
+  age: u10
+  block: B2
+  area: Supporting
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Find open space and show the player with the ball you are available
+  - Spread out to make the field big
+  - Move to a new spot after passing
+- id: u10-b2-supporting-dev
+  age: u10
+  block: B2
+  area: Supporting
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Choose a support position that gives the passer a forward option
+  - Adjust the angle and distance as the ball moves
+  - Call or signal for the ball with a word or a hand
+- id: u10-b2-passing-movement-intro
+  age: u10
+  block: B2
+  area: Passing & Movement
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Pass to a teammate and run into space for the return
+  - Pass into feet so the teammate can play it back
+  - Keep moving after the pass
+- id: u10-b2-passing-movement-dev-comp
+  age: u10
+  block: B2
+  area: Passing & Movement
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Time the run so the return pass arrives in space
+  - Use a first-time return pass when the defender is close
+  - Look for the give and go when the dribble is blocked
+- id: u10-b2-technique-for-combination-play-intro
+  age: u10
+  block: B2
+  area: Technique for Combination Play
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Notice when a teammate is free and a 2v1 is possible
+  - Drive at one defender, then pass to the free teammate
+  - Celebrate passes that beat a defender
+- id: u10-b2-technique-for-combination-play-dev-comp
+  age: u10
+  block: B2
+  area: Technique for Combination Play
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Commit the defender by driving at them, then release at the right time
+  - Support at an angle that the defender cannot cover both options
+  - Finish the 2v1 with a shot or a final pass
+- id: u10-b2-decision-making-intro
+  age: u10
+  block: B2
+  area: Decision-Making
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Choose between dribbling and passing in the game
+  - Pass to a free teammate when the dribble is closed
+  - Talk to teammates with simple calls
+- id: u10-b2-decision-making-dev
+  age: u10
+  block: B2
+  area: Decision-Making
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Make the choice faster as the picture changes
+  - Choose the forward pass when it is there, the safe pass when it is not
+  - Stay connected to the next play after the pass
+- id: u10-b3-defensive-decision-making-intro
+  age: u10
+  block: B3
+  area: Defensive Decision-Making
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Run to the player with the ball to stop them from scanning and passing forward
+  - Slow down as you arrive so you do not get dribbled past
+  - Go in to win the ball when the moment is right
+  - Slow the ball carrier down when a teammate is not ready to help
+  - Stay between the ball and the goal
+  - Stand with the body at an angle to the goal you are protecting
+- id: u10-b3-defensive-decision-making-dev-comp
+  age: u10
+  block: B3
+  area: Defensive Decision-Making
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Choose when to press, when to delay and when to go in
+  - Show the ball carrier one way and cut off the other
+  - Press again straight away if the first press is beaten
+  - Delay until cover arrives, then step in
+  - Force the ball carrier toward the sideline
+  - Keep a balanced stance to react to a change of direction
+- id: u10-b3-covering-intro
+  age: u10
+  block: B3
+  area: Covering
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Stand behind the pressing teammate at a good distance
+  - Be ready to press if they are beaten
+  - Block the passing option nearest to the ball
+  - Stay close to the opponent in your area
+  - Keep your body between the opponent and the goal
+  - Stay close enough to stop an easy pass to them
+- id: u10-b3-covering-dev
+  age: u10
+  block: B3
+  area: Covering
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Adjust distance and angle as the press changes
+  - Call out "I've got cover" so the presser commits
+  - Slide across when the first defender steps in
+  - Stay goal-side and ball-side as the ball moves
+  - Anticipate the pass and step in to intercept
+  - Switch the mark with a teammate when needed
+- id: u10-b3-shape-line-management-intro
+  age: u10
+  block: B3
+  area: Shape & Line Management
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Stay close to your teammates when the other team has the ball
+  - Run back goal-side when the ball is lost
+  - Close the middle of the field first
+- id: u10-b3-shape-line-management-dev-comp
+  age: u10
+  block: B3
+  area: Shape & Line Management
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Shift together toward the ball
+  - Recognize when the team is too spread out and close the gaps
+  - Re-apply pressure as soon as a teammate is beaten
+- id: u10-b3-denying-the-finish-intro
+  age: u10
+  block: B3
+  area: Denying the Finish
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Get narrow and close the center near goal
+  - Stop the cross and block the shot
+  - Stay on your feet until the shot is taken
+  - Turn your shoulders and hips 45 to 90 degrees toward your own goal
+  - Look for the ball, the nearest teammates and the nearest opponents in relation to your goal
+- id: u10-b3-denying-the-finish-dev
+  age: u10
+  block: B3
+  area: Denying the Finish
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Choose between blocking the shot and staying goal-side
+  - Step in to challenge when the opponent has a chance on goal
+  - Cover the near post area when the ball is wide
+- id: u10-b1-driving-intro
+  age: u10
+  block: B1
+  area: Driving
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Push the ball a few steps ahead and keep it within reach
+- id: u10-b1-dribbling-intro
+  age: u10
+  block: B1
+  area: Dribbling
+  level: intro
+  tracks:
+  - rec
+  - comp
+  bullets:
+  - Take on an opponent with a change of pace or direction
+  - Dribble when it creates danger on goal
+- id: u10-b1-decision-making-dev-comp
+  age: u10
+  block: B1
+  area: Decision-Making
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Choose between driving into space and taking on a defender
+- id: u10-b1-dribbling-dev-comp
+  age: u10
+  block: B1
+  area: Dribbling
+  level: dev
+  tracks:
+  - comp
+  bullets:
+  - Change pace and direction to create real separation
+  - Keep the head up to see the next decision while dribbling

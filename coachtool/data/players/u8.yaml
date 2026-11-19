@@ -1,0 +1,94 @@
+id: u8
+age: u8
+who:
+- label: How they learn
+  text: Through experience and repetition, not explanation. Show them a game and they figure it out. Keep
+    instructions short, one idea at a time, then let them play.
+- label: What motivates them
+  text: Scoring goals. Being successful. Having fun with friends. Competing. Keep score. They care about
+    it, and it creates genuine intensity without you manufacturing it.
+- label: Attention and activity
+  text: Their attention span is short but improving. Long lines and waiting kill engagement. Every player
+    should be active for virtually the entire session. If kids are standing still, change the game.
+- label: Positions and the game
+  text: There are no fixed positions at U8. Every player plays everywhere over the course of the season.
+    In the game, rotate the goalkeeper regularly so everyone gets a turn in goal.
+great_session:
+- title: Players have the ball constantly
+  text: We encourage players to have the ball at their feet as frequently as possible. One player, one
+    ball is the target during practice activities. No sharing, no waiting.
+- title: Lots of goals scored
+  text: 'US Soccer is explicit: set up games where players can be successful and score lots of goals.
+    Frequent scoring means high engagement and happy players.'
+- title: Noise and energy
+  text: Laughing, celebrating, competing. If it is quiet, something is wrong. This age group should be
+    loud and joyful.
+- title: Coach mostly watching
+  text: Your best coaching is a single question after something happens. Resist the urge to over-coach.
+    The game is the teacher.
+- title: Players making decisions
+  text: 'Even simple ones: which goal to attack, when to dribble, when to pass. Decision-making in the
+    game starts here.'
+- title: Sessions end too soon
+  text: If players leave wanting more, you did your job. That desire to return is what builds a long-term
+    love of the game.
+prepared: 'The best sessions start before the first player arrives. Coaches who show up knowing their
+  activity and their question spend the whole session watching their players and enjoying it. The setup
+  is the same every week: mark a grid with disc cones, lay a ball out for every player, set up cone goals
+  at each end of the closing game space. By the time players arrive, the only thing left to do is put
+  a ball at their feet.'
+parents:
+  intro: 'Before the session starts, take 30 seconds to walk over and say something like:'
+  script: 'Today we are working on keeping the ball close and looking up while dribbling. The most helpful
+    thing you can do is cheer everything: the attempt, the stumble, the scramble. That''s the job.'
+  outro: Most parents want to know what is happening and how to help. Give them a role and they will take
+    it. If you see a parent who is genuinely enthusiastic and engaged, that conversation is worth having.
+shape:
+  title: The session
+  why: 'Kids join a team to play. So every session opens with play and closes with play, and practice sits in the middle. The opening play is a small game with one added rule that sets a challenge, so the players solve the problem you are working on without being told how. Your job is to build the challenge into the play, not to take the play away.'
+  note: About 55 to 60 minutes. Arrive 15 minutes early.
+  opening:
+    label: Play
+    minutes: 10 to 12 min
+    title: Free small-sided game
+    setup: 'Same setup every week, so players know this game before they arrive. Mini goals or cone goals
+      at each end. No offside. Ball out of play: restart with a kick-in or dribble-in from the sideline.
+      Set up the space, then step back. Let them play. Restart quickly after every goal. Rotate the goalkeeper
+      throughout the season so every player gets time in the position.'
+    job: Watch. Look for moments of good scanning, a player who tries to beat someone, a clever pass.
+      Make a mental note of two or three things. One of them will tell you which practice activity to
+      run today. Do not stop the game. Do not instruct. Save your voice for the question.
+    question: 'Who scored a goal today? How did you do it: did you dribble past someone, or did you find
+      a teammate?'
+    kit: 1 ball per team · Mini goals or cone goals at each end · Disc cones for boundaries · Pinnies
+      in 2 colors
+  practice:
+    label: Practice
+    minutes: 25 to 30 min
+    note: Pick one activity based on what you saw in the opening play and run it for 20 to 25 minutes.
+      Rotate through the toolkit across the season.
+  closing:
+    label: Play
+    minutes: 10 to 12 min
+    title: Back to the game
+    setup: 'Same format as the opening. The space can be slightly larger to give players more room. Let
+      it run without stopping and step all the way back. Alternative: one large goal at one end with two
+      cone goals at the halfway line. One team defends the large goal, the other scores through the halfway
+      cones. It gives players a taste of a more directional game.'
+    question: What is one thing you did today that you want to try again next week?
+    kit: 1 ball per team · Mini goals, cone goals, or 1 large goal plus cone goals · Disc cones for boundaries
+      · Pinnies in 2 colors
+cues:
+- when: Player looks up while dribbling
+  say: '"Yes, that is scanning. You are already looking for what is next. That is a big deal at any age."'
+- when: Player tries to dribble past and fails
+  say: '"I love that you tried it. What would you do differently next time?"'
+- when: Player passes and teammate scores
+  say: Celebrate it loudly. Do not over-explain why it worked. Let the result speak for itself.
+- when: Player stands still without the ball
+  say: 'Do not instruct. Ask: "Where could you move to help your team right now?"'
+- when: Player gets frustrated after a mistake
+  say: '"Every player in the world loses the ball. The best ones go and win it straight back."'
+- when: Session feels chaotic
+  say: That is okay. Controlled chaos at U8 is normal. If everyone has a ball and is moving, you are doing
+    it right.

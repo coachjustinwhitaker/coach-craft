@@ -1,0 +1,49 @@
+id: 4v4-win-it-and-go
+order: 115
+name: 4v4 Win It and Go
+block: B4
+skills:
+- Decision-Making
+- Pressing
+- Combination Play
+ages:
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Mini goals or cone goals at each end. No goalkeepers.
+- 4v4. Extra players wait on the sideline and rotate in after each goal.
+- Tell players to start the count the moment they win the ball.
+rules:
+- 'The challenge: when you win the ball, go forward right away.'
+- A goal scored within eight seconds of winning the ball counts double. The coach or sideline counts out loud.
+- If the defending team has time to get back, go ahead and pass or build up. There is no penalty for taking more
+  time.
+- Kick in from the sideline to restart.
+scoring: A goal is 1 point. A goal within eight seconds of winning the ball is 2. First team to 5.
+coach:
+- cue: Win it, look up and go.
+  ask: What did you see the moment you won it?
+- cue: Pass forward early, to the open player.
+  ask: Who was open, and how fast did you play it?
+- cue: Lost it? Get back and win it again.
+  ask: What did you do when you lost the ball?
+type: opening-play
+objective: Attack the moment you win it. Shoot within eight seconds of winning the ball and the goal counts double.
+progression:
+- title: Easier
+  text: Give ten seconds.
+- title: Harder
+  text: Six seconds, and a counter has to use at least one pass.

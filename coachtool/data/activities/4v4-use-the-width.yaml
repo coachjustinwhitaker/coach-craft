@@ -1,0 +1,51 @@
+id: 4v4-use-the-width
+order: 109
+name: 4v4 Use the Width
+block: B2
+skills:
+- Passing
+- Supporting
+- Possession
+ages:
+- u8
+- u10
+- u12
+- u14
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 6
+  max: 16
+space: quarter
+minutes: 12
+pairs_with: []
+equipment: Balls · Cones · Mini goals or cone goals · Pinnies in 2 colors
+setup:
+- Keep it small. Mark a field about 25 by 20 yards at U8, 30 by 25 at U10, and 35 by 30 at U12 and U14. Go smaller
+  if it plays loose.
+- Use cones to mark a narrow lane along each sideline, about 5 yards wide. Mini goals or cone goals at each end.
+  No goalkeepers.
+- 4v4. Extra players wait on the sideline and rotate in after each goal.
+- Walk the lanes once so players know where they are.
+rules:
+- 'The challenge: a goal only counts after the ball touches a teammate standing in a side lane.'
+- One player from the team in possession can stand in a lane. The other team cannot enter the lane.
+- The ball can be passed to the lane player and back, or the lane player can play it onward.
+- Kick in from the sideline to restart.
+scoring: One point per goal that counts. First team to 4.
+coach:
+- cue: Spread out. Make the field big when you have the ball.
+  ask: Where did you stand to give your teammate space?
+- cue: The wide player waits for the ball, then plays it back to the middle.
+  ask: What did you see before you passed?
+- cue: Go the long way if the short way is blocked.
+  ask: Why did you play it wide instead of through the middle?
+type: opening-play
+objective: Spread out to open the field. The ball has to touch a player on the wing before a goal can count.
+progression:
+- title: Easier
+  text: The lane player can score from the lane.
+- title: Harder
+  text: Make the lane narrower, or a goal counts only after the ball goes from one lane to the other.

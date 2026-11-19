@@ -1,0 +1,48 @@
+id: 6v2-rondo-release-to-finish
+order: 64
+name: 6v2 Rondo Release to Finish
+block: B5
+skills:
+- Possession
+- Combination Play
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- app
+players:
+  min: 8
+  max: 10
+space: half
+minutes: 20
+pairs_with:
+- 3v2-line-break-and-wide-finish
+equipment: Balls · Cones · Full-size goal and keeper · 2 small goals · Pinnies in 2 colors
+setup:
+- Same grid as 3v2 Line-Break and Wide Finish. No need to move the goal or cones.
+- 6 serves the rondo in from outside the grid, then anchors the back of the shape. 8 and 10 sit central,
+  9 up top near the edge of the box, 7 and 11 wide in the lanes as outlets. 4 and 5 press inside the shape
+  to win the ball back.
+- Rotate 4 and 5 out for two resting attackers every few minutes. After a goal, a save or a clean win
+  by the defenders, 6 serves a new ball.
+rules:
+- The group combines at least 5 passes before breaking to goal.
+- 'Then release: a ball to either winger to run it and shoot or cross, or a line-break to 9, who turns
+  and finishes.'
+- The defender nearest the release sprints to recover and contest it.
+coach:
+- cue: Do not force the release early. String the passes together until the picture is open.
+  ask: What opened up that told you to release?
+- cue: 'Winger on the release: beat your recovering defender before you decide to cut in or cross.'
+  ask: What did you see when you received?
+- cue: '9 on a central release: get your body shape ready before the ball arrives.'
+  ask: Where was the defender when you set your body?
+- cue: 'Caught upfield after a turnover: sprint back into the shape, do not jog.'
+  ask: What did you do the moment you lost it?
+diagram: 6v2-rondo-release-to-finish.png
+type: rondo
+objective: 'Keep the ball under pressure, then release on the same reads as the 3v2: a wide run or a line-break.'
+diagram_caption: Six players keep the ball against two defenders at the top of the box. The wingers stand
+  wide in the lanes and the striker waits at the edge of the box.

@@ -1,0 +1,34 @@
+id: flying-numbers-transition
+order: 33
+name: 'Flying Numbers: Transition Focus'
+block: B4
+type: small-sided
+objective: Flying Numbers with a focus on transition. Sprint on and off, and react the moment the ball
+  turns over.
+skills:
+- Decision-Making
+- Communication
+ages:
+- u12
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 8
+  max: 20
+space: half
+minutes: 15
+setup: Same as the opening game anchor, but now explicitly framed around transition. Outgoing players
+  must sprint off the field. Incoming players must sprint on. No walking at any point during rotation.
+  Call the numbers quickly so there is barely any gap between rounds.
+coach:
+- cue: The transition moment is the entire point. What happens the instant a goal is scored or the ball
+    goes out? Do players react and sprint in, or shuffle in? Urgency in transition is a habit and habits
+    form through repetition. This is why Flying Numbers appears in both the anchor and focus roles.
+  ask: What is the difference between a team that sprints into transition and a team that walks? How does
+    that change what the other team can do?
+pairs_with:
+- crisscross
+- hawaii
+equipment: 1 ball · 2 goals · Disc cones · Pinnies

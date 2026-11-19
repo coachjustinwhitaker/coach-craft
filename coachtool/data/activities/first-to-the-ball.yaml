@@ -1,0 +1,43 @@
+id: first-to-the-ball
+order: 60
+name: First to the Ball
+block: B5
+skills:
+- Shooting
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+players:
+  min: 4
+  max: 8
+space: half
+minutes: 7
+pairs_with: []
+equipment: Balls · Cones · 2 flags · Full-size goal and keeper
+setup:
+- A full-size goal with a keeper. Two lines on either side, with a flag marking each line's start. A loose
+  ball in the middle. A second ball staged outside the grid.
+- Both players go to the back of a line after the 1v1 resolves. Swap sides each rep so nobody races the
+  same person.
+rules:
+- 1. The first player in each line sprints to the loose ball.
+- 2. The winner takes a touch and shoots.
+- 3. The loser peels off to the second ball and brings it forward.
+- 4. The winner recovers immediately to defend. Live 1v1 to a shot.
+coach:
+- cue: Sprint like it matters. This is a race, not a jog.
+  ask: What did you do in the first two steps?
+- cue: 'Winner: no time to think. Get the shot off.'
+  ask: How quickly did you decide?
+- cue: 'Loser: flip from disappointment to attacking.'
+  ask: How fast was your reset?
+diagram: first-to-the-ball.jpg
+type: small-sided
+objective: 'Race to a loose ball, then flip straight into the next job: the winner shoots then defends,
+  the loser attacks a defender who just shot.'
+diagram_caption: Two lines race to a loose ball in front of goal. The loser fetches a second ball for
+  a live 1v1.

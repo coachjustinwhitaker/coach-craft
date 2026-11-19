@@ -1,0 +1,58 @@
+id: 4v2-to-goal
+order: 47
+name: 4v2 to Goal
+block: B5
+skills:
+- Passing
+- Shooting
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- dev
+- app
+players:
+  min: 10
+  max: 10
+space: quarter
+minutes: 15
+pairs_with: []
+equipment: Balls · Cones · 2 goals · Pinnies in 2 colors
+setup:
+- Two goals facing each other, about 24 yards apart. Each team has its own keeper.
+- Cones across the middle, halfway between the goals, mark the midline. Wide cones mark the sides, about
+  36 yards wide.
+- 'Each team is 5: 4 field players and a keeper.'
+- To start, one team attacks with 4 against 2 defenders. The defending team's other 2 players wait wide.
+rules:
+- Keepers stay in their own goal.
+- Free touches until a pass takes the ball over the midline.
+- After the ball crosses the midline, two touches at most. A third touch gives the ball to the defending
+  keeper.
+- If the defense wins the ball, the ball goes out, or a goal is scored, the attackers drop to 2 defenders.
+  The other team adds its 2 waiting players and attacks the other goal.
+- The two attackers nearest the goal they now defend stay as defenders. The other two go wide and wait.
+scoring: A goal is one point.
+coach:
+- cue: Move to space and expect the ball. Do not wait on your heels.
+  ask: What did you see before you moved?
+- cue: Weight the pass so your teammate can step to it.
+  ask: Could your teammate step into that pass? What would have made it easier?
+- cue: In the one-touch zone, decide before the ball arrives.
+  ask: What was your plan for the ball before it got to you?
+progression:
+- title: Two touches
+  text: Play with the two-touch rule past the midline.
+  minutes: 7
+- title: One touch
+  text: Switch to one touch past the midline. A second touch gives the ball to the defending keeper. Swap
+    keepers.
+  minutes: 7
+diagram: 4v2-to-goal.png
+type: small-sided
+objective: Control the ball until there is a chance to create a finish. Then pass it into space and finish
+  immediately.
+diagram_caption: Blue attacks the top goal with four against two red defenders. The two reds out wide
+  are waiting. The cone line across the middle is the midline. The coach feeds a new ball.

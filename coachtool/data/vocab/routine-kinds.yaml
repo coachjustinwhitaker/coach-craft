@@ -1,0 +1,4 @@
+# The only routine kinds. A routine is a repeatable sequence of moves, not a game.
+kinds:
+- {id: ball-mastery, label: Ball mastery}
+- {id: dynamic-warm-up, label: Dynamic warm-up}

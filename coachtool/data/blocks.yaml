@@ -1,0 +1,7 @@
+# Block names and the heading shown above each group of activities.
+B1: {name: Me & the Ball, group_label: "Individual skill, pressure, scanning, body shape", css: ""}
+B2: {name: Me & My Teammates, group_label: "Passing, combination play, creating and using space", css: ""}
+B3: {name: Me & My Team Defending, group_label: "Pressing, delaying, covering, marking, staying compact", css: defending}
+B4: {name: Me & the Game, group_label: "Both transitions: the moment we lose it and the moment we win it", css: ""}
+B5: {name: Me & the Moment, group_label: "Finishing, composure, game management", css: ""}
+D: {name: Discovery, group_label: "Movement, ball comfort and joy", css: ""}

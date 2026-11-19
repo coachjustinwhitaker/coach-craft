@@ -1,0 +1,63 @@
+id: 3v2-line-break-and-wide-finish
+order: 63
+name: 3v2 Line-Break and Wide Finish
+block: B5
+skills:
+- Passing
+- Shooting
+- Decision-Making
+ages:
+- u14
+tracks:
+- comp
+levels:
+- app
+players:
+  min: 8
+  max: 14
+space: half
+minutes: 30
+pairs_with:
+- 6v2-rondo-release-to-finish
+equipment: Balls · Cones · Full-size goal and keeper · 2 small goals · Pinnies, one distinct bib for the
+  coach defender
+setup:
+- Top of the box, one goal, keeper in net. Two defenders (4, 5). Four players (6, 8, 9, 10) rotate through
+  the attacking 3.
+- Wingers (7, 11) and their fullbacks (2, 3) work the wide lanes, alternating which side goes live each
+  rep. A coach stands in each wide lane as a passive defender.
+- Two small goals at the base of the box for the defenders to counter into.
+- Rotate one attacker out of the 3 every rep. A second ball goes in right after a miss or a save. The
+  reset is the rep.
+rules:
+- The line-break has to be a pass. No dribbling past 4 and 5.
+- After the pass breaks the line, the runner takes a one-touch shot. On the same trigger the winger on
+  that side drives at the coach.
+- After the shot, the shooter gets back level with 4 and 5, onside, then follows the winger's ball in.
+scoring:
+- 'Attack: 1 point for a pass that breaks the line, scored or not. 1 point for a shot that scores.'
+- 'Defense: 1 point for winning the ball and scoring into a small goal.'
+coach_note: Alternate sides each rep so both wingers and both fullbacks get even reps.
+coach:
+- cue: Can you split the defense with a grounded ball into the gap for a runner in behind?
+  ask: What gap did you see?
+- cue: Receive back to goal, lay it off to a teammate facing goal and get played in yourself.
+  ask: Who was facing goal when you laid it off?
+- cue: If 4 and 5 get pulled to one side, switch the point to the runner on the far side.
+  ask: What pulled the defense to one side?
+- cue: 'Winger: pushed outside, get ready to cross. Pushed inside, run in for the shot.'
+  ask: Which way did the coach push you, and what did you do?
+- cue: 'Shooter: get back onside before you do anything else, then follow the next ball in.'
+  ask: What did you do right after your shot?
+progression:
+- title: Set 1, defenders hold
+  text: 4 and 5 stay outside the box after the pass. The winger drives solo at the coach.
+- title: Set 2, defenders chase
+  text: '4 and 5 release and chase the moment the line-breaking pass is played. The keeper can come off
+    the line. Winger and fullback work as a pair: the driver fixes the coach, the partner overlaps.'
+diagram: 3v2-line-break-and-wide-finish.png
+type: small-sided
+objective: 'Break the line with a pass, then finish twice off one sequence: the runner shoots and the
+  winger drives the wide lane.'
+diagram_caption: Three attackers play against two defenders at the top of the box. The winger drives the
+  wide lane against a passive coach. Small goals sit at the base of the box.

@@ -1,0 +1,39 @@
+id: rondo-5v2
+order: 12
+name: Rondo 5v2
+block: B2
+type: rondo
+objective: Five keep the ball from two defenders. A bigger rondo with faster decisions, and an optional
+  touch limit.
+skills:
+- Passing
+- Body Shape
+- Controlling
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 7
+  max: 14
+space: quarter
+minutes: 15
+setup: Square of cones. Five attackers in a circle, two defenders in the center. Attackers keep the ball
+  away. Track consecutive passes. Attacker who last touched an interception or ball out of bounds swaps
+  with a defender. Rotate defenders every few minutes.
+coach:
+- cue: 'Where the Rondo (4v1) is a small tight game, this is the bigger version: more players, two defenders,
+    faster decisions required. Quick touches and spreading the space are the two things to reinforce.
+    Encourage attackers to draw a defender toward them before passing. The moment a defender commits,
+    there is a free player somewhere. That read is the whole game.'
+  ask: How did you draw the defender in before passing? What would have happened if you passed straight
+    away?
+pairs_with:
+- flying-numbers
+- shrinking-field
+equipment: 1 ball · 4 cones for square · Pinnies for defenders
+progression:
+- title: Limit the touches
+  text: Limit to 1–2 touches for extra challenge.

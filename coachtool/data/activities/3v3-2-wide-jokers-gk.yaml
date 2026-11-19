@@ -1,0 +1,52 @@
+id: 3v3-2-wide-jokers-gk
+order: 53
+name: 3v3 + 2 Wide Jokers + GK
+block: B2
+skills:
+- Combination Play
+- Passing
+- Decision-Making
+ages:
+- u12
+- u14
+tracks:
+- rec
+- comp
+levels:
+- intro
+players:
+  min: 9
+  max: 10
+space: half
+minutes: 25
+pairs_with:
+- 1v1-two-active-wide-outlets-gk
+equipment: Balls · Cones · 1 full-size goal · 2 Pugg goals · Pinnies in 2 colors
+setup:
+- A central 3v3, live.
+- Two jokers in wide channels.
+- The attacking end has a full-size goal with a goalkeeper. The counter end has 2 Pugg goals.
+rules:
+- Jokers play for the attacking team only. One or two touches, wall pass return only. No carrying or shooting.
+- Rotate the joker roles every few minutes.
+- The coach feeds a new ball after each shot or turnover.
+scoring:
+- The attacking team shoots on the full goal.
+- The defending team counters to either Pugg goal at the opposite end.
+coach:
+- cue: Central players, break the middle first and then use the joker.
+  ask: 'What opened the chance: the combination or the defender''s mistake?'
+- cue: Jokers, set your angle early and give an easy target.
+  ask: Where did you set your angle?
+- cue: Player who used the joker, move immediately.
+  ask: What did you do right after the pass?
+- cue: When you win the ball, go to the counter Puggs.
+  ask: What did you see when you won it?
+coach_note: The progression addresses midfielders abandoning central space. Use it only if the pattern
+  appears.
+progression:
+- title: Play through the middle first
+  text: If central players always go wide first, require play through the middle before a joker can be
+    used. Use it only if the pattern appears.
+type: small-sided
+objective: Break the middle first, then use the wide jokers for wall passes to create the chance.

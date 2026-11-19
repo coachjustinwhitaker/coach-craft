@@ -1,0 +1,33 @@
+id: shadow-marking
+order: 15
+name: Shadow Marking
+block: B3
+type: small-sided
+objective: 4v4 where each defender stays with one attacker. Marked goals count double, and interceptions
+  score.
+skills:
+- Marking
+ages:
+- u10
+tracks:
+- rec
+levels:
+- intro
+players:
+  min: 8
+  max: 16
+space: quarter
+minutes: 15
+setup: Grid about 30 by 20 yards with a small goal at each end, no goalkeepers. 4v4. Give each defender
+  one attacker to stay with (match pinnie colors or numbers). A goal counts double if the scoring player
+  was marked closely, and an interception counts as a point. Everyone plays defender and attacker. Play
+  two minutes per round, then swap who marks whom.
+coach:
+- cue: Marking means staying between your player and the goal, close enough to step in when the ball is
+    played. Look for defenders who keep one eye on the ball and one on their player. A defender who ball-watches
+    loses their player. Celebrate the player who steps in front and steals the pass.
+  ask: When your player moved, how did you decide how close to stay?
+pairs_with:
+- pressure-cover-3v3
+- flying-numbers
+equipment: 1 ball · 2 small goals · Disc cones · Pinnies in 2 colors, numbered if possible

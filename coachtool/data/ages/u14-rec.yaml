@@ -1,0 +1,26 @@
+id: u14-rec
+age: u14
+track: rec
+label: U14
+pills:
+- controlling
+- protecting
+- driving
+- dribbling
+- passing
+- shooting
+- finishing
+- scanning
+- supporting
+- body-shape
+- covering
+- marking
+- timing-runs
+pills_note: '**Finishing** and **Timing Runs** are the new pieces this season. Finishing is shooting with
+  composure when it matters: choosing the corner, striking cleanly, and following up. Timing a run means
+  arriving in the right place at the right moment, not early and not late. Both are what the finishing
+  block looks like in action.'
+next_age: the next level
+goals: u14
+players: u14
+framework: u14

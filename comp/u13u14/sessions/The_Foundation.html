@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Foundation — Coach Craft Strikers</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#384959;--navy-dark:#384959;--gold:#6A89A7;--gold-light:#f5ecd4;
+    --gray-light:#F5F6FA;--gray-dark:#333;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Inter",Arial,sans-serif;background:white;color:var(--gray-dark);line-height:1.6;}
+  .page{max-width:680px;margin:0 auto;padding:32px 28px;}
+
+  .header{display:flex;align-items:center;gap:20px;border-bottom:3px solid var(--gold);padding-bottom:20px;margin-bottom:28px;}
+  .header img{height:72px;width:auto;}
+  .header-text{}
+  .header-eyebrow{font-family:"Inter",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .header-title{font-family:"Inter",Arial,sans-serif;font-size:28px;font-weight:800;color:var(--navy);line-height:1.1;margin-bottom:4px;}
+  .header-sub{font-size:13px;color:#666;}
+
+  .intro{background:var(--navy);color:white;border-radius:6px;padding:16px 20px;margin-bottom:28px;}
+  .intro p{font-size:13.5px;line-height:1.65;color:rgba(255,255,255,0.9);}
+  .intro strong{color:var(--gold);}
+
+  .moves{display:flex;flex-direction:column;gap:14px;}
+  .move{display:flex;gap:16px;align-items:flex-start;border-bottom:1px solid #eee;padding-bottom:14px;}
+  .move:last-child{border-bottom:none;padding-bottom:0;}
+  .move-num{font-family:"Inter",Arial,sans-serif;font-size:22px;font-weight:800;color:var(--gold);min-width:32px;line-height:1;padding-top:2px;}
+  .move-content{}
+  .move-name{font-family:"Inter",Arial,sans-serif;font-size:14px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+  .move-desc{font-size:12.5px;color:var(--gray-dark);line-height:1.6;}
+  .move-cue{display:inline-block;margin-top:5px;font-size:11px;font-weight:700;color:var(--gold);font-family:"Inter",Arial,sans-serif;letter-spacing:0.5px;}
+
+  .footer-note{margin-top:28px;border-top:2px solid var(--gold);padding-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .footer-note p{font-size:11px;color:#888;}
+  .footer-note strong{color:var(--navy);}
+
+  @media print{
+    body{background:white;}
+    .page{padding:20px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <img src="data:image/png;base64,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" alt="Coach Craft">
+    <div class="header-text">
+      <div class="header-eyebrow">Coach Craft &nbsp;·&nbsp; Sessions</div>
+      <div class="header-title">The Foundation</div>
+      <div class="header-sub">Your daily ball mastery sequence. Every session. Every day.</div>
+    </div>
+  </div>
+
+  <div class="intro">
+    <p>This is yours. Before every training session, complete The Foundation on your own before you join the group. Twenty reps of each move, in place, one ball. <strong>The better you get at these, the better everything else gets.</strong> Learn the sequence here. Do it at home. Do it before school. Do it whenever you have a ball at your feet.</p>
+  </div>
+
+  <div class="moves">
+
+    <div class="move">
+      <div class="move-num">1</div>
+      <div class="move-content">
+        <div class="move-name">Toe Taps</div>
+        <div class="move-desc">Alternate tapping the top of the ball lightly with each foot. Stay on your toes, keep the ball still, and find a quick rhythm. This is about touch and footspeed, not power.</div>
+        <div class="move-cue">Feel it: light contact, fast feet, ball barely moves</div>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="move-num">2</div>
+      <div class="move-content">
+        <div class="move-name">Foundations</div>
+        <div class="move-desc">Tap the ball back and forth using the inside of your foot. One foot taps it across, the other receives and taps it back. Short, controlled touches. Stay light on your feet and keep a steady rhythm.</div>
+        <div class="move-cue">Feel it: inside of the foot, short taps, ball stays close</div>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="move-num">3</div>
+      <div class="move-content">
+        <div class="move-name">Sole Rolls</div>
+        <div class="move-desc">Place the sole of your foot on top of the ball and roll it sideways across to your other foot. That foot receives it and rolls it back. The ball travels across the ground from foot to foot using the bottom of each foot. Keep your weight balanced and your touches smooth.</div>
+        <div class="move-cue">Feel it: sole on top, ball rolls across, other foot receives</div>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="move-num">4</div>
+      <div class="move-content">
+        <div class="move-name">V-Pulls</div>
+        <div class="move-desc">Pull the ball back with the sole of one foot, then push it diagonally forward with the inside of the same foot. The ball travels to your other foot, tracing a V shape on the ground. That foot then pulls back and pushes forward to return it. Second variation: same movement but use your laces instead of the inside to push forward. The V and the transfer to the other foot is what separates this from the Push Pull, which stays on one foot.</div>
+        <div class="move-cue">Feel it: sole pulls back, inside (or laces) pushes the V forward to the other foot</div>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="move-num">5</div>
+      <div class="move-content">
+        <div class="move-name">V-Pulls: Laces Variation</div>
+        <div class="move-desc">Same as the V-Pull but use your laces instead of the inside of your foot to push the ball diagonally forward. Pull back with the sole, push forward with the laces. The V shape and the transfer to the other foot stay the same. This variation changes the angle of your foot and the feel of the push significantly.</div>
+        <div class="move-cue">Feel it: sole pulls back, laces push the V forward to the other foot</div>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="move-num">6</div>
+      <div class="move-content">
+        <div class="move-name">La Croqueta</div>
+        <div class="move-desc">Push the ball laterally with the inside of one foot and shift your entire body weight with it, sliding to follow the ball as it moves. The other foot receives it and pushes it back the other way with another full weight shift. This is a whole-body movement, not just a foot tap. The ball is actually moving across the ground and your body is moving with it. Think Iniesta or Lamine Yamal — fluid, deceptive, committing the whole body to the direction change.</div>
+        <div class="move-cue">Feel it: full weight shift, body moves with the ball, not just feet tapping</div>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="move-num">7</div>
+      <div class="move-content">
+        <div class="move-name">Push Pull Laces</div>
+        <div class="move-desc">Push the ball forward with your laces, then pull it back with your sole. Same foot, forward and back. Keep the touch short — the ball should not travel far in either direction. Switch feet after your reps.</div>
+        <div class="move-cue">Feel it: laces push, sole pulls, short distance, stay balanced</div>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="move-num">8</div>
+      <div class="move-content">
+        <div class="move-name">Push Pull Insides</div>
+        <div class="move-desc">Same idea as Push Pull Laces but use the inside of your foot to push and the sole to pull back. This one works a different angle of contact and a different body position. Switch feet after your reps.</div>
+        <div class="move-cue">Feel it: inside pushes across, sole pulls back, stay light on your feet</div>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="move-num">9</div>
+      <div class="move-content">
+        <div class="move-name">Inside Outs</div>
+        <div class="move-desc">Push the ball outside with the outside of your right foot, then step over it and use the inside of your right foot to push it back to center. Then push it outside with the outside of your left foot, step over it and use the inside of your left foot to push it back to center. The step-over is part of the move, not an afterthought. Keep the sequence flowing: outside push, step over, inside back, other side.</div>
+        <div class="move-cue">Feel it: outside push, step over, inside back, continuous rhythm</div>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="move-num">10</div>
+      <div class="move-content">
+        <div class="move-name">Elastico</div>
+        <div class="move-desc">Push the ball to the outside with the outside of your foot, then immediately flick it back inside with the inside of the same foot in one fast motion. The two touches happen almost at the same time. This one takes time — slow it down until the two touches are clean, then speed it up.</div>
+        <div class="move-cue">Feel it: outside push, instant inside snap, one fluid move</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">
+    <p><strong>20 reps each.</strong> In place. One ball. Every session, every day.</p>
+    <p>Coach Craft &nbsp;·&nbsp; Sessions &nbsp;·&nbsp; Fall 2026</p>
+  </div>
+
+</div>
+</body>
+</html>

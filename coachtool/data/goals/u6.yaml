@@ -1,0 +1,18 @@
+age: u6
+goals:
+- id: runs-to-ball
+  text: Runs toward the ball instead of away from it
+  blocks:
+  - D
+- id: moves-with-ball
+  text: Moves with the ball rather than kicking it away
+  blocks:
+  - D
+- id: finds-goal
+  text: Knows where the goal is and tries to shoot at it
+  blocks:
+  - D
+- id: wants-to-return
+  text: Shows up to the next session excited to play again
+  blocks:
+  - D
