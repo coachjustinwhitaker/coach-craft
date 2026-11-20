@@ -446,8 +446,8 @@ function viewLibrary(){
   draw();
 }
 function viewMore(){
-  const H = DATA.help || {}, ask = T.club.contact, hl = helpLinks(), fb = H.feedback ? `<a class="btn" href="${H.feedback}" target="_blank" rel="noopener">Send feedback</a>` : '';
-  app.innerHTML = tabs('more') + `<h1>More</h1>` + (ask || hl || fb ? `<h2>Feedback</h2>${ask ? `<div class="card"><p>${ask}</p></div>` : ''}<p class="note">Something not working, or an activity your players love? Tell us.</p><div class="noprint">${fb}</div>${hl}` : '') + `<h2>Your setup</h2><a class="card row" href="#" data-nav="setup"><b>Setup</b><div class="note">Age group, players, space and season start.</div></a>`;
+  const H = DATA.help || {}, ask = T.club.contact, hl = helpLinks(), fb = H.feedback ? `<a class="card row" href="${H.feedback}" target="_blank" rel="noopener"><b>Send feedback</b><div class="note">Something not working, or an activity your players love? Tell us.</div></a>` : `<p class="note">Something not working, or an activity your players love? Tell us.</p>`;
+  app.innerHTML = tabs('more') + `<h1>More</h1>` + (ask || hl || fb ? `<h2>Feedback</h2>${ask ? `<div class="card"><p>${ask}</p></div>` : ''}<div class="noprint">${fb}</div>${hl}` : '') + `<h2>Your setup</h2><a class="card row" href="#" data-nav="setup"><b>Setup</b><div class="note">Age group, players, space and season start.</div></a>`;
 }
 function viewGoals(){
   app.innerHTML = '<a class="back" href="#" data-nav="more">&larr; More</a>' + `<h1>Player goals</h1><p class="lead">${goalsLead()} The plan builds toward them.</p>` + goalsHtml();
