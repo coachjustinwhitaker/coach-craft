@@ -9,6 +9,7 @@ slot_labels:
 weeks:
 - week: 1
   focus: Moving with the ball
+  lead: "Get the ball moving with the player, close to the feet, and stopping on command."
   say: "Ball close! Stop when I say red."
   watch:
     title: "Ball close, real stops"
@@ -26,6 +27,7 @@ weeks:
   - B1
 - week: 2
   focus: Dodging and changing direction
+  lead: "Teach players to change direction with the ball when someone gets close."
   say: "Dodge the shark! Find the open gap."
   watch:
     title: "Changing direction"
@@ -43,10 +45,11 @@ weeks:
   - B1
 - week: 3
   focus: Counting, scoring and heads up
+  lead: "Give the dribbling a goal. Counting and scoring get players looking up to find their next target instead of down at the ball."
   say: "Count your goals out loud! Can we reach 101 together?"
   watch:
     title: "Scores and heads up"
-    text: "Are they shouting their scores? Do they look up to find an open triangle before they dribble in?"
+    text: "Are they shouting their scores? Do they look up to find an open target before they dribble in?"
   sessions:
   - a:
       activity: 101-dalmatians
@@ -60,6 +63,7 @@ weeks:
   - B1
 - week: 4
   focus: Both feet, turns and hops
+  lead: "Teach players to use both feet and turn with the ball, not just run in a straight line."
   say: "Use both feet! Turn when the dinosaur gets close."
   watch:
     title: "Both feet and turns"
@@ -77,6 +81,7 @@ weeks:
   - B1
 - week: 5
   focus: Finding the goal
+  lead: "Show players that dribbling has a point: find a goal and score."
   say: "Find a goal and score! Celebrate every one."
   watch:
     title: "Looking for the goal"
@@ -94,6 +99,7 @@ weeks:
   - B1
 - week: 6
   focus: Silly games, real skills
+  lead: "Keep it silly while players learn to keep the ball close before they strike it."
   say: "Be a silly mosquito! Keep the ball close before you strike."
   watch:
     title: "Close before they strike"
@@ -111,6 +117,7 @@ weeks:
   - B1
 - week: 7
   focus: Favorites
+  lead: "Revisit the games they love, so players can feel how much they have improved."
   say: "Can we beat our group total from last time?"
   watch:
     title: "Remembering favorites"
