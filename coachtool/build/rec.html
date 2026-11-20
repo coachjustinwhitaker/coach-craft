@@ -235,6 +235,9 @@ button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
 .card.row.mr{position:relative;padding-right:44px;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}.card.row.mr::after{content:'';position:absolute;right:18px;top:50%;width:9px;height:9px;border-right:2.5px solid #1E6FD9;border-top:2.5px solid #1E6FD9;transform:translateY(-50%) rotate(45deg);transition:right .15s}
 @media(hover:hover){.card.row.mr:hover{border-color:#1E6FD9;box-shadow:0 4px 14px rgba(30,111,217,.15);transform:translateY(-1px)}.card.row.mr:hover::after{right:14px}}
 .card.row.mr:active{background:#E6F6FF;border-color:#1E6FD9}.card.row.mr:focus-visible{outline:3px solid #66C4FF;outline-offset:2px}
+.card.gd,.card.wk{transition:border-color .15s,box-shadow .15s,transform .15s;text-decoration:none}
+@media(hover:hover){.card.gd:hover,.card.wk:hover{border-color:#1E6FD9;border-left-color:var(--bc,#1E6FD9);box-shadow:0 4px 14px rgba(30,111,217,.15);transform:translateY(-1px)}}
+.card.gd:active,.card.wk:active{background:#E6F6FF}.card.gd:focus-visible,.card.wk:focus-visible{outline:3px solid #66C4FF;outline-offset:2px}
 [hidden]{display:none!important}
 .tw{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 8px}.tw i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--bc);color:var(--navy);font-style:normal;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}.tw span{font-size:15px;color:var(--ink,#13202B)}.tw.choice{background:#F3F8FB;border:1.5px dashed #BFD9EE}.tw.choice span{color:var(--mute)}
 .bgrp{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:18px 2px 8px;padding-bottom:6px;border-bottom:3px solid var(--bc,var(--gold))}.bgrp b{font-size:15px;color:var(--navy)}.bgrp span{font-size:13px;color:var(--mute);white-space:nowrap}
