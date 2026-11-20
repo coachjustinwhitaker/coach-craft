@@ -238,6 +238,7 @@ button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
 .card.gd,.card.wk{transition:border-color .15s,box-shadow .15s,transform .15s;text-decoration:none}
 @media(hover:hover){.card.gd:hover,.card.wk:hover{border-color:#1E6FD9;border-left-color:var(--bc,#1E6FD9);box-shadow:0 4px 14px rgba(30,111,217,.15);transform:translateY(-1px)}}
 .card.gd:active,.card.wk:active{background:#E6F6FF}.card.gd:focus-visible,.card.wk:focus-visible{outline:3px solid #66C4FF;outline-offset:2px}
+.sayit{margin:8px 0 4px;padding:8px 12px;background:#E6F6FF;border-left:4px solid #66C4FF;border-radius:8px;font-weight:600;color:var(--navy)}.sayit span{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#124A96;margin-bottom:2px}
 [hidden]{display:none!important}
 .tw{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 8px}.tw i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--bc);color:var(--navy);font-style:normal;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}.tw span{font-size:15px;color:var(--ink,#13202B)}.tw.choice{background:#F3F8FB;border:1.5px dashed #BFD9EE}.tw.choice span{color:var(--mute)}
 .bgrp{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:18px 2px 8px;padding-bottom:6px;border-bottom:3px solid var(--bc,var(--gold))}.bgrp b{font-size:15px;color:var(--navy)}.bgrp span{font-size:13px;color:var(--mute);white-space:nowrap}
@@ -583,18 +584,18 @@ function viewWeek(n){
       ${alts.map(x => `<div class="alt"><span>${x.name}<br><span class="note">${TYPE(x.type)}</span></span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('')}</div>`;
     const bk = slot === plan.backup_slot;
     return `<div class="slot${bk ? ' bk' : ''}"><div class="lab">${(plan.slot_labels && plan.slot_labels[slot]) || (multi ? (slot==='a' ? 'Main activity · familiar' : 'Main activity · new idea') : 'Main activity')}${swapped ? '' : repeatChip(w, si, slot)}</div><div class="nm">${actName(ref)}</div>
-      <div class="note">${[TYPE(a.type), swapped ? 'Swapped in' : note].filter(Boolean).join(' · ')}</div>
+      <div class="note">${[TYPE(a.type), swapped ? 'Swapped in' : note].filter(Boolean).join(' · ')}</div>${(w.say && !bk && !swapped) ? `<p class="sayit"><span>Say it</span>&ldquo;${w.say}&rdquo;</p>` : ''}
       <details><summary>How to run it</summary>${runIt(a)}</details>
       <details class="swap"><summary>${alts.length ? 'Swap · ' + alts.length + ' fit your numbers and space' : 'Swap · none fit yet'}</summary>${alts.map(x => `<div class="alt"><span>${x.name}</span><button class="small" data-k="${key}" data-id="${x.id}">Use</button></div>`).join('') || '<p class="note">Nothing else fits. Try a different space in Setup.</p>'}
       ${swapped ? `<button class="small ghost" data-k="${key}" data-id="">${w.sessions[si][slot].activity ? 'Put the original back' : 'Clear my choice'}</button>` : ''}</details></div>`;
   }).join('') + '</div>');
   const sessions = sessionList.join('');
-  const gs = P.great_session[(n-1) % P.great_session.length], cue = P.cues && P.cues[(n-1) % P.cues.length];
+  const gs = w.watch || P.great_session[(n-1) % P.great_session.length], cue = P.cues && P.cues[(n-1) % P.cues.length];
   const links = [n === 1 ? `<a href="#" data-nav="guide/parents">A word for parents</a>` : '', ...[...new Set(w.sessions.map((x, i) => sesBlock(w, i)))].map(b => `<a href="#" data-nav="why/${b}">Why this block: ${DATA.blocks[b].name}</a>`), `<a href="#" data-nav="guide">Coach guide</a>`].filter(Boolean).join('');
   const bits = `<section class="watch"><div class="lab">Watch for this week</div><div class="nm">${gs.title}</div><p>${gs.text}</p>${cue ? `<div class="stage"><b>${cue.when}</b>${cue.say}</div>` : ''}<div class="linkrow noprint">${links}</div></section>${(plan.standing || []).map(x => `<div class="card"><p><b>${x.title}</b><br>${x.text}</p></div>`).join('')}`;
   const tog = !one && sessionList.length > 1, cur = tog ? Math.min(prTab[n] || 0, sessionList.length - 1) : 0;
   const pblock = si => `<div class="pr${shape ? ' seq' : ''}${tog && si !== cur ? ' pr-off' : ''}" data-pr="${si}">` + (shape ? playCard(w, shape.opening, si) : '') + (si === 0 || tog ? routineCard(w) : '') + sessionList[si] + (shape ? gameCard(shape.closing, 'Closing game') : '') + '</div>';
-  const body = (shape ? `<p class="lead">Every practice: play, practice, play.</p>` : '') + (tog ? `<div class="ptog noprint" role="tablist">${sessionList.map((_, i) => `<button type="button" data-pt="${i}" class="${i === cur ? 'on' : ''}">Day ${i + 1}</button>`).join('')}</div>` + sessionList.map((_, i) => pblock(i)).join('') : pblock(0));
+  const body = (shape ? `<p class="lead">${w.lead || 'Every practice: play, practice, play.'}</p>` : '') + (tog ? `<div class="ptog noprint" role="tablist">${sessionList.map((_, i) => `<button type="button" data-pt="${i}" class="${i === cur ? 'on' : ''}">Day ${i + 1}</button>`).join('')}</div>` + sessionList.map((_, i) => pblock(i)).join('') : pblock(0));
   app.innerHTML = tabs(on) + strip + bn + `<h1>${w.focus}</h1>` + body + bits + `<div class="share noprint"><button id="shr">Share this week</button><button class="ghost" id="prt">Print</button></div>${helpLinks(n)}`;
   app.querySelectorAll('[data-pt]').forEach(b => b.onclick = () => { prTab[n] = +b.dataset.pt; app.querySelectorAll('[data-pt]').forEach(x => x.classList.toggle('on', x === b)); app.querySelectorAll('.pr').forEach(x => x.classList.toggle('pr-off', +x.dataset.pr !== +b.dataset.pt)); });
   $('#shr').onclick = () => shareWeek(n, $('#shr')); $('#prt').onclick = printWeek;

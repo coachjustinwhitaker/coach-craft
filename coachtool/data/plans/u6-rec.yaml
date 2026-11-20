@@ -9,6 +9,10 @@ slot_labels:
 weeks:
 - week: 1
   focus: Moving with the ball
+  say: "Ball close! Stop when I say red."
+  watch:
+    title: "Ball close, real stops"
+    text: "Do they stop with a foot on the ball at red? Do they keep the ball close at yellow?"
   sessions:
   - a:
       activity: red-light-green-light
@@ -22,6 +26,10 @@ weeks:
   - B1
 - week: 2
   focus: Dodging and changing direction
+  say: "Dodge the shark! Find the open gap."
+  watch:
+    title: "Changing direction"
+    text: "Do they change direction when someone gets close? Are they looking up to find open space?"
   sessions:
   - a:
       activity: sharks-and-minnows
@@ -35,19 +43,27 @@ weeks:
   - B1
 - week: 3
   focus: Counting, scoring and heads up
+  say: "Count your goals out loud! Can we reach 101 together?"
+  watch:
+    title: "Scores and heads up"
+    text: "Are they shouting their scores? Do they look up to find an open triangle before they dribble in?"
   sessions:
   - a:
       activity: 101-dalmatians
       note: Count together and raise the target each round
     b:
-      activity: red-light-green-light
-      note: Familiar from week 1. Quick to start again
+      activity: wreck-it-ralph
+      note: Same grid and balls. Switch here to score through goals instead of counting
   block: D
   level: intro
   also_blocks:
   - B1
 - week: 4
   focus: Both feet, turns and hops
+  say: "Use both feet! Turn when the dinosaur gets close."
+  watch:
+    title: "Both feet and turns"
+    text: "Do they use both feet? Do they turn with the ball instead of running past it?"
   sessions:
   - a:
       activity: dinosaur-tag
@@ -61,6 +77,10 @@ weeks:
   - B1
 - week: 5
   focus: Finding the goal
+  say: "Find a goal and score! Celebrate every one."
+  watch:
+    title: "Looking for the goal"
+    text: "Do they look for a goal before they dribble toward it? Are they celebrating?"
   sessions:
   - a:
       activity: wreck-it-ralph
@@ -74,6 +94,10 @@ weeks:
   - B1
 - week: 6
   focus: Silly games, real skills
+  say: "Be a silly mosquito! Keep the ball close before you strike."
+  watch:
+    title: "Close before they strike"
+    text: "Is the ball close before they kick it? Are they laughing while they work?"
   sessions:
   - a:
       activity: mosquitoes
@@ -87,6 +111,10 @@ weeks:
   - B1
 - week: 7
   focus: Favorites
+  say: "Can we beat our group total from last time?"
+  watch:
+    title: "Remembering favorites"
+    text: "Do they remember the rules without help? Which game do they ask for again?"
   sessions:
   - a:
       activity: 101-dalmatians
