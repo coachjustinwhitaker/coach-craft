@@ -399,7 +399,7 @@ function tourSteps(){
   if(plan.why_periodize) add('Why we periodize', 'Why each week has a theme.', [`<div class="card"><p>${plan.season_note || ''}</p>${(plan.why_periodize || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
   add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. ${DATA.area === 'comp' ? 'Each week has a theme and a block. You plan the practices.' : 'Each week has one focus.'}`, [seasonTour()]);
   const mins = Math.max(5, Math.round((steps.length + 1) * 0.7));
-  steps.unshift({title: `Welcome, ${T.label} coach`, sub: `A ${mins} minute tour, then you are ready to run week 1. You will cover who your players are, what a practice looks like, and what each week asks of you.`, part: '', html: ''});
+  steps.unshift({title: `Welcome, ${T.label} coach`, sub: `Next is a quick ${mins} minute background on ${T.label}, then you are ready to run week 1. This tour will cover who your players are, what a practice looks like, and what each week asks of you.`, part: '', html: ''});
   return steps;
 }
 function seasonTour(){
