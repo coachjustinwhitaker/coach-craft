@@ -398,8 +398,9 @@ function tourSteps(){
   if(plan.levels) add('Introduction, Development, Application', 'The three levels every block moves through.', [`<div class="card">${(plan.levels || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
   if(plan.why_periodize) add('Why we periodize', 'Why each week has a theme.', [`<div class="card"><p>${plan.season_note || ''}</p>${(plan.why_periodize || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
   add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. ${DATA.area === 'comp' ? 'Each week has a theme and a block. You plan the practices.' : 'Each week has one focus.'}`, [seasonTour()]);
-  const seen = [], topics = steps.filter(s => !seen.includes(s.title) && seen.push(s.title)).map(s => `<li style="margin:8px 0"><b>${s.title}</b><br><span class="note">${s.sub}</span></li>`).join(''), mins = Math.max(5, Math.round((steps.length + 1) * 0.7));
-  steps.unshift({title: 'Before you start', sub: `A short tour of your ${T.label} group. Here is what is coming.`, part: '', html: `<div class="card"><ul style="padding-left:20px;margin:6px 0">${topics}</ul></div><p>About ${mins} minutes. You can skip any of it, and all of it stays in the Guide for later.</p>`});
+  const seen = [], titles = steps.filter(s => !seen.includes(s.title) && seen.push(s.title)), mins = Math.max(5, Math.round((steps.length + 1) * 0.7));
+  const topics = titles.map((s, k) => `<div class="tw" style="--bc:#BFD9EE"><i>${k + 1}</i><span>${s.title}</span></div>`).join('');
+  steps.unshift({title: 'Before you start', sub: `About ${mins} minutes, and you will be ready to run week 1 with your ${T.label} group.`, part: '', html: topics});
   return steps;
 }
 function seasonTour(){
@@ -411,7 +412,7 @@ function seasonTour(){
 function viewTour(n){
   const steps = tourSteps(), last = steps.length, i = Math.max(1, Math.min(last, n)), st = steps[i-1];
   app.innerHTML = `<div class="bar"><i style="width:${Math.round(i / last * 100)}%"></i></div><div class="tourtop"><span class="badge">${[T.label, T.track === 'rec' ? 'Rec' : T.track.charAt(0).toUpperCase() + T.track.slice(1), T.club.format].filter(Boolean).join(' · ')}</span><span class="note">Step ${i} of ${last} · <a href="#" data-nav="setup">Change</a></span></div><h1>${st.title}${st.part ? ` <span class="note" style="font-size:14px;font-weight:500">${st.part}</span>` : ''}</h1>${st.sub ? `<p class="lead">${st.sub}</p>` : ''}${st.html}
-    <button id="nx">${i === last ? 'Start with this week' : i === 1 ? 'Start the tour' : 'Next'}</button><button class="ghost" data-nav="${i > 1 ? 'onb/' + (i-1) : 'setup'}">${i > 1 ? 'Back' : 'Back to setup'}</button><a class="skip" href="#" id="sk">Skip the tour. It is all in the Guide.</a>`;
+    <button id="nx">${i === last ? 'Start with this week' : i === 1 ? 'Start the tour' : 'Next'}</button>${i > 1 ? `<button class="ghost" data-nav="onb/${i-1}">Back</button>` : ''}<a class="skip" href="#" id="sk">Skip the tour. It is all in the Guide.</a>`;
   $('#nx').onclick = () => i === last ? finishTour('now') : go('onb/' + (i+1));
   $('#sk').onclick = e => { e.preventDefault(); finishTour('now'); };
 }
