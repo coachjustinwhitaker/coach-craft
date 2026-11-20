@@ -5089,9 +5089,10 @@
     "age": "u6",
     "track": "rec",
     "sessions_per_week": 1,
+    "backup_slot": "b",
     "slot_labels": {
-     "a": "First activity",
-     "b": "Second activity"
+     "a": "Main activity",
+     "b": "Backup, if they lose interest"
     },
     "weeks": [
      {
@@ -5104,8 +5105,8 @@
          "note": "Ball close at yellow, a real stop at red"
         },
         "b": {
-         "activity": "octopus",
-         "note": "Small touches to dodge, bigger touches to escape"
+         "activity": "101-dalmatians",
+         "note": "Same grid and balls. Switch here if they need goals to chase"
         }
        }
       ],
@@ -5125,8 +5126,8 @@
          "note": "Heads up to find the gaps"
         },
         "b": {
-         "activity": "kangaroo-jacks",
-         "note": "Let the hopping be silly. The coordination work is real"
+         "activity": "octopus",
+         "note": "Same ocean, a new monster to dodge"
         }
        }
       ],
@@ -5146,8 +5147,8 @@
          "note": "Count together and raise the target each round"
         },
         "b": {
-         "activity": "snake",
-         "note": "Players calling out who they are chasing"
+         "activity": "red-light-green-light",
+         "note": "Familiar from week 1. Quick to start again"
         }
        }
       ],
@@ -5167,8 +5168,8 @@
          "note": "Watch for both feet on the turns"
         },
         "b": {
-         "activity": "bunny-trail",
-         "note": "Keep hopping segments to three in a row at most"
+         "activity": "kangaroo-jacks",
+         "note": "Keeps the hopping theme and the energy up"
         }
        }
       ],
@@ -5188,8 +5189,8 @@
          "note": "Celebrate every goal loudly"
         },
         "b": {
-         "activity": "sharks-and-minnows",
-         "note": "Revisit: can they find the gaps faster?"
+         "activity": "101-dalmatians",
+         "note": "Familiar and loud. Count the goals together"
         }
        }
       ],
@@ -5210,7 +5211,7 @@
         },
         "b": {
          "activity": "octopus",
-         "note": "Revisit: dodging with a smile"
+         "note": "Same ocean, different monster"
         }
        }
       ],
@@ -5230,8 +5231,8 @@
          "note": "Revisit: beat last time's group total"
         },
         "b": {
-         "activity": "mosquitoes",
-         "note": "Revisit: keep shots below the knee"
+         "activity": "red-light-green-light",
+         "note": "An easy reset if the energy drops"
         }
        }
       ],
@@ -5326,7 +5327,7 @@
       "text": "If players are asking \"can we play more?\" when the session ends, you have done your job perfectly. End while they still want more, every single week."
      }
     ],
-    "prepared": "Preparation at U6 is simple. Know which two activities you are going to run. Have your cones laid out before the first player arrives. Put a ball at every player's starting spot. That is it. You do not need a session plan with timing breakdowns. You need to show up with energy and an idea of what game you are playing first. The rest follows.",
+    "prepared": "Preparation at U6 is simple. Know your main activity and your backup. Have your cones laid out before the first player arrives. Put a ball at every player's starting spot. That is it. You do not need a session plan with timing breakdowns. You need to show up with energy and an idea of what game you are playing first. The rest follows.",
     "parents": {
      "intro": "U6 parents are more anxious than any other age group, and more likely to intervene. Before the session, walk over and say something like:",
      "script": "These sessions are going to look like organized chaos, and that is completely intentional. The games are silly on purpose. Every one of them is building coordination, confidence, and a love of the ball. The best thing you can do is cheer loudly and let them figure things out for themselves. If they run to you mid-game, just point them back to the field with a smile.",
@@ -5334,8 +5335,8 @@
     },
     "shape": {
      "title": "The session",
-     "why": "Kids join a team to play. At U6 the play is the point, so there is no challenge to solve yet. Start with play, do a couple of short activities, and finish with play.",
-     "note": "About 45 to 50 minutes. Arrive 15 minutes early. Play, two activities of about 10 minutes, play.",
+     "why": "Kids join a team to play. At U6 the play is the point, so there is no challenge to solve yet. Start with play, run one activity with a backup ready, and finish with play.",
+     "note": "About 45 to 50 minutes. Arrive 15 minutes early. Play, one main activity with a backup ready, play.",
      "opening": {
       "label": "Play",
       "minutes": "8 to 10 min",
