@@ -239,7 +239,7 @@ button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
 @media(hover:hover){.card.gd:hover,.card.wk:hover{border-color:#1E6FD9;border-left-color:var(--bc,#1E6FD9);box-shadow:0 4px 14px rgba(30,111,217,.15);transform:translateY(-1px)}}
 .card.gd:active,.card.wk:active{background:#E6F6FF}.card.gd:focus-visible,.card.wk:focus-visible{outline:3px solid #66C4FF;outline-offset:2px}
 .sayit{margin:8px 0 4px;padding:8px 12px;background:#E6F6FF;border-left:4px solid #66C4FF;border-radius:8px;font-weight:600;color:var(--navy)}.sayit span{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#124A96;margin-bottom:2px}
-a.tw.go{text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}@media(hover:hover){a.tw.go:hover{border-color:#1E6FD9;box-shadow:0 4px 14px rgba(30,111,217,.15);transform:translateY(-1px)}}a.tw.go:active{background:#E6F6FF}a.tw.go:focus-visible{outline:3px solid #66C4FF;outline-offset:2px}
+.cover{list-style:none;counter-reset:c;margin:4px 0 8px;padding:0}.cover li{counter-increment:c;display:flex;align-items:center;gap:12px;padding:7px 2px;font-size:16px;color:var(--ink,#13202B)}.cover li::before{content:counter(c);flex:none;width:26px;height:26px;border-radius:50%;background:#D9F0FF;color:#124A96;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
 [hidden]{display:none!important}
 .tw{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 8px}.tw i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--bc);color:var(--navy);font-style:normal;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}.tw span{font-size:15px;color:var(--ink,#13202B)}.tw.choice{background:#F3F8FB;border:1.5px dashed #BFD9EE}.tw.choice span{color:var(--mute)}
 .bgrp{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:18px 2px 8px;padding-bottom:6px;border-bottom:3px solid var(--bc,var(--gold))}.bgrp b{font-size:15px;color:var(--navy)}.bgrp span{font-size:13px;color:var(--mute);white-space:nowrap}
@@ -400,7 +400,7 @@ function tourSteps(){
   if(plan.why_periodize) add('Why we periodize', 'Why each week has a theme.', [`<div class="card"><p>${plan.season_note || ''}</p>${(plan.why_periodize || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
   add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. ${DATA.area === 'comp' ? 'Each week has a theme and a block. You plan the practices.' : 'Each week has one focus.'}`, [seasonTour()]);
   const seen = [], titles = steps.filter(s => !seen.includes(s.title) && seen.push(s.title)), mins = Math.max(5, Math.round((steps.length + 1) * 0.7));
-  const topics = titles.map((s, k) => `<a class="tw go" href="#" data-nav="onb/${steps.indexOf(s) + 2}" style="--bc:#BFD9EE"><i>${k + 1}</i><span>${s.title}</span></a>`).join('');
+  const topics = `<ol class="cover">${titles.map(s => `<li>${s.title}</li>`).join('')}</ol>`;
   steps.unshift({title: 'Before you start', sub: `About ${mins} minutes, and you will be ready to run week 1 with your ${T.label} group.`, part: '', html: topics});
   return steps;
 }
