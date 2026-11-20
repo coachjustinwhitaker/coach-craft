@@ -5474,7 +5474,7 @@
     },
     {
      "label": "Game time",
-     "text": "4 quarters of 10 minutes",
+     "text": "4 quarters, no longer than 10 minutes each, with 5 minute breaks",
      "source": "US Soccer Player Development Initiatives, small-sided games chart",
      "origin": "core"
     },
@@ -6037,7 +6037,7 @@
     },
     {
      "label": "Game time",
-     "text": "4 quarters of 10 minutes",
+     "text": "4 quarters, no longer than 10 minutes each, with 5 minute breaks",
      "source": "US Soccer Player Development Initiatives, small-sided games chart",
      "origin": "core"
     },
