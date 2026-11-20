@@ -58,6 +58,7 @@ shape:
   opening:
     label: Play
     minutes: 12 min
+    glance: "Free small-sided game. Let them play and watch for the week's focus."
     title: 5v5 or 6v6 free small-sided game
     setup: Same setup every session. Smaller than the closing game, so more touches and cleaner decisions.
       Small goals or full goals depending on space. Teams of 5 or 6, no goalkeeper. Quick restarts. Let
@@ -71,6 +72,7 @@ shape:
   closing:
     label: Play
     minutes: 25 min
+    glance: "Full game. Watch for the focus showing up without being asked."
     title: Full game
     setup: 'The biggest game of the session. Proper goals if possible. Include a goalkeeper and rotate
       it so every player experiences the position across the season. No offside until players are genuinely

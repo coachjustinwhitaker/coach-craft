@@ -57,6 +57,7 @@ shape:
   opening:
     label: Play
     minutes: 8 to 10 min
+    glance: "Free play. Small field, pop-up goals if you have them. Get in there, encourage, do not coach."
     title: Small-sided game, free play
     setup: Same setup every week. Mini or pop-up goals at each end if you have them, cone goals otherwise.
       Pop-up goals give players the satisfaction of the ball going into a net, which matters at this age.
@@ -73,6 +74,7 @@ shape:
   closing:
     label: Play
     minutes: 10 min
+    glance: "Same game as the opening. End while they still want more."
     title: Back to play
     setup: Same small-sided game as the opening. Same teams or mix them up, either works. Let it run without
       interruption. Your job is to restart quickly after goals and keep the energy up. Bring everyone

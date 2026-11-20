@@ -50,6 +50,7 @@ shape:
   opening:
     label: Play
     minutes: 10 to 12 min
+    glance: "Free play, no coaching. Watch for scanning, beating a player and clever passes. They tell you what to run today."
     title: Free small-sided game
     setup: 'Same setup every week, so players know this game before they arrive. Mini goals or cone goals
       at each end. No offside. Ball out of play: restart with a kick-in or dribble-in from the sideline.
@@ -70,6 +71,7 @@ shape:
   closing:
     label: Play
     minutes: 10 to 12 min
+    glance: "Same format, slightly bigger space. Step all the way back."
     title: Back to the game
     setup: 'Same format as the opening. The space can be slightly larger to give players more room. Let
       it run without stopping and step all the way back. Alternative: one large goal at one end with two

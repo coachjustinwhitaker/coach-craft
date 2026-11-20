@@ -5340,6 +5340,7 @@
      "opening": {
       "label": "Play",
       "minutes": "8 to 10 min",
+      "glance": "Free play. Small field, pop-up goals if you have them. Get in there, encourage, do not coach.",
       "title": "Small-sided game, free play",
       "setup": "Same setup every week. Mini or pop-up goals at each end if you have them, cone goals otherwise. Pop-up goals give players the satisfaction of the ball going into a net, which matters at this age. Split however many players you have into two roughly equal teams. No goalkeeper, no offside, no rules beyond kick-in restarts. Keep the field small enough that every player is near the action most of the time. When in doubt, go smaller. Mark the space, put the ball down, and step back. Restart quickly after every goal and celebrate each one.",
       "job": "Get in there a little. Encourage. High-five. React to goals like they are the greatest thing you have ever seen. At U6, your energy is contagious in both directions. Do not coach. Do not correct. Just play.",
@@ -5349,6 +5350,7 @@
      "closing": {
       "label": "Play",
       "minutes": "10 min",
+      "glance": "Same game as the opening. End while they still want more.",
       "title": "Back to play",
       "setup": "Same small-sided game as the opening. Same teams or mix them up, either works. Let it run without interruption. Your job is to restart quickly after goals and keep the energy up. Bring everyone in at the end. High-fives all around, then one very simple question to close the loop. End while they still want more.",
       "question": "What was your favorite part of today?",
@@ -5780,6 +5782,7 @@
      "opening": {
       "label": "Play",
       "minutes": "10 to 12 min",
+      "glance": "Free play, no coaching. Watch for scanning, beating a player and clever passes. They tell you what to run today.",
       "title": "Free small-sided game",
       "setup": "Same setup every week, so players know this game before they arrive. Mini goals or cone goals at each end. No offside. Ball out of play: restart with a kick-in or dribble-in from the sideline. Set up the space, then step back. Let them play. Restart quickly after every goal. Rotate the goalkeeper throughout the season so every player gets time in the position.",
       "job": "Watch. Look for moments of good scanning, a player who tries to beat someone, a clever pass. Make a mental note of two or three things. One of them will tell you which practice activity to run today. Do not stop the game. Do not instruct. Save your voice for the question.",
@@ -5794,6 +5797,7 @@
      "closing": {
       "label": "Play",
       "minutes": "10 to 12 min",
+      "glance": "Same format, slightly bigger space. Step all the way back.",
       "title": "Back to the game",
       "setup": "Same format as the opening. The space can be slightly larger to give players more room. Let it run without stopping and step all the way back. Alternative: one large goal at one end with two cone goals at the halfway line. One team defends the large goal, the other scores through the halfway cones. It gives players a taste of a more directional game.",
       "question": "What is one thing you did today that you want to try again next week?",
@@ -6438,6 +6442,7 @@
      "opening": {
       "label": "Play",
       "minutes": "10 to 12 min",
+      "glance": "Small game with one added rule. Say it once, then watch how they solve it.",
       "title": "Small-sided game, one added rule",
       "setup": "Keep it small, 3v3 or 4v4, with mini goals or cone goals and no goalkeepers. Smaller than the game means more touches and more decisions. The added rule is the challenge for the week. Say it once, start the game, then step back. Quick restarts. With more than eight players, run two games side by side and rotate teams.",
       "job": "Say the rule, then watch. Look for players solving the problem without being told how. One thing you see will tell you how to use the familiar activity. Do not stop the game to coach. Save your voice for the question.",
@@ -6447,6 +6452,7 @@
      "closing": {
       "label": "Play",
       "minutes": "15 to 20 min",
+      "glance": "The biggest game of the session. Watch for the week's focus showing up on its own.",
       "title": "7v7 game",
       "setup": "The biggest game of the session. Full 7v7 with goalkeepers if you have them, rotating the position so every player gets a turn across the season. Let it run without stopping. Watch for the focus you introduced that week showing up without being asked. On Day 2, notice whether anything from Day 1 carried over.",
       "question": "Was there a moment today where you and a teammate figured something out together?",
@@ -7191,6 +7197,7 @@
      "opening": {
       "label": "Play",
       "minutes": "12 min",
+      "glance": "Free small-sided game. Let them play and watch for the week's focus.",
       "title": "5v5 or 6v6 free small-sided game",
       "setup": "Same setup every session. Smaller than the closing game, so more touches and cleaner decisions. Small goals or full goals depending on space. Teams of 5 or 6, no goalkeeper. Quick restarts. Let them play the first 8 minutes without saying anything. On Day 2, watch specifically for whether the concept from Day 1 earlier in the week shows up.",
       "job": "Watch the transition moments specifically. What happens in the first couple of seconds after the ball changes hands? That tells you which focus area to prioritize today. Come in with Activity A already chosen and let the opening play confirm your read.",
@@ -7200,6 +7207,7 @@
      "closing": {
       "label": "Play",
       "minutes": "25 min",
+      "glance": "Full game. Watch for the focus showing up without being asked.",
       "title": "Full game",
       "setup": "The biggest game of the session. Proper goals if possible. Include a goalkeeper and rotate it so every player experiences the position across the season. No offside until players are genuinely ready for it. Let the game run without stopping. Watch for the focus you introduced that week showing up without being asked for: a compact defensive shape, or a player who sprints to press the instant possession is lost. On Day 2, notice whether anything from the first session carried over.",
       "question": "Was there a moment today where your whole team did something together, attacking or defending, that one player could not have done alone?",
@@ -7949,6 +7957,7 @@
      "opening": {
       "label": "Play",
       "minutes": "12 min",
+      "glance": "Free small-sided game. Let them play and watch for the week's focus.",
       "title": "6v6 or 7v7 free small-sided game",
       "setup": "Same setup every session. Smaller than the closing game, so more touches, more shots and cleaner decisions. Half a field, with a full-size or large goal at each end. Teams of 6 or 7. Add a goalkeeper if you have one willing. Quick restarts. Let them play the first 8 minutes without saying anything. On Day 2, watch for whether the concept from Day 1 earlier in the week shows up.",
       "job": "Watch the moments in front of goal. Do players shoot? Do they pick their moment or force it? Watch the transitions too. Come in with the familiar activity already chosen and let the opening play confirm your read for the new-idea activity.",
@@ -7958,6 +7967,7 @@
      "closing": {
       "label": "Play",
       "minutes": "25 min",
+      "glance": "Full game. Watch for the focus showing up without being asked.",
       "title": "Full game",
       "setup": "The biggest game of the session. Full field, full-size goals, goalkeepers. Play 11v11 if you have the numbers. Short of players? Play 9v9 or 10v10 on a narrower field rather than leaving gaps. Alternatively, put a full-size goal with a keeper at one end and two small goals at the halfway line for the other team to attack. Offside applies, so introduce it early in the season and be patient with it. Let the game run without stopping. Watch for the focus you introduced that week showing up without being asked: a team that stays compact across three lines, a player who sprints to press the instant possession is lost, a forward who shoots when the chance comes.",
       "question": "Was there a moment today where your whole team did something together, attacking or defending, that one player could not have done alone?",
