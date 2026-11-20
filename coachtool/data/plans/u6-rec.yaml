@@ -9,7 +9,7 @@ slot_labels:
 weeks:
 - week: 1
   focus: Moving with the ball
-  lead: "Get the ball moving with the player, close to the feet, and stopping on command."
+  lead: "Get the ball moving with the player and stopping on command."
   say: "Ball close! Stop when I say red."
   watch:
     title: "Ball close, real stops"
@@ -27,7 +27,7 @@ weeks:
   - B1
 - week: 2
   focus: Dodging and changing direction
-  lead: "Teach players to change direction with the ball when someone gets close."
+  lead: "Teach players to change direction with the ball."
   say: "Dodge the shark! Find the open gap."
   watch:
     title: "Changing direction"
@@ -45,7 +45,7 @@ weeks:
   - B1
 - week: 3
   focus: Counting, scoring and heads up
-  lead: "Give the dribbling a goal. Counting and scoring get players looking up to find their next target instead of down at the ball."
+  lead: "Counting and scoring get players looking up to find their next target."
   say: "Count your goals out loud! Can we reach 101 together?"
   watch:
     title: "Scores and heads up"
@@ -81,7 +81,7 @@ weeks:
   - B1
 - week: 5
   focus: Finding the goal
-  lead: "Show players that dribbling has a point: find a goal and score."
+  lead: "Dribbling has a point: find a goal and score."
   say: "Find a goal and score! Celebrate every one."
   watch:
     title: "Looking for the goal"
