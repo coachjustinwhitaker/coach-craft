@@ -62,19 +62,19 @@ weeks:
   also_blocks:
   - B1
 - week: 4
-  focus: Both feet, turns and hops
-  lead: "Teach players to use both feet and turn with the ball, not just run in a straight line."
-  say: "Use both feet! Turn when the dinosaur gets close."
+  focus: Turns and escaping
+  lead: "Teach players to move their bodies to turn the ball around cones and away from a chaser."
+  say: "Turn away when the dinosaur gets close!"
   watch:
-    title: "Both feet and turns"
-    text: "Do they use both feet? Do they turn with the ball instead of running past it?"
+    title: "Turning their bodies"
+    text: "Do they turn their body with the ball instead of running past it? Notice who uses both feet, but do not coach it."
   sessions:
   - a:
       activity: dinosaur-tag
       note: Watch for both feet on the turns
     b:
       activity: kangaroo-jacks
-      note: Keeps the hopping theme and the energy up
+      note: "Same idea, turning away from a chaser. A bigger group game"
   block: D
   level: intro
   also_blocks:
