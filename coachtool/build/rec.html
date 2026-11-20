@@ -232,6 +232,7 @@ button.ghost,.btn.ghost{background:#fff!important;color:var(--gold)!important}
 .card>p:has(>b:first-child+br)>b{display:block;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:2px}
 .card>p:has(>b:first-child+br)>br{display:none}
 
+.tw{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 8px}.tw i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--bc);color:var(--navy);font-style:normal;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}.tw span{font-size:15px;color:var(--ink,#13202B)}.tw.choice{background:#F3F8FB;border:1.5px dashed #BFD9EE}.tw.choice span{color:var(--mute)}
 .bgrp{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:18px 2px 8px;padding-bottom:6px;border-bottom:3px solid var(--bc,var(--gold))}.bgrp b{font-size:15px;color:var(--navy)}.bgrp span{font-size:13px;color:var(--mute);white-space:nowrap}
 .card.wk{border-left:6px solid var(--bc,var(--cc-line,#D5DEE5))}
 .card.wk.now{background:#E6F6FF;border-color:#1E6FD9;border-left-color:var(--bc,#1E6FD9);box-shadow:0 0 0 1px #1E6FD9}
@@ -386,10 +387,16 @@ function tourSteps(){
   if(T.rules && T.rules.length) add('Game rules at this age', 'What to know before the first game. If a referee or your league says otherwise, they win.', [rulesHtml()]);
   if(plan.levels) add('Introduction, Development, Application', 'The three levels every block moves through.', [`<div class="card">${(plan.levels || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
   if(plan.why_periodize) add('Why we periodize', 'Why each week has a theme.', [`<div class="card"><p>${plan.season_note || ''}</p>${(plan.why_periodize || []).map(x => `<p><b>${x.title}</b><br>${x.text}</p>`).join('')}</div>`]);
-  add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. ${DATA.area === 'comp' ? 'Each week has a theme and a block. You plan the practices.' : 'Each week has one focus.'}`, chunk(plan.weeks, 99).map(g => g.map(w => `<div class="card"><b>Week ${w.week}</b><div class="note">${w.focus}</div></div>`).join('')));
+  add('Your season', `${plan.weeks.length} weeks, ${plan.sessions_per_week === 1 ? 'one practice' : 'two practices'} a week. ${DATA.area === 'comp' ? 'Each week has a theme and a block. You plan the practices.' : 'Each week has one focus.'}`, [seasonTour()]);
   const seen = [], topics = steps.filter(s => !seen.includes(s.title) && seen.push(s.title)).map(s => `<li style="margin:8px 0"><b>${s.title}</b><br><span class="note">${s.sub}</span></li>`).join(''), mins = Math.max(5, Math.round((steps.length + 1) * 0.7));
   steps.unshift({title: 'Before you start', sub: `A short tour of your ${T.label} group. Here is what is coming.`, part: '', html: `<div class="card"><ul style="padding-left:20px;margin:6px 0">${topics}</ul></div><p>About ${mins} minutes. You can skip any of it, and all of it stays in the Guide for later.</p>`});
   return steps;
+}
+function seasonTour(){
+  const wb = w => w.coach_choice ? '' : (w.block || ((w.sessions || [])[0] || {}).block || '');
+  const runs = []; plan.weeks.forEach(w => { const b = wb(w), last = runs[runs.length - 1]; if(last && last.b === b) last.ws.push(w); else runs.push({b, ws: [w]}); });
+  return runs.map(r => { const a = r.ws[0].week, z = r.ws[r.ws.length - 1].week, bl = r.b && DATA.blocks[r.b];
+    return (bl ? `<div class="bgrp" style="--bc:${BCOL(r.b)}"><b>${bl.name}</b><span>${a === z ? 'Week ' + a : 'Weeks ' + a + ' to ' + z}</span></div>` : '') + r.ws.map(w => `<div class="tw${w.coach_choice ? ' choice' : ''}" style="--bc:${w.coach_choice ? '#BFD9EE' : BCOL(r.b)}"><i>${w.week}</i><span>${w.focus}</span></div>`).join(''); }).join('');
 }
 function viewTour(n){
   const steps = tourSteps(), last = steps.length, i = Math.max(1, Math.min(last, n)), st = steps[i-1];
